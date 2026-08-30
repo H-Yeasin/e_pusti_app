@@ -22,32 +22,32 @@ class EPustiLocalizations {
   bool get isBangla => language == AppLanguage.bangla;
 
   String get languageSelectionTitle => isBangla
-      ? '\u{9AD}\u{9BE}\u{9B7}\u{9BE} \u{9A8}\u{9BF}\u{9B0}\u{9CD}\u{9AC}\u{9BE}\u{99A}\u{9A8} \u{995}\u{9B0}\u{9C1}\u{9A8}'
+      ? 'ভাষা নির্বাচন করুন'
       : 'Select language';
 
   String get chooseLanguage => isBangla
-      ? '\u{986}\u{9AA}\u{9A8}\u{9BE}\u{9B0} \u{9AD}\u{9BE}\u{9B7}\u{9BE} \u{9AC}\u{9C7}\u{99B}\u{9C7} \u{9A8}\u{9BF}\u{9A8}'
+      ? 'আপনার ভাষা বেছে নিন'
       : 'Choose your language';
 
-  String get banglaName => '\u{9AC}\u{9BE}\u{982}\u{9B2}\u{9BE}';
+  String get banglaName => 'বাংলা';
 
   String get banglaLabel => 'Bangla';
 
   String get englishName => 'English';
 
-  String get englishLabel => '\u{987}\u{982}\u{9B0}\u{9C7}\u{99C}\u{9BF}';
+  String get englishLabel => 'ইংরেজি';
 
   String get languageCanChangeLater => isBangla
-      ? '\u{9B8}\u{9C7}\u{99F}\u{9BF}\u{982}\u{9B8} \u{9A5}\u{9C7}\u{995}\u{9C7} \u{9AF}\u{9C7}\u{995}\u{9CB}\u{9A8}\u{9CB} \u{9B8}\u{9AE}\u{9DF}\u{9BC} \u{9AA}\u{9B0}\u{9BF}\u{9AC}\u{9B0}\u{9CD}\u{9A4}\u{9A8} \u{995}\u{9B0}\u{9BE} \u{9AF}\u{9BE}\u{9AC}\u{9C7}'
+      ? 'সেটিংস থেকে যেকোনো সময় পরিবর্তন করা যাবে'
       : 'You can change this anytime from Settings';
 
   String get continueLabel => isBangla
-      ? '\u{99A}\u{9BE}\u{9B2}\u{9BF}\u{9DF}\u{9C7} \u{9AF}\u{9BE}\u{9A8}'
+      ? 'চালিয়ে যান'
       : 'Continue';
 
   String runningEnvironment(String environmentLabel) {
     return isBangla
-        ? '$environmentLabel \u{9AA}\u{9B0}\u{9BF}\u{9AC}\u{9C7}\u{9B6}\u{9C7} \u{99A}\u{9B2}\u{99B}\u{9C7}'
+        ? '$environmentLabel পরিবেশে চলছে'
         : 'Running $environmentLabel';
   }
 }
@@ -75,4 +75,7 @@ class _EPustiLocalizationsDelegate
   @override
   bool shouldReload(_EPustiLocalizationsDelegate old) => false;
 }
+
+
+
 

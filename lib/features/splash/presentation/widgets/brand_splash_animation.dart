@@ -89,7 +89,7 @@ class BrandSplashAnimation extends StatelessWidget {
                       child: Column(
                         children: [
                           const Text(
-                            '\u{986}\u{9AA}\u{9A8}\u{9BE}\u{9B0} \u{9AC}\u{9CD}\u{9AF}\u{995}\u{9CD}\u{9A4}\u{9BF}\u{997}\u{9A4} \u{9AA}\u{9C1}\u{9B7}\u{9CD}\u{99F}\u{9BF} \u{997}\u{9BE}\u{987}\u{9A1}',
+                            'আপনার ব্যক্তিগত পুষ্টি গাইড',
                             textAlign: TextAlign.center,
                             style: TextStyle(
                               color: Colors.white,
@@ -106,7 +106,7 @@ class BrandSplashAnimation extends StatelessWidget {
                           ),
                           const SizedBox(height: 18),
                           const Text(
-                            '\u{98F}\u{9B0} \u{98F}\u{995}\u{99F}\u{9BF} \u{989}\u{9A6}\u{9CD}\u{9AF}\u{9CB}\u{997}',
+                            'এর একটি উদ্যোগ',
                             textAlign: TextAlign.center,
                             style: TextStyle(
                               color: Color(0xD9FFFFFF),
@@ -192,3 +192,4 @@ class _LogoHalo extends StatelessWidget {
     );
   }
 }
+
