@@ -1,4 +1,4 @@
-package com.example.e_pusti_app
+package com.example.epushti
 
 import io.flutter.embedding.android.FlutterActivity
 

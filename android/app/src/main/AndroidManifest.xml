@@ -1,6 +1,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
     <application
-        android:label="e_pusti_app"
+        android:label="e-pusti"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity
