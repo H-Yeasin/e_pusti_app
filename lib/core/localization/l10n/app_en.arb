@@ -1,0 +1,19 @@
+﻿{
+  "@@locale": "en",
+  "languageSelectionTitle": "Select language",
+  "chooseLanguage": "Choose your language",
+  "banglaName": "বাংলা",
+  "banglaLabel": "Bangla",
+  "englishName": "English",
+  "englishLabel": "ইংরেজি",
+  "languageCanChangeLater": "You can change this anytime from Settings",
+  "continueLabel": "Continue",
+  "runningEnvironment": "Running {environmentLabel}",
+  "@runningEnvironment": {
+    "placeholders": {
+      "environmentLabel": {
+        "type": "String"
+      }
+    }
+  }
+}

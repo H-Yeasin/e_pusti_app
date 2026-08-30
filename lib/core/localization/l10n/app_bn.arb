@@ -1,0 +1,19 @@
+﻿{
+  "@@locale": "bn",
+  "languageSelectionTitle": "ভাষা নির্বাচন করুন",
+  "chooseLanguage": "আপনার ভাষা বেছে নিন",
+  "banglaName": "বাংলা",
+  "banglaLabel": "Bangla",
+  "englishName": "English",
+  "englishLabel": "ইংরেজি",
+  "languageCanChangeLater": "সেটিংস থেকে যেকোনো সময় পরিবর্তন করা যাবে",
+  "continueLabel": "চালিয়ে যান",
+  "runningEnvironment": "{environmentLabel} পরিবেশে চলছে",
+  "@runningEnvironment": {
+    "placeholders": {
+      "environmentLabel": {
+        "type": "String"
+      }
+    }
+  }
+}
