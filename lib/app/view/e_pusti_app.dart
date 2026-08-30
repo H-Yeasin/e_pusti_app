@@ -1,5 +1,4 @@
 ﻿import 'package:flutter/material.dart';
-import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -83,14 +82,10 @@ class _LocalizedMaterialApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: buildAppTheme(),
       locale: locale,
-      supportedLocales: AppLanguage.values.map((language) => language.locale),
-      localizationsDelegates: const [
-        EPustiLocalizations.delegate,
-        GlobalMaterialLocalizations.delegate,
-        GlobalCupertinoLocalizations.delegate,
-        GlobalWidgetsLocalizations.delegate,
-      ],
+      supportedLocales: EPustiGeneratedLocalizations.supportedLocales,
+      localizationsDelegates: EPustiGeneratedLocalizations.localizationsDelegates,
       home: home,
     );
   }
 }
+
