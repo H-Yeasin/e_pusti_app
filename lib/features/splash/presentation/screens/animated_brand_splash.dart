@@ -1,13 +1,20 @@
 ﻿import 'package:flutter/material.dart';
 
 import '../../../../core/config/app_environment.dart';
+import '../../../../core/localization/localization.dart';
 import '../../../home/presentation/screens/home_screen.dart';
+import '../../../language/presentation/screens/language_selection_screen.dart';
 import '../widgets/brand_splash_animation.dart';
 
 class AnimatedBrandSplash extends StatefulWidget {
-  const AnimatedBrandSplash({super.key, required this.environment});
+  const AnimatedBrandSplash({
+    super.key,
+    required this.environment,
+    required this.localeController,
+  });
 
   final AppEnvironment environment;
+  final AppLocaleController localeController;
 
   @override
   State<AnimatedBrandSplash> createState() => _AnimatedBrandSplashState();
@@ -22,7 +29,7 @@ class _AnimatedBrandSplashState extends State<AnimatedBrandSplash>
   late final Animation<double> _logoOpacity;
   late final Animation<Offset> _logoSlide;
   late final Animation<Offset> _contentSlide;
-  bool _showHome = false;
+  Widget? _nextScreen;
 
   @override
   void initState() {
@@ -78,10 +85,21 @@ class _AnimatedBrandSplashState extends State<AnimatedBrandSplash>
       ),
     );
 
-    Future<void>.delayed(const Duration(milliseconds: 2500), () {
-      if (mounted) {
-        setState(() => _showHome = true);
-      }
+    Future<void>.delayed(const Duration(milliseconds: 2500), _resolveFirstScreen);
+  }
+
+  void _resolveFirstScreen() {
+    if (!mounted) {
+      return;
+    }
+
+    setState(() {
+      _nextScreen = widget.localeController.hasChosenLanguage
+          ? HomeScreen(environment: widget.environment)
+          : LanguageSelectionScreen(
+              environment: widget.environment,
+              localeController: widget.localeController,
+            );
     });
   }
 
@@ -97,17 +115,16 @@ class _AnimatedBrandSplashState extends State<AnimatedBrandSplash>
       duration: const Duration(milliseconds: 520),
       switchInCurve: Curves.easeOutCubic,
       switchOutCurve: Curves.easeInCubic,
-      child: _showHome
-          ? HomeScreen(environment: widget.environment)
-          : BrandSplashAnimation(
-              key: const ValueKey('brand-splash'),
-              haloScale: _haloScale,
-              haloOpacity: _haloOpacity,
-              logoScale: _logoScale,
-              logoOpacity: _logoOpacity,
-              logoSlide: _logoSlide,
-              contentSlide: _contentSlide,
-            ),
+      child: _nextScreen ??
+          BrandSplashAnimation(
+            key: const ValueKey('brand-splash'),
+            haloScale: _haloScale,
+            haloOpacity: _haloOpacity,
+            logoScale: _logoScale,
+            logoOpacity: _logoOpacity,
+            logoSlide: _logoSlide,
+            contentSlide: _contentSlide,
+          ),
     );
   }
 }
