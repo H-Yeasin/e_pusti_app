@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:drawable="@color/splash_background" />
+
+    <item
+        android:width="260dp"
+        android:height="260dp"
+        android:gravity="center">
+        <shape android:shape="oval">
+            <gradient
+                android:type="radial"
+                android:centerColor="#667ED957"
+                android:endColor="#00F7FFF8"
+                android:gradientRadius="130dp"
+                android:startColor="#997ED957" />
+        </shape>
+    </item>
+
+    <item>
+        <bitmap
+            android:gravity="center"
+            android:src="@drawable/epusti_launch_logo" />
+    </item>
+</layer-list>
