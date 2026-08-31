@@ -19,6 +19,15 @@ class HomeScreen extends StatelessWidget {
     _DashboardSlot.empty(id: 'feed-bottom'),
   ];
 
+  static const _bottomBanners = [
+    'assets/slot_banner/super-bundle-pack.jpeg',
+    'assets/slot_banner/min-pack.jpeg',
+    'assets/slot_banner/ratecutter.jpeg',
+    'assets/slot_banner/super-bundle.jpeg',
+    'assets/slot_banner/super-internet.jpeg',
+    'assets/slot_banner/super-rate-cutter.jpeg',
+  ];
+
   @override
   Widget build(BuildContext context) {
     final l10n = context.l10n;
@@ -26,28 +35,21 @@ class HomeScreen extends StatelessWidget {
       _HomeAction(
         label: l10n.homeWebinar,
         iconAsset: 'assets/icons/webinar.gif',
-        color: const Color(0xFF008C44),
       ),
-      _HomeAction(
-        label: l10n.homeCourse,
-        iconAsset: 'assets/icons/course.gif',
-        color: const Color(0xFFCE8A00),
-      ),
+      _HomeAction(label: l10n.homeCourse, iconAsset: 'assets/icons/course.gif'),
       _HomeAction(
         label: l10n.homeDigiSkill,
         iconAsset: 'assets/icons/digiskill.gif',
-        color: const Color(0xFF1E5AA8),
       ),
       _HomeAction(
         label: l10n.homeLibrary,
         iconAsset: 'assets/icons/library.gif',
-        color: const Color(0xFF6F3DB8),
       ),
     ];
 
     return Scaffold(
-      backgroundColor: const Color(0xFFF7F8F4),
-      drawer: Drawer(
+      backgroundColor: const Color(0xFFF8FAF6),
+      endDrawer: Drawer(
         child: SafeArea(
           child: ListTile(
             leading: const Icon(Icons.eco_outlined),
@@ -57,17 +59,32 @@ class HomeScreen extends StatelessWidget {
         ),
       ),
       appBar: AppBar(
-        backgroundColor: const Color(0xFF00AE22),
+        automaticallyImplyLeading: false,
+        backgroundColor: const Color(0xFF118514),
         foregroundColor: Colors.white,
         centerTitle: true,
-        title: Text(
-          l10n.homeAppTitle,
-          style: const TextStyle(fontSize: 15, fontWeight: FontWeight.w800),
+        title: Image.asset(
+          'assets/logo/Header_logo.png',
+          height: 40,
+          fit: BoxFit.contain,
+          semanticLabel: l10n.homeAppTitle,
         ),
+        leading: const SizedBox(width: 48),
+        actions: [
+          Builder(
+            builder: (context) {
+              return IconButton(
+                tooltip: MaterialLocalizations.of(context).openAppDrawerTooltip,
+                onPressed: () => Scaffold.of(context).openEndDrawer(),
+                icon: const Icon(Icons.menu_rounded, size: 28),
+              );
+            },
+          ),
+          const SizedBox(width: 8),
+        ],
         elevation: 0,
         scrolledUnderElevation: 0,
-        toolbarHeight: 52,
-        actions: const [SizedBox(width: 48)],
+        toolbarHeight: 50,
       ),
       body: SafeArea(
         top: false,
@@ -78,7 +95,7 @@ class HomeScreen extends StatelessWidget {
                 : double.infinity;
 
             return SingleChildScrollView(
-              padding: const EdgeInsets.fromLTRB(20, 14, 20, 24),
+              padding: const EdgeInsets.fromLTRB(22, 20, 22, 24),
               child: Center(
                 child: ConstrainedBox(
                   constraints: BoxConstraints(maxWidth: maxWidth),
@@ -88,13 +105,14 @@ class HomeScreen extends StatelessWidget {
                       _SlotBanner(slot: _adSlots[0]),
                       _SmsSubscriptionCard(l10n: l10n),
                       _SlotBanner(slot: _adSlots[1]),
-                      const SizedBox(height: 12),
+                      const SizedBox(height: 30),
                       _ActionGrid(actions: navigationTiles),
                       _SlotBanner(slot: _adSlots[2]),
-                      const SizedBox(height: 12),
+                      const SizedBox(height: 4),
                       _BmiCard(l10n: l10n),
                       _SlotBanner(slot: _adSlots[3]),
-                      _HomeFeed(l10n: l10n),
+                      const SizedBox(height: 32),
+                      const _BottomBannerCarousel(banners: _bottomBanners),
                       _SlotBanner(slot: _adSlots[4]),
                       _SlotBanner(slot: _adSlots[5]),
                       _SlotBanner(slot: _adSlots[6]),
@@ -119,12 +137,15 @@ class _SmsSubscriptionCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return _PromoCard(
-      backgroundColor: const Color(0xFFE5F1EF),
-      titleColor: const Color(0xFF008C44),
-      buttonColor: const Color(0xFF00A83C),
+      backgroundColor: const Color(0xFFF0FFF1),
+      borderColor: const Color(0xFFA9E9B5),
+      titleColor: const Color(0xFF115C18),
+      subtitleColor: const Color(0xFF66706A),
+      buttonColor: const Color(0xFF118514),
       title: l10n.homeSmsTitle,
       subtitle: l10n.homeSmsSubtitle,
       buttonLabel: l10n.homeSubscribeButton,
+      buttonStyle: _PromoButtonStyle.filled,
     );
   }
 }
@@ -137,12 +158,15 @@ class _BmiCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return _PromoCard(
-      backgroundColor: const Color(0xFFFFF4DC),
-      titleColor: const Color(0xFFA87915),
-      buttonColor: const Color(0xFFE19A00),
+      backgroundColor: const Color(0xFFF1FAFF),
+      borderColor: const Color(0xFFD8E8EF),
+      titleColor: const Color(0xFF486473),
+      subtitleColor: const Color(0xFF6D8490),
+      buttonColor: const Color(0xFF547C91),
       title: l10n.homeBmiTitle,
       subtitle: l10n.homeBmiSubtitle,
       buttonLabel: l10n.homeViewNowButton,
+      buttonStyle: _PromoButtonStyle.outlined,
     );
   }
 }
@@ -150,27 +174,34 @@ class _BmiCard extends StatelessWidget {
 class _PromoCard extends StatelessWidget {
   const _PromoCard({
     required this.backgroundColor,
+    required this.borderColor,
     required this.titleColor,
+    required this.subtitleColor,
     required this.buttonColor,
     required this.title,
     required this.subtitle,
     required this.buttonLabel,
+    required this.buttonStyle,
   });
 
   final Color backgroundColor;
+  final Color borderColor;
   final Color titleColor;
+  final Color subtitleColor;
   final Color buttonColor;
   final String title;
   final String subtitle;
   final String buttonLabel;
+  final _PromoButtonStyle buttonStyle;
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.all(16),
+      padding: const EdgeInsets.fromLTRB(17, 17, 17, 16),
       decoration: BoxDecoration(
         color: backgroundColor,
-        borderRadius: BorderRadius.circular(6),
+        borderRadius: BorderRadius.circular(8),
+        border: Border.all(color: borderColor),
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -179,41 +210,80 @@ class _PromoCard extends StatelessWidget {
             title,
             style: TextStyle(
               color: titleColor,
-              fontSize: 16,
+              fontSize: 23,
               fontWeight: FontWeight.w800,
-              height: 1.2,
+              height: 1.18,
             ),
           ),
-          const SizedBox(height: 8),
+          const SizedBox(height: 11),
           Text(
             subtitle,
             style: TextStyle(
-              color: Colors.black.withValues(alpha: 0.48),
-              fontSize: 12,
-              fontWeight: FontWeight.w600,
-              height: 1.35,
+              color: subtitleColor,
+              fontSize: 15,
+              fontWeight: FontWeight.w500,
+              height: 1.4,
             ),
           ),
-          const SizedBox(height: 16),
-          FilledButton(
-            style: FilledButton.styleFrom(
-              backgroundColor: buttonColor,
-              foregroundColor: Colors.white,
-              minimumSize: const Size(0, 38),
-              padding: const EdgeInsets.symmetric(horizontal: 14),
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(5),
-              ),
-              textStyle: const TextStyle(
-                fontSize: 12,
-                fontWeight: FontWeight.w800,
-              ),
-            ),
-            onPressed: () {},
-            child: Text(buttonLabel),
+          const SizedBox(height: 20),
+          _PromoButton(
+            label: buttonLabel,
+            color: buttonColor,
+            style: buttonStyle,
           ),
         ],
       ),
+    );
+  }
+}
+
+class _PromoButton extends StatelessWidget {
+  const _PromoButton({
+    required this.label,
+    required this.color,
+    required this.style,
+  });
+
+  final String label;
+  final Color color;
+  final _PromoButtonStyle style;
+
+  @override
+  Widget build(BuildContext context) {
+    final shape = RoundedRectangleBorder(
+      borderRadius: BorderRadius.circular(8),
+    );
+    final textStyle = const TextStyle(
+      fontSize: 14,
+      fontWeight: FontWeight.w800,
+    );
+
+    if (style == _PromoButtonStyle.outlined) {
+      return OutlinedButton(
+        style: OutlinedButton.styleFrom(
+          foregroundColor: color,
+          minimumSize: const Size(114, 48),
+          padding: const EdgeInsets.symmetric(horizontal: 20),
+          side: BorderSide(color: color),
+          shape: shape,
+          textStyle: textStyle,
+        ),
+        onPressed: () {},
+        child: Text(label),
+      );
+    }
+
+    return FilledButton(
+      style: FilledButton.styleFrom(
+        backgroundColor: color,
+        foregroundColor: Colors.white,
+        minimumSize: const Size(128, 46),
+        padding: const EdgeInsets.symmetric(horizontal: 20),
+        shape: shape,
+        textStyle: textStyle,
+      ),
+      onPressed: () {},
+      child: Text(label),
     );
   }
 }
@@ -231,9 +301,9 @@ class _ActionGrid extends StatelessWidget {
       physics: const NeverScrollableScrollPhysics(),
       gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
         crossAxisCount: 2,
-        mainAxisSpacing: 10,
-        crossAxisSpacing: 10,
-        childAspectRatio: 1.55,
+        mainAxisSpacing: 14,
+        crossAxisSpacing: 14,
+        childAspectRatio: 1.62,
       ),
       itemBuilder: (context, index) => _ActionTile(action: actions[index]),
     );
@@ -249,43 +319,42 @@ class _ActionTile extends StatelessWidget {
   Widget build(BuildContext context) {
     return Material(
       color: Colors.white,
-      borderRadius: BorderRadius.circular(7),
+      borderRadius: BorderRadius.circular(8),
       child: InkWell(
-        borderRadius: BorderRadius.circular(7),
+        borderRadius: BorderRadius.circular(8),
         onTap: () {},
         child: DecoratedBox(
           decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(7),
-            border: Border.all(color: const Color(0xFFE1E3DD)),
+            borderRadius: BorderRadius.circular(8),
+            border: Border.all(color: const Color(0xFFC9CEC7)),
           ),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Image.asset(
                 action.iconAsset,
-                width: 24,
-                height: 24,
+                width: 46,
+                height: 46,
                 fit: BoxFit.contain,
-                color: action.color,
                 errorBuilder: (context, error, stackTrace) {
-                  return Icon(
+                  return const Icon(
                     Icons.apps_rounded,
-                    color: action.color,
-                    size: 24,
+                    color: Color(0xFF174A9B),
+                    size: 46,
                   );
                 },
               ),
-              const SizedBox(height: 8),
+              const SizedBox(height: 5),
               Text(
                 action.label,
                 textAlign: TextAlign.center,
                 maxLines: 1,
                 overflow: TextOverflow.ellipsis,
                 style: const TextStyle(
-                  color: Color(0xFF151515),
-                  fontSize: 13,
+                  color: Color(0xFF252725),
+                  fontSize: 15,
                   fontWeight: FontWeight.w800,
-                  height: 1.2,
+                  height: 1.15,
                 ),
               ),
             ],
@@ -296,71 +365,50 @@ class _ActionTile extends StatelessWidget {
   }
 }
 
-class _HomeFeed extends StatelessWidget {
-  const _HomeFeed({required this.l10n});
+class _BottomBannerCarousel extends StatelessWidget {
+  const _BottomBannerCarousel({required this.banners});
 
-  final EPustiGeneratedLocalizations l10n;
+  final List<String> banners;
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        const SizedBox(height: 12),
-        _InsightTile(
-          icon: Icons.restaurant_menu_rounded,
-          title: l10n.homeNutritionTipTitle,
-          subtitle: l10n.homeNutritionTipSubtitle,
-        ),
-        const SizedBox(height: 10),
-        _InsightTile(
-          icon: Icons.health_and_safety_outlined,
-          title: l10n.homeHealthCheckTitle,
-          subtitle: l10n.homeHealthCheckSubtitle,
-        ),
-      ],
+    return SizedBox(
+      height: 122,
+      child: ListView.separated(
+        clipBehavior: Clip.none,
+        scrollDirection: Axis.horizontal,
+        itemCount: banners.length,
+        separatorBuilder: (context, index) => const SizedBox(width: 10),
+        itemBuilder: (context, index) {
+          return _BottomBanner(assetPath: banners[index]);
+        },
+      ),
     );
   }
 }
 
-class _InsightTile extends StatelessWidget {
-  const _InsightTile({
-    required this.icon,
-    required this.title,
-    required this.subtitle,
-  });
+class _BottomBanner extends StatelessWidget {
+  const _BottomBanner({required this.assetPath});
 
-  final IconData icon;
-  final String title;
-  final String subtitle;
+  final String assetPath;
 
   @override
   Widget build(BuildContext context) {
-    return ListTile(
-      contentPadding: const EdgeInsets.symmetric(horizontal: 14, vertical: 6),
-      tileColor: Colors.white,
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(7),
-        side: const BorderSide(color: Color(0xFFE1E3DD)),
-      ),
-      leading: CircleAvatar(
-        radius: 18,
-        backgroundColor: const Color(0xFFE7F6EA),
-        child: Icon(icon, color: const Color(0xFF008C44), size: 20),
-      ),
-      title: Text(
-        title,
-        maxLines: 1,
-        overflow: TextOverflow.ellipsis,
-        style: const TextStyle(fontSize: 13, fontWeight: FontWeight.w800),
-      ),
-      subtitle: Text(
-        subtitle,
-        maxLines: 1,
-        overflow: TextOverflow.ellipsis,
-        style: TextStyle(
-          color: Colors.black.withValues(alpha: 0.48),
-          fontSize: 11,
-          fontWeight: FontWeight.w600,
+    return AspectRatio(
+      aspectRatio: 3.0,
+      child: ClipRRect(
+        borderRadius: BorderRadius.circular(8),
+        child: DecoratedBox(
+          decoration: BoxDecoration(
+            border: Border.all(color: const Color(0xFF222222)),
+            borderRadius: BorderRadius.circular(8),
+          ),
+          child: Image.asset(
+            assetPath,
+            fit: BoxFit.cover,
+            errorBuilder: (context, error, stackTrace) =>
+                const SizedBox.shrink(),
+          ),
         ),
       ),
     );
@@ -382,7 +430,7 @@ class _SlotBanner extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.only(bottom: 12),
       child: ClipRRect(
-        borderRadius: BorderRadius.circular(6),
+        borderRadius: BorderRadius.circular(8),
         child: AspectRatio(
           aspectRatio: 3.45,
           child: Image.asset(
@@ -398,15 +446,10 @@ class _SlotBanner extends StatelessWidget {
 }
 
 class _HomeAction {
-  const _HomeAction({
-    required this.label,
-    required this.iconAsset,
-    required this.color,
-  });
+  const _HomeAction({required this.label, required this.iconAsset});
 
   final String label;
   final String iconAsset;
-  final Color color;
 }
 
 class _DashboardSlot {
@@ -418,3 +461,5 @@ class _DashboardSlot {
   final String id;
   final String? assetPath;
 }
+
+enum _PromoButtonStyle { filled, outlined }
