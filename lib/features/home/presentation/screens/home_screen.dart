@@ -73,7 +73,9 @@ class HomeScreen extends StatelessWidget {
         top: false,
         child: LayoutBuilder(
           builder: (context, constraints) {
-            final maxWidth = constraints.maxWidth > 460 ? 420.0 : double.infinity;
+            final maxWidth = constraints.maxWidth > 460
+                ? 420.0
+                : double.infinity;
 
             return SingleChildScrollView(
               padding: const EdgeInsets.fromLTRB(20, 14, 20, 24),
@@ -83,20 +85,20 @@ class HomeScreen extends StatelessWidget {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.stretch,
                     children: [
-                      const _SlotBanner(slot: _adSlots[0]),
+                      _SlotBanner(slot: _adSlots[0]),
                       _SmsSubscriptionCard(l10n: l10n),
-                      const _SlotBanner(slot: _adSlots[1]),
+                      _SlotBanner(slot: _adSlots[1]),
                       const SizedBox(height: 12),
                       _ActionGrid(actions: navigationTiles),
-                      const _SlotBanner(slot: _adSlots[2]),
+                      _SlotBanner(slot: _adSlots[2]),
                       const SizedBox(height: 12),
                       _BmiCard(l10n: l10n),
-                      const _SlotBanner(slot: _adSlots[3]),
+                      _SlotBanner(slot: _adSlots[3]),
                       _HomeFeed(l10n: l10n),
-                      const _SlotBanner(slot: _adSlots[4]),
-                      const _SlotBanner(slot: _adSlots[5]),
-                      const _SlotBanner(slot: _adSlots[6]),
-                      const _SlotBanner(slot: _adSlots[7]),
+                      _SlotBanner(slot: _adSlots[4]),
+                      _SlotBanner(slot: _adSlots[5]),
+                      _SlotBanner(slot: _adSlots[6]),
+                      _SlotBanner(slot: _adSlots[7]),
                     ],
                   ),
                 ),
@@ -199,8 +201,13 @@ class _PromoCard extends StatelessWidget {
               foregroundColor: Colors.white,
               minimumSize: const Size(0, 38),
               padding: const EdgeInsets.symmetric(horizontal: 14),
-              shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(5)),
-              textStyle: const TextStyle(fontSize: 12, fontWeight: FontWeight.w800),
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(5),
+              ),
+              textStyle: const TextStyle(
+                fontSize: 12,
+                fontWeight: FontWeight.w800,
+              ),
             ),
             onPressed: () {},
             child: Text(buttonLabel),
@@ -261,7 +268,11 @@ class _ActionTile extends StatelessWidget {
                 fit: BoxFit.contain,
                 color: action.color,
                 errorBuilder: (context, error, stackTrace) {
-                  return Icon(Icons.apps_rounded, color: action.color, size: 24);
+                  return Icon(
+                    Icons.apps_rounded,
+                    color: action.color,
+                    size: 24,
+                  );
                 },
               ),
               const SizedBox(height: 8),
@@ -377,7 +388,8 @@ class _SlotBanner extends StatelessWidget {
           child: Image.asset(
             assetPath,
             fit: BoxFit.cover,
-            errorBuilder: (context, error, stackTrace) => const SizedBox.shrink(),
+            errorBuilder: (context, error, stackTrace) =>
+                const SizedBox.shrink(),
           ),
         ),
       ),
@@ -400,7 +412,8 @@ class _HomeAction {
 class _DashboardSlot {
   const _DashboardSlot({required this.id, required this.assetPath});
 
-  const _DashboardSlot.empty({required String id}) : this(id: id, assetPath: null);
+  const _DashboardSlot.empty({required String id})
+    : this(id: id, assetPath: null);
 
   final String id;
   final String? assetPath;

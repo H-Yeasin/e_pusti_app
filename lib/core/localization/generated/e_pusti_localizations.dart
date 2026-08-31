@@ -224,7 +224,7 @@ abstract class EPustiGeneratedLocalizations {
   /// No description provided for @homeNutritionTipTitle.
   ///
   /// In en, this message translates to:
-  /// **'Today&apos;s nutrition tip'**
+  /// **'Today\'s nutrition tip'**
   String get homeNutritionTipTitle;
 
   /// No description provided for @homeNutritionTipSubtitle.

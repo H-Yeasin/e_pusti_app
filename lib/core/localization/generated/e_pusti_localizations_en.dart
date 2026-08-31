@@ -73,7 +73,7 @@ class EPustiGeneratedLocalizationsEn extends EPustiGeneratedLocalizations {
   String get homeViewNowButton => 'View now';
 
   @override
-  String get homeNutritionTipTitle => 'Today&apos;s nutrition tip';
+  String get homeNutritionTipTitle => 'Today\'s nutrition tip';
 
   @override
   String get homeNutritionTipSubtitle =>
