@@ -37,4 +37,51 @@ class EPustiGeneratedLocalizationsEn extends EPustiGeneratedLocalizations {
   String runningEnvironment(String environmentLabel) {
     return 'Running $environmentLabel';
   }
+
+  @override
+  String get homeAppTitle => 'e-Pushti';
+
+  @override
+  String get homeSmsTitle => 'Daily nutrition SMS - PUST9';
+
+  @override
+  String get homeSmsSubtitle =>
+      '30-day course with daily tips delivered by SMS';
+
+  @override
+  String get homeSubscribeButton => 'Subscribe';
+
+  @override
+  String get homeWebinar => 'Webinar';
+
+  @override
+  String get homeCourse => 'Course';
+
+  @override
+  String get homeDigiSkill => 'Digi Skill';
+
+  @override
+  String get homeLibrary => 'Library';
+
+  @override
+  String get homeBmiTitle => 'BMI Calculator';
+
+  @override
+  String get homeBmiSubtitle => 'Enter height and weight for an instant result';
+
+  @override
+  String get homeViewNowButton => 'View now';
+
+  @override
+  String get homeNutritionTipTitle => 'Today&apos;s nutrition tip';
+
+  @override
+  String get homeNutritionTipSubtitle =>
+      'Add colorful vegetables to family meals';
+
+  @override
+  String get homeHealthCheckTitle => 'Health check';
+
+  @override
+  String get homeHealthCheckSubtitle => 'Record weight and height regularly';
 }

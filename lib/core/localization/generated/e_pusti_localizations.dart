@@ -154,6 +154,96 @@ abstract class EPustiGeneratedLocalizations {
   /// In en, this message translates to:
   /// **'Running {environmentLabel}'**
   String runningEnvironment(String environmentLabel);
+
+  /// No description provided for @homeAppTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'e-Pushti'**
+  String get homeAppTitle;
+
+  /// No description provided for @homeSmsTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Daily nutrition SMS - PUST9'**
+  String get homeSmsTitle;
+
+  /// No description provided for @homeSmsSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'30-day course with daily tips delivered by SMS'**
+  String get homeSmsSubtitle;
+
+  /// No description provided for @homeSubscribeButton.
+  ///
+  /// In en, this message translates to:
+  /// **'Subscribe'**
+  String get homeSubscribeButton;
+
+  /// No description provided for @homeWebinar.
+  ///
+  /// In en, this message translates to:
+  /// **'Webinar'**
+  String get homeWebinar;
+
+  /// No description provided for @homeCourse.
+  ///
+  /// In en, this message translates to:
+  /// **'Course'**
+  String get homeCourse;
+
+  /// No description provided for @homeDigiSkill.
+  ///
+  /// In en, this message translates to:
+  /// **'Digi Skill'**
+  String get homeDigiSkill;
+
+  /// No description provided for @homeLibrary.
+  ///
+  /// In en, this message translates to:
+  /// **'Library'**
+  String get homeLibrary;
+
+  /// No description provided for @homeBmiTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'BMI Calculator'**
+  String get homeBmiTitle;
+
+  /// No description provided for @homeBmiSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Enter height and weight for an instant result'**
+  String get homeBmiSubtitle;
+
+  /// No description provided for @homeViewNowButton.
+  ///
+  /// In en, this message translates to:
+  /// **'View now'**
+  String get homeViewNowButton;
+
+  /// No description provided for @homeNutritionTipTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Today&apos;s nutrition tip'**
+  String get homeNutritionTipTitle;
+
+  /// No description provided for @homeNutritionTipSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Add colorful vegetables to family meals'**
+  String get homeNutritionTipSubtitle;
+
+  /// No description provided for @homeHealthCheckTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Health check'**
+  String get homeHealthCheckTitle;
+
+  /// No description provided for @homeHealthCheckSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Record weight and height regularly'**
+  String get homeHealthCheckSubtitle;
 }
 
 class _EPustiGeneratedLocalizationsDelegate

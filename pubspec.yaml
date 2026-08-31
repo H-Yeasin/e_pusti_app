@@ -1,4 +1,4 @@
-﻿name: epushti
+name: epushti
 description: "A new Flutter project."
 # The following line prevents the package from being accidentally published to
 # pub.dev using `flutter pub publish`. This is preferred for private packages.
@@ -50,6 +50,28 @@ dev_dependencies:
   # package. See that file for information about deactivating specific lint
   # rules and activating additional ones.
   flutter_lints: ^6.0.0
+  flutter_launcher_icons: ^0.14.4
+
+flutter_launcher_icons:
+  android: true
+  ios: true
+  remove_alpha_ios: true
+  macos:
+    generate: true
+    image_path: "assets/app_icon/icon_full.png"
+  windows:
+    generate: true
+    image_path: "assets/app_icon/icon_full.png"
+    icon_size: 256
+  web:
+    generate: true
+    image_path: "assets/app_icon/icon_full.png"
+    background_color: "#ffffff"
+    theme_color: "#67c02a"
+  image_path: "assets/app_icon/icon_full.png"
+  adaptive_icon_background: "#ffffff"
+  adaptive_icon_foreground: "assets/app_icon/icon_foreground.png"
+  min_sdk_android: 21
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
@@ -66,6 +88,8 @@ flutter:
     - assets/logo/e-pusti_logo.png
     - assets/logo/e-pusti_logo.svg
     - assets/logo/BIID foundation_Logo.png
+    - assets/icons/
+    - assets/slot_banner/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images
@@ -92,6 +116,7 @@ flutter:
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/to/font-from-package
+
 
 
 

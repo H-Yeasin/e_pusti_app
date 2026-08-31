@@ -37,4 +37,49 @@ class EPustiGeneratedLocalizationsBn extends EPustiGeneratedLocalizations {
   String runningEnvironment(String environmentLabel) {
     return '$environmentLabel পরিবেশে চলছে';
   }
+
+  @override
+  String get homeAppTitle => 'e-Pushti';
+
+  @override
+  String get homeSmsTitle => 'দৈনিক পুষ্টি SMS - PUST9';
+
+  @override
+  String get homeSmsSubtitle => '৩০ দিনের কোর্স, দৈনিক টিপসসহ সরাসরি SMS-এ';
+
+  @override
+  String get homeSubscribeButton => 'সাবস্ক্রাইব করুন';
+
+  @override
+  String get homeWebinar => 'ওয়েবিনার';
+
+  @override
+  String get homeCourse => 'কোর্স';
+
+  @override
+  String get homeDigiSkill => 'ডিজি স্কিল';
+
+  @override
+  String get homeLibrary => 'লাইব্রেরি';
+
+  @override
+  String get homeBmiTitle => 'BMI ক্যালকুলেটর';
+
+  @override
+  String get homeBmiSubtitle => 'উচ্চতা ও ওজন দিন, তাৎক্ষণিক ফলাফল পান';
+
+  @override
+  String get homeViewNowButton => 'এখনই দেখুন';
+
+  @override
+  String get homeNutritionTipTitle => 'আজকের পুষ্টি টিপস';
+
+  @override
+  String get homeNutritionTipSubtitle => 'পরিবারের খাবারে রঙিন শাকসবজি রাখুন';
+
+  @override
+  String get homeHealthCheckTitle => 'স্বাস্থ্য পরীক্ষা';
+
+  @override
+  String get homeHealthCheckSubtitle => 'নিয়মিত ওজন ও উচ্চতা নথিভুক্ত করুন';
 }

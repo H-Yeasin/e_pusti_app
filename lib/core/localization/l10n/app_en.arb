@@ -1,11 +1,11 @@
-﻿{
+{
   "@@locale": "en",
   "languageSelectionTitle": "Select language",
   "chooseLanguage": "Choose your language",
-  "banglaName": "বাংলা",
+  "banglaName": "?????",
   "banglaLabel": "Bangla",
   "englishName": "English",
-  "englishLabel": "ইংরেজি",
+  "englishLabel": "??????",
   "languageCanChangeLater": "You can change this anytime from Settings",
   "continueLabel": "Continue",
   "runningEnvironment": "Running {environmentLabel}",
@@ -15,5 +15,20 @@
         "type": "String"
       }
     }
-  }
+  },
+  "homeAppTitle": "e-Pushti",
+  "homeSmsTitle": "Daily nutrition SMS - PUST9",
+  "homeSmsSubtitle": "30-day course with daily tips delivered by SMS",
+  "homeSubscribeButton": "Subscribe",
+  "homeWebinar": "Webinar",
+  "homeCourse": "Course",
+  "homeDigiSkill": "Digi Skill",
+  "homeLibrary": "Library",
+  "homeBmiTitle": "BMI Calculator",
+  "homeBmiSubtitle": "Enter height and weight for an instant result",
+  "homeViewNowButton": "View now",
+  "homeNutritionTipTitle": "Today's nutrition tip",
+  "homeNutritionTipSubtitle": "Add colorful vegetables to family meals",
+  "homeHealthCheckTitle": "Health check",
+  "homeHealthCheckSubtitle": "Record weight and height regularly"
 }
