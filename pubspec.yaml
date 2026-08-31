@@ -87,6 +87,7 @@ flutter:
   assets:
     - assets/logo/e-pusti_logo.png
     - assets/logo/e-pusti_logo.svg
+    - assets/logo/Header_logo.png
     - assets/logo/BIID foundation_Logo.png
     - assets/icons/
     - assets/slot_banner/
