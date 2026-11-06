@@ -1,12 +1,10 @@
 import 'package:flutter/foundation.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
 import '../../core/config/app_environment.dart';
 import '../../core/config/app_info.dart';
 import '../../core/config/remote_config.dart';
-import '../../core/localization/localization.dart';
 import '../../core/utils/version.dart';
 import '../../features/auth/presentation/providers/auth_controller.dart';
 import '../../features/assessment/domain/learning_models.dart';
@@ -31,6 +29,12 @@ import '../../features/courses/presentation/screens/chapter_screen.dart';
 import '../../features/courses/presentation/screens/course_list_screen.dart';
 import '../../features/home/presentation/screens/home_screen.dart';
 import '../../features/language/presentation/screens/language_selection_screen.dart';
+import '../../features/notifications/domain/notification_models.dart';
+import '../../features/notifications/presentation/engagement_providers.dart';
+import '../../features/notifications/presentation/screens/inbox_screen.dart';
+import '../../features/notifications/presentation/screens/notification_settings_screen.dart';
+import '../../features/pust9/presentation/screens/pust9_archive_screen.dart';
+import '../../features/webinars/presentation/screens/my_registrations_screen.dart';
 import '../../features/library/presentation/screens/document_screen.dart';
 import '../../features/library/presentation/screens/downloads_screen.dart';
 import '../../features/library/presentation/screens/library_screen.dart';
@@ -46,7 +50,6 @@ import '../dev/component_catalog_screen.dart';
 import '../providers/app_environment_provider.dart';
 import '../providers/app_locale_controller_provider.dart';
 import 'app_routes.dart';
-import 'placeholder_screen.dart';
 
 /// Pure redirect rule, kept separate so it can be unit tested.
 ///
@@ -64,6 +67,14 @@ String? resolveRedirect({
   required bool isDev,
   bool updateRequired = false,
 }) {
+  // epushti://webinars/w1 arrives with the first segment as the host.
+  if (location.scheme == 'epushti') {
+    final path = '/${location.host}${location.path}';
+    return Uri(
+      path: path == '/' ? AppRoutes.home : path,
+      query: location.query.isEmpty ? null : location.query,
+    ).toString();
+  }
   final path = location.path;
   if (updateRequired) {
     return path == AppRoutes.updateRequired ? null : AppRoutes.updateRequired;
@@ -90,13 +101,6 @@ final appRouterProvider = Provider<GoRouter>((ref) {
     ref.watch(appInfoProvider).version,
     ref.watch(remoteConfigProvider.select((c) => c.minSupportedVersion)),
   );
-
-  GoRoute placeholder(String path, String Function(BuildContext) title) {
-    return GoRoute(
-      path: path,
-      builder: (context, state) => PlaceholderScreen(title: title(context)),
-    );
-  }
 
   final router = GoRouter(
     initialLocation: AppRoutes.splash,
@@ -171,6 +175,20 @@ final appRouterProvider = Provider<GoRouter>((ref) {
       GoRoute(
         path: AppRoutes.pust9,
         builder: (context, state) => const Pust9Screen(),
+        routes: [
+          GoRoute(
+            path: 'tips',
+            builder: (context, state) => const Pust9ArchiveScreen(),
+          ),
+        ],
+      ),
+      GoRoute(
+        path: AppRoutes.registrations,
+        builder: (context, state) => const MyRegistrationsScreen(),
+      ),
+      GoRoute(
+        path: AppRoutes.notifications,
+        builder: (context, state) => const InboxScreen(),
       ),
       GoRoute(
         path: AppRoutes.bmi,
@@ -254,6 +272,10 @@ final appRouterProvider = Provider<GoRouter>((ref) {
             path: 'delete-account',
             builder: (context, state) => const DeleteAccountScreen(),
           ),
+          GoRoute(
+            path: 'notifications',
+            builder: (context, state) => const NotificationSettingsScreen(),
+          ),
         ],
       ),
       GoRoute(
@@ -294,14 +316,18 @@ final appRouterProvider = Provider<GoRouter>((ref) {
           ),
         ],
       ),
-      placeholder(AppRoutes.registrations, (c) => c.l10n.menuRegistrations),
-      placeholder(AppRoutes.notifications, (c) => c.l10n.menuNotifications),
       GoRoute(
         path: AppRoutes.devCatalog,
         builder: (context, state) => const ComponentCatalogScreen(),
       ),
     ],
   );
+  // Tapping a shown reminder opens its in-app destination.
+  final taps = ref.watch(reminderSchedulerProvider).taps.listen((route) {
+    final safe = safeNotificationRoute(route);
+    if (safe != null) router.push(safe);
+  });
+  ref.onDispose(taps.cancel);
   ref.onDispose(router.dispose);
   return router;
 });

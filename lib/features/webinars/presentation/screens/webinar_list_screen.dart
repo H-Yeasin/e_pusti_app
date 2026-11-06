@@ -11,8 +11,7 @@ import '../../../../core/widgets/feedback/ep_async_view.dart';
 import '../../../../core/widgets/feedback/ep_banner.dart';
 import '../../../../core/widgets/navigation/ep_app_bar.dart';
 import '../../domain/webinar_models.dart';
-import '../webinar_actions.dart';
-import '../webinar_providers.dart';
+import '../../../notifications/presentation/engagement_providers.dart';
 
 /// WEB-01 — upcoming first, then past events with recordings.
 class WebinarListScreen extends ConsumerWidget {
@@ -21,13 +20,17 @@ class WebinarListScreen extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final l10n = context.l10n;
-    final webinars = ref.watch(webinarsProvider);
+    final webinars = ref.watch(webinarsWithSeatsProvider);
+    final registered = {
+      for (final r in ref.watch(registrationsProvider).value ?? const [])
+        r.webinarId,
+    };
 
     return Scaffold(
       appBar: EpAppBar(title: l10n.homeWebinar),
       body: EpAsyncView(
         value: webinars,
-        onRetry: () => ref.invalidate(webinarsProvider),
+        onRetry: () => ref.invalidate(webinarsWithSeatsProvider),
         data: (all) {
           final now = DateTime.now();
           final upcoming = all.where((w) => !w.isPast(now)).toList()
@@ -48,7 +51,11 @@ class WebinarListScreen extends ConsumerWidget {
               else ...[
                 Text(l10n.webinarUpcoming, style: theme.textTheme.titleLarge),
                 const SizedBox(height: EpSpace.s3),
-                for (final w in upcoming) _UpcomingCard(webinar: w),
+                for (final w in upcoming)
+                  _UpcomingCard(
+                    webinar: w,
+                    registered: registered.contains(w.id),
+                  ),
               ],
               if (past.isNotEmpty) ...[
                 const SizedBox(height: EpSpace.s5),
@@ -85,16 +92,19 @@ class WebinarListScreen extends ConsumerWidget {
 }
 
 class _UpcomingCard extends ConsumerWidget {
-  const _UpcomingCard({required this.webinar});
+  const _UpcomingCard({required this.webinar, required this.registered});
 
   final Webinar webinar;
+  final bool registered;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final l10n = context.l10n;
     final theme = Theme.of(context);
     final seats = context.digits(webinar.seatsLeft);
-    final seatText = webinar.isFull
+    final seatText = registered
+        ? l10n.webinarRegisteredBadge
+        : webinar.isFull
         ? l10n.webinarFull
         : webinar.isAlmostFull
         ? l10n.webinarOnlySeatsLeft(seats)
@@ -122,16 +132,17 @@ class _UpcomingCard extends ConsumerWidget {
                 seatText,
                 style: TextStyle(
                   fontWeight: FontWeight.w700,
-                  color: webinar.isFull || webinar.isAlmostFull
+                  color: registered
+                      ? EpColors.green700
+                      : webinar.isFull || webinar.isAlmostFull
                       ? EpColors.destructiveText
                       : EpColors.green700,
                 ),
               ),
-              if (!webinar.isFull) ...[
+              if (!webinar.isFull && !registered) ...[
                 const SizedBox(height: EpSpace.s3),
                 FilledButton(
-                  onPressed: () =>
-                      requireLoginForWebinar(context, ref, webinar.id),
+                  onPressed: () => context.push(AppRoutes.webinar(webinar.id)),
                   child: Text(l10n.webinarReserveSeat),
                 ),
               ],

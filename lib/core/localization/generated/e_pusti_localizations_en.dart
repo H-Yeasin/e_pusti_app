@@ -1433,4 +1433,209 @@ class EPustiGeneratedLocalizationsEn extends EPustiGeneratedLocalizations {
 
   @override
   String get certificateNotFound => 'Certificate not found';
+
+  @override
+  String get webinarRegisteredBadge => 'Registered';
+
+  @override
+  String get webinarYoureIn => 'Your seat is reserved';
+
+  @override
+  String get webinarYoureInBody =>
+      'The join link appears here 15 minutes before the event.';
+
+  @override
+  String get webinarJoin => 'Join now';
+
+  @override
+  String get webinarLostSeatTitle => 'Sorry — the last seat was just taken.';
+
+  @override
+  String get webinarLostSeatBody =>
+      'Someone took the seat just before you registered. None of your information was saved.';
+
+  @override
+  String get webinarCancelRegistration => 'Cancel registration';
+
+  @override
+  String get webinarCancelConfirm =>
+      'Cancel your registration? Your seat will go to someone else.';
+
+  @override
+  String get webinarAddToCalendar => 'Add to calendar';
+
+  @override
+  String get webinarLinkBeforeEvent => 'Link shown before the event';
+
+  @override
+  String get webinarAlertOn =>
+      'We\'ll tell you when the recording is published';
+
+  @override
+  String get webinarRecordingNotYet => 'The recording isn\'t published yet';
+
+  @override
+  String get webinarKeepAction => 'Keep my seat';
+
+  @override
+  String get registrationsEmptyTitle => 'No registrations';
+
+  @override
+  String get registrationsEmptyBody =>
+      'Reserve a seat in an upcoming webinar to join live Q&A with nutrition experts.';
+
+  @override
+  String get seeWebinarsAction => 'See webinars';
+
+  @override
+  String get registrationsPast => 'Past';
+
+  @override
+  String get reminderWebinar24h => 'Webinar tomorrow';
+
+  @override
+  String get reminderWebinar15m => 'Webinar starts in 15 minutes';
+
+  @override
+  String get reminderMeasureTitle => 'Time to measure';
+
+  @override
+  String reminderMeasureBody(String name) {
+    return 'Measure $name\'s height and weight again';
+  }
+
+  @override
+  String get inboxMarkAll => 'Mark all read';
+
+  @override
+  String get inboxEmptyTitle => 'No notifications';
+
+  @override
+  String get inboxEmptyBody =>
+      'New webinars, courses and content will appear here.';
+
+  @override
+  String get inboxUnread => 'Unread';
+
+  @override
+  String get prefsTitle => 'Notification settings';
+
+  @override
+  String get prefsHeading => 'What you want to hear about';
+
+  @override
+  String get catWebinar => 'Webinars';
+
+  @override
+  String get catWebinarSub => 'New events and reminders';
+
+  @override
+  String get catCourse => 'Courses';
+
+  @override
+  String get catCourseSub => 'New chapters and modules';
+
+  @override
+  String get catContent => 'New content';
+
+  @override
+  String get catContentSub => 'New documents in the library';
+
+  @override
+  String get catGeneral => 'General';
+
+  @override
+  String get catGeneralSub => 'Announcements and information';
+
+  @override
+  String get catHealth => 'Health records';
+
+  @override
+  String get catHealthSub => 'Reminders to measure family members';
+
+  @override
+  String get permissionDeniedTitle =>
+      'Notifications for this app are off in your phone\'s settings.';
+
+  @override
+  String get permissionDeniedBody =>
+      'Even with the choices below on, no notifications will arrive.';
+
+  @override
+  String get openPhoneSettings => 'Open phone settings';
+
+  @override
+  String timeMinutesAgo(String n) {
+    return '$n min ago';
+  }
+
+  @override
+  String timeHoursAgo(String n) {
+    return '$n hours ago';
+  }
+
+  @override
+  String get timeYesterday => 'Yesterday';
+
+  @override
+  String get timeJustNow => 'Just now';
+
+  @override
+  String get homeForYou => 'For you';
+
+  @override
+  String get homeContinue => 'Continue';
+
+  @override
+  String get homeNextWebinar => 'Your next webinar';
+
+  @override
+  String homeMeasureDue(String name) {
+    return 'Time to measure $name';
+  }
+
+  @override
+  String get homeMeasureAction => 'Measure';
+
+  @override
+  String get shareAppAction => 'Share the app';
+
+  @override
+  String get shareAppText =>
+      'e-Pushti — reliable nutrition information for your family.';
+
+  @override
+  String shareContentText(String title) {
+    return '$title — on e-Pushti';
+  }
+
+  @override
+  String get pust9ArchiveTitle => 'PUST9 tips';
+
+  @override
+  String get pust9ArchiveLink => 'See earlier tips';
+
+  @override
+  String get pust9ArchiveEmptyTitle => 'No tips here yet';
+
+  @override
+  String get pust9ArchiveEmptyBody =>
+      'When PUST9\'s daily tips are published here, you can read them — even if the SMS was deleted.';
+
+  @override
+  String pust9TipDay(String n) {
+    return 'Day $n';
+  }
+
+  @override
+  String get pust9StatusNote =>
+      'The app can\'t see whether your subscription is active — check the confirmation SMS from your operator.';
+
+  @override
+  String get pust9StopTitle => 'To stop the subscription';
+
+  @override
+  String pust9StopBody(String keyword, String shortcode) {
+    return 'Send $keyword to $shortcode';
+  }
 }

@@ -1,4 +1,4 @@
-﻿import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:package_info_plus/package_info_plus.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -9,6 +9,7 @@ import '../core/config/app_info.dart';
 import '../core/config/backend_config.dart';
 import '../core/localization/localization.dart';
 import '../features/auth/presentation/providers/auth_controller.dart';
+import 'backend_overrides.dart';
 import 'providers/app_environment_provider.dart';
 import 'providers/app_locale_controller_provider.dart';
 import 'view/e_pusti_app.dart';
@@ -47,6 +48,7 @@ Future<void> bootstrap(AppEnvironment environment) async {
         appInfoProvider.overrideWithValue(
           AppInfo(version: packageInfo.version),
         ),
+        ...backendOverrides(backendKind),
       ],
       child: const EPustiApp(),
     ),

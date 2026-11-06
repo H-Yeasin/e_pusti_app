@@ -73,6 +73,11 @@ Phases are ordered by dependency and user value. Each phase ends in a shippable 
 | Partner slots live | SLOT-A/B with real creatives & consented analytics |
 **Exit:** retention features live; slot revenue path proven.
 
+**Status (2026-11-06):**
+- Done: WEB-02 registration with capacity enforced in a locked transaction, the "lost the last seat" state, registered state, join link from 15 minutes before (registered users only), cancel, add to calendar (.ics), "tell me about the recording"; WEB-03 my registrations; recordings open externally when a link exists. NOT-01 inbox (unread first, mark all read, tap opens the destination, sidebar badge); NOT-02 per-category settings with the OS-permission trap and "open phone settings". On-device reminders: 24 h and 15 min before registered webinars, and P1-4 measurement reminders (30 / 90 / 180 days by age, from remote config — pending clinical confirmation). P1-2 "For you" card (continue learning, next webinar, measurements due). P1-7 sharing for webinars plus "share the app"; `epushti://` deep links. Live remote config from `app_config` with cache and bundled fallback; partner-slot impressions/clicks recorded only for consenting signed-in users.
+- PUST9: tips archive screen (SMS-02) and an honest status note; stop instructions appear once `stopKeyword` / `stopShortcode` are confirmed in config.
+- Not possible yet: server push (needs a Firebase project); PUST9 tip content and subscription status (needs a content source / operator API); a personalised daily tip (needs tip content); share links on the web (`shareBaseUrl`, needs a domain).
+
 ## Phase 5 — Depth (after clinical/content sign-off)
 P2-1 growth charts · P2-2 pregnancy/breastfeeding journey · P2-3 audio narration · P2-4 global search · P2-5 bookmarks · selected P3 items after user research.
 

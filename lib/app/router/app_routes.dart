@@ -33,6 +33,8 @@ abstract final class AppRoutes {
   static String webinar(String id) => '$webinars/$id';
   static String module(String id) => '$digiSkills/$id';
   static const assessments = '/assessment';
+  static const notificationSettings = '/settings/notifications';
+  static const pust9Archive = '/pust9/tips';
   static String assessment(String id) => '$assessments/$id';
   static String assessmentResult(String id) => '$assessments/$id/result';
   static String certificate(String code) => '$certificates/$code';

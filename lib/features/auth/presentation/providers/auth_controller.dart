@@ -1,18 +1,15 @@
 import 'dart:async';
 
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 import 'package:supabase_flutter/supabase_flutter.dart' show Supabase;
 
+import '../../../../core/config/app_preferences.dart';
 import '../../../../core/config/backend_config.dart';
 import '../../data/local_backend.dart';
 import '../../data/supabase_backend.dart';
 import '../../domain/auth_repository.dart';
 
-/// Overridden in `bootstrap` (and tests) with the loaded instance.
-final sharedPreferencesProvider = Provider<SharedPreferences>((ref) {
-  throw UnimplementedError('SharedPreferences must be overridden.');
-});
+export '../../../../core/config/app_preferences.dart';
 
 final authRepositoryProvider = Provider<AuthRepository>((ref) {
   return switch (ref.watch(backendKindProvider)) {

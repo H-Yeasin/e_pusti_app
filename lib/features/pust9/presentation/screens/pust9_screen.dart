@@ -111,6 +111,39 @@ class Pust9Screen extends ConsumerWidget {
               ],
             ),
           ],
+          const SizedBox(height: EpSpace.s5),
+          EpBanner(
+            key: const ValueKey('pust9-status-note'),
+            icon: Icons.help_outline_rounded,
+            message: l10n.pust9StatusNote,
+          ),
+          if (pust9.stopKeyword != null && pust9.stopShortcode != null) ...[
+            const SizedBox(height: EpSpace.s4),
+            Text(l10n.pust9StopTitle, style: theme.textTheme.titleMedium),
+            const SizedBox(height: EpSpace.s1),
+            Text(
+              l10n.pust9StopBody(pust9.stopKeyword!, pust9.stopShortcode!),
+              key: const ValueKey('pust9-stop'),
+            ),
+            Align(
+              alignment: AlignmentDirectional.centerStart,
+              child: TextButton.icon(
+                onPressed: () => Launcher.sms(
+                  context,
+                  to: pust9.stopShortcode!,
+                  body: pust9.stopKeyword!,
+                ),
+                icon: const Icon(Icons.sms_outlined),
+                label: Text(l10n.pust9OpenSmsAction),
+              ),
+            ),
+          ],
+          const SizedBox(height: EpSpace.s3),
+          OutlinedButton.icon(
+            onPressed: () => context.push(AppRoutes.pust9Archive),
+            icon: const Icon(Icons.history_rounded),
+            label: Text(l10n.pust9ArchiveLink),
+          ),
           const AdSlot(id: AdSlotId.pust9Banner),
           const SizedBox(height: EpSpace.s4),
           Center(

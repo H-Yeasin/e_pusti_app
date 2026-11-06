@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
+import '../../analytics/slot_events.dart';
 import '../../config/remote_config.dart';
+import '../../platform/launcher.dart';
 import '../../localization/localization.dart';
 import '../../theme/app_tokens.dart';
 
@@ -40,7 +42,7 @@ class AdSlot extends ConsumerWidget {
         promotion == null ? null : houseBuilder?.call(context, promotion),
       PartnerSlot() =>
         content.confirmedPartner && content.imageUrl.isNotEmpty
-            ? _PartnerCreative(slot: content, onTap: onPartnerTap)
+            ? _PartnerCreative(slotId: id, slot: content, onTap: onPartnerTap)
             : null,
     };
 
@@ -51,18 +53,54 @@ class AdSlot extends ConsumerWidget {
   }
 }
 
-class _PartnerCreative extends StatefulWidget {
-  const _PartnerCreative({required this.slot, this.onTap});
+class _PartnerCreative extends ConsumerStatefulWidget {
+  const _PartnerCreative({
+    required this.slotId,
+    required this.slot,
+    this.onTap,
+  });
 
+  final AdSlotId slotId;
   final PartnerSlot slot;
   final void Function(PartnerSlot slot)? onTap;
 
   @override
-  State<_PartnerCreative> createState() => _PartnerCreativeState();
+  ConsumerState<_PartnerCreative> createState() => _PartnerCreativeState();
 }
 
-class _PartnerCreativeState extends State<_PartnerCreative> {
+class _PartnerCreativeState extends ConsumerState<_PartnerCreative> {
   bool _failed = false;
+
+  @override
+  void initState() {
+    super.initState();
+    if (markImpressionOnce(widget.slotId.key, widget.slot.imageUrl)) {
+      ref
+          .read(slotEventSinkProvider)
+          .record(
+            widget.slotId.key,
+            SlotEventKind.impression,
+            creative: widget.slot.imageUrl,
+          );
+    }
+  }
+
+  void _tap() {
+    ref
+        .read(slotEventSinkProvider)
+        .record(
+          widget.slotId.key,
+          SlotEventKind.click,
+          creative: widget.slot.imageUrl,
+        );
+    final custom = widget.onTap;
+    if (custom != null) {
+      custom(widget.slot);
+      return;
+    }
+    final url = widget.slot.clickUrl;
+    if (url != null && url.startsWith('https://')) Launcher.web(context, url);
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -70,12 +108,12 @@ class _PartnerCreativeState extends State<_PartnerCreative> {
     if (_failed) {
       return const SizedBox.shrink();
     }
-    final onTap = widget.onTap;
+    final tappable = widget.onTap != null || widget.slot.clickUrl != null;
     return Semantics(
       label: context.l10n.partnerContentLabel,
-      button: onTap != null,
+      button: tappable,
       child: GestureDetector(
-        onTap: onTap == null ? null : () => onTap(widget.slot),
+        onTap: tappable ? _tap : null,
         child: ClipRRect(
           borderRadius: EpRadius.mdAll,
           child: Image.network(

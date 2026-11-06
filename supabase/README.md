@@ -68,3 +68,27 @@ Use the project's publishable (anon) key only — never the service-role key.
 
 It calls `verify_certificate(code)`, which anyone may call and which returns
 only the code, holder name, title, source, issue date and revoked flag.
+
+## Webinars, inbox, live config and slot events (Phase 4)
+
+- `webinars` holds seats and links (catalogue text stays on the content
+  server). `register_for_webinar()` locks the webinar row, so two people can
+  never take the last seat; it returns `registered` or `full`. The app shows
+  "lost the last seat" when it had shown free seats and the answer is `full`.
+- `join_url` is not readable by clients; `webinar_join_link()` returns it
+  only to registered users from 15 minutes before the start until the end.
+- `inbox_items` is filled by triggers (registration, certificate issued,
+  recording published to everyone who asked) and by `announce()`, which staff
+  run with the service role. Clients can only set `read_at`.
+- `app_config` row `mobile` is the remote config JSON (slots, PUST9 values,
+  minimum version, share/verify domains, reminder intervals). The app caches
+  it and falls back to bundled defaults.
+- `slot_events` accepts impressions/clicks only from signed-in users who
+  accepted the terms; nobody can read it through the API.
+
+## Push notifications (not wired yet)
+
+The inbox and on-device reminders work without a server push. Server push
+needs a Firebase project (`google-services.json`, `GoogleService-Info.plist`,
+APNs key); add `firebase_messaging`, store device tokens per account, and
+send a push alongside each `inbox_items` insert.

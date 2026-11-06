@@ -13,6 +13,7 @@ import '../../../auth/presentation/providers/auth_controller.dart';
 import '../../../auth/presentation/widgets/login_prompt_sheet.dart';
 import '../../../system/presentation/widgets/offline_card.dart';
 import '../widgets/app_sidebar.dart';
+import '../widgets/for_you_card.dart';
 
 /// HOM-01. Identical logged in or out; with the slot empty (the launch state)
 /// the layout still looks finished.
@@ -120,6 +121,7 @@ class HomeScreen extends ConsumerWidget {
                       ),
                       const SizedBox(height: EpSpace.s5),
                       _TileGrid(tiles: tiles, onOpen: open),
+                      const ForYouCard(),
                       const SizedBox(height: EpSpace.s5),
                       EpPromoCard(
                         key: const ValueKey('home-bmi-card'),

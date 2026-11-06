@@ -10,6 +10,8 @@ import '../../../../core/localization/localization.dart';
 import '../../../../core/theme/app_tokens.dart';
 import '../../../auth/presentation/phone_number.dart';
 import '../../../auth/presentation/providers/auth_controller.dart';
+import '../../../notifications/presentation/engagement_providers.dart';
+import '../../../share/share_actions.dart';
 
 /// HOM-02. Gated destinations stay visible and are marked with a lock when
 /// logged out — never hidden.
@@ -26,6 +28,7 @@ class AppSidebar extends ConsumerWidget {
     final session = ref.watch(authControllerProvider);
     final environment = ref.watch(appEnvironmentProvider);
     final version = ref.watch(appInfoProvider).version;
+    final unread = session.isLoggedIn ? ref.watch(unreadCountProvider) : 0;
 
     void go(String route) {
       Navigator.of(context).pop();
@@ -78,8 +81,18 @@ class AppSidebar extends ConsumerWidget {
                       icon: icon,
                       label: label,
                       locked: AppRoutes.isGated(route) && !session.isLoggedIn,
+                      badge: route == AppRoutes.notifications ? unread : 0,
                       onTap: () => go(route),
                     ),
+                  _SidebarItem(
+                    icon: Icons.share_outlined,
+                    label: l10n.shareAppAction,
+                    locked: false,
+                    onTap: () {
+                      Navigator.of(context).pop();
+                      shareApp(context, ref);
+                    },
+                  ),
                   if (environment == AppEnvironment.dev)
                     _SidebarItem(
                       icon: Icons.palette_outlined,
@@ -172,11 +185,13 @@ class _SidebarItem extends StatelessWidget {
     required this.label,
     required this.locked,
     required this.onTap,
+    this.badge = 0,
   });
 
   final IconData icon;
   final String label;
   final bool locked;
+  final int badge;
   final VoidCallback onTap;
 
   @override
@@ -196,6 +211,12 @@ class _SidebarItem extends StatelessWidget {
               size: 18,
               color: EpColors.textMuted,
               semanticLabel: context.l10n.menuLockedHint,
+            )
+          : badge > 0
+          ? Badge(
+              key: const ValueKey('sidebar-unread'),
+              label: Text(context.digits(badge)),
+              backgroundColor: EpColors.fillPrimary,
             )
           : null,
       onTap: onTap,

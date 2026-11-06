@@ -1428,4 +1428,209 @@ class EPustiGeneratedLocalizationsBn extends EPustiGeneratedLocalizations {
 
   @override
   String get certificateNotFound => 'সার্টিফিকেট পাওয়া যায়নি';
+
+  @override
+  String get webinarRegisteredBadge => 'রেজিস্ট্রেশন সম্পন্ন';
+
+  @override
+  String get webinarYoureIn => 'আপনার আসন সংরক্ষিত';
+
+  @override
+  String get webinarYoureInBody =>
+      'ইভেন্টের ১৫ মিনিট আগে যোগ দেওয়ার লিংক এখানে দেখা যাবে।';
+
+  @override
+  String get webinarJoin => 'যোগ দিন';
+
+  @override
+  String get webinarLostSeatTitle =>
+      'দুঃখিত — শেষ আসনটি এইমাত্র নেওয়া হয়েছে।';
+
+  @override
+  String get webinarLostSeatBody =>
+      'আপনি রেজিস্ট্রেশন করার ঠিক আগে অন্য একজন আসনটি নিয়েছেন। আপনার কোনো তথ্য সংরক্ষিত হয়নি।';
+
+  @override
+  String get webinarCancelRegistration => 'রেজিস্ট্রেশন বাতিল করুন';
+
+  @override
+  String get webinarCancelConfirm =>
+      'রেজিস্ট্রেশন বাতিল করবেন? আপনার আসনটি অন্য কেউ নিতে পারবেন।';
+
+  @override
+  String get webinarAddToCalendar => 'ক্যালেন্ডারে যোগ করুন';
+
+  @override
+  String get webinarLinkBeforeEvent => 'লিংক ইভেন্টের আগে দেখা যাবে';
+
+  @override
+  String get webinarAlertOn => 'রেকর্ডিং প্রকাশ হলে আপনাকে জানানো হবে';
+
+  @override
+  String get webinarRecordingNotYet => 'রেকর্ডিং এখনো প্রকাশ হয়নি';
+
+  @override
+  String get webinarKeepAction => 'আসন রাখুন';
+
+  @override
+  String get registrationsEmptyTitle => 'কোনো রেজিস্ট্রেশন নেই';
+
+  @override
+  String get registrationsEmptyBody =>
+      'পুষ্টি বিশেষজ্ঞদের সাথে সরাসরি প্রশ্নোত্তরে অংশ নিতে আসন্ন ওয়েবিনারে আসন সংরক্ষণ করুন।';
+
+  @override
+  String get seeWebinarsAction => 'ওয়েবিনার দেখুন';
+
+  @override
+  String get registrationsPast => 'বিগত';
+
+  @override
+  String get reminderWebinar24h => 'আগামীকাল ওয়েবিনার';
+
+  @override
+  String get reminderWebinar15m => '১৫ মিনিট পর ওয়েবিনার শুরু';
+
+  @override
+  String get reminderMeasureTitle => 'মাপ নেওয়ার সময় হয়েছে';
+
+  @override
+  String reminderMeasureBody(String name) {
+    return '$name-এর উচ্চতা ও ওজন আবার মেপে রাখুন';
+  }
+
+  @override
+  String get inboxMarkAll => 'সব পড়া';
+
+  @override
+  String get inboxEmptyTitle => 'কোনো নোটিফিকেশন নেই';
+
+  @override
+  String get inboxEmptyBody =>
+      'নতুন ওয়েবিনার, কোর্স বা কনটেন্ট যুক্ত হলে এখানে দেখতে পাবেন।';
+
+  @override
+  String get inboxUnread => 'অপঠিত';
+
+  @override
+  String get prefsTitle => 'নোটিফিকেশন সেটিংস';
+
+  @override
+  String get prefsHeading => 'কী কী জানতে চান';
+
+  @override
+  String get catWebinar => 'ওয়েবিনার';
+
+  @override
+  String get catWebinarSub => 'নতুন ইভেন্ট ও রিমাইন্ডার';
+
+  @override
+  String get catCourse => 'কোর্স';
+
+  @override
+  String get catCourseSub => 'নতুন অধ্যায় ও মডিউল';
+
+  @override
+  String get catContent => 'নতুন কনটেন্ট';
+
+  @override
+  String get catContentSub => 'লাইব্রেরিতে নতুন ডকুমেন্ট';
+
+  @override
+  String get catGeneral => 'সাধারণ';
+
+  @override
+  String get catGeneralSub => 'ঘোষণা ও তথ্য';
+
+  @override
+  String get catHealth => 'স্বাস্থ্য রেকর্ড';
+
+  @override
+  String get catHealthSub => 'পরিবারের সদস্যদের মাপ নেওয়ার রিমাইন্ডার';
+
+  @override
+  String get permissionDeniedTitle =>
+      'ফোনের সেটিংসে এই অ্যাপের নোটিফিকেশন বন্ধ আছে।';
+
+  @override
+  String get permissionDeniedBody =>
+      'নিচের পছন্দগুলো চালু থাকলেও কোনো নোটিফিকেশন আসবে না।';
+
+  @override
+  String get openPhoneSettings => 'ফোনের সেটিংস খুলুন';
+
+  @override
+  String timeMinutesAgo(String n) {
+    return '$n মিনিট আগে';
+  }
+
+  @override
+  String timeHoursAgo(String n) {
+    return '$n ঘণ্টা আগে';
+  }
+
+  @override
+  String get timeYesterday => 'গতকাল';
+
+  @override
+  String get timeJustNow => 'এইমাত্র';
+
+  @override
+  String get homeForYou => 'আপনার জন্য';
+
+  @override
+  String get homeContinue => 'চালিয়ে যান';
+
+  @override
+  String get homeNextWebinar => 'আপনার পরবর্তী ওয়েবিনার';
+
+  @override
+  String homeMeasureDue(String name) {
+    return '$name-এর মাপ নেওয়ার সময় হয়েছে';
+  }
+
+  @override
+  String get homeMeasureAction => 'মাপ নিন';
+
+  @override
+  String get shareAppAction => 'অ্যাপটি শেয়ার করুন';
+
+  @override
+  String get shareAppText =>
+      'e-Pushti — পরিবারের জন্য নির্ভরযোগ্য পুষ্টি তথ্য।';
+
+  @override
+  String shareContentText(String title) {
+    return '$title — e-Pushti-তে';
+  }
+
+  @override
+  String get pust9ArchiveTitle => 'PUST9 টিপস';
+
+  @override
+  String get pust9ArchiveLink => 'আগের টিপস দেখুন';
+
+  @override
+  String get pust9ArchiveEmptyTitle => 'এখনো কোনো টিপস নেই';
+
+  @override
+  String get pust9ArchiveEmptyBody =>
+      'PUST9-এর দৈনিক টিপস এখানে প্রকাশ করা হলে পড়তে পারবেন — SMS মুছে গেলেও।';
+
+  @override
+  String pust9TipDay(String n) {
+    return 'দিন $n';
+  }
+
+  @override
+  String get pust9StatusNote =>
+      'আপনার সাবস্ক্রিপশন চালু আছে কিনা অ্যাপ থেকে দেখা যায় না — অপারেটরের নিশ্চিতকরণ SMS দেখুন।';
+
+  @override
+  String get pust9StopTitle => 'সাবস্ক্রিপশন বন্ধ করতে';
+
+  @override
+  String pust9StopBody(String keyword, String shortcode) {
+    return '$keyword লিখে $shortcode নম্বরে পাঠান';
+  }
 }

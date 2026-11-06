@@ -48,6 +48,13 @@ class SettingsScreen extends ConsumerWidget {
               onTap: () => _pickLanguage(context, localeController),
             ),
             const Divider(height: 1),
+            ListTile(
+              key: const ValueKey('settings-notifications'),
+              title: Text(l10n.menuNotifications),
+              trailing: const Icon(Icons.chevron_right_rounded),
+              onTap: () => context.push(AppRoutes.notificationSettings),
+            ),
+            const Divider(height: 1),
             SwitchListTile(
               key: const ValueKey('settings-video-wifi'),
               title: Text(l10n.settingsVideoWifi),

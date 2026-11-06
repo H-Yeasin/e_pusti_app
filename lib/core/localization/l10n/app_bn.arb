@@ -799,5 +799,117 @@
       }
     }
   },
-  "certificateNotFound": "সার্টিফিকেট পাওয়া যায়নি"
+  "certificateNotFound": "সার্টিফিকেট পাওয়া যায়নি",
+  "webinarRegisteredBadge": "রেজিস্ট্রেশন সম্পন্ন",
+  "webinarYoureIn": "আপনার আসন সংরক্ষিত",
+  "webinarYoureInBody": "ইভেন্টের ১৫ মিনিট আগে যোগ দেওয়ার লিংক এখানে দেখা যাবে।",
+  "webinarJoin": "যোগ দিন",
+  "webinarLostSeatTitle": "দুঃখিত — শেষ আসনটি এইমাত্র নেওয়া হয়েছে।",
+  "webinarLostSeatBody": "আপনি রেজিস্ট্রেশন করার ঠিক আগে অন্য একজন আসনটি নিয়েছেন। আপনার কোনো তথ্য সংরক্ষিত হয়নি।",
+  "webinarCancelRegistration": "রেজিস্ট্রেশন বাতিল করুন",
+  "webinarCancelConfirm": "রেজিস্ট্রেশন বাতিল করবেন? আপনার আসনটি অন্য কেউ নিতে পারবেন।",
+  "webinarAddToCalendar": "ক্যালেন্ডারে যোগ করুন",
+  "webinarLinkBeforeEvent": "লিংক ইভেন্টের আগে দেখা যাবে",
+  "webinarAlertOn": "রেকর্ডিং প্রকাশ হলে আপনাকে জানানো হবে",
+  "webinarRecordingNotYet": "রেকর্ডিং এখনো প্রকাশ হয়নি",
+  "webinarKeepAction": "আসন রাখুন",
+  "registrationsEmptyTitle": "কোনো রেজিস্ট্রেশন নেই",
+  "registrationsEmptyBody": "পুষ্টি বিশেষজ্ঞদের সাথে সরাসরি প্রশ্নোত্তরে অংশ নিতে আসন্ন ওয়েবিনারে আসন সংরক্ষণ করুন।",
+  "seeWebinarsAction": "ওয়েবিনার দেখুন",
+  "registrationsPast": "বিগত",
+  "reminderWebinar24h": "আগামীকাল ওয়েবিনার",
+  "reminderWebinar15m": "১৫ মিনিট পর ওয়েবিনার শুরু",
+  "reminderMeasureTitle": "মাপ নেওয়ার সময় হয়েছে",
+  "reminderMeasureBody": "{name}-এর উচ্চতা ও ওজন আবার মেপে রাখুন",
+  "@reminderMeasureBody": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "inboxMarkAll": "সব পড়া",
+  "inboxEmptyTitle": "কোনো নোটিফিকেশন নেই",
+  "inboxEmptyBody": "নতুন ওয়েবিনার, কোর্স বা কনটেন্ট যুক্ত হলে এখানে দেখতে পাবেন।",
+  "inboxUnread": "অপঠিত",
+  "prefsTitle": "নোটিফিকেশন সেটিংস",
+  "prefsHeading": "কী কী জানতে চান",
+  "catWebinar": "ওয়েবিনার",
+  "catWebinarSub": "নতুন ইভেন্ট ও রিমাইন্ডার",
+  "catCourse": "কোর্স",
+  "catCourseSub": "নতুন অধ্যায় ও মডিউল",
+  "catContent": "নতুন কনটেন্ট",
+  "catContentSub": "লাইব্রেরিতে নতুন ডকুমেন্ট",
+  "catGeneral": "সাধারণ",
+  "catGeneralSub": "ঘোষণা ও তথ্য",
+  "catHealth": "স্বাস্থ্য রেকর্ড",
+  "catHealthSub": "পরিবারের সদস্যদের মাপ নেওয়ার রিমাইন্ডার",
+  "permissionDeniedTitle": "ফোনের সেটিংসে এই অ্যাপের নোটিফিকেশন বন্ধ আছে।",
+  "permissionDeniedBody": "নিচের পছন্দগুলো চালু থাকলেও কোনো নোটিফিকেশন আসবে না।",
+  "openPhoneSettings": "ফোনের সেটিংস খুলুন",
+  "timeMinutesAgo": "{n} মিনিট আগে",
+  "@timeMinutesAgo": {
+    "placeholders": {
+      "n": {
+        "type": "String"
+      }
+    }
+  },
+  "timeHoursAgo": "{n} ঘণ্টা আগে",
+  "@timeHoursAgo": {
+    "placeholders": {
+      "n": {
+        "type": "String"
+      }
+    }
+  },
+  "timeYesterday": "গতকাল",
+  "timeJustNow": "এইমাত্র",
+  "homeForYou": "আপনার জন্য",
+  "homeContinue": "চালিয়ে যান",
+  "homeNextWebinar": "আপনার পরবর্তী ওয়েবিনার",
+  "homeMeasureDue": "{name}-এর মাপ নেওয়ার সময় হয়েছে",
+  "@homeMeasureDue": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "homeMeasureAction": "মাপ নিন",
+  "shareAppAction": "অ্যাপটি শেয়ার করুন",
+  "shareAppText": "e-Pushti — পরিবারের জন্য নির্ভরযোগ্য পুষ্টি তথ্য।",
+  "shareContentText": "{title} — e-Pushti-তে",
+  "@shareContentText": {
+    "placeholders": {
+      "title": {
+        "type": "String"
+      }
+    }
+  },
+  "pust9ArchiveTitle": "PUST9 টিপস",
+  "pust9ArchiveLink": "আগের টিপস দেখুন",
+  "pust9ArchiveEmptyTitle": "এখনো কোনো টিপস নেই",
+  "pust9ArchiveEmptyBody": "PUST9-এর দৈনিক টিপস এখানে প্রকাশ করা হলে পড়তে পারবেন — SMS মুছে গেলেও।",
+  "pust9TipDay": "দিন {n}",
+  "@pust9TipDay": {
+    "placeholders": {
+      "n": {
+        "type": "String"
+      }
+    }
+  },
+  "pust9StatusNote": "আপনার সাবস্ক্রিপশন চালু আছে কিনা অ্যাপ থেকে দেখা যায় না — অপারেটরের নিশ্চিতকরণ SMS দেখুন।",
+  "pust9StopTitle": "সাবস্ক্রিপশন বন্ধ করতে",
+  "pust9StopBody": "{keyword} লিখে {shortcode} নম্বরে পাঠান",
+  "@pust9StopBody": {
+    "placeholders": {
+      "keyword": {
+        "type": "String"
+      },
+      "shortcode": {
+        "type": "String"
+      }
+    }
+  }
 }

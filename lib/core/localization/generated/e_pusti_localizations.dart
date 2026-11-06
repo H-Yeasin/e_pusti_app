@@ -2614,6 +2614,366 @@ abstract class EPustiGeneratedLocalizations {
   /// In en, this message translates to:
   /// **'Certificate not found'**
   String get certificateNotFound;
+
+  /// No description provided for @webinarRegisteredBadge.
+  ///
+  /// In en, this message translates to:
+  /// **'Registered'**
+  String get webinarRegisteredBadge;
+
+  /// No description provided for @webinarYoureIn.
+  ///
+  /// In en, this message translates to:
+  /// **'Your seat is reserved'**
+  String get webinarYoureIn;
+
+  /// No description provided for @webinarYoureInBody.
+  ///
+  /// In en, this message translates to:
+  /// **'The join link appears here 15 minutes before the event.'**
+  String get webinarYoureInBody;
+
+  /// No description provided for @webinarJoin.
+  ///
+  /// In en, this message translates to:
+  /// **'Join now'**
+  String get webinarJoin;
+
+  /// No description provided for @webinarLostSeatTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Sorry — the last seat was just taken.'**
+  String get webinarLostSeatTitle;
+
+  /// No description provided for @webinarLostSeatBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Someone took the seat just before you registered. None of your information was saved.'**
+  String get webinarLostSeatBody;
+
+  /// No description provided for @webinarCancelRegistration.
+  ///
+  /// In en, this message translates to:
+  /// **'Cancel registration'**
+  String get webinarCancelRegistration;
+
+  /// No description provided for @webinarCancelConfirm.
+  ///
+  /// In en, this message translates to:
+  /// **'Cancel your registration? Your seat will go to someone else.'**
+  String get webinarCancelConfirm;
+
+  /// No description provided for @webinarAddToCalendar.
+  ///
+  /// In en, this message translates to:
+  /// **'Add to calendar'**
+  String get webinarAddToCalendar;
+
+  /// No description provided for @webinarLinkBeforeEvent.
+  ///
+  /// In en, this message translates to:
+  /// **'Link shown before the event'**
+  String get webinarLinkBeforeEvent;
+
+  /// No description provided for @webinarAlertOn.
+  ///
+  /// In en, this message translates to:
+  /// **'We\'ll tell you when the recording is published'**
+  String get webinarAlertOn;
+
+  /// No description provided for @webinarRecordingNotYet.
+  ///
+  /// In en, this message translates to:
+  /// **'The recording isn\'t published yet'**
+  String get webinarRecordingNotYet;
+
+  /// No description provided for @webinarKeepAction.
+  ///
+  /// In en, this message translates to:
+  /// **'Keep my seat'**
+  String get webinarKeepAction;
+
+  /// No description provided for @registrationsEmptyTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'No registrations'**
+  String get registrationsEmptyTitle;
+
+  /// No description provided for @registrationsEmptyBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Reserve a seat in an upcoming webinar to join live Q&A with nutrition experts.'**
+  String get registrationsEmptyBody;
+
+  /// No description provided for @seeWebinarsAction.
+  ///
+  /// In en, this message translates to:
+  /// **'See webinars'**
+  String get seeWebinarsAction;
+
+  /// No description provided for @registrationsPast.
+  ///
+  /// In en, this message translates to:
+  /// **'Past'**
+  String get registrationsPast;
+
+  /// No description provided for @reminderWebinar24h.
+  ///
+  /// In en, this message translates to:
+  /// **'Webinar tomorrow'**
+  String get reminderWebinar24h;
+
+  /// No description provided for @reminderWebinar15m.
+  ///
+  /// In en, this message translates to:
+  /// **'Webinar starts in 15 minutes'**
+  String get reminderWebinar15m;
+
+  /// No description provided for @reminderMeasureTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Time to measure'**
+  String get reminderMeasureTitle;
+
+  /// No description provided for @reminderMeasureBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Measure {name}\'s height and weight again'**
+  String reminderMeasureBody(String name);
+
+  /// No description provided for @inboxMarkAll.
+  ///
+  /// In en, this message translates to:
+  /// **'Mark all read'**
+  String get inboxMarkAll;
+
+  /// No description provided for @inboxEmptyTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'No notifications'**
+  String get inboxEmptyTitle;
+
+  /// No description provided for @inboxEmptyBody.
+  ///
+  /// In en, this message translates to:
+  /// **'New webinars, courses and content will appear here.'**
+  String get inboxEmptyBody;
+
+  /// No description provided for @inboxUnread.
+  ///
+  /// In en, this message translates to:
+  /// **'Unread'**
+  String get inboxUnread;
+
+  /// No description provided for @prefsTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Notification settings'**
+  String get prefsTitle;
+
+  /// No description provided for @prefsHeading.
+  ///
+  /// In en, this message translates to:
+  /// **'What you want to hear about'**
+  String get prefsHeading;
+
+  /// No description provided for @catWebinar.
+  ///
+  /// In en, this message translates to:
+  /// **'Webinars'**
+  String get catWebinar;
+
+  /// No description provided for @catWebinarSub.
+  ///
+  /// In en, this message translates to:
+  /// **'New events and reminders'**
+  String get catWebinarSub;
+
+  /// No description provided for @catCourse.
+  ///
+  /// In en, this message translates to:
+  /// **'Courses'**
+  String get catCourse;
+
+  /// No description provided for @catCourseSub.
+  ///
+  /// In en, this message translates to:
+  /// **'New chapters and modules'**
+  String get catCourseSub;
+
+  /// No description provided for @catContent.
+  ///
+  /// In en, this message translates to:
+  /// **'New content'**
+  String get catContent;
+
+  /// No description provided for @catContentSub.
+  ///
+  /// In en, this message translates to:
+  /// **'New documents in the library'**
+  String get catContentSub;
+
+  /// No description provided for @catGeneral.
+  ///
+  /// In en, this message translates to:
+  /// **'General'**
+  String get catGeneral;
+
+  /// No description provided for @catGeneralSub.
+  ///
+  /// In en, this message translates to:
+  /// **'Announcements and information'**
+  String get catGeneralSub;
+
+  /// No description provided for @catHealth.
+  ///
+  /// In en, this message translates to:
+  /// **'Health records'**
+  String get catHealth;
+
+  /// No description provided for @catHealthSub.
+  ///
+  /// In en, this message translates to:
+  /// **'Reminders to measure family members'**
+  String get catHealthSub;
+
+  /// No description provided for @permissionDeniedTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Notifications for this app are off in your phone\'s settings.'**
+  String get permissionDeniedTitle;
+
+  /// No description provided for @permissionDeniedBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Even with the choices below on, no notifications will arrive.'**
+  String get permissionDeniedBody;
+
+  /// No description provided for @openPhoneSettings.
+  ///
+  /// In en, this message translates to:
+  /// **'Open phone settings'**
+  String get openPhoneSettings;
+
+  /// No description provided for @timeMinutesAgo.
+  ///
+  /// In en, this message translates to:
+  /// **'{n} min ago'**
+  String timeMinutesAgo(String n);
+
+  /// No description provided for @timeHoursAgo.
+  ///
+  /// In en, this message translates to:
+  /// **'{n} hours ago'**
+  String timeHoursAgo(String n);
+
+  /// No description provided for @timeYesterday.
+  ///
+  /// In en, this message translates to:
+  /// **'Yesterday'**
+  String get timeYesterday;
+
+  /// No description provided for @timeJustNow.
+  ///
+  /// In en, this message translates to:
+  /// **'Just now'**
+  String get timeJustNow;
+
+  /// No description provided for @homeForYou.
+  ///
+  /// In en, this message translates to:
+  /// **'For you'**
+  String get homeForYou;
+
+  /// No description provided for @homeContinue.
+  ///
+  /// In en, this message translates to:
+  /// **'Continue'**
+  String get homeContinue;
+
+  /// No description provided for @homeNextWebinar.
+  ///
+  /// In en, this message translates to:
+  /// **'Your next webinar'**
+  String get homeNextWebinar;
+
+  /// No description provided for @homeMeasureDue.
+  ///
+  /// In en, this message translates to:
+  /// **'Time to measure {name}'**
+  String homeMeasureDue(String name);
+
+  /// No description provided for @homeMeasureAction.
+  ///
+  /// In en, this message translates to:
+  /// **'Measure'**
+  String get homeMeasureAction;
+
+  /// No description provided for @shareAppAction.
+  ///
+  /// In en, this message translates to:
+  /// **'Share the app'**
+  String get shareAppAction;
+
+  /// No description provided for @shareAppText.
+  ///
+  /// In en, this message translates to:
+  /// **'e-Pushti — reliable nutrition information for your family.'**
+  String get shareAppText;
+
+  /// No description provided for @shareContentText.
+  ///
+  /// In en, this message translates to:
+  /// **'{title} — on e-Pushti'**
+  String shareContentText(String title);
+
+  /// No description provided for @pust9ArchiveTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'PUST9 tips'**
+  String get pust9ArchiveTitle;
+
+  /// No description provided for @pust9ArchiveLink.
+  ///
+  /// In en, this message translates to:
+  /// **'See earlier tips'**
+  String get pust9ArchiveLink;
+
+  /// No description provided for @pust9ArchiveEmptyTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'No tips here yet'**
+  String get pust9ArchiveEmptyTitle;
+
+  /// No description provided for @pust9ArchiveEmptyBody.
+  ///
+  /// In en, this message translates to:
+  /// **'When PUST9\'s daily tips are published here, you can read them — even if the SMS was deleted.'**
+  String get pust9ArchiveEmptyBody;
+
+  /// No description provided for @pust9TipDay.
+  ///
+  /// In en, this message translates to:
+  /// **'Day {n}'**
+  String pust9TipDay(String n);
+
+  /// No description provided for @pust9StatusNote.
+  ///
+  /// In en, this message translates to:
+  /// **'The app can\'t see whether your subscription is active — check the confirmation SMS from your operator.'**
+  String get pust9StatusNote;
+
+  /// No description provided for @pust9StopTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'To stop the subscription'**
+  String get pust9StopTitle;
+
+  /// No description provided for @pust9StopBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Send {keyword} to {shortcode}'**
+  String pust9StopBody(String keyword, String shortcode);
 }
 
 class _EPustiGeneratedLocalizationsDelegate

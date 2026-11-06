@@ -11,6 +11,7 @@ import '../../../../core/widgets/feedback/ep_banner.dart';
 import '../../../../core/widgets/navigation/ep_app_bar.dart';
 import '../../../auth/presentation/providers/auth_controller.dart';
 import '../../../auth/presentation/widgets/login_prompt_sheet.dart';
+import '../../../notifications/presentation/engagement_providers.dart';
 import '../../../profile/domain/profile_models.dart';
 import '../../../profile/presentation/profile_labels.dart';
 import '../../../profile/presentation/profile_providers.dart';
@@ -78,16 +79,23 @@ class _ResultBody extends ConsumerWidget {
     if (person == null || !context.mounted) return;
 
     final input = outcome.input;
+    final measurement = Measurement(
+      id: newId(),
+      personId: person.id,
+      measuredAt: DateTime.now(),
+      heightCm: input.heightCm,
+      weightKg: input.weightKg,
+    );
+    await ref.read(measurementActionsProvider).save(measurement);
+    if (!context.mounted) return;
+    // P1-4: remind when the next measurement is due for this person.
     await ref
-        .read(measurementActionsProvider)
-        .save(
-          Measurement(
-            id: newId(),
-            personId: person.id,
-            measuredAt: DateTime.now(),
-            heightCm: input.heightCm,
-            weightKg: input.weightKg,
-          ),
+        .read(reminderPlannerProvider)
+        .planMeasurement(
+          person,
+          measurement,
+          title: l10n.reminderMeasureTitle,
+          body: l10n.reminderMeasureBody(personName(context, person)),
         );
     if (!context.mounted) return;
     ScaffoldMessenger.of(context)
