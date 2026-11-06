@@ -100,6 +100,7 @@ class Pust9Config {
     required this.pricePerDayTaka,
     this.stopShortcode,
     this.stopKeyword,
+    this.inAppSubscribe = false,
   });
 
   /// Wireframe V4 says 60 days; the earlier app copy said 30 (decision A1).
@@ -123,6 +124,10 @@ class Pust9Config {
   final String? stopShortcode;
   final String? stopKeyword;
 
+  /// Offer subscribing inside the app through the bdapps OTP API. Off until
+  /// the `pust9-subscribe` function is deployed with the bdapps credentials.
+  final bool inAppSubscribe;
+
   factory Pust9Config.fromJson(Map<String, Object?> json) {
     const d = defaults;
     return Pust9Config(
@@ -133,6 +138,7 @@ class Pust9Config {
       pricePerDayTaka: json['pricePerDayTaka'] as num? ?? d.pricePerDayTaka,
       stopShortcode: json['stopShortcode'] as String?,
       stopKeyword: json['stopKeyword'] as String?,
+      inAppSubscribe: json['inAppSubscribe'] as bool? ?? d.inAppSubscribe,
     );
   }
 }

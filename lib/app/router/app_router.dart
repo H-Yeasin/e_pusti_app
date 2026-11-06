@@ -42,6 +42,7 @@ import '../../features/library/presentation/screens/document_screen.dart';
 import '../../features/library/presentation/screens/downloads_screen.dart';
 import '../../features/library/presentation/screens/library_screen.dart';
 import '../../features/pust9/presentation/screens/pust9_screen.dart';
+import '../../features/pust9/presentation/screens/pust9_verify_screen.dart';
 import '../../features/splash/presentation/screens/animated_brand_splash.dart';
 import '../../features/support/presentation/screens/about_screen.dart';
 import '../../features/support/presentation/screens/settings_screen.dart';
@@ -182,6 +183,10 @@ final appRouterProvider = Provider<GoRouter>((ref) {
           GoRoute(
             path: 'tips',
             builder: (context, state) => const Pust9ArchiveScreen(),
+          ),
+          GoRoute(
+            path: 'confirm',
+            builder: (context, state) => const Pust9VerifyScreen(),
           ),
         ],
       ),

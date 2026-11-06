@@ -12,7 +12,12 @@ import '../../../../core/widgets/commercial/ad_slot.dart';
 import '../../../../core/widgets/feedback/ep_banner.dart';
 import '../../../../core/widgets/navigation/ep_app_bar.dart';
 import '../../../auth/presentation/providers/auth_controller.dart';
+import '../../../auth/presentation/phone_number.dart';
+import '../../../auth/presentation/widgets/login_prompt_sheet.dart';
 import '../../domain/entities/mobile_operator.dart';
+import '../../domain/pust9_subscription.dart';
+import '../providers/pust9_providers.dart';
+import '../pust9_messages.dart';
 
 /// SMS-01. One scrollable screen: the dial path and the SMS path are peers,
 /// and copying has equal weight to dialling. Never a dead end.
@@ -26,6 +31,13 @@ class Pust9Screen extends ConsumerWidget {
     final phone = ref.watch(authControllerProvider).phoneNumber;
     final notEligible =
         phone != null && !MobileOperator.fromPhoneNumber(phone).supportsPust9;
+    final inApp = ref.watch(pust9InAppAvailableProvider);
+    final subscription = ref.watch(pust9SubscriptionProvider);
+    final status = subscription.value;
+    final subscribed = status?.isSubscribed ?? false;
+    // The status note says the app can't see the subscription; drop it once
+    // bdapps has told us.
+    final knowsStatus = inApp && status != null && !subscription.hasError;
     final theme = Theme.of(context);
 
     return Scaffold(
@@ -55,69 +67,88 @@ class Pust9Screen extends ConsumerWidget {
           const SizedBox(height: EpSpace.s3),
           _ChargeRow(price: context.digits(pust9.pricePerDayTaka)),
           const SizedBox(height: EpSpace.s5),
-          _PathCard(
-            badge: 'A',
-            title: l10n.pust9PathATitle,
-            fields: [_CodeField(value: pust9.ussdCode)],
-            primaryLabel: l10n.pust9DialAction,
-            primaryIcon: Icons.call_outlined,
-            onPrimary: () => Launcher.dial(context, pust9.ussdCode),
-            onCopy: () => Launcher.copy(context, pust9.ussdCode),
-            steps: [
-              l10n.pust9PathAStep1,
-              l10n.pust9PathAStep2,
-              l10n.pust9PathAStep3,
-            ],
-          ),
-          const SizedBox(height: EpSpace.s4),
-          _PathCard(
-            badge: 'B',
-            title: l10n.pust9PathBTitle,
-            fields: [
-              _CodeField(
-                label: l10n.pust9ShortcodeLabel,
-                value: 'To: ${pust9.shortcode}',
+          if (subscribed)
+            _SubscribedCard(status: status!)
+          else ...[
+            if (inApp && !notEligible) ...[
+              _InAppCard(
+                phone: phone,
+                unsubscribed: status?.phase == Pust9Phase.unsubscribed,
               ),
-              _CodeField(label: l10n.pust9MessageLabel, value: pust9.keyword),
+              const SizedBox(height: EpSpace.s5),
+              Text(l10n.pust9OrManual, style: theme.textTheme.titleMedium),
+              const SizedBox(height: EpSpace.s3),
             ],
-            primaryLabel: l10n.pust9OpenSmsAction,
-            primaryIcon: Icons.sms_outlined,
-            onPrimary: () =>
-                Launcher.sms(context, to: pust9.shortcode, body: pust9.keyword),
-            onCopy: () => Launcher.copy(context, pust9.keyword),
-            steps: [l10n.pust9PathBStep1, l10n.pust9PathBStep2],
-          ),
-          if (notEligible) ...[
-            const SizedBox(height: EpSpace.s5),
-            Text(l10n.pust9StillOpen, style: theme.textTheme.titleMedium),
-            const SizedBox(height: EpSpace.s2),
-            Row(
-              children: [
-                Expanded(
-                  child: OutlinedButton.icon(
-                    onPressed: () => context.push(AppRoutes.courses),
-                    icon: const Icon(Icons.menu_book_outlined),
-                    label: Text(l10n.homeCourse),
-                  ),
-                ),
-                const SizedBox(width: EpSpace.s3),
-                Expanded(
-                  child: OutlinedButton.icon(
-                    onPressed: () => context.push(AppRoutes.digiSkills),
-                    icon: const Icon(Icons.auto_awesome_outlined),
-                    label: Text(l10n.homeDigiSkill),
-                  ),
-                ),
+            _PathCard(
+              badge: 'A',
+              title: l10n.pust9PathATitle,
+              fields: [_CodeField(value: pust9.ussdCode)],
+              primaryLabel: l10n.pust9DialAction,
+              primaryIcon: Icons.call_outlined,
+              onPrimary: () => Launcher.dial(context, pust9.ussdCode),
+              onCopy: () => Launcher.copy(context, pust9.ussdCode),
+              steps: [
+                l10n.pust9PathAStep1,
+                l10n.pust9PathAStep2,
+                l10n.pust9PathAStep3,
               ],
             ),
+            const SizedBox(height: EpSpace.s4),
+            _PathCard(
+              badge: 'B',
+              title: l10n.pust9PathBTitle,
+              fields: [
+                _CodeField(
+                  label: l10n.pust9ShortcodeLabel,
+                  value: 'To: ${pust9.shortcode}',
+                ),
+                _CodeField(label: l10n.pust9MessageLabel, value: pust9.keyword),
+              ],
+              primaryLabel: l10n.pust9OpenSmsAction,
+              primaryIcon: Icons.sms_outlined,
+              onPrimary: () => Launcher.sms(
+                context,
+                to: pust9.shortcode,
+                body: pust9.keyword,
+              ),
+              onCopy: () => Launcher.copy(context, pust9.keyword),
+              steps: [l10n.pust9PathBStep1, l10n.pust9PathBStep2],
+            ),
+            if (notEligible) ...[
+              const SizedBox(height: EpSpace.s5),
+              Text(l10n.pust9StillOpen, style: theme.textTheme.titleMedium),
+              const SizedBox(height: EpSpace.s2),
+              Row(
+                children: [
+                  Expanded(
+                    child: OutlinedButton.icon(
+                      onPressed: () => context.push(AppRoutes.courses),
+                      icon: const Icon(Icons.menu_book_outlined),
+                      label: Text(l10n.homeCourse),
+                    ),
+                  ),
+                  const SizedBox(width: EpSpace.s3),
+                  Expanded(
+                    child: OutlinedButton.icon(
+                      onPressed: () => context.push(AppRoutes.digiSkills),
+                      icon: const Icon(Icons.auto_awesome_outlined),
+                      label: Text(l10n.homeDigiSkill),
+                    ),
+                  ),
+                ],
+              ),
+            ],
           ],
           const SizedBox(height: EpSpace.s5),
-          EpBanner(
-            key: const ValueKey('pust9-status-note'),
-            icon: Icons.help_outline_rounded,
-            message: l10n.pust9StatusNote,
-          ),
-          if (pust9.stopKeyword != null && pust9.stopShortcode != null) ...[
+          if (!knowsStatus)
+            EpBanner(
+              key: const ValueKey('pust9-status-note'),
+              icon: Icons.help_outline_rounded,
+              message: l10n.pust9StatusNote,
+            ),
+          if (!subscribed &&
+              pust9.stopKeyword != null &&
+              pust9.stopShortcode != null) ...[
             const SizedBox(height: EpSpace.s4),
             Text(l10n.pust9StopTitle, style: theme.textTheme.titleMedium),
             const SizedBox(height: EpSpace.s1),
@@ -316,6 +347,243 @@ class _PathCard extends StatelessWidget {
                 ],
               ),
             ),
+        ],
+      ),
+    );
+  }
+}
+
+/// The bdapps OTP path: one tap sends the code, the next screen confirms.
+class _InAppCard extends ConsumerStatefulWidget {
+  const _InAppCard({required this.phone, required this.unsubscribed});
+
+  final String? phone;
+  final bool unsubscribed;
+
+  @override
+  ConsumerState<_InAppCard> createState() => _InAppCardState();
+}
+
+class _InAppCardState extends ConsumerState<_InAppCard> {
+  bool _busy = false;
+  Object? _error;
+
+  Future<void> _subscribe() async {
+    final phone = widget.phone;
+    final l10n = context.l10n;
+    if (phone == null) {
+      await showLoginPrompt(
+        context,
+        returnTo: AppRoutes.pust9,
+        title: l10n.pust9LoginTitle,
+        body: l10n.pust9LoginBody,
+      );
+      return;
+    }
+    setState(() {
+      _busy = true;
+      _error = null;
+    });
+    try {
+      await ref.read(pust9SubscriptionProvider.notifier).requestOtp(phone);
+      if (mounted) await context.push(AppRoutes.pust9Verify);
+    } on Pust9Failure catch (e) {
+      if (mounted) setState(() => _error = e);
+    } finally {
+      if (mounted) setState(() => _busy = false);
+    }
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final l10n = context.l10n;
+    final theme = Theme.of(context);
+    final phone = widget.phone;
+    final error = _error;
+    return Container(
+      key: const ValueKey('pust9-in-app'),
+      padding: const EdgeInsets.all(EpSpace.cardPadding),
+      decoration: BoxDecoration(
+        color: EpColors.green50,
+        borderRadius: EpRadius.mdAll,
+        border: Border.all(color: EpColors.green100),
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          Text(l10n.pust9InAppTitle, style: theme.textTheme.titleMedium),
+          const SizedBox(height: EpSpace.s2),
+          if (widget.unsubscribed) ...[
+            Text(
+              l10n.pust9Unsubscribed,
+              key: const ValueKey('pust9-unsubscribed'),
+              style: theme.textTheme.bodyMedium,
+            ),
+            const SizedBox(height: EpSpace.s2),
+          ],
+          Text(
+            phone == null
+                ? l10n.pust9InAppBodyLoggedOut
+                : l10n.pust9InAppBody(
+                    context.digits(PhoneNumber.display(phone)),
+                  ),
+            style: theme.textTheme.bodyMedium,
+          ),
+          if (error != null) ...[
+            const SizedBox(height: EpSpace.s3),
+            EpBanner(
+              key: const ValueKey('pust9-in-app-error'),
+              tone: EpBannerTone.destructive,
+              message: pust9FailureMessage(context, error),
+            ),
+          ],
+          const SizedBox(height: EpSpace.s3),
+          FilledButton.icon(
+            key: const ValueKey('pust9-in-app-subscribe'),
+            onPressed: _busy ? null : _subscribe,
+            icon: _busy
+                ? const SizedBox.square(
+                    dimension: 18,
+                    child: CircularProgressIndicator(strokeWidth: 2),
+                  )
+                : const Icon(Icons.check_circle_outline_rounded),
+            label: Text(l10n.pust9InAppAction),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+/// Live status from bdapps, with a confirmed stop.
+class _SubscribedCard extends ConsumerStatefulWidget {
+  const _SubscribedCard({required this.status});
+
+  final Pust9Status status;
+
+  @override
+  ConsumerState<_SubscribedCard> createState() => _SubscribedCardState();
+}
+
+class _SubscribedCardState extends ConsumerState<_SubscribedCard> {
+  bool _busy = false;
+  Object? _error;
+
+  Future<void> _stop() async {
+    final l10n = context.l10n;
+    final confirmed = await showDialog<bool>(
+      context: context,
+      builder: (dialogContext) => AlertDialog(
+        title: Text(l10n.pust9StopConfirmTitle),
+        content: Text(l10n.pust9StopConfirmBody),
+        actions: [
+          TextButton(
+            onPressed: () => Navigator.of(dialogContext).pop(false),
+            child: Text(l10n.cancelAction),
+          ),
+          TextButton(
+            key: const ValueKey('pust9-stop-confirm'),
+            onPressed: () => Navigator.of(dialogContext).pop(true),
+            style: TextButton.styleFrom(
+              foregroundColor: EpColors.destructiveText,
+            ),
+            child: Text(l10n.pust9StopConfirmAction),
+          ),
+        ],
+      ),
+    );
+    if (confirmed != true || !mounted) return;
+    setState(() {
+      _busy = true;
+      _error = null;
+    });
+    final messenger = ScaffoldMessenger.of(context);
+    try {
+      await ref.read(pust9SubscriptionProvider.notifier).unsubscribe();
+      messenger.showSnackBar(SnackBar(content: Text(l10n.pust9StoppedToast)));
+    } on Pust9Failure catch (e) {
+      if (mounted) setState(() => _error = e);
+    } finally {
+      if (mounted) setState(() => _busy = false);
+    }
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final l10n = context.l10n;
+    final theme = Theme.of(context);
+    final status = widget.status;
+    final error = _error;
+    return Container(
+      key: const ValueKey('pust9-subscribed'),
+      padding: const EdgeInsets.all(EpSpace.cardPadding),
+      decoration: BoxDecoration(
+        color: EpColors.green50,
+        borderRadius: EpRadius.mdAll,
+        border: Border.all(color: EpColors.green100),
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          Row(
+            children: [
+              const Icon(Icons.check_circle_rounded, color: EpColors.green700),
+              const SizedBox(width: EpSpace.s2),
+              Expanded(
+                child: Text(
+                  l10n.pust9SubscribedTitle,
+                  style: theme.textTheme.titleMedium,
+                ),
+              ),
+            ],
+          ),
+          if (status.courseDays > 0) ...[
+            const SizedBox(height: EpSpace.s3),
+            Text(
+              l10n.pust9SubscribedDay(
+                context.digits(status.day),
+                context.digits(status.courseDays),
+              ),
+              style: theme.textTheme.bodyLarge,
+            ),
+            const SizedBox(height: EpSpace.s2),
+            ClipRRect(
+              borderRadius: EpRadius.smAll,
+              child: LinearProgressIndicator(
+                value: status.day / status.courseDays,
+                minHeight: 6,
+              ),
+            ),
+          ],
+          if (status.phone != null) ...[
+            const SizedBox(height: EpSpace.s3),
+            Text(
+              l10n.pust9SubscribedPhone(
+                context.digits(PhoneNumber.display(status.phone!)),
+              ),
+              style: theme.textTheme.bodySmall,
+            ),
+          ],
+          if (error != null) ...[
+            const SizedBox(height: EpSpace.s3),
+            EpBanner(
+              tone: EpBannerTone.destructive,
+              message: pust9FailureMessage(context, error),
+            ),
+          ],
+          const SizedBox(height: EpSpace.s3),
+          Align(
+            alignment: AlignmentDirectional.centerStart,
+            child: TextButton.icon(
+              key: const ValueKey('pust9-in-app-stop'),
+              onPressed: _busy ? null : _stop,
+              style: TextButton.styleFrom(
+                foregroundColor: EpColors.destructiveText,
+              ),
+              icon: const Icon(Icons.cancel_outlined),
+              label: Text(l10n.pust9StopAction),
+            ),
+          ),
         ],
       ),
     );

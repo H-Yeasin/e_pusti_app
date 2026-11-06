@@ -1811,4 +1811,97 @@ class EPustiGeneratedLocalizationsBn extends EPustiGeneratedLocalizations {
   @override
   String get growthNeedsSex =>
       'WHO বৃদ্ধির গ্রাফ ছেলে ও মেয়েদের জন্য আলাদা, তাই লিঙ্গ \"অন্যান্য\" বা দেওয়া না থাকলে গ্রাফ দেখানো যায় না।';
+
+  @override
+  String get pust9InAppTitle => 'অ্যাপেই সাবস্ক্রাইব করুন';
+
+  @override
+  String pust9InAppBody(String phone) {
+    return '$phone নম্বরে এসএমএসে একটি কোড পাঠানো হবে। কোডটি এখানে দিলেই PUST9 শুরু হবে।';
+  }
+
+  @override
+  String get pust9InAppBodyLoggedOut =>
+      'আপনার রবি বা এয়ারটেল নম্বর দিয়ে লগইন করুন, তারপর এসএমএসে পাওয়া কোড দিয়ে নিশ্চিত করুন।';
+
+  @override
+  String get pust9InAppAction => 'সাবস্ক্রাইব করুন';
+
+  @override
+  String get pust9OrManual => 'অথবা নিজে সাবস্ক্রাইব করুন';
+
+  @override
+  String get pust9LoginTitle => 'সাবস্ক্রাইব করতে লগইন করুন';
+
+  @override
+  String get pust9LoginBody =>
+      'যে রবি বা এয়ারটেল নম্বরে প্রতিদিনের পরামর্শ পেতে চান, সেই নম্বর দিয়ে লগইন করুন।';
+
+  @override
+  String get pust9OtpTitle => 'সাবস্ক্রিপশন নিশ্চিত করুন';
+
+  @override
+  String pust9OtpBody(String phone) {
+    return '$phone নম্বরে এসএমএসে পাঠানো কোডটি দিন।';
+  }
+
+  @override
+  String pust9OtpCharge(String price) {
+    return 'নিশ্চিত করলে আপনার মোবাইল ব্যালেন্স থেকে ৳$price/দিন + ভ্যাট, সম্পূরক শুল্ক ও সারচার্জ কাটা হবে।';
+  }
+
+  @override
+  String get pust9OtpFieldLabel => 'কোড';
+
+  @override
+  String get pust9OtpConfirm => 'নিশ্চিত করে সাবস্ক্রাইব করুন';
+
+  @override
+  String get pust9ErrorService =>
+      'এই মুহূর্তে PUST9-এ সংযোগ করা যাচ্ছে না। আবার চেষ্টা করুন, অথবা ডায়াল বা এসএমএস করে সাবস্ক্রাইব করুন।';
+
+  @override
+  String get pust9ErrorRateLimited =>
+      'অনেকবার কোড চাওয়া হয়েছে। এক ঘণ্টা পর আবার চেষ্টা করুন।';
+
+  @override
+  String get pust9SubscribedTitle => 'আপনি সাবস্ক্রাইব করেছেন';
+
+  @override
+  String pust9SubscribedDay(String day, String days) {
+    return '$days দিনের মধ্যে দিন $day';
+  }
+
+  @override
+  String pust9SubscribedPhone(String phone) {
+    return 'পরামর্শ যাবে $phone নম্বরে';
+  }
+
+  @override
+  String get pust9SubscribedToast => 'PUST9 শুরু হয়েছে। প্রথম পরামর্শ আসছে।';
+
+  @override
+  String get pust9StopAction => 'সাবস্ক্রিপশন বন্ধ করুন';
+
+  @override
+  String get pust9StopConfirmTitle => 'PUST9 বন্ধ করবেন?';
+
+  @override
+  String get pust9StopConfirmBody =>
+      'প্রতিদিনের পরামর্শ ও দৈনিক চার্জ বন্ধ হবে। যেকোনো সময় আবার সাবস্ক্রাইব করতে পারবেন।';
+
+  @override
+  String get pust9StopConfirmAction => 'বন্ধ করুন';
+
+  @override
+  String get pust9StoppedToast => 'PUST9 বন্ধ হয়েছে।';
+
+  @override
+  String get pust9Unsubscribed =>
+      'আপনার PUST9 সাবস্ক্রিপশন বন্ধ আছে। যেকোনো সময় আবার সাবস্ক্রাইব করতে পারবেন।';
+
+  @override
+  String homePust9Subscribed(String day) {
+    return 'সাবস্ক্রাইবড · দিন $day';
+  }
 }

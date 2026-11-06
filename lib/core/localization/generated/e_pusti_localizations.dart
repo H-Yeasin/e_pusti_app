@@ -3274,6 +3274,156 @@ abstract class EPustiGeneratedLocalizations {
   /// In en, this message translates to:
   /// **'WHO growth charts are separate for boys and girls, so they can\'t be shown when sex is \"Other\" or not given.'**
   String get growthNeedsSex;
+
+  /// No description provided for @pust9InAppTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Subscribe in the app'**
+  String get pust9InAppTitle;
+
+  /// No description provided for @pust9InAppBody.
+  ///
+  /// In en, this message translates to:
+  /// **'We\'ll send a code by SMS to {phone}. Enter it here and PUST9 starts.'**
+  String pust9InAppBody(String phone);
+
+  /// No description provided for @pust9InAppBodyLoggedOut.
+  ///
+  /// In en, this message translates to:
+  /// **'Log in with your Robi or Airtel number, then confirm with the code we send by SMS.'**
+  String get pust9InAppBodyLoggedOut;
+
+  /// No description provided for @pust9InAppAction.
+  ///
+  /// In en, this message translates to:
+  /// **'Subscribe'**
+  String get pust9InAppAction;
+
+  /// No description provided for @pust9OrManual.
+  ///
+  /// In en, this message translates to:
+  /// **'Or subscribe yourself'**
+  String get pust9OrManual;
+
+  /// No description provided for @pust9LoginTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Log in to subscribe'**
+  String get pust9LoginTitle;
+
+  /// No description provided for @pust9LoginBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Log in with the Robi or Airtel number that should get the daily tips.'**
+  String get pust9LoginBody;
+
+  /// No description provided for @pust9OtpTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Confirm subscription'**
+  String get pust9OtpTitle;
+
+  /// No description provided for @pust9OtpBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Enter the code sent by SMS to {phone}.'**
+  String pust9OtpBody(String phone);
+
+  /// No description provided for @pust9OtpCharge.
+  ///
+  /// In en, this message translates to:
+  /// **'By confirming you agree to ৳{price}/day + VAT, supplementary duty and surcharge, charged to your mobile balance.'**
+  String pust9OtpCharge(String price);
+
+  /// No description provided for @pust9OtpFieldLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Code'**
+  String get pust9OtpFieldLabel;
+
+  /// No description provided for @pust9OtpConfirm.
+  ///
+  /// In en, this message translates to:
+  /// **'Confirm and subscribe'**
+  String get pust9OtpConfirm;
+
+  /// No description provided for @pust9ErrorService.
+  ///
+  /// In en, this message translates to:
+  /// **'PUST9 couldn\'t be reached right now. Try again, or subscribe by dialling or SMS.'**
+  String get pust9ErrorService;
+
+  /// No description provided for @pust9ErrorRateLimited.
+  ///
+  /// In en, this message translates to:
+  /// **'Too many codes requested. Please wait an hour and try again.'**
+  String get pust9ErrorRateLimited;
+
+  /// No description provided for @pust9SubscribedTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'You\'re subscribed'**
+  String get pust9SubscribedTitle;
+
+  /// No description provided for @pust9SubscribedDay.
+  ///
+  /// In en, this message translates to:
+  /// **'Day {day} of {days}'**
+  String pust9SubscribedDay(String day, String days);
+
+  /// No description provided for @pust9SubscribedPhone.
+  ///
+  /// In en, this message translates to:
+  /// **'Tips go to {phone}'**
+  String pust9SubscribedPhone(String phone);
+
+  /// No description provided for @pust9SubscribedToast.
+  ///
+  /// In en, this message translates to:
+  /// **'PUST9 has started. Your first tip is on its way.'**
+  String get pust9SubscribedToast;
+
+  /// No description provided for @pust9StopAction.
+  ///
+  /// In en, this message translates to:
+  /// **'Stop subscription'**
+  String get pust9StopAction;
+
+  /// No description provided for @pust9StopConfirmTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Stop PUST9?'**
+  String get pust9StopConfirmTitle;
+
+  /// No description provided for @pust9StopConfirmBody.
+  ///
+  /// In en, this message translates to:
+  /// **'The daily tips and the daily charge stop. You can subscribe again any time.'**
+  String get pust9StopConfirmBody;
+
+  /// No description provided for @pust9StopConfirmAction.
+  ///
+  /// In en, this message translates to:
+  /// **'Stop'**
+  String get pust9StopConfirmAction;
+
+  /// No description provided for @pust9StoppedToast.
+  ///
+  /// In en, this message translates to:
+  /// **'PUST9 is stopped.'**
+  String get pust9StoppedToast;
+
+  /// No description provided for @pust9Unsubscribed.
+  ///
+  /// In en, this message translates to:
+  /// **'Your PUST9 subscription is stopped. You can subscribe again any time.'**
+  String get pust9Unsubscribed;
+
+  /// No description provided for @homePust9Subscribed.
+  ///
+  /// In en, this message translates to:
+  /// **'Subscribed · Day {day}'**
+  String homePust9Subscribed(String day);
 }
 
 class _EPustiGeneratedLocalizationsDelegate

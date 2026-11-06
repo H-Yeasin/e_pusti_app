@@ -1,0 +1,14 @@
+# Function settings for `supabase functions serve` / `deploy`. Run
+# `supabase init` to generate the rest of the local-dev config if needed.
+
+[functions.pust9-subscribe]
+verify_jwt = true
+
+# Called by bdapps, which sends no Supabase JWT; protected by the secret
+# path token and the applicationId check instead.
+[functions.bdapps-callback]
+verify_jwt = false
+
+# Called by pg_cron with the x-cron-token header.
+[functions.pust9-daily-send]
+verify_jwt = false

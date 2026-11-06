@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
+import '../../../pust9/presentation/providers/pust9_providers.dart';
 import '../../../../app/providers/app_locale_controller_provider.dart';
 import '../../../../app/router/app_routes.dart';
 import '../../../../core/config/remote_config.dart';
@@ -95,6 +96,15 @@ class SettingsScreen extends ConsumerWidget {
               },
             ),
             if (isLoggedIn) ...[
+              if (ref.watch(pust9InAppAvailableProvider)) ...[
+                const Divider(height: 1),
+                ListTile(
+                  key: const ValueKey('settings-pust9'),
+                  title: Text(l10n.pust9Title),
+                  trailing: const Icon(Icons.chevron_right_rounded),
+                  onTap: () => context.push(AppRoutes.pust9),
+                ),
+              ],
               const Divider(height: 1),
               ListTile(
                 key: const ValueKey('settings-privacy'),

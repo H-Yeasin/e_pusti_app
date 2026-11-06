@@ -11,6 +11,7 @@ import '../../../../core/widgets/commercial/ad_slot.dart';
 import '../../../../core/widgets/display/ep_promo_card.dart';
 import '../../../auth/presentation/providers/auth_controller.dart';
 import '../../../auth/presentation/widgets/login_prompt_sheet.dart';
+import '../../../pust9/presentation/providers/pust9_providers.dart';
 import '../../../system/presentation/widgets/offline_card.dart';
 import '../widgets/app_sidebar.dart';
 import '../widgets/for_you_card.dart';
@@ -24,6 +25,10 @@ class HomeScreen extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final l10n = context.l10n;
     final pust9 = ref.watch(remoteConfigProvider.select((c) => c.pust9));
+    final pust9Status = ref.watch(pust9SubscriptionProvider).value;
+    final pust9Action = pust9Status != null && pust9Status.isSubscribed
+        ? l10n.homePust9Subscribed(context.digits(pust9Status.day))
+        : l10n.homeSubscribeButton;
 
     void open(String route) {
       if (route == AppRoutes.home) {
@@ -122,7 +127,7 @@ class HomeScreen extends ConsumerWidget {
                         subtitle: l10n.homeSmsSubtitle(
                           context.digits(pust9.courseDays),
                         ),
-                        actionLabel: l10n.homeSubscribeButton,
+                        actionLabel: pust9Action,
                         onAction: () => open(AppRoutes.pust9),
                       ),
                       const SizedBox(height: EpSpace.s5),

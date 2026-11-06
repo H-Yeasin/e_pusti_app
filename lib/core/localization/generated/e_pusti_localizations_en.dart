@@ -1815,4 +1815,98 @@ class EPustiGeneratedLocalizationsEn extends EPustiGeneratedLocalizations {
   @override
   String get growthNeedsSex =>
       'WHO growth charts are separate for boys and girls, so they can\'t be shown when sex is \"Other\" or not given.';
+
+  @override
+  String get pust9InAppTitle => 'Subscribe in the app';
+
+  @override
+  String pust9InAppBody(String phone) {
+    return 'We\'ll send a code by SMS to $phone. Enter it here and PUST9 starts.';
+  }
+
+  @override
+  String get pust9InAppBodyLoggedOut =>
+      'Log in with your Robi or Airtel number, then confirm with the code we send by SMS.';
+
+  @override
+  String get pust9InAppAction => 'Subscribe';
+
+  @override
+  String get pust9OrManual => 'Or subscribe yourself';
+
+  @override
+  String get pust9LoginTitle => 'Log in to subscribe';
+
+  @override
+  String get pust9LoginBody =>
+      'Log in with the Robi or Airtel number that should get the daily tips.';
+
+  @override
+  String get pust9OtpTitle => 'Confirm subscription';
+
+  @override
+  String pust9OtpBody(String phone) {
+    return 'Enter the code sent by SMS to $phone.';
+  }
+
+  @override
+  String pust9OtpCharge(String price) {
+    return 'By confirming you agree to ৳$price/day + VAT, supplementary duty and surcharge, charged to your mobile balance.';
+  }
+
+  @override
+  String get pust9OtpFieldLabel => 'Code';
+
+  @override
+  String get pust9OtpConfirm => 'Confirm and subscribe';
+
+  @override
+  String get pust9ErrorService =>
+      'PUST9 couldn\'t be reached right now. Try again, or subscribe by dialling or SMS.';
+
+  @override
+  String get pust9ErrorRateLimited =>
+      'Too many codes requested. Please wait an hour and try again.';
+
+  @override
+  String get pust9SubscribedTitle => 'You\'re subscribed';
+
+  @override
+  String pust9SubscribedDay(String day, String days) {
+    return 'Day $day of $days';
+  }
+
+  @override
+  String pust9SubscribedPhone(String phone) {
+    return 'Tips go to $phone';
+  }
+
+  @override
+  String get pust9SubscribedToast =>
+      'PUST9 has started. Your first tip is on its way.';
+
+  @override
+  String get pust9StopAction => 'Stop subscription';
+
+  @override
+  String get pust9StopConfirmTitle => 'Stop PUST9?';
+
+  @override
+  String get pust9StopConfirmBody =>
+      'The daily tips and the daily charge stop. You can subscribe again any time.';
+
+  @override
+  String get pust9StopConfirmAction => 'Stop';
+
+  @override
+  String get pust9StoppedToast => 'PUST9 is stopped.';
+
+  @override
+  String get pust9Unsubscribed =>
+      'Your PUST9 subscription is stopped. You can subscribe again any time.';
+
+  @override
+  String homePust9Subscribed(String day) {
+    return 'Subscribed · Day $day';
+  }
 }

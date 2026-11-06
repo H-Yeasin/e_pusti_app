@@ -38,6 +38,7 @@ abstract final class AppRoutes {
   static const saved = '/saved';
   static const journey = '/journey';
   static const pust9Archive = '/pust9/tips';
+  static const pust9Verify = '/pust9/confirm';
   static String assessment(String id) => '$assessments/$id';
   static String assessmentResult(String id) => '$assessments/$id/result';
   static String certificate(String code) => '$certificates/$code';
@@ -65,6 +66,7 @@ abstract final class AppRoutes {
     consent,
     assessments,
     journey,
+    pust9Verify,
   };
 
   /// A gated path or anything beneath it (e.g. `/profile/person/x`).

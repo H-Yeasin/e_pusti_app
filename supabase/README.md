@@ -86,6 +86,75 @@ only the code, holder name, title, source, issue date and revoked flag.
 - `slot_events` accepts impressions/clicks only from signed-in users who
   accepted the terms; nobody can read it through the API.
 
+## PUST9 on bdapps (Robi/Airtel)
+
+PUST9 is a bdapps subscription app (shortcode 21213, USSD `*213*02025#`).
+Three Edge Functions in `functions/` talk to the bdapps TAP API
+(<https://dev.bdapps.com/API_Documentation/bdapps_tap_api.html>). The bdapps
+application password lives only in function secrets and never goes in the app.
+
+| Function | Who calls it | What it does |
+|----------|--------------|--------------|
+| `pust9-subscribe` | the app (signed-in user, JWT checked) | `request_otp` → bdapps `/otp/request`; `verify_otp` → `/otp/verify` (registers the subscription); `status` → `/subscription/getStatus`; `unsubscribe` → `/subscription/send` action 0 |
+| `bdapps-callback` | bdapps (public, `verify_jwt = false`) | subscription notify, SMS MO keywords (START / STOP / anything else → help), delivery reports, the USSD menu |
+| `pust9-daily-send` | `pg_cron` at 09:00 Dhaka | sends each registered member their next tip, batched 100 numbers per bdapps request; safe to run twice |
+
+Tables (migration `20261107000000_pust9_bdapps.sql`):
+- `pust9_members`: one row per bdapps subscriber, however they joined.
+- `pust9_subscriptions`: links an app account to a member. Users can read only their own status columns.
+- `pust9_tips`: one tip per day.
+- `bdapps_events`: every callback, with the password removed, kept 90 days.
+- `ussd_sessions`: where each live USSD session is in the menu.
+
+Only the service role writes these tables.
+
+### Setup
+
+1. Ask bdapps (support@bdapps.com) to confirm that the **OTP** and
+   **Subscription** APIs are enabled for the PUST9 app, and that the
+   subscription charge is Tk 1/day.
+2. Set the function secrets. Generate two long random tokens:
+   ```bash
+   supabase secrets set BDAPPS_APP_ID=APP_XXXXXX BDAPPS_PASSWORD=<bdapps password> \
+     BDAPPS_CALLBACK_TOKEN=<random> PUST9_CRON_TOKEN=<random>
+   ```
+   Optional settings:
+   - `BDAPPS_BASE_URL`: defaults to `https://developer.bdapps.com`. Point it at a mock while testing.
+   - `PUST9_AUTO_STOP=false`: keep subscriptions running after the last day. By default the course stops itself so nobody is charged past it.
+3. Deploy:
+   ```bash
+   supabase db push
+   supabase functions deploy pust9-subscribe
+   supabase functions deploy bdapps-callback --no-verify-jwt
+   supabase functions deploy pust9-daily-send --no-verify-jwt
+   ```
+4. Enable `pg_cron` and `pg_net` (Database → Extensions). Add two Vault secrets:
+   - `project_url`: `https://<project>.supabase.co`
+   - `pust9_cron_token`: the same value as `PUST9_CRON_TOKEN`
+
+   The migration schedules the daily run.
+5. Seed `pust9_tips` with BIID-reviewed content: `day_no` from 1 to `courseDays`, plus `body_bn`. A day with no tip is skipped and retried the next day, and the function logs it.
+6. In the bdapps portal, set the app's URLs. `<token>` is `BDAPPS_CALLBACK_TOKEN`:
+   - Subscription notification: `https://<project>.supabase.co/functions/v1/bdapps-callback/<token>/subscription`
+   - SMS MO: `…/bdapps-callback/<token>/sms`
+   - SMS delivery report: `…/bdapps-callback/<token>/sms-report`
+   - USSD: `…/bdapps-callback/<token>/ussd`
+
+   **Cut-over:** saving these URLs moves 21213 / `*213*02025#` handling away from whatever serves it today. Make sure tips are seeded first.
+7. Turn the app's in-app path on in remote config: set
+   `app_config.mobile.pust9.inAppSubscribe = true`. Also set `stopKeyword` and
+   `stopShortcode` so the manual stop instructions show.
+
+### Testing
+
+- `cd supabase/functions && deno test --allow-env tests/` runs the client, callback routing, USSD menu and daily-send tests against a fake bdapps.
+- To test locally, run `supabase functions serve --env-file .env.local` with `BDAPPS_BASE_URL` pointing at a mock. Post the sample payloads from the bdapps docs to `/functions/v1/bdapps-callback/<token>/…`.
+- bdapps has no public sandbox. The final check is a real Robi or Airtel SIM: subscribe in the app, get the code and the day-1 SMS, dial the USSD menu, then stop.
+
+Notes:
+- bdapps may return a **masked** `subscriberId`. That masked id is the member key, and SMS is sent to it.
+- USSD uses encoding 440 (plain ASCII), so the menu is in English. SMS tips are in Bangla.
+
 ## Push notifications (not wired yet)
 
 The inbox and on-device reminders work without a server push. Server push

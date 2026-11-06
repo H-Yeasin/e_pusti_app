@@ -1020,5 +1020,75 @@
   "under5LengthNote": "Under 2 years, length is measured lying down; from 2 years, height standing.",
   "under5OutOfRange": "The saved height is outside the range of the WHO weight-for-height table.",
   "growthNeedsDob": "Add a date of birth to see growth charts.",
-  "growthNeedsSex": "WHO growth charts are separate for boys and girls, so they can't be shown when sex is \"Other\" or not given."
+  "growthNeedsSex": "WHO growth charts are separate for boys and girls, so they can't be shown when sex is \"Other\" or not given.",
+  "pust9InAppTitle": "Subscribe in the app",
+  "pust9InAppBody": "We'll send a code by SMS to {phone}. Enter it here and PUST9 starts.",
+  "@pust9InAppBody": {
+    "placeholders": {
+      "phone": {
+        "type": "String"
+      }
+    }
+  },
+  "pust9InAppBodyLoggedOut": "Log in with your Robi or Airtel number, then confirm with the code we send by SMS.",
+  "pust9InAppAction": "Subscribe",
+  "pust9OrManual": "Or subscribe yourself",
+  "pust9LoginTitle": "Log in to subscribe",
+  "pust9LoginBody": "Log in with the Robi or Airtel number that should get the daily tips.",
+  "pust9OtpTitle": "Confirm subscription",
+  "pust9OtpBody": "Enter the code sent by SMS to {phone}.",
+  "@pust9OtpBody": {
+    "placeholders": {
+      "phone": {
+        "type": "String"
+      }
+    }
+  },
+  "pust9OtpCharge": "By confirming you agree to ৳{price}/day + VAT, supplementary duty and surcharge, charged to your mobile balance.",
+  "@pust9OtpCharge": {
+    "placeholders": {
+      "price": {
+        "type": "String"
+      }
+    }
+  },
+  "pust9OtpFieldLabel": "Code",
+  "pust9OtpConfirm": "Confirm and subscribe",
+  "pust9ErrorService": "PUST9 couldn't be reached right now. Try again, or subscribe by dialling or SMS.",
+  "pust9ErrorRateLimited": "Too many codes requested. Please wait an hour and try again.",
+  "pust9SubscribedTitle": "You're subscribed",
+  "pust9SubscribedDay": "Day {day} of {days}",
+  "@pust9SubscribedDay": {
+    "placeholders": {
+      "day": {
+        "type": "String"
+      },
+      "days": {
+        "type": "String"
+      }
+    }
+  },
+  "pust9SubscribedPhone": "Tips go to {phone}",
+  "@pust9SubscribedPhone": {
+    "placeholders": {
+      "phone": {
+        "type": "String"
+      }
+    }
+  },
+  "pust9SubscribedToast": "PUST9 has started. Your first tip is on its way.",
+  "pust9StopAction": "Stop subscription",
+  "pust9StopConfirmTitle": "Stop PUST9?",
+  "pust9StopConfirmBody": "The daily tips and the daily charge stop. You can subscribe again any time.",
+  "pust9StopConfirmAction": "Stop",
+  "pust9StoppedToast": "PUST9 is stopped.",
+  "pust9Unsubscribed": "Your PUST9 subscription is stopped. You can subscribe again any time.",
+  "homePust9Subscribed": "Subscribed · Day {day}",
+  "@homePust9Subscribed": {
+    "placeholders": {
+      "day": {
+        "type": "String"
+      }
+    }
+  }
 }

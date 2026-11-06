@@ -18,9 +18,11 @@ LmsTable _load(String key, {bool tenths = false}) => LmsTable.parse(
 
 const _account = 'acc1';
 
-final _vertical = find.byWidgetPredicate(
-  (w) => w is Scrollable && w.axisDirection == AxisDirection.down,
-).last;
+final _vertical = find
+    .byWidgetPredicate(
+      (w) => w is Scrollable && w.axisDirection == AxisDirection.down,
+    )
+    .last;
 
 void main() {
   group('WHO 2006 tables reproduce published values', () {
