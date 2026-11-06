@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="bn">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>e-Pushti — সার্টিফিকেট যাচাই</title>
+  <meta name="robots" content="noindex">
+  <style>
+    :root {
+      --green-50: #effcee; --green-600: #19871b; --green-800: #0e4c0f;
+      --n-0: #ffffff; --n-50: #f6f9f6; --n-200: #dadfda; --n-600: #707770; --n-900: #292d29;
+      --destructive-tint: #fff3ee; --destructive-strong: #9d321e;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0; background: var(--n-50); color: var(--n-900);
+      font: 16px/1.5 "Noto Sans Bengali", "Noto Sans", system-ui, sans-serif;
+    }
+    main { max-width: 480px; margin: 0 auto; padding: 24px 16px; }
+    h1 { font-size: 22px; margin: 0 0 4px; }
+    p.lead { color: var(--n-600); margin: 0 0 20px; }
+    form { display: flex; gap: 8px; margin-bottom: 20px; }
+    input {
+      flex: 1; min-width: 0; padding: 12px; font: inherit; text-transform: uppercase;
+      border: 1px solid var(--n-200); border-radius: 10px; background: var(--n-0);
+    }
+    button {
+      padding: 12px 16px; font: inherit; font-weight: 700; color: var(--n-0);
+      background: var(--green-600); border: 0; border-radius: 10px; cursor: pointer;
+    }
+    .card { background: var(--n-0); border: 1px solid var(--n-200); border-radius: 14px; padding: 20px; }
+    .valid { border-color: var(--green-600); background: var(--green-50); }
+    .revoked, .missing { background: var(--destructive-tint); border-color: var(--destructive-strong); }
+    .status { font-weight: 700; margin: 0 0 12px; }
+    .valid .status { color: var(--green-800); }
+    .revoked .status, .missing .status { color: var(--destructive-strong); }
+    dl { margin: 0; display: grid; grid-template-columns: auto 1fr; gap: 6px 12px; }
+    dt { color: var(--n-600); }
+    dd { margin: 0; font-weight: 600; overflow-wrap: anywhere; }
+    footer { color: var(--n-600); font-size: 13px; margin-top: 24px; }
+  </style>
+</head>
+<body>
+<main>
+  <h1>সার্টিফিকেট যাচাই · Verify a certificate</h1>
+  <p class="lead">e-Pushti · BIID Foundation</p>
+
+  <form id="form">
+    <label for="code" hidden>Certificate code</label>
+    <input id="code" name="code" placeholder="EP-2026-XXXXXXXX" autocomplete="off" required>
+    <button type="submit">যাচাই করুন</button>
+  </form>
+
+  <section id="result" aria-live="polite"></section>
+
+  <footer>
+    এই পাতায় শুধু সার্টিফিকেটের সত্যতা দেখানো হয় — অন্য কোনো ব্যক্তিগত তথ্য নয়।<br>
+    Only the certificate's validity is shown — no other personal data.
+  </footer>
+</main>
+
+<script>
+  // Fill in at deploy time (the project URL and its publishable/anon key —
+  // never the service-role key). The function returns only snapshot fields.
+  const SUPABASE_URL = '';
+  const SUPABASE_PUBLISHABLE_KEY = '';
+
+  const form = document.getElementById('form');
+  const input = document.getElementById('code');
+  const result = document.getElementById('result');
+
+  function render(kind, status, rows) {
+    result.replaceChildren();
+    const card = document.createElement('div');
+    card.className = 'card ' + kind;
+    const p = document.createElement('p');
+    p.className = 'status';
+    p.textContent = status;
+    card.append(p);
+    if (rows) {
+      const dl = document.createElement('dl');
+      for (const [label, value] of rows) {
+        const dt = document.createElement('dt');
+        dt.textContent = label;
+        const dd = document.createElement('dd');
+        dd.textContent = value;
+        dl.append(dt, dd);
+      }
+      card.append(dl);
+    }
+    result.append(card);
+  }
+
+  async function verify(raw) {
+    const code = raw.trim().toUpperCase();
+    if (!/^EP-\d{4}-[2-9A-Z]{8}$/.test(code)) {
+      render('missing', 'কোডটি সঠিক নয় · Not a valid code');
+      return;
+    }
+    if (!SUPABASE_URL || !SUPABASE_PUBLISHABLE_KEY) {
+      render('missing', 'যাচাই সেবা এখনো চালু হয়নি · Verification is not configured yet');
+      return;
+    }
+    render('', 'যাচাই করা হচ্ছে… · Checking…');
+    try {
+      const res = await fetch(SUPABASE_URL + '/rest/v1/rpc/verify_certificate', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'apikey': SUPABASE_PUBLISHABLE_KEY,
+          'Authorization': 'Bearer ' + SUPABASE_PUBLISHABLE_KEY,
+        },
+        body: JSON.stringify({ p_code: code }),
+      });
+      if (!res.ok) throw new Error(String(res.status));
+      const data = await res.json();
+      if (!data) {
+        render('missing', 'এই কোডের কোনো সার্টিফিকেট পাওয়া যায়নি · No certificate with this code');
+        return;
+      }
+      const issued = new Date(data.issued_at).toLocaleDateString('bn-BD', {
+        day: 'numeric', month: 'long', year: 'numeric',
+      });
+      const rows = [
+        ['নাম · Name', data.holder_name],
+        ['মডিউল · Module', data.title + (data.source ? ' (' + data.source + ')' : '')],
+        ['ইস্যু · Issued', issued],
+        ['কোড · Code', data.code],
+      ];
+      if (data.revoked) {
+        render('revoked', 'এই সার্টিফিকেটটি বাতিল করা হয়েছে · This certificate has been revoked', rows);
+      } else {
+        render('valid', '✓ সার্টিফিকেটটি বৈধ · This certificate is valid', rows);
+      }
+    } catch (e) {
+      render('missing', 'যাচাই করা যায়নি, পরে আবার চেষ্টা করুন · Could not check, please try again');
+    }
+  }
+
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const code = input.value.trim().toUpperCase();
+    history.replaceState(null, '', '?code=' + encodeURIComponent(code));
+    verify(code);
+  });
+
+  // Supports both /EP-2026-XXXXXXXX (QR target) and ?code=…
+  const fromPath = decodeURIComponent(location.pathname.split('/').pop() || '');
+  const fromQuery = new URLSearchParams(location.search).get('code') || '';
+  const initial = /^EP-/i.test(fromPath) ? fromPath : fromQuery;
+  if (initial) {
+    input.value = initial.toUpperCase();
+    verify(initial);
+  }
+</script>
+</body>
+</html>

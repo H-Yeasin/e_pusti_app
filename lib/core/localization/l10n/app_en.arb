@@ -2,10 +2,10 @@
   "@@locale": "en",
   "languageSelectionTitle": "Select language",
   "chooseLanguage": "Choose your language",
-  "banglaName": "\u09ac\u09be\u0982\u09b2\u09be",
+  "banglaName": "বাংলা",
   "banglaLabel": "Bangla",
   "englishName": "English",
-  "englishLabel": "\u0987\u0982\u09b0\u09c7\u099c\u09bf",
+  "englishLabel": "ইংরেজি",
   "languageCanChangeLater": "You can change this anytime from Settings",
   "continueLabel": "Continue",
   "runningEnvironment": "Running {environmentLabel}",
@@ -17,12 +17,19 @@
     }
   },
   "homeAppTitle": "e-Pushti",
-  "homeSmsTitle": "Daily nutrition SMS - PUST9",
-  "homeSmsSubtitle": "30-day course with daily tips delivered by SMS",
+  "homeSmsTitle": "Daily nutrition SMS — PUST9",
+  "homeSmsSubtitle": "{days}-day course, daily tips straight to your SMS",
+  "@homeSmsSubtitle": {
+    "placeholders": {
+      "days": {
+        "type": "String"
+      }
+    }
+  },
   "homeSubscribeButton": "Subscribe",
   "homeWebinar": "Webinar",
   "homeCourse": "Course",
-  "homeDigiSkill": "Digi Skill",
+  "homeDigiSkill": "Digi Skills",
   "homeLibrary": "Library",
   "homeBmiTitle": "BMI Calculator",
   "homeBmiSubtitle": "Enter height and weight for an instant result",
@@ -30,5 +37,988 @@
   "homeNutritionTipTitle": "Today's nutrition tip",
   "homeNutritionTipSubtitle": "Add colorful vegetables to family meals",
   "homeHealthCheckTitle": "Health check",
-  "homeHealthCheckSubtitle": "Record weight and height regularly"
+  "homeHealthCheckSubtitle": "Record weight and height regularly",
+  "menuHome": "Home",
+  "menuFamilyProfile": "Family & profile",
+  "menuCertificates": "My certificates",
+  "menuRegistrations": "My registrations",
+  "menuNotifications": "Notifications",
+  "menuAbout": "About us",
+  "menuSupport": "Support / Feedback",
+  "menuSettings": "Settings",
+  "menuLogin": "Log in →",
+  "menuLockedHint": "Login required",
+  "menuVersion": "e-Pushti · version {version}",
+  "@menuVersion": {
+    "placeholders": {
+      "version": {
+        "type": "String"
+      }
+    }
+  },
+  "loginPromptTitle": "Save your progress",
+  "loginPromptBody": "Log in to use this. You'll come back to exactly where you were.",
+  "loginAction": "Log in",
+  "notNowAction": "Not now",
+  "loginTitle": "Log in",
+  "pust9Title": "PUST9 subscription",
+  "academyTitle": "e-Pushti Academy",
+  "comingSoonTitle": "Coming soon",
+  "comingSoonBody": "This section is being built.",
+  "backToHomeAction": "Back to home",
+  "devSimulateLogin": "Simulate login (dev only)",
+  "devCatalogTitle": "Component catalog",
+  "partnerContentLabel": "Partner content",
+  "retryAction": "Try again",
+  "cancelAction": "Cancel",
+  "copyAction": "Copy",
+  "copiedToast": "Copied",
+  "cannotOpenAppToast": "Couldn't open the app on this phone",
+  "offlineTitle": "No internet connection",
+  "offlineAvailableIntro": "Available without a connection —",
+  "offlineDownloadedDocs": "Downloaded documents · {count}",
+  "@offlineDownloadedDocs": {
+    "placeholders": {
+      "count": {
+        "type": "String"
+      }
+    }
+  },
+  "offlineReadChapters": "Text of chapters you've read",
+  "offlineBmi": "BMI calculator",
+  "offlineVideoWebinar": "Videos and webinars",
+  "offlineBody": "Try again when you're back online.",
+  "slowConnection": "Slow connection — this is taking a while",
+  "serverErrorTitle": "Something went wrong",
+  "serverErrorBody": "It's not your fault. Our server is having a temporary problem. Please try again shortly.",
+  "reportToSupport": "Tell support",
+  "contentServerTitle": "Couldn't fetch the content",
+  "contentServerBody": "This content comes from our content server, which can't be reached right now. Your progress is safely saved.",
+  "updateTitle": "Update the app",
+  "updateBody": "This version is no longer supported. Please update to the new version to continue.",
+  "updateVersionSize": "Version {version} · {size} MB",
+  "@updateVersionSize": {
+    "placeholders": {
+      "version": {
+        "type": "String"
+      },
+      "size": {
+        "type": "String"
+      }
+    }
+  },
+  "updateAction": "Update",
+  "updateRequiredNote": "The app can't be used without updating",
+  "pust9Headline": "{days}-day nutrition curriculum",
+  "@pust9Headline": {
+    "placeholders": {
+      "days": {
+        "type": "String"
+      }
+    }
+  },
+  "pust9Tagline": "One nutrition tip a day, straight to your phone",
+  "pust9OperatorNote": "Available only for Robi and Airtel customers",
+  "pust9ChargeLabel": "Charge",
+  "pust9Charge": "৳{price}/day + VAT, supplementary duty and surcharge apply",
+  "@pust9Charge": {
+    "placeholders": {
+      "price": {
+        "type": "String"
+      }
+    }
+  },
+  "pust9PathATitle": "Subscribe by dialling",
+  "pust9DialAction": "Dial",
+  "pust9PathAStep1": "Dial the code above",
+  "pust9PathAStep2": "When the pop-up menu appears, type 1 and Reply/Send",
+  "pust9PathAStep3": "The service starts when you get the confirmation SMS",
+  "pust9PathBTitle": "Subscribe by SMS",
+  "pust9ShortcodeLabel": "Shortcode",
+  "pust9MessageLabel": "Message",
+  "pust9OpenSmsAction": "Open SMS app",
+  "pust9PathBStep1": "Send the message above to the shortcode",
+  "pust9PathBStep2": "Reply 1 to the message you get back",
+  "pust9SupportLink": "Having trouble? Tell support",
+  "pust9NotEligible": "Your number doesn't look like Robi or Airtel. PUST9 runs only on these two operators.",
+  "pust9StillOpen": "But all of the app's content is open to you —",
+  "bmiAnonymousNote": "You can calculate without logging in. Saving needs a login.",
+  "bmiHeight": "Height",
+  "bmiWeight": "Weight",
+  "bmiAge": "Age",
+  "bmiSex": "Sex",
+  "bmiUnitCm": "cm",
+  "bmiUnitFeetInches": "ft + in",
+  "bmiFeet": "ft",
+  "bmiInches": "in",
+  "bmiKg": "kg",
+  "bmiAddAgeOptional": "Add age (optional)",
+  "bmiAgeValue": "{years} y {months} m",
+  "@bmiAgeValue": {
+    "placeholders": {
+      "years": {
+        "type": "String"
+      },
+      "months": {
+        "type": "String"
+      }
+    }
+  },
+  "bmiAgeYears": "Years",
+  "bmiAgeMonths": "Months",
+  "bmiAgeClear": "Remove age",
+  "doneAction": "Done",
+  "bmiNoAgeNote": "Without an age the result uses the adult standard — that does not apply to children and teenagers.",
+  "bmiSexNote": "Under 19, BMI is assessed on separate growth standards for boys and girls. With \"Other\" an age-based result can't be shown.",
+  "sexFemale": "Female",
+  "sexMale": "Male",
+  "sexOther": "Other",
+  "childBoy": "boy",
+  "childGirl": "girl",
+  "bmiShowResult": "Show result",
+  "bmiCheckHeight": "Check the height",
+  "bmiCheckWeight": "Check the weight",
+  "bmiResultTitle": "Result",
+  "bmiAdultUnderweight": "Underweight",
+  "bmiAdultNormal": "Normal",
+  "bmiAdultOverweight": "Overweight",
+  "bmiAdultObesity": "Obesity",
+  "bmiAdultUnderweightBody": "Your weight is below the healthy range for your height.",
+  "bmiAdultNormalBody": "Your weight is in the healthy range for your height.",
+  "bmiAdultOverweightBody": "Your weight is above the healthy range for your height.",
+  "bmiAdultObesityBody": "Your weight is well above the healthy range for your height.",
+  "bmiAdultStandard": "Adult standard (WHO)",
+  "bmiBandUnder": "Below 18.5",
+  "bmiBandNormal": "18.5 – 24.9",
+  "bmiBandOver": "25.0 – 29.9",
+  "bmiBandObese": "30.0 or more",
+  "bmiDisclaimer": "This is not a diagnosis. If you're worried, talk to a doctor.",
+  "bmiChildDisclaimer": "This is not a diagnosis. If you're worried about a child's growth, talk to a doctor.",
+  "saveAction": "Save",
+  "bmiSaveDataAction": "Save the data",
+  "bmiSavePromptBody": "Log in to save measurements and follow changes over time. You'll come back to this result.",
+  "bmiPersonAge": "{age} years",
+  "@bmiPersonAge": {
+    "placeholders": {
+      "age": {
+        "type": "String"
+      }
+    }
+  },
+  "bmiChildStandardNote": "Results for children and teenagers use growth standards by age and sex — adult values don't apply here.",
+  "bmiChildPosition": "Position for age",
+  "bmiChildThinness": "Thinness",
+  "bmiChildSevereThinness": "Severe thinness",
+  "bmiChildNormal": "Normal",
+  "bmiChildOverweight": "Overweight",
+  "bmiChildObesity": "Obesity",
+  "bmiChildCompare": "Compared with {group} of the same age, the weight is: {category}.",
+  "@bmiChildCompare": {
+    "placeholders": {
+      "group": {
+        "type": "String"
+      },
+      "category": {
+        "type": "String"
+      }
+    }
+  },
+  "bmiUnderFiveTitle": "BMI doesn't apply",
+  "bmiUnderFiveBody": "Nutrition status of children under 5 isn't measured with BMI. At this age, weight-for-height and the growth pattern are used.",
+  "bmiUnderFiveSave": "If you save the data, the child's growth pattern can be followed over time.",
+  "bmiUnderFiveAdvice": "To know the child's nutrition status, visit the nearest health centre or a doctor.",
+  "bmiNoReferenceTitle": "An age-based result can't be shown",
+  "bmiNoReferenceSubtitle": "{age} years · Sex: Other",
+  "@bmiNoReferenceSubtitle": {
+    "placeholders": {
+      "age": {
+        "type": "String"
+      }
+    }
+  },
+  "bmiNoReferenceBody": "Under 19, BMI is assessed on separate growth standards for boys and girls. There is no internationally recognised standard for \"Other\".",
+  "bmiNoReferenceWhy": "We think showing nothing is better than showing a wrong result.",
+  "bmiNoReferenceSave": "Height and weight can still be saved and used when talking to a doctor.",
+  "bmiNoAgeLabel": "On the adult standard",
+  "bmiNoAgeGiven": "No age given",
+  "bmiNoAgeBody": "This result uses the adult standard. It does not apply if the person is under 19.",
+  "bmiNoAgeHint": "Add age and sex for an accurate result.",
+  "bmiAddAgeAction": "Add age",
+  "bmiChildTablesMissing": "The age-based reference for children isn't available in this version yet, so no classification is shown.",
+  "minutesShort": "{minutes} min",
+  "@minutesShort": {
+    "placeholders": {
+      "minutes": {
+        "type": "String"
+      }
+    }
+  },
+  "chapterNumbered": "{number}. {title}",
+  "@chapterNumbered": {
+    "placeholders": {
+      "number": {
+        "type": "String"
+      },
+      "title": {
+        "type": "String"
+      }
+    }
+  },
+  "coursesLoggedOutNote": "All chapters can be read without logging in. Saving progress and quizzes need a login.",
+  "videoDataNote": "Playing the video uses about {size} MB of data",
+  "@videoDataNote": {
+    "placeholders": {
+      "size": {
+        "type": "String"
+      }
+    }
+  },
+  "videoWifiOnlyNote": "Video is set to play on Wi-Fi only. Change this in Settings.",
+  "videoFailedTitle": "Couldn't load the video",
+  "videoFailedBody": "The video can be watched when the connection is back. The text is fine to read.",
+  "takeQuizAction": "Take the quiz",
+  "quizLoginBody": "Log in to take the quiz and get a certificate. You'll come back to where you were.",
+  "libraryAllCategories": "All categories",
+  "libraryDocCount": "{count} documents",
+  "@libraryDocCount": {
+    "placeholders": {
+      "count": {
+        "type": "String"
+      }
+    }
+  },
+  "librarySearchHint": "Search documents…",
+  "libraryNoResultsTitle": "No documents found",
+  "libraryNoResultsBody": "Nothing matched \"{query}\". Try another word, or see all categories.",
+  "@libraryNoResultsBody": {
+    "placeholders": {
+      "query": {
+        "type": "String"
+      }
+    }
+  },
+  "librarySeeAll": "See all documents",
+  "docMeta": "{size} MB · {pages} pages",
+  "@docMeta": {
+    "placeholders": {
+      "size": {
+        "type": "String"
+      },
+      "pages": {
+        "type": "String"
+      }
+    }
+  },
+  "docDownloaded": "Downloaded",
+  "docWaitingWifi": "Waiting for Wi-Fi",
+  "docPending": "Waiting to download",
+  "downloadAction": "Download",
+  "docLargeNote": "This document is {size} MB. Opening it on mobile data will cost data.",
+  "@docLargeNote": {
+    "placeholders": {
+      "size": {
+        "type": "String"
+      }
+    }
+  },
+  "openAction": "Open",
+  "readLaterWifi": "Read later on Wi-Fi",
+  "queuedForWifiToast": "Added to downloads — it will download on Wi-Fi",
+  "queuedToast": "Added to downloads",
+  "docPreviewUnavailableTitle": "Preview not available yet",
+  "docPreviewUnavailableBody": "This document's file isn't on the content server yet.",
+  "pageCounter": "{page} / {total}",
+  "@pageCounter": {
+    "placeholders": {
+      "page": {
+        "type": "String"
+      },
+      "total": {
+        "type": "String"
+      }
+    }
+  },
+  "downloadsTitle": "Downloaded files",
+  "downloadsEmptyTitle": "No downloads yet",
+  "downloadsEmptyBody": "Documents you download or save for Wi-Fi appear here and can be read offline.",
+  "removeAction": "Remove",
+  "webinarUpcoming": "Upcoming",
+  "webinarPast": "Past events",
+  "webinarSeatsLeft": "{count} seats left",
+  "@webinarSeatsLeft": {
+    "placeholders": {
+      "count": {
+        "type": "String"
+      }
+    }
+  },
+  "webinarOnlySeatsLeft": "Only {count} seats left",
+  "@webinarOnlySeatsLeft": {
+    "placeholders": {
+      "count": {
+        "type": "String"
+      }
+    }
+  },
+  "webinarSeatsOfTotal": "{left} seats left · {total} total",
+  "@webinarSeatsOfTotal": {
+    "placeholders": {
+      "left": {
+        "type": "String"
+      },
+      "total": {
+        "type": "String"
+      }
+    }
+  },
+  "webinarReserveSeat": "Reserve a seat",
+  "webinarCompleted": "Completed",
+  "webinarWatchRecording": "Watch recording",
+  "webinarNoRecording": "No recording",
+  "webinarNoUpcoming": "There are no upcoming webinars right now. You'll get a notification when a new event is announced.",
+  "webinarFull": "Full",
+  "webinarFullBody": "All seats for this session are taken. We'll let you know when the recording is published.",
+  "webinarNotifyRecording": "Tell me about the recording",
+  "webinarSeeOthers": "See other webinars",
+  "webinarMinutes": "{minutes} minutes",
+  "@webinarMinutes": {
+    "placeholders": {
+      "minutes": {
+        "type": "String"
+      }
+    }
+  },
+  "webinarRegisterLoginBody": "Log in to reserve a seat. You'll come back to this webinar.",
+  "aboutBody": "e-Pushti is an initiative to bring reliable nutrition information to families in Bangladesh. Content follows government and internationally recognised guidelines.",
+  "aboutPartners": "Partners",
+  "privacyPolicy": "Privacy policy",
+  "termsOfUse": "Terms of use",
+  "versionLabel": "Version {version}",
+  "@versionLabel": {
+    "placeholders": {
+      "version": {
+        "type": "String"
+      }
+    }
+  },
+  "supportScope": "This channel helps with using the app. Personal health or medical advice is not given here — please contact a doctor for that.",
+  "supportSubject": "Subject",
+  "supportSubjectSubscription": "Subscription problem",
+  "supportSubjectApp": "Using the app",
+  "supportSubjectContent": "Content",
+  "supportSubjectOther": "Other",
+  "supportDetails": "Details",
+  "supportDetailsHint": "Describe the problem…",
+  "supportSend": "Send",
+  "supportSendNote": "Opens your email app with the message ready to send.",
+  "supportDirect": "Direct contact",
+  "supportHours": "Sun–Thu, 10 am – 5 pm",
+  "settingsLanguage": "Language",
+  "settingsVideoWifi": "Video on Wi-Fi only",
+  "settingsVideoWifiSub": "Saves mobile data",
+  "settingsLogout": "Log out",
+  "offlineNotNow": "Needs internet",
+  "phoneHeading": "Enter your mobile number",
+  "phoneReason": "Needed to save progress, certificates and webinar registrations",
+  "phoneLabel": "Mobile number",
+  "phoneHint": "1XXX-XXXXXX",
+  "phoneOperatorNote": "Any operator's number works for the app. Only the PUST9 subscription needs Robi or Airtel.",
+  "phoneTermsNote": "By continuing you accept the privacy policy and terms.",
+  "phoneInvalid": "Enter a valid Bangladeshi mobile number",
+  "sendCodeAction": "Send code",
+  "otpTitle": "Verify code",
+  "otpSentTo": "Code sent to this number",
+  "changeAction": "Change",
+  "otpResendIn": "Resend code — {time}",
+  "@otpResendIn": {
+    "placeholders": {
+      "time": {
+        "type": "String"
+      }
+    }
+  },
+  "otpResend": "Resend code",
+  "otpVerify": "Verify",
+  "otpNoCodeHint": "If the code doesn't arrive, check your network connection",
+  "otpDelayedHint": "Code taking long? Check the number is right, or use another number.",
+  "otpWrong": "That code isn't right — try again",
+  "otpExpired": "This code has expired — get a new one",
+  "otpTooMany": "Too many attempts. Please wait a while and try again.",
+  "otpSmsFailed": "The code couldn't be sent. Please try again shortly.",
+  "authUnavailable": "Login isn't available in this version yet. Everything else in the app is open to you.",
+  "devOtpHint": "Development build: use code {code}",
+  "@devOtpHint": {
+    "placeholders": {
+      "code": {
+        "type": "String"
+      }
+    }
+  },
+  "changeNumberTitle": "Change number",
+  "changeNumberHeading": "Enter your new mobile number",
+  "changeNumberBody": "Your profile, family, records and certificates move to the new number.",
+  "phoneInUse": "This number is already used by another account.",
+  "numberChangedToast": "Number changed",
+  "consentTitle": "Consent",
+  "consentHeading": "How your information is used",
+  "consentBody": "The information you give is used only to give you suitable nutrition advice and, without names, in BIID Foundation's aggregate reports. No information is sold.",
+  "consentTerms": "I have read and agree to the privacy policy and terms",
+  "consentHealth": "I consent to storing health information (height, weight)",
+  "consentContinue": "Agree and continue",
+  "consentSkipNote": "Without consent you can still use courses, the library and webinars",
+  "privacyCentreTitle": "Privacy & data",
+  "privacyTermsAccepted": "Terms accepted on {date}",
+  "@privacyTermsAccepted": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "privacyHealthOn": "Health data storage: on",
+  "privacyHealthOff": "Health data storage: off",
+  "privacyWithdraw": "Withdraw health data consent",
+  "privacyWithdrawConfirm": "Withdraw consent? All saved height, weight and BMI records will be deleted. This can't be undone.",
+  "privacyGiveConsent": "Give consent",
+  "withdrawAction": "Withdraw",
+  "profileTitle": "Your profile",
+  "editAction": "Edit",
+  "profileAddName": "Add your details",
+  "familyAddTitle": "Add family members",
+  "familyAddBody": "Add your children, spouse or parents to see age-appropriate nutrition advice and BMI for them too.",
+  "familyAddAction": "Add member",
+  "familyCount": "Your family · {count}",
+  "@familyCount": {
+    "placeholders": {
+      "count": {
+        "type": "String"
+      }
+    }
+  },
+  "consentNeededBanner": "Give consent to save profile and health information.",
+  "ageYearsMonths": "{years} y {months} m",
+  "@ageYearsMonths": {
+    "placeholders": {
+      "years": {
+        "type": "String"
+      },
+      "months": {
+        "type": "String"
+      }
+    }
+  },
+  "ageYears": "{years} years",
+  "@ageYears": {
+    "placeholders": {
+      "years": {
+        "type": "String"
+      }
+    }
+  },
+  "fieldNameOptional": "Name (optional)",
+  "fieldNameHint": "Full name",
+  "fieldRelationship": "Relationship",
+  "fieldDob": "Date of birth",
+  "fieldDistrict": "District",
+  "fieldOccupation": "Occupation",
+  "fieldPregnant": "Pregnant",
+  "fieldBreastfeeding": "Breastfeeding",
+  "fieldInterests": "Interests",
+  "fieldInterestsOptional": "Interests (optional)",
+  "fieldChoose": "Choose",
+  "fieldSelectedCount": "{count} selected",
+  "@fieldSelectedCount": {
+    "placeholders": {
+      "count": {
+        "type": "String"
+      }
+    }
+  },
+  "dobReason": "Date of birth and sex are needed for age-appropriate BMI",
+  "dobSelectedAge": "Selected age: {age}",
+  "@dobSelectedAge": {
+    "placeholders": {
+      "age": {
+        "type": "String"
+      }
+    }
+  },
+  "removeMemberAction": "Remove member",
+  "removeMemberConfirm": "Remove this member? Their saved measurements will also be deleted.",
+  "savedToast": "Saved",
+  "pickDistrictTitle": "Choose district",
+  "pickDistrictSearch": "Search districts…",
+  "pickOccupationTitle": "Choose occupation",
+  "pickRelationshipTitle": "Choose relationship",
+  "pickSexTitle": "Choose sex",
+  "pickInterestsHint": "You can choose more than one",
+  "pickInterestsDone": "Done · {count} selected",
+  "@pickInterestsDone": {
+    "placeholders": {
+      "count": {
+        "type": "String"
+      }
+    }
+  },
+  "divisionDhaka": "Dhaka Division",
+  "divisionChattogram": "Chattogram Division",
+  "divisionRajshahi": "Rajshahi Division",
+  "divisionKhulna": "Khulna Division",
+  "divisionBarishal": "Barishal Division",
+  "divisionSylhet": "Sylhet Division",
+  "divisionRangpur": "Rangpur Division",
+  "divisionMymensingh": "Mymensingh Division",
+  "relChild": "Child",
+  "relSpouse": "Husband / Wife",
+  "relParent": "Father / Mother",
+  "relSibling": "Brother / Sister",
+  "relOther": "Other",
+  "relHolderYou": "{name} (you)",
+  "@relHolderYou": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "youLabel": "You",
+  "occStudent": "Student",
+  "occPrivate": "Employee (private)",
+  "occGovernment": "Government employee",
+  "occBusiness": "Business",
+  "occTeacher": "Teacher",
+  "occFarmer": "Farmer",
+  "occHomemaker": "Homemaker",
+  "occOther": "Other",
+  "intBalanced": "Balanced diet",
+  "intPregnancy": "Nutrition in pregnancy",
+  "intWeight": "Weight management",
+  "intChild": "Child nutrition",
+  "intDiabetes": "Diabetes management",
+  "intGeneral": "General health awareness",
+  "bmiForWhom": "Who is this for?",
+  "bmiSeeHistory": "See previous records",
+  "bmiChoosePerson": "Save for whom?",
+  "bmiSavedToast": "Saved to records",
+  "historyTitle": "Records",
+  "historyHeader": "{person} · {count} records",
+  "@historyHeader": {
+    "placeholders": {
+      "person": {
+        "type": "String"
+      },
+      "count": {
+        "type": "String"
+      }
+    }
+  },
+  "historyRowMeta": "{height} cm · {weight} kg",
+  "@historyRowMeta": {
+    "placeholders": {
+      "height": {
+        "type": "String"
+      },
+      "weight": {
+        "type": "String"
+      }
+    }
+  },
+  "historyGrowthSoon": "Growth chart coming soon",
+  "historyEmptyTitle": "No records yet",
+  "historyEmptyBody": "Save height and weight to see changes over time here.",
+  "historyAddAction": "Add measurement",
+  "historyEditTitle": "Correct record",
+  "deleteAction": "Delete",
+  "deleteRecordConfirm": "Delete this record?",
+  "settingsChangeNumber": "Change number",
+  "settingsPrivacyCentre": "Privacy & data",
+  "settingsDeleteAccount": "Delete account",
+  "logoutConfirm": "Log out? Downloaded files stay on this phone.",
+  "deleteAccountTitle": "Delete account",
+  "deleteAccountWarning": "Deleting the account is permanent — it can't be restored.",
+  "deleteAccountDeletes": "What will be deleted",
+  "deleteAccountProfiles": "Your and your family members' profiles",
+  "deleteAccountRecords": "Saved height, weight and BMI records",
+  "deleteAccountProgress": "Course and module progress",
+  "deleteAccountRegistrations": "Webinar registrations",
+  "deleteAccountStays": "What stays",
+  "deleteAccountCertificates": "Issued certificates stay verifiable, because third parties may check them. Anonymous aggregate statistics also remain.",
+  "deleteAccountPust9": "The PUST9 subscription stays active with your operator — stop it separately.",
+  "deleteAccountFailed": "The account couldn't be deleted. Please try again.",
+  "accountDeletedToast": "Account deleted",
+  "academyProgress": "Your progress · {done}/{total} complete",
+  "@academyProgress": {
+    "placeholders": {
+      "done": {
+        "type": "String"
+      },
+      "total": {
+        "type": "String"
+      }
+    }
+  },
+  "statusCompleted": "Completed",
+  "statusInProgress": "In progress",
+  "digiIntro": "Complete a module to get a verifiable certificate",
+  "digiCompletedScore": "Completed · {score}%",
+  "@digiCompletedScore": {
+    "placeholders": {
+      "score": {
+        "type": "String"
+      }
+    }
+  },
+  "digiLockedHint": "Finish the previous module first",
+  "digiCertBadge": "CERT",
+  "digiOfflineBanner": "Can't reach the content server. Modules can't be opened, but the list and your progress are shown.",
+  "digiApprovedCert": "{source}-approved certificate",
+  "@digiApprovedCert": {
+    "placeholders": {
+      "source": {
+        "type": "String"
+      }
+    }
+  },
+  "digiPassToCert": "Score {mark}% in the assessment to get the certificate",
+  "@digiPassToCert": {
+    "placeholders": {
+      "mark": {
+        "type": "String"
+      }
+    }
+  },
+  "takeAssessmentAction": "Take the assessment",
+  "assessmentSoon": "The assessment for this module will be published soon.",
+  "assessmentLoginBody": "Log in to take the assessment and get a certificate. You'll come back here.",
+  "assessmentTitle": "Assessment",
+  "questionCounter": "Question {n} / {total}",
+  "@questionCounter": {
+    "placeholders": {
+      "n": {
+        "type": "String"
+      },
+      "total": {
+        "type": "String"
+      }
+    }
+  },
+  "nextAction": "Next",
+  "previousAction": "Previous",
+  "submitAction": "Submit",
+  "exitAssessmentTitle": "Leave the assessment?",
+  "exitAssessmentBody": "Your answers are saved. You can continue from here later.",
+  "exitAction": "Leave",
+  "keepGoingAction": "Continue",
+  "submitFailed": "Couldn't submit — your answers are saved. Try again when you're connected.",
+  "attemptsExhaustedTitle": "No attempts left for now",
+  "attemptsExhaustedBody": "Read the module again. You can try again from {time}.",
+  "@attemptsExhaustedBody": {
+    "placeholders": {
+      "time": {
+        "type": "String"
+      }
+    }
+  },
+  "attemptsLeftNote": "{count} attempts left",
+  "@attemptsLeftNote": {
+    "placeholders": {
+      "count": {
+        "type": "String"
+      }
+    }
+  },
+  "certificateNameTitle": "Name on the certificate",
+  "certificateNameBody": "Your name is printed on the certificate exactly as you write it here.",
+  "resultPassedTitle": "Congratulations, you passed",
+  "resultFailedTitle": "Try once more",
+  "resultScoreLine": "{correct} of {total} correct · pass mark {mark}%",
+  "@resultScoreLine": {
+    "placeholders": {
+      "correct": {
+        "type": "String"
+      },
+      "total": {
+        "type": "String"
+      },
+      "mark": {
+        "type": "String"
+      }
+    }
+  },
+  "resultFailedHint": "Read the explanations below and try again. {count} attempts left.",
+  "@resultFailedHint": {
+    "placeholders": {
+      "count": {
+        "type": "String"
+      }
+    }
+  },
+  "viewCertificateAction": "View certificate",
+  "answerReview": "Answer review",
+  "yourAnswer": "Your answer",
+  "correctAnswer": "Correct answer",
+  "noAnswer": "Not answered",
+  "tryAgainAction": "Try again",
+  "certificatesNote": "Every certificate can be verified — anyone can check it with the number.",
+  "certificatesEmptyTitle": "No certificates yet",
+  "certificatesEmptyBody": "Complete a Digi Skills module and pass the assessment to get a BFSA-approved certificate.",
+  "seeModulesAction": "See modules",
+  "certificateTitle": "Certificate",
+  "certifyLine": "This is to certify that",
+  "completedLine": "has successfully completed",
+  "approvedModule": "{source}-approved module",
+  "@approvedModule": {
+    "placeholders": {
+      "source": {
+        "type": "String"
+      }
+    }
+  },
+  "downloadPdfAction": "Download PDF",
+  "shareAction": "Share",
+  "revokedBanner": "This certificate has been revoked.",
+  "revokedContact": "Contact support for details.",
+  "revokedStamp": "Revoked",
+  "verifyAt": "Verify at {url}",
+  "@verifyAt": {
+    "placeholders": {
+      "url": {
+        "type": "String"
+      }
+    }
+  },
+  "verifyLinkSoon": "Online verification link coming soon",
+  "shareCertificateText": "My e-Pushti certificate: {title} ({code})",
+  "@shareCertificateText": {
+    "placeholders": {
+      "title": {
+        "type": "String"
+      },
+      "code": {
+        "type": "String"
+      }
+    }
+  },
+  "certificateNotFound": "Certificate not found",
+  "webinarRegisteredBadge": "Registered",
+  "webinarYoureIn": "Your seat is reserved",
+  "webinarYoureInBody": "The join link appears here 15 minutes before the event.",
+  "webinarJoin": "Join now",
+  "webinarLostSeatTitle": "Sorry — the last seat was just taken.",
+  "webinarLostSeatBody": "Someone took the seat just before you registered. None of your information was saved.",
+  "webinarCancelRegistration": "Cancel registration",
+  "webinarCancelConfirm": "Cancel your registration? Your seat will go to someone else.",
+  "webinarAddToCalendar": "Add to calendar",
+  "webinarLinkBeforeEvent": "Link shown before the event",
+  "webinarAlertOn": "We'll tell you when the recording is published",
+  "webinarRecordingNotYet": "The recording isn't published yet",
+  "webinarKeepAction": "Keep my seat",
+  "registrationsEmptyTitle": "No registrations",
+  "registrationsEmptyBody": "Reserve a seat in an upcoming webinar to join live Q&A with nutrition experts.",
+  "seeWebinarsAction": "See webinars",
+  "registrationsPast": "Past",
+  "reminderWebinar24h": "Webinar tomorrow",
+  "reminderWebinar15m": "Webinar starts in 15 minutes",
+  "reminderMeasureTitle": "Time to measure",
+  "reminderMeasureBody": "Measure {name}'s height and weight again",
+  "@reminderMeasureBody": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "inboxMarkAll": "Mark all read",
+  "inboxEmptyTitle": "No notifications",
+  "inboxEmptyBody": "New webinars, courses and content will appear here.",
+  "inboxUnread": "Unread",
+  "prefsTitle": "Notification settings",
+  "prefsHeading": "What you want to hear about",
+  "catWebinar": "Webinars",
+  "catWebinarSub": "New events and reminders",
+  "catCourse": "Courses",
+  "catCourseSub": "New chapters and modules",
+  "catContent": "New content",
+  "catContentSub": "New documents in the library",
+  "catGeneral": "General",
+  "catGeneralSub": "Announcements and information",
+  "catHealth": "Health records",
+  "catHealthSub": "Reminders to measure family members",
+  "permissionDeniedTitle": "Notifications for this app are off in your phone's settings.",
+  "permissionDeniedBody": "Even with the choices below on, no notifications will arrive.",
+  "openPhoneSettings": "Open phone settings",
+  "timeMinutesAgo": "{n} min ago",
+  "@timeMinutesAgo": {
+    "placeholders": {
+      "n": {
+        "type": "String"
+      }
+    }
+  },
+  "timeHoursAgo": "{n} hours ago",
+  "@timeHoursAgo": {
+    "placeholders": {
+      "n": {
+        "type": "String"
+      }
+    }
+  },
+  "timeYesterday": "Yesterday",
+  "timeJustNow": "Just now",
+  "homeForYou": "For you",
+  "homeContinue": "Continue",
+  "homeNextWebinar": "Your next webinar",
+  "homeMeasureDue": "Time to measure {name}",
+  "@homeMeasureDue": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "homeMeasureAction": "Measure",
+  "shareAppAction": "Share the app",
+  "shareAppText": "e-Pushti — reliable nutrition information for your family.",
+  "shareContentText": "{title} — on e-Pushti",
+  "@shareContentText": {
+    "placeholders": {
+      "title": {
+        "type": "String"
+      }
+    }
+  },
+  "pust9ArchiveTitle": "PUST9 tips",
+  "pust9ArchiveLink": "See earlier tips",
+  "pust9ArchiveEmptyTitle": "No tips here yet",
+  "pust9ArchiveEmptyBody": "When PUST9's daily tips are published here, you can read them — even if the SMS was deleted.",
+  "pust9TipDay": "Day {n}",
+  "@pust9TipDay": {
+    "placeholders": {
+      "n": {
+        "type": "String"
+      }
+    }
+  },
+  "pust9StatusNote": "The app can't see whether your subscription is active — check the confirmation SMS from your operator.",
+  "pust9StopTitle": "To stop the subscription",
+  "pust9StopBody": "Send {keyword} to {shortcode}",
+  "@pust9StopBody": {
+    "placeholders": {
+      "keyword": {
+        "type": "String"
+      },
+      "shortcode": {
+        "type": "String"
+      }
+    }
+  },
+  "bookmarkAdd": "Save",
+  "bookmarkRemove": "Remove from saved",
+  "bookmarkSaved": "Added to saved",
+  "bookmarkRemoved": "Removed from saved",
+  "savedTitle": "Saved",
+  "savedEmptyTitle": "Nothing saved yet",
+  "savedEmptyBody": "Tap the bookmark on a chapter, module, document or webinar to save it here.",
+  "searchHint": "Search all content…",
+  "searchTooltip": "Search",
+  "searchPromptTitle": "What are you looking for?",
+  "searchPromptBody": "Search chapters, modules, the library and webinars in one place.",
+  "searchRecent": "Recent searches",
+  "searchNoResults": "Nothing matched \"{query}\". Try another word, or browse the library or courses.",
+  "@searchNoResults": {
+    "placeholders": {
+      "query": {
+        "type": "String"
+      }
+    }
+  },
+  "listenAction": "Listen",
+  "listenStop": "Stop",
+  "listenUnavailable": "This phone has no Bangla text-to-speech voice. Add a Bangla voice in the phone's settings to listen.",
+  "growthChartTitle": "Growth chart (BMI for age)",
+  "growthChartLegend": "Lines: WHO 2007 reference from −2 to +2 SD; the thick line is the median. Dots are saved measurements. Shaded: −2 to +1 SD.",
+  "growthChartSemantic": "Growth chart with {count} measurements",
+  "@growthChartSemantic": {
+    "placeholders": {
+      "count": {
+        "type": "String"
+      }
+    }
+  },
+  "journeyTitle": "Mother & baby journey",
+  "journeyPregnancy": "Pregnancy",
+  "journeyBreastfeeding": "Breastfeeding",
+  "journeyPregnancyWeek": "Week {week}",
+  "@journeyPregnancyWeek": {
+    "placeholders": {
+      "week": {
+        "type": "String"
+      }
+    }
+  },
+  "journeyBabyWeek": "{name}: {week} weeks old",
+  "@journeyBabyWeek": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      },
+      "week": {
+        "type": "String"
+      }
+    }
+  },
+  "journeyTrimester": "Trimester {n}",
+  "@journeyTrimester": {
+    "placeholders": {
+      "n": {
+        "type": "String"
+      }
+    }
+  },
+  "journeyDueDate": "Expected due date: {date}",
+  "@journeyDueDate": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "journeyAddDueDate": "Add the expected due date to see your week",
+  "journeyAddBaby": "Add your baby to see guidance by age",
+  "journeyContentSoon": "Guidance for this week will be added soon. Meanwhile, see the resources below.",
+  "journeyResources": "Related resources",
+  "journeyNoneTitle": "For pregnant and breastfeeding mothers",
+  "journeyNoneBody": "Turn on \"Pregnant\" or \"Breastfeeding\" in your profile to see information for you here.",
+  "journeyAncTitle": "Antenatal check-ups",
+  "journeyAncWeek": "Week {week} check-up",
+  "@journeyAncWeek": {
+    "placeholders": {
+      "week": {
+        "type": "String"
+      }
+    }
+  },
+  "journeyAncRemind": "Remind me before check-ups",
+  "journeyAncReminded": "You'll be reminded the day before each check-up",
+  "journeyAncReminderTitle": "Antenatal check-up tomorrow",
+  "journeyAncReminderBody": "Week {week} check-up",
+  "@journeyAncReminderBody": {
+    "placeholders": {
+      "week": {
+        "type": "String"
+      }
+    }
+  },
+  "fieldDueDate": "Expected due date",
+  "under5Title": "Growth charts (WHO 2006 standards)",
+  "indWeightForAge": "Weight for age",
+  "indHeightForAge": "Height for age",
+  "indWeightForHeight": "Weight for height",
+  "under5Legend": "Lines: WHO Child Growth Standards (2006), −2 to +2 SD; the thick line is the median; shaded −2 to +2 SD. Dots are saved measurements.",
+  "under5AxisMonths": "Bottom axis: age in months.",
+  "under5AxisCm": "Bottom axis: length/height in cm.",
+  "under5LengthNote": "Under 2 years, length is measured lying down; from 2 years, height standing.",
+  "under5OutOfRange": "The saved height is outside the range of the WHO weight-for-height table.",
+  "growthNeedsDob": "Add a date of birth to see growth charts.",
+  "growthNeedsSex": "WHO growth charts are separate for boys and girls, so they can't be shown when sex is \"Other\" or not given."
 }
