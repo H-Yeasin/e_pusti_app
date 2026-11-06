@@ -119,17 +119,17 @@ void main() {
       expect(find.byKey(const ValueKey('bmi-value')), findsNothing);
     });
 
-    testWidgets('child result without bundled WHO tables does not guess', (
-      tester,
-    ) async {
+    testWidgets('child 5–19 is classified on WHO BMI-for-age', (tester) async {
       await pumpAppAtHome(tester);
       await pushRoute(tester, '/bmi/result?h=132&w=27.5&a=112&s=male');
 
+      expect(find.text('15.8'), findsOneWidget);
+      expect(find.text('Position for age'), findsOneWidget);
       expect(
         find.textContaining("isn't available in this version"),
-        findsOneWidget,
+        findsNothing,
       );
-      expect(find.text('Normal'), findsNothing);
+      expect(find.text('Normal'), findsWidgets);
     });
 
     testWidgets('saving while logged out asks to log in', (tester) async {
