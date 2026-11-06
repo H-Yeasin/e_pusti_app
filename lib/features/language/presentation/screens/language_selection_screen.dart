@@ -1,17 +1,14 @@
-﻿import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 
-import '../../../../core/config/app_environment.dart';
+import 'package:go_router/go_router.dart';
+
+import '../../../../app/router/app_routes.dart';
 import '../../../../core/localization/localization.dart';
-import '../../../home/presentation/screens/home_screen.dart';
+import '../../../../core/theme/app_tokens.dart';
 
 class LanguageSelectionScreen extends StatefulWidget {
-  const LanguageSelectionScreen({
-    super.key,
-    required this.environment,
-    required this.localeController,
-  });
+  const LanguageSelectionScreen({super.key, required this.localeController});
 
-  final AppEnvironment environment;
   final AppLocaleController localeController;
 
   @override
@@ -35,11 +32,7 @@ class _LanguageSelectionScreenState extends State<LanguageSelectionScreen> {
       return;
     }
 
-    Navigator.of(context).pushReplacement(
-      MaterialPageRoute<void>(
-        builder: (context) => HomeScreen(environment: widget.environment),
-      ),
-    );
+    context.go(AppRoutes.home);
   }
 
   void _selectLanguage(AppLanguage language) {
@@ -55,7 +48,7 @@ class _LanguageSelectionScreenState extends State<LanguageSelectionScreen> {
     final l10n = context.l10n;
 
     return Scaffold(
-      backgroundColor: const Color(0xFFFAFCFA),
+      backgroundColor: EpColors.n50,
       body: Stack(
         children: [
           const _HeaderWash(),
@@ -71,7 +64,7 @@ class _LanguageSelectionScreenState extends State<LanguageSelectionScreen> {
                     l10n.languageSelectionTitle,
                     textAlign: TextAlign.center,
                     style: const TextStyle(
-                      color: Color(0xFF111712),
+                      color: EpColors.n900,
                       fontSize: 27,
                       fontWeight: FontWeight.w800,
                       height: 1.18,
@@ -82,7 +75,7 @@ class _LanguageSelectionScreenState extends State<LanguageSelectionScreen> {
                     l10n.chooseLanguage,
                     textAlign: TextAlign.center,
                     style: const TextStyle(
-                      color: Color(0xFF67706A),
+                      color: EpColors.n600,
                       fontSize: 15,
                       fontWeight: FontWeight.w600,
                       height: 1.35,
@@ -107,7 +100,7 @@ class _LanguageSelectionScreenState extends State<LanguageSelectionScreen> {
                     l10n.languageCanChangeLater,
                     textAlign: TextAlign.center,
                     style: const TextStyle(
-                      color: Color(0xFF808982),
+                      color: EpColors.n500,
                       fontSize: 13,
                       fontWeight: FontWeight.w500,
                       height: 1.35,
@@ -118,9 +111,9 @@ class _LanguageSelectionScreenState extends State<LanguageSelectionScreen> {
                     onPressed: _isSaving ? null : _continue,
                     style: FilledButton.styleFrom(
                       minimumSize: const Size.fromHeight(56),
-                      backgroundColor: const Color(0xFF02A91F),
-                      disabledBackgroundColor: const Color(0xFF9ADDA6),
-                      foregroundColor: Colors.white,
+                      backgroundColor: EpColors.green500,
+                      disabledBackgroundColor: EpColors.green200,
+                      foregroundColor: EpColors.n0,
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(8),
                       ),
@@ -154,7 +147,7 @@ class _HeaderWash extends StatelessWidget {
           gradient: LinearGradient(
             begin: Alignment.topCenter,
             end: Alignment.bottomCenter,
-            colors: [Color(0xFFE7F8EA), Color(0x00E7F8EA)],
+            colors: [EpColors.green50, Color(0x00EFFCEE)],
           ),
         ),
       ),
@@ -197,11 +190,11 @@ class _LanguageOption extends StatelessWidget {
       button: true,
       selected: selected,
       child: Material(
-        color: selected ? const Color(0xFFEAF8ED) : Colors.white,
+        color: selected ? EpColors.green50 : EpColors.n0,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(8),
           side: BorderSide(
-            color: selected ? const Color(0xFF02A91F) : const Color(0xFFE0E5E1),
+            color: selected ? EpColors.green500 : EpColors.n200,
             width: selected ? 1.5 : 1,
           ),
         ),
@@ -226,7 +219,7 @@ class _LanguageOption extends StatelessWidget {
                           maxLines: 1,
                           overflow: TextOverflow.ellipsis,
                           style: const TextStyle(
-                            color: Color(0xFF1F2521),
+                            color: EpColors.n900,
                             fontSize: 24,
                             fontWeight: FontWeight.w800,
                             height: 1.12,
@@ -238,7 +231,7 @@ class _LanguageOption extends StatelessWidget {
                           maxLines: 1,
                           overflow: TextOverflow.ellipsis,
                           style: const TextStyle(
-                            color: Color(0xFF7B847D),
+                            color: EpColors.n600,
                             fontSize: 14,
                             fontWeight: FontWeight.w700,
                             height: 1.1,
@@ -252,17 +245,15 @@ class _LanguageOption extends StatelessWidget {
                     width: 26,
                     height: 26,
                     decoration: BoxDecoration(
-                      color: selected ? const Color(0xFF02A91F) : Colors.white,
+                      color: selected ? EpColors.green500 : EpColors.n0,
                       shape: BoxShape.circle,
                       border: Border.all(
-                        color: selected
-                            ? const Color(0xFF02A91F)
-                            : const Color(0xFFD3D9D5),
+                        color: selected ? EpColors.green500 : EpColors.n300,
                         width: 1.5,
                       ),
                     ),
                     child: selected
-                        ? const Icon(Icons.check, size: 17, color: Colors.white)
+                        ? const Icon(Icons.check, size: 17, color: EpColors.n0)
                         : null,
                   ),
                 ],
