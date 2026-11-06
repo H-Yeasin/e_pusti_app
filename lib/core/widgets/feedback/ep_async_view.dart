@@ -31,15 +31,20 @@ class EpAsyncView<T> extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return switch (value) {
-      AsyncData(:final value) => data(value),
-      AsyncError(:final error) => EpFailureView(
-        failure: error,
+    final value = this.value;
+    // Errors first: a provider that is reloading after a failure is
+    // "loading with an error", and must still show the failure state.
+    if (value.hasError) {
+      return EpFailureView(
+        failure: value.error!,
         onRetry: onRetry,
         onReportToSupport: onReportToSupport,
-      ),
-      _ => const EpLoadingView(),
-    };
+      );
+    }
+    if (value.hasValue) {
+      return data(value.requireValue);
+    }
+    return const EpLoadingView();
   }
 }
 

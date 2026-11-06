@@ -55,6 +55,13 @@ Phases are ordered by dependency and user value. Each phase ends in a shippable 
 | Certificates | CRT-01, CRT-02 (QR, PDF, share, revoked), CRT-03 public verify page (needs O-15) |
 **Exit:** module → quiz → certificate → third-party verification works end to end.
 
+**Status (2026-11-06):**
+- Done: CRS-01 logged-in progress (a chapter completes when its quiz is passed); DGS-01 with sources, CERT badge, sequential lock on assessments (reading stays open), last-known list when the content server is down; DGS-02 with the "progress is safe" failure; ASM-01 one question per screen, answers kept on the device across exit and failed submits, exit confirm, name asked once for certificates; ASM-02 pass / fail / attempts exhausted with an explanation for every answer; CRT-01 list and empty state; CRT-02 card with code, QR (when a verify domain is set), PDF (rendered from the on-screen card so Bangla shapes correctly) and share, revoked state; CRT-03 static verification page.
+- Backend: SQL migration with server-side grading (`submit_assessment`), unreadable answer keys, attempt limits in the database, random certificate codes, certificates kept on account deletion, public `verify_certificate`. Dev backend mirrors it.
+- Interim decisions (change when product decides): A2 — only Digi Skills modules issue certificates, Academy quizzes count as progress; A7 — 3 attempts, then a 24-hour wait.
+- Also fixed: failed content loads now show their failure state immediately (Riverpod's automatic retry is off app-wide).
+- Still open: BFSA-reviewed questions (sample questions now, from the design and WHO "Five Keys to Safer Food"); quizzes for the other Academy chapters; verification domain (O-15).
+
 ## Phase 4 — Engagement
 | Feature | Screens |
 |---------|---------|

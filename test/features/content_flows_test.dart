@@ -177,7 +177,7 @@ void main() {
 
     testWidgets('quiz asks to log in when logged out', (tester) async {
       await pumpAppAtHome(tester);
-      await pushRoute(tester, '/courses/c1');
+      await pushRoute(tester, '/courses/c2');
       await tapAndSettle(tester, find.text('Take the quiz'));
 
       expect(find.textContaining('Log in to take the quiz'), findsOneWidget);

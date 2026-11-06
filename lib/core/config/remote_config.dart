@@ -135,6 +135,7 @@ class AppRemoteConfig {
     this.supportEmail = 'support@epushti.org',
     this.privacyUrl,
     this.termsUrl,
+    this.verifyBaseUrl,
   });
 
   /// Bundled defaults used until (and whenever) the server config is not
@@ -160,6 +161,10 @@ class AppRemoteConfig {
   /// Not published yet; the rows say "coming soon" while null.
   final String? privacyUrl;
   final String? termsUrl;
+
+  /// Public certificate verification page, e.g. `https://verify.epushti.org`
+  /// (open item O-15). While null, certificates show the code but no QR.
+  final String? verifyBaseUrl;
 
   SlotContent slot(AdSlotId id) => slots[id] ?? const EmptySlot();
 
@@ -190,6 +195,7 @@ class AppRemoteConfig {
       supportEmail: json['supportEmail'] as String? ?? defaults.supportEmail,
       privacyUrl: json['privacyUrl'] as String?,
       termsUrl: json['termsUrl'] as String?,
+      verifyBaseUrl: json['verifyBaseUrl'] as String?,
     );
   }
 }

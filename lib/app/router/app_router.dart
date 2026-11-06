@@ -9,7 +9,14 @@ import '../../core/config/remote_config.dart';
 import '../../core/localization/localization.dart';
 import '../../core/utils/version.dart';
 import '../../features/auth/presentation/providers/auth_controller.dart';
+import '../../features/assessment/domain/learning_models.dart';
+import '../../features/assessment/presentation/screens/assessment_result_screen.dart';
+import '../../features/assessment/presentation/screens/assessment_screen.dart';
 import '../../features/auth/presentation/screens/login_screen.dart';
+import '../../features/certificates/presentation/screens/certificate_detail_screen.dart';
+import '../../features/certificates/presentation/screens/certificates_screen.dart';
+import '../../features/digiskills/presentation/screens/module_list_screen.dart';
+import '../../features/digiskills/presentation/screens/module_screen.dart';
 import '../../features/auth/presentation/screens/verify_code_screen.dart';
 import '../../features/bmi/presentation/screens/bmi_history_screen.dart';
 import '../../features/profile/presentation/screens/consent_screen.dart';
@@ -249,8 +256,44 @@ final appRouterProvider = Provider<GoRouter>((ref) {
           ),
         ],
       ),
-      placeholder(AppRoutes.digiSkills, (c) => c.l10n.homeDigiSkill),
-      placeholder(AppRoutes.certificates, (c) => c.l10n.menuCertificates),
+      GoRoute(
+        path: AppRoutes.digiSkills,
+        builder: (context, state) => const ModuleListScreen(),
+        routes: [
+          GoRoute(
+            path: ':id',
+            builder: (context, state) =>
+                ModuleScreen(moduleId: state.pathParameters['id']!),
+          ),
+        ],
+      ),
+      GoRoute(
+        path: '${AppRoutes.assessments}/:id',
+        builder: (context, state) =>
+            AssessmentScreen(assessmentId: state.pathParameters['id']!),
+        routes: [
+          GoRoute(
+            path: 'result',
+            builder: (context, state) {
+              final result = state.extra;
+              return result is AssessmentResult
+                  ? AssessmentResultScreen(result: result)
+                  : AssessmentScreen(assessmentId: state.pathParameters['id']!);
+            },
+          ),
+        ],
+      ),
+      GoRoute(
+        path: AppRoutes.certificates,
+        builder: (context, state) => const CertificatesScreen(),
+        routes: [
+          GoRoute(
+            path: ':code',
+            builder: (context, state) =>
+                CertificateDetailScreen(code: state.pathParameters['code']!),
+          ),
+        ],
+      ),
       placeholder(AppRoutes.registrations, (c) => c.l10n.menuRegistrations),
       placeholder(AppRoutes.notifications, (c) => c.l10n.menuNotifications),
       GoRoute(

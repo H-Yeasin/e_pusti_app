@@ -31,6 +31,11 @@ abstract final class AppRoutes {
   static String chapter(String id) => '$courses/$id';
   static String document(String id) => '$library/doc/$id';
   static String webinar(String id) => '$webinars/$id';
+  static String module(String id) => '$digiSkills/$id';
+  static const assessments = '/assessment';
+  static String assessment(String id) => '$assessments/$id';
+  static String assessmentResult(String id) => '$assessments/$id/result';
+  static String certificate(String code) => '$certificates/$code';
 
   /// SYS-04 — reachable only through the version check redirect.
   static const updateRequired = '/update';
@@ -53,6 +58,7 @@ abstract final class AppRoutes {
     deleteAccount,
     changeNumber,
     consent,
+    assessments,
   };
 
   /// A gated path or anything beneath it (e.g. `/profile/person/x`).

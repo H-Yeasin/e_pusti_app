@@ -1,3 +1,4 @@
+import 'package:epushti/app/bootstrap.dart';
 import 'package:epushti/app/providers/app_environment_provider.dart';
 import 'package:epushti/app/providers/app_locale_controller_provider.dart';
 import 'package:epushti/app/router/app_router.dart';
@@ -37,6 +38,7 @@ Future<void> pumpAppAtHome(
 
   await tester.pumpWidget(
     ProviderScope(
+      retry: noAutomaticRetry,
       overrides: [
         appEnvironmentProvider.overrideWithValue(AppEnvironment.dev),
         sharedPreferencesProvider.overrideWithValue(preferences),

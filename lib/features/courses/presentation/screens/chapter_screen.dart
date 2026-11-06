@@ -9,6 +9,10 @@ import '../../../../core/theme/app_tokens.dart';
 import '../../../../core/widgets/feedback/ep_async_view.dart';
 import '../../../../core/widgets/feedback/ep_banner.dart';
 import '../../../../core/widgets/navigation/ep_app_bar.dart';
+import '../../../../app/router/app_routes.dart';
+import '../../../assessment/data/fixture_assessments.dart';
+import '../../../assessment/domain/learning_models.dart';
+import '../../../assessment/presentation/learning_providers.dart';
 import '../../../auth/presentation/providers/auth_controller.dart';
 import '../../../auth/presentation/widgets/login_prompt_sheet.dart';
 import '../../../support/presentation/app_settings_controller.dart';
@@ -30,9 +34,17 @@ class _ChapterScreenState extends ConsumerState<ChapterScreen> {
   @override
   void initState() {
     super.initState();
-    // Opening the text counts as read for the offline summary.
+    // Opening the text counts as read for the offline summary, and as
+    // started for a logged-in user's progress.
     ref.read(readChaptersProvider.notifier).markRead(widget.chapterId);
+    if (ref.read(authControllerProvider).isLoggedIn) {
+      ref
+          .read(progressProvider.notifier)
+          .markStarted(LearningItemType.chapter, widget.chapterId);
+    }
   }
+
+  String? get _assessmentId => chapterAssessments[widget.chapterId];
 
   @override
   Widget build(BuildContext context) {
@@ -62,10 +74,11 @@ class _ChapterScreenState extends ConsumerState<ChapterScreen> {
               const SizedBox(height: EpSpace.s4),
             ],
             const SizedBox(height: EpSpace.s4),
-            FilledButton(
-              onPressed: () => _takeQuiz(context),
-              child: Text(l10n.takeQuizAction),
-            ),
+            if (_assessmentId != null)
+              FilledButton(
+                onPressed: () => _takeQuiz(context),
+                child: Text(l10n.takeQuizAction),
+              ),
           ],
         ),
       ),
@@ -82,10 +95,7 @@ class _ChapterScreenState extends ConsumerState<ChapterScreen> {
       );
       return;
     }
-    // The assessment engine arrives in Phase 3.
-    ScaffoldMessenger.of(context)
-      ..hideCurrentSnackBar()
-      ..showSnackBar(SnackBar(content: Text(l10n.comingSoonTitle)));
+    context.push(AppRoutes.assessment(_assessmentId!));
   }
 }
 

@@ -1232,4 +1232,200 @@ class EPustiGeneratedLocalizationsBn extends EPustiGeneratedLocalizations {
 
   @override
   String get accountDeletedToast => 'অ্যাকাউন্ট মুছে ফেলা হয়েছে';
+
+  @override
+  String academyProgress(String done, String total) {
+    return 'আপনার অগ্রগতি · $done/$total সম্পন্ন';
+  }
+
+  @override
+  String get statusCompleted => 'সম্পন্ন';
+
+  @override
+  String get statusInProgress => 'চলমান';
+
+  @override
+  String get digiIntro => 'মডিউল সম্পন্ন করলে যাচাইযোগ্য সার্টিফিকেট পাবেন';
+
+  @override
+  String digiCompletedScore(String score) {
+    return 'সম্পন্ন · $score%';
+  }
+
+  @override
+  String get digiLockedHint => 'আগের মডিউল শেষ করুন';
+
+  @override
+  String get digiCertBadge => 'CERT';
+
+  @override
+  String get digiOfflineBanner =>
+      'কনটেন্ট সার্ভারে সংযোগ করা যাচ্ছে না। মডিউল খোলা যাবে না, তবে তালিকা ও আপনার অগ্রগতি দেখা যাচ্ছে।';
+
+  @override
+  String digiApprovedCert(String source) {
+    return '$source অনুমোদিত সার্টিফিকেট';
+  }
+
+  @override
+  String digiPassToCert(String mark) {
+    return 'মূল্যায়নে $mark% পেলে সার্টিফিকেট ইস্যু হবে';
+  }
+
+  @override
+  String get takeAssessmentAction => 'মূল্যায়ন দিন';
+
+  @override
+  String get assessmentSoon => 'এই মডিউলের মূল্যায়ন শীঘ্রই প্রকাশ করা হবে।';
+
+  @override
+  String get assessmentLoginBody =>
+      'মূল্যায়ন দিতে ও সার্টিফিকেট পেতে লগইন করুন। আপনি এখানেই ফিরে আসবেন।';
+
+  @override
+  String get assessmentTitle => 'মূল্যায়ন';
+
+  @override
+  String questionCounter(String n, String total) {
+    return 'প্রশ্ন $n / $total';
+  }
+
+  @override
+  String get nextAction => 'পরবর্তী';
+
+  @override
+  String get previousAction => 'আগের';
+
+  @override
+  String get submitAction => 'জমা দিন';
+
+  @override
+  String get exitAssessmentTitle => 'মূল্যায়ন থেকে বের হবেন?';
+
+  @override
+  String get exitAssessmentBody =>
+      'আপনার দেওয়া উত্তরগুলো সংরক্ষিত থাকবে। পরে এখান থেকেই শুরু করতে পারবেন।';
+
+  @override
+  String get exitAction => 'বের হয়ে যান';
+
+  @override
+  String get keepGoingAction => 'চালিয়ে যান';
+
+  @override
+  String get submitFailed =>
+      'জমা দেওয়া যায়নি — আপনার উত্তর সংরক্ষিত আছে। সংযোগ ফিরে এলে আবার জমা দিন।';
+
+  @override
+  String get attemptsExhaustedTitle => 'এই মুহূর্তে আর কোনো সুযোগ নেই';
+
+  @override
+  String attemptsExhaustedBody(String time) {
+    return 'মডিউলটি আবার পড়ুন। $time থেকে আবার চেষ্টা করতে পারবেন।';
+  }
+
+  @override
+  String attemptsLeftNote(String count) {
+    return '$countটি সুযোগ বাকি';
+  }
+
+  @override
+  String get certificateNameTitle => 'সার্টিফিকেটে আপনার নাম';
+
+  @override
+  String get certificateNameBody =>
+      'এখানে যেভাবে লিখবেন, সার্টিফিকেটে ঠিক সেভাবেই আপনার নাম ছাপা হবে।';
+
+  @override
+  String get resultPassedTitle => 'অভিনন্দন, আপনি উত্তীর্ণ হয়েছেন';
+
+  @override
+  String get resultFailedTitle => 'আরেকবার চেষ্টা করুন';
+
+  @override
+  String resultScoreLine(String correct, String total, String mark) {
+    return '$totalটির মধ্যে $correctটি সঠিক · পাস মার্ক $mark%';
+  }
+
+  @override
+  String resultFailedHint(String count) {
+    return 'নিচের ব্যাখ্যাগুলো পড়ে আবার চেষ্টা করুন। $countটি সুযোগ বাকি আছে।';
+  }
+
+  @override
+  String get viewCertificateAction => 'সার্টিফিকেট দেখুন';
+
+  @override
+  String get answerReview => 'উত্তর পর্যালোচনা';
+
+  @override
+  String get yourAnswer => 'আপনার উত্তর';
+
+  @override
+  String get correctAnswer => 'সঠিক উত্তর';
+
+  @override
+  String get noAnswer => 'উত্তর দেননি';
+
+  @override
+  String get tryAgainAction => 'আবার চেষ্টা করুন';
+
+  @override
+  String get certificatesNote =>
+      'প্রতিটি সার্টিফিকেট যাচাই করা যায় — নম্বর দিয়ে যে কেউ সত্যতা দেখতে পারবেন।';
+
+  @override
+  String get certificatesEmptyTitle => 'এখনো কোনো সার্টিফিকেট নেই';
+
+  @override
+  String get certificatesEmptyBody =>
+      'ডিজি স্কিলসের মডিউল সম্পন্ন করে মূল্যায়নে উত্তীর্ণ হলে BFSA-অনুমোদিত সার্টিফিকেট পাবেন।';
+
+  @override
+  String get seeModulesAction => 'মডিউল দেখুন';
+
+  @override
+  String get certificateTitle => 'সার্টিফিকেট';
+
+  @override
+  String get certifyLine => 'এই মর্মে প্রত্যয়ন করা যাচ্ছে যে';
+
+  @override
+  String get completedLine => 'সফলভাবে সম্পন্ন করেছেন';
+
+  @override
+  String approvedModule(String source) {
+    return '$source অনুমোদিত মডিউল';
+  }
+
+  @override
+  String get downloadPdfAction => 'PDF ডাউনলোড';
+
+  @override
+  String get shareAction => 'শেয়ার করুন';
+
+  @override
+  String get revokedBanner => 'এই সার্টিফিকেটটি বাতিল করা হয়েছে।';
+
+  @override
+  String get revokedContact => 'বিস্তারিত জানতে সাপোর্টে যোগাযোগ করুন।';
+
+  @override
+  String get revokedStamp => 'বাতিল';
+
+  @override
+  String verifyAt(String url) {
+    return 'যাচাই করুন: $url';
+  }
+
+  @override
+  String get verifyLinkSoon => 'অনলাইন যাচাই লিংক শীঘ্রই';
+
+  @override
+  String shareCertificateText(String title, String code) {
+    return 'আমার e-Pushti সার্টিফিকেট: $title ($code)';
+  }
+
+  @override
+  String get certificateNotFound => 'সার্টিফিকেট পাওয়া যায়নি';
 }

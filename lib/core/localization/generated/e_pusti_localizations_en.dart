@@ -1236,4 +1236,201 @@ class EPustiGeneratedLocalizationsEn extends EPustiGeneratedLocalizations {
 
   @override
   String get accountDeletedToast => 'Account deleted';
+
+  @override
+  String academyProgress(String done, String total) {
+    return 'Your progress · $done/$total complete';
+  }
+
+  @override
+  String get statusCompleted => 'Completed';
+
+  @override
+  String get statusInProgress => 'In progress';
+
+  @override
+  String get digiIntro => 'Complete a module to get a verifiable certificate';
+
+  @override
+  String digiCompletedScore(String score) {
+    return 'Completed · $score%';
+  }
+
+  @override
+  String get digiLockedHint => 'Finish the previous module first';
+
+  @override
+  String get digiCertBadge => 'CERT';
+
+  @override
+  String get digiOfflineBanner =>
+      'Can\'t reach the content server. Modules can\'t be opened, but the list and your progress are shown.';
+
+  @override
+  String digiApprovedCert(String source) {
+    return '$source-approved certificate';
+  }
+
+  @override
+  String digiPassToCert(String mark) {
+    return 'Score $mark% in the assessment to get the certificate';
+  }
+
+  @override
+  String get takeAssessmentAction => 'Take the assessment';
+
+  @override
+  String get assessmentSoon =>
+      'The assessment for this module will be published soon.';
+
+  @override
+  String get assessmentLoginBody =>
+      'Log in to take the assessment and get a certificate. You\'ll come back here.';
+
+  @override
+  String get assessmentTitle => 'Assessment';
+
+  @override
+  String questionCounter(String n, String total) {
+    return 'Question $n / $total';
+  }
+
+  @override
+  String get nextAction => 'Next';
+
+  @override
+  String get previousAction => 'Previous';
+
+  @override
+  String get submitAction => 'Submit';
+
+  @override
+  String get exitAssessmentTitle => 'Leave the assessment?';
+
+  @override
+  String get exitAssessmentBody =>
+      'Your answers are saved. You can continue from here later.';
+
+  @override
+  String get exitAction => 'Leave';
+
+  @override
+  String get keepGoingAction => 'Continue';
+
+  @override
+  String get submitFailed =>
+      'Couldn\'t submit — your answers are saved. Try again when you\'re connected.';
+
+  @override
+  String get attemptsExhaustedTitle => 'No attempts left for now';
+
+  @override
+  String attemptsExhaustedBody(String time) {
+    return 'Read the module again. You can try again from $time.';
+  }
+
+  @override
+  String attemptsLeftNote(String count) {
+    return '$count attempts left';
+  }
+
+  @override
+  String get certificateNameTitle => 'Name on the certificate';
+
+  @override
+  String get certificateNameBody =>
+      'Your name is printed on the certificate exactly as you write it here.';
+
+  @override
+  String get resultPassedTitle => 'Congratulations, you passed';
+
+  @override
+  String get resultFailedTitle => 'Try once more';
+
+  @override
+  String resultScoreLine(String correct, String total, String mark) {
+    return '$correct of $total correct · pass mark $mark%';
+  }
+
+  @override
+  String resultFailedHint(String count) {
+    return 'Read the explanations below and try again. $count attempts left.';
+  }
+
+  @override
+  String get viewCertificateAction => 'View certificate';
+
+  @override
+  String get answerReview => 'Answer review';
+
+  @override
+  String get yourAnswer => 'Your answer';
+
+  @override
+  String get correctAnswer => 'Correct answer';
+
+  @override
+  String get noAnswer => 'Not answered';
+
+  @override
+  String get tryAgainAction => 'Try again';
+
+  @override
+  String get certificatesNote =>
+      'Every certificate can be verified — anyone can check it with the number.';
+
+  @override
+  String get certificatesEmptyTitle => 'No certificates yet';
+
+  @override
+  String get certificatesEmptyBody =>
+      'Complete a Digi Skills module and pass the assessment to get a BFSA-approved certificate.';
+
+  @override
+  String get seeModulesAction => 'See modules';
+
+  @override
+  String get certificateTitle => 'Certificate';
+
+  @override
+  String get certifyLine => 'This is to certify that';
+
+  @override
+  String get completedLine => 'has successfully completed';
+
+  @override
+  String approvedModule(String source) {
+    return '$source-approved module';
+  }
+
+  @override
+  String get downloadPdfAction => 'Download PDF';
+
+  @override
+  String get shareAction => 'Share';
+
+  @override
+  String get revokedBanner => 'This certificate has been revoked.';
+
+  @override
+  String get revokedContact => 'Contact support for details.';
+
+  @override
+  String get revokedStamp => 'Revoked';
+
+  @override
+  String verifyAt(String url) {
+    return 'Verify at $url';
+  }
+
+  @override
+  String get verifyLinkSoon => 'Online verification link coming soon';
+
+  @override
+  String shareCertificateText(String title, String code) {
+    return 'My e-Pushti certificate: $title ($code)';
+  }
+
+  @override
+  String get certificateNotFound => 'Certificate not found';
 }

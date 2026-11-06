@@ -13,6 +13,10 @@ import 'providers/app_environment_provider.dart';
 import 'providers/app_locale_controller_provider.dart';
 import 'view/e_pusti_app.dart';
 
+/// Failures show their own "Try again"; silent retries would hide them and
+/// spend data on metered connections.
+Duration? noAutomaticRetry(int retryCount, Object error) => null;
+
 /// Loads local-only state (no network, so the splash never blocks on it)
 /// and starts the app.
 Future<void> bootstrap(AppEnvironment environment) async {
@@ -32,6 +36,7 @@ Future<void> bootstrap(AppEnvironment environment) async {
 
   runApp(
     ProviderScope(
+      retry: noAutomaticRetry,
       overrides: [
         appEnvironmentProvider.overrideWithValue(environment),
         sharedPreferencesProvider.overrideWithValue(preferences),

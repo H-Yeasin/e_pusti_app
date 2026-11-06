@@ -2284,6 +2284,336 @@ abstract class EPustiGeneratedLocalizations {
   /// In en, this message translates to:
   /// **'Account deleted'**
   String get accountDeletedToast;
+
+  /// No description provided for @academyProgress.
+  ///
+  /// In en, this message translates to:
+  /// **'Your progress · {done}/{total} complete'**
+  String academyProgress(String done, String total);
+
+  /// No description provided for @statusCompleted.
+  ///
+  /// In en, this message translates to:
+  /// **'Completed'**
+  String get statusCompleted;
+
+  /// No description provided for @statusInProgress.
+  ///
+  /// In en, this message translates to:
+  /// **'In progress'**
+  String get statusInProgress;
+
+  /// No description provided for @digiIntro.
+  ///
+  /// In en, this message translates to:
+  /// **'Complete a module to get a verifiable certificate'**
+  String get digiIntro;
+
+  /// No description provided for @digiCompletedScore.
+  ///
+  /// In en, this message translates to:
+  /// **'Completed · {score}%'**
+  String digiCompletedScore(String score);
+
+  /// No description provided for @digiLockedHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Finish the previous module first'**
+  String get digiLockedHint;
+
+  /// No description provided for @digiCertBadge.
+  ///
+  /// In en, this message translates to:
+  /// **'CERT'**
+  String get digiCertBadge;
+
+  /// No description provided for @digiOfflineBanner.
+  ///
+  /// In en, this message translates to:
+  /// **'Can\'t reach the content server. Modules can\'t be opened, but the list and your progress are shown.'**
+  String get digiOfflineBanner;
+
+  /// No description provided for @digiApprovedCert.
+  ///
+  /// In en, this message translates to:
+  /// **'{source}-approved certificate'**
+  String digiApprovedCert(String source);
+
+  /// No description provided for @digiPassToCert.
+  ///
+  /// In en, this message translates to:
+  /// **'Score {mark}% in the assessment to get the certificate'**
+  String digiPassToCert(String mark);
+
+  /// No description provided for @takeAssessmentAction.
+  ///
+  /// In en, this message translates to:
+  /// **'Take the assessment'**
+  String get takeAssessmentAction;
+
+  /// No description provided for @assessmentSoon.
+  ///
+  /// In en, this message translates to:
+  /// **'The assessment for this module will be published soon.'**
+  String get assessmentSoon;
+
+  /// No description provided for @assessmentLoginBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Log in to take the assessment and get a certificate. You\'ll come back here.'**
+  String get assessmentLoginBody;
+
+  /// No description provided for @assessmentTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Assessment'**
+  String get assessmentTitle;
+
+  /// No description provided for @questionCounter.
+  ///
+  /// In en, this message translates to:
+  /// **'Question {n} / {total}'**
+  String questionCounter(String n, String total);
+
+  /// No description provided for @nextAction.
+  ///
+  /// In en, this message translates to:
+  /// **'Next'**
+  String get nextAction;
+
+  /// No description provided for @previousAction.
+  ///
+  /// In en, this message translates to:
+  /// **'Previous'**
+  String get previousAction;
+
+  /// No description provided for @submitAction.
+  ///
+  /// In en, this message translates to:
+  /// **'Submit'**
+  String get submitAction;
+
+  /// No description provided for @exitAssessmentTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Leave the assessment?'**
+  String get exitAssessmentTitle;
+
+  /// No description provided for @exitAssessmentBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Your answers are saved. You can continue from here later.'**
+  String get exitAssessmentBody;
+
+  /// No description provided for @exitAction.
+  ///
+  /// In en, this message translates to:
+  /// **'Leave'**
+  String get exitAction;
+
+  /// No description provided for @keepGoingAction.
+  ///
+  /// In en, this message translates to:
+  /// **'Continue'**
+  String get keepGoingAction;
+
+  /// No description provided for @submitFailed.
+  ///
+  /// In en, this message translates to:
+  /// **'Couldn\'t submit — your answers are saved. Try again when you\'re connected.'**
+  String get submitFailed;
+
+  /// No description provided for @attemptsExhaustedTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'No attempts left for now'**
+  String get attemptsExhaustedTitle;
+
+  /// No description provided for @attemptsExhaustedBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Read the module again. You can try again from {time}.'**
+  String attemptsExhaustedBody(String time);
+
+  /// No description provided for @attemptsLeftNote.
+  ///
+  /// In en, this message translates to:
+  /// **'{count} attempts left'**
+  String attemptsLeftNote(String count);
+
+  /// No description provided for @certificateNameTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Name on the certificate'**
+  String get certificateNameTitle;
+
+  /// No description provided for @certificateNameBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Your name is printed on the certificate exactly as you write it here.'**
+  String get certificateNameBody;
+
+  /// No description provided for @resultPassedTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Congratulations, you passed'**
+  String get resultPassedTitle;
+
+  /// No description provided for @resultFailedTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Try once more'**
+  String get resultFailedTitle;
+
+  /// No description provided for @resultScoreLine.
+  ///
+  /// In en, this message translates to:
+  /// **'{correct} of {total} correct · pass mark {mark}%'**
+  String resultScoreLine(String correct, String total, String mark);
+
+  /// No description provided for @resultFailedHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Read the explanations below and try again. {count} attempts left.'**
+  String resultFailedHint(String count);
+
+  /// No description provided for @viewCertificateAction.
+  ///
+  /// In en, this message translates to:
+  /// **'View certificate'**
+  String get viewCertificateAction;
+
+  /// No description provided for @answerReview.
+  ///
+  /// In en, this message translates to:
+  /// **'Answer review'**
+  String get answerReview;
+
+  /// No description provided for @yourAnswer.
+  ///
+  /// In en, this message translates to:
+  /// **'Your answer'**
+  String get yourAnswer;
+
+  /// No description provided for @correctAnswer.
+  ///
+  /// In en, this message translates to:
+  /// **'Correct answer'**
+  String get correctAnswer;
+
+  /// No description provided for @noAnswer.
+  ///
+  /// In en, this message translates to:
+  /// **'Not answered'**
+  String get noAnswer;
+
+  /// No description provided for @tryAgainAction.
+  ///
+  /// In en, this message translates to:
+  /// **'Try again'**
+  String get tryAgainAction;
+
+  /// No description provided for @certificatesNote.
+  ///
+  /// In en, this message translates to:
+  /// **'Every certificate can be verified — anyone can check it with the number.'**
+  String get certificatesNote;
+
+  /// No description provided for @certificatesEmptyTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'No certificates yet'**
+  String get certificatesEmptyTitle;
+
+  /// No description provided for @certificatesEmptyBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Complete a Digi Skills module and pass the assessment to get a BFSA-approved certificate.'**
+  String get certificatesEmptyBody;
+
+  /// No description provided for @seeModulesAction.
+  ///
+  /// In en, this message translates to:
+  /// **'See modules'**
+  String get seeModulesAction;
+
+  /// No description provided for @certificateTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Certificate'**
+  String get certificateTitle;
+
+  /// No description provided for @certifyLine.
+  ///
+  /// In en, this message translates to:
+  /// **'This is to certify that'**
+  String get certifyLine;
+
+  /// No description provided for @completedLine.
+  ///
+  /// In en, this message translates to:
+  /// **'has successfully completed'**
+  String get completedLine;
+
+  /// No description provided for @approvedModule.
+  ///
+  /// In en, this message translates to:
+  /// **'{source}-approved module'**
+  String approvedModule(String source);
+
+  /// No description provided for @downloadPdfAction.
+  ///
+  /// In en, this message translates to:
+  /// **'Download PDF'**
+  String get downloadPdfAction;
+
+  /// No description provided for @shareAction.
+  ///
+  /// In en, this message translates to:
+  /// **'Share'**
+  String get shareAction;
+
+  /// No description provided for @revokedBanner.
+  ///
+  /// In en, this message translates to:
+  /// **'This certificate has been revoked.'**
+  String get revokedBanner;
+
+  /// No description provided for @revokedContact.
+  ///
+  /// In en, this message translates to:
+  /// **'Contact support for details.'**
+  String get revokedContact;
+
+  /// No description provided for @revokedStamp.
+  ///
+  /// In en, this message translates to:
+  /// **'Revoked'**
+  String get revokedStamp;
+
+  /// No description provided for @verifyAt.
+  ///
+  /// In en, this message translates to:
+  /// **'Verify at {url}'**
+  String verifyAt(String url);
+
+  /// No description provided for @verifyLinkSoon.
+  ///
+  /// In en, this message translates to:
+  /// **'Online verification link coming soon'**
+  String get verifyLinkSoon;
+
+  /// No description provided for @shareCertificateText.
+  ///
+  /// In en, this message translates to:
+  /// **'My e-Pushti certificate: {title} ({code})'**
+  String shareCertificateText(String title, String code);
+
+  /// No description provided for @certificateNotFound.
+  ///
+  /// In en, this message translates to:
+  /// **'Certificate not found'**
+  String get certificateNotFound;
 }
 
 class _EPustiGeneratedLocalizationsDelegate
