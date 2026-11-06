@@ -1,5 +1,6 @@
-﻿import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 
+import '../../../../core/theme/app_tokens.dart';
 import 'splash_backdrop.dart';
 import 'splash_dots.dart';
 
@@ -24,7 +25,7 @@ class BrandSplashAnimation extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xFF02A91F),
+      backgroundColor: EpColors.green500,
       body: Stack(
         fit: StackFit.expand,
         children: [
@@ -192,4 +193,3 @@ class _LogoHalo extends StatelessWidget {
     );
   }
 }
-

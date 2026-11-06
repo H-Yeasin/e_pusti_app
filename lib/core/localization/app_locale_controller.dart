@@ -1,4 +1,4 @@
-﻿import 'package:flutter/widgets.dart';
+import 'package:flutter/widgets.dart';
 
 import 'app_language.dart';
 import 'app_language_store.dart';
@@ -25,4 +25,3 @@ class AppLocaleController extends ChangeNotifier {
     return _store.languageCodeForAccountMigration();
   }
 }
-

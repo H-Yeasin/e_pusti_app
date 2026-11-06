@@ -164,14 +164,14 @@ abstract class EPustiGeneratedLocalizations {
   /// No description provided for @homeSmsTitle.
   ///
   /// In en, this message translates to:
-  /// **'Daily nutrition SMS - PUST9'**
+  /// **'Daily nutrition SMS — PUST9'**
   String get homeSmsTitle;
 
   /// No description provided for @homeSmsSubtitle.
   ///
   /// In en, this message translates to:
-  /// **'30-day course with daily tips delivered by SMS'**
-  String get homeSmsSubtitle;
+  /// **'{days}-day course, daily tips straight to your SMS'**
+  String homeSmsSubtitle(String days);
 
   /// No description provided for @homeSubscribeButton.
   ///
@@ -194,7 +194,7 @@ abstract class EPustiGeneratedLocalizations {
   /// No description provided for @homeDigiSkill.
   ///
   /// In en, this message translates to:
-  /// **'Digi Skill'**
+  /// **'Digi Skills'**
   String get homeDigiSkill;
 
   /// No description provided for @homeLibrary.
@@ -244,6 +244,150 @@ abstract class EPustiGeneratedLocalizations {
   /// In en, this message translates to:
   /// **'Record weight and height regularly'**
   String get homeHealthCheckSubtitle;
+
+  /// No description provided for @menuHome.
+  ///
+  /// In en, this message translates to:
+  /// **'Home'**
+  String get menuHome;
+
+  /// No description provided for @menuFamilyProfile.
+  ///
+  /// In en, this message translates to:
+  /// **'Family & profile'**
+  String get menuFamilyProfile;
+
+  /// No description provided for @menuCertificates.
+  ///
+  /// In en, this message translates to:
+  /// **'My certificates'**
+  String get menuCertificates;
+
+  /// No description provided for @menuRegistrations.
+  ///
+  /// In en, this message translates to:
+  /// **'My registrations'**
+  String get menuRegistrations;
+
+  /// No description provided for @menuNotifications.
+  ///
+  /// In en, this message translates to:
+  /// **'Notifications'**
+  String get menuNotifications;
+
+  /// No description provided for @menuAbout.
+  ///
+  /// In en, this message translates to:
+  /// **'About us'**
+  String get menuAbout;
+
+  /// No description provided for @menuSupport.
+  ///
+  /// In en, this message translates to:
+  /// **'Support / Feedback'**
+  String get menuSupport;
+
+  /// No description provided for @menuSettings.
+  ///
+  /// In en, this message translates to:
+  /// **'Settings'**
+  String get menuSettings;
+
+  /// No description provided for @menuLogin.
+  ///
+  /// In en, this message translates to:
+  /// **'Log in →'**
+  String get menuLogin;
+
+  /// No description provided for @menuLockedHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Login required'**
+  String get menuLockedHint;
+
+  /// No description provided for @menuVersion.
+  ///
+  /// In en, this message translates to:
+  /// **'e-Pushti · version {version}'**
+  String menuVersion(String version);
+
+  /// No description provided for @loginPromptTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Save your progress'**
+  String get loginPromptTitle;
+
+  /// No description provided for @loginPromptBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Log in to use this. You\'ll come back to exactly where you were.'**
+  String get loginPromptBody;
+
+  /// No description provided for @loginAction.
+  ///
+  /// In en, this message translates to:
+  /// **'Log in'**
+  String get loginAction;
+
+  /// No description provided for @notNowAction.
+  ///
+  /// In en, this message translates to:
+  /// **'Not now'**
+  String get notNowAction;
+
+  /// No description provided for @loginTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Log in'**
+  String get loginTitle;
+
+  /// No description provided for @pust9Title.
+  ///
+  /// In en, this message translates to:
+  /// **'PUST9 subscription'**
+  String get pust9Title;
+
+  /// No description provided for @academyTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'e-Pushti Academy'**
+  String get academyTitle;
+
+  /// No description provided for @comingSoonTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Coming soon'**
+  String get comingSoonTitle;
+
+  /// No description provided for @comingSoonBody.
+  ///
+  /// In en, this message translates to:
+  /// **'This section is being built.'**
+  String get comingSoonBody;
+
+  /// No description provided for @backToHomeAction.
+  ///
+  /// In en, this message translates to:
+  /// **'Back to home'**
+  String get backToHomeAction;
+
+  /// No description provided for @devSimulateLogin.
+  ///
+  /// In en, this message translates to:
+  /// **'Simulate login (dev only)'**
+  String get devSimulateLogin;
+
+  /// No description provided for @devCatalogTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Component catalog'**
+  String get devCatalogTitle;
+
+  /// No description provided for @partnerContentLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Partner content'**
+  String get partnerContentLabel;
 }
 
 class _EPustiGeneratedLocalizationsDelegate

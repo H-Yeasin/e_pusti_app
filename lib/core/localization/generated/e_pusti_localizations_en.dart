@@ -42,11 +42,12 @@ class EPustiGeneratedLocalizationsEn extends EPustiGeneratedLocalizations {
   String get homeAppTitle => 'e-Pushti';
 
   @override
-  String get homeSmsTitle => 'Daily nutrition SMS - PUST9';
+  String get homeSmsTitle => 'Daily nutrition SMS — PUST9';
 
   @override
-  String get homeSmsSubtitle =>
-      '30-day course with daily tips delivered by SMS';
+  String homeSmsSubtitle(String days) {
+    return '$days-day course, daily tips straight to your SMS';
+  }
 
   @override
   String get homeSubscribeButton => 'Subscribe';
@@ -58,7 +59,7 @@ class EPustiGeneratedLocalizationsEn extends EPustiGeneratedLocalizations {
   String get homeCourse => 'Course';
 
   @override
-  String get homeDigiSkill => 'Digi Skill';
+  String get homeDigiSkill => 'Digi Skills';
 
   @override
   String get homeLibrary => 'Library';
@@ -84,4 +85,79 @@ class EPustiGeneratedLocalizationsEn extends EPustiGeneratedLocalizations {
 
   @override
   String get homeHealthCheckSubtitle => 'Record weight and height regularly';
+
+  @override
+  String get menuHome => 'Home';
+
+  @override
+  String get menuFamilyProfile => 'Family & profile';
+
+  @override
+  String get menuCertificates => 'My certificates';
+
+  @override
+  String get menuRegistrations => 'My registrations';
+
+  @override
+  String get menuNotifications => 'Notifications';
+
+  @override
+  String get menuAbout => 'About us';
+
+  @override
+  String get menuSupport => 'Support / Feedback';
+
+  @override
+  String get menuSettings => 'Settings';
+
+  @override
+  String get menuLogin => 'Log in →';
+
+  @override
+  String get menuLockedHint => 'Login required';
+
+  @override
+  String menuVersion(String version) {
+    return 'e-Pushti · version $version';
+  }
+
+  @override
+  String get loginPromptTitle => 'Save your progress';
+
+  @override
+  String get loginPromptBody =>
+      'Log in to use this. You\'ll come back to exactly where you were.';
+
+  @override
+  String get loginAction => 'Log in';
+
+  @override
+  String get notNowAction => 'Not now';
+
+  @override
+  String get loginTitle => 'Log in';
+
+  @override
+  String get pust9Title => 'PUST9 subscription';
+
+  @override
+  String get academyTitle => 'e-Pushti Academy';
+
+  @override
+  String get comingSoonTitle => 'Coming soon';
+
+  @override
+  String get comingSoonBody => 'This section is being built.';
+
+  @override
+  String get backToHomeAction => 'Back to home';
+
+  @override
+  String get devSimulateLogin => 'Simulate login (dev only)';
+
+  @override
+  String get devCatalogTitle => 'Component catalog';
+
+  @override
+  String get partnerContentLabel => 'Partner content';
 }

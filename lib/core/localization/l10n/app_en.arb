@@ -2,10 +2,10 @@
   "@@locale": "en",
   "languageSelectionTitle": "Select language",
   "chooseLanguage": "Choose your language",
-  "banglaName": "\u09ac\u09be\u0982\u09b2\u09be",
+  "banglaName": "বাংলা",
   "banglaLabel": "Bangla",
   "englishName": "English",
-  "englishLabel": "\u0987\u0982\u09b0\u09c7\u099c\u09bf",
+  "englishLabel": "ইংরেজি",
   "languageCanChangeLater": "You can change this anytime from Settings",
   "continueLabel": "Continue",
   "runningEnvironment": "Running {environmentLabel}",
@@ -17,12 +17,19 @@
     }
   },
   "homeAppTitle": "e-Pushti",
-  "homeSmsTitle": "Daily nutrition SMS - PUST9",
-  "homeSmsSubtitle": "30-day course with daily tips delivered by SMS",
+  "homeSmsTitle": "Daily nutrition SMS — PUST9",
+  "homeSmsSubtitle": "{days}-day course, daily tips straight to your SMS",
+  "@homeSmsSubtitle": {
+    "placeholders": {
+      "days": {
+        "type": "String"
+      }
+    }
+  },
   "homeSubscribeButton": "Subscribe",
   "homeWebinar": "Webinar",
   "homeCourse": "Course",
-  "homeDigiSkill": "Digi Skill",
+  "homeDigiSkill": "Digi Skills",
   "homeLibrary": "Library",
   "homeBmiTitle": "BMI Calculator",
   "homeBmiSubtitle": "Enter height and weight for an instant result",
@@ -30,5 +37,36 @@
   "homeNutritionTipTitle": "Today's nutrition tip",
   "homeNutritionTipSubtitle": "Add colorful vegetables to family meals",
   "homeHealthCheckTitle": "Health check",
-  "homeHealthCheckSubtitle": "Record weight and height regularly"
+  "homeHealthCheckSubtitle": "Record weight and height regularly",
+  "menuHome": "Home",
+  "menuFamilyProfile": "Family & profile",
+  "menuCertificates": "My certificates",
+  "menuRegistrations": "My registrations",
+  "menuNotifications": "Notifications",
+  "menuAbout": "About us",
+  "menuSupport": "Support / Feedback",
+  "menuSettings": "Settings",
+  "menuLogin": "Log in →",
+  "menuLockedHint": "Login required",
+  "menuVersion": "e-Pushti · version {version}",
+  "@menuVersion": {
+    "placeholders": {
+      "version": {
+        "type": "String"
+      }
+    }
+  },
+  "loginPromptTitle": "Save your progress",
+  "loginPromptBody": "Log in to use this. You'll come back to exactly where you were.",
+  "loginAction": "Log in",
+  "notNowAction": "Not now",
+  "loginTitle": "Log in",
+  "pust9Title": "PUST9 subscription",
+  "academyTitle": "e-Pushti Academy",
+  "comingSoonTitle": "Coming soon",
+  "comingSoonBody": "This section is being built.",
+  "backToHomeAction": "Back to home",
+  "devSimulateLogin": "Simulate login (dev only)",
+  "devCatalogTitle": "Component catalog",
+  "partnerContentLabel": "Partner content"
 }
