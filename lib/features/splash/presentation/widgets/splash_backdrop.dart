@@ -1,4 +1,4 @@
-﻿import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 
 import 'glow_orb.dart';
 
@@ -12,11 +12,7 @@ class SplashBackdrop extends StatelessWidget {
         gradient: LinearGradient(
           begin: Alignment.topLeft,
           end: Alignment.bottomRight,
-          colors: [
-            Color(0xFF00B926),
-            Color(0xFF00A81D),
-            Color(0xFF049A22),
-          ],
+          colors: [Color(0xFF00B926), Color(0xFF00A81D), Color(0xFF049A22)],
         ),
       ),
       child: Stack(
