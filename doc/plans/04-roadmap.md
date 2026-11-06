@@ -24,6 +24,10 @@ Phases are ordered by dependency and user value. Each phase ends in a shippable 
 | System | SYS-01…04 | |
 **Exit:** a logged-out user can do everything the design allows logged-out; offline mode works for downloaded/read content.
 
+**Status (2026-11-06):**
+- Done: SMS-01 (dial / SMS / copy, charge, operator check with "never a dead end", `pust9_banner` slot); BMI engine with all 5 result cases + feet/inch and Bangla-digit input, results in the clinical palette, save → login sheet that returns to the same result; CRS-01/02 (logged-out list, video size gate, Wi-Fi-only setting, failed-video state, quiz → login); LIB-01/02 + LIB-03 downloads list (search, category picker, no-results way out, large-file consent, Wi-Fi queue); WEB-01/02 browse (upcoming/past, seats, full); INF-01 about, INF-02 support (opens the email app), INF-04 settings (language, video on Wi-Fi only, downloads, logout); SYS-01 offline card on home, SYS-02 slow skeleton after 3 s, SYS-03 error with code + time, SYS-04 forced update via `minSupportedVersion`. Content comes from fixture repositories behind interfaces.
+- Still open: **WHO 2007 BMI-for-age tables** (`assets/who/bmi_for_age_2007.csv`; until bundled, ages 5–19 show no classification); clinical sign-off on result copy (O-13/O-17); real VPS content API, video player and PDF renderer (need real URLs); actual file transfer for the download queue; INF-03 reference number (needs a support API); privacy/terms URLs.
+
 ## Phase 2 — Account, family, saving
 | Feature | Screens |
 |---------|---------|

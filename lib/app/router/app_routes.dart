@@ -22,6 +22,16 @@ abstract final class AppRoutes {
   static const registrations = '/registrations';
   static const notifications = '/notifications';
 
+  // Detail screens.
+  static const bmiResult = '/bmi/result';
+  static const downloads = '/library/downloads';
+  static String chapter(String id) => '$courses/$id';
+  static String document(String id) => '$library/doc/$id';
+  static String webinar(String id) => '$webinars/$id';
+
+  /// SYS-04 — reachable only through the version check redirect.
+  static const updateRequired = '/update';
+
   static const devCatalog = '/dev/catalog';
 
   static const gated = {profile, certificates, registrations, notifications};

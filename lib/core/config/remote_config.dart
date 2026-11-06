@@ -92,6 +92,7 @@ class Pust9Config {
     required this.ussdCode,
     required this.shortcode,
     required this.keyword,
+    required this.pricePerDayTaka,
   });
 
   /// Wireframe V4 says 60 days; the earlier app copy said 30 (decision A1).
@@ -100,12 +101,16 @@ class Pust9Config {
     ussdCode: '*213*02025#',
     shortcode: '21213',
     keyword: 'START PUST9',
+    pricePerDayTaka: 1,
   );
 
   final int courseDays;
   final String ussdCode;
   final String shortcode;
   final String keyword;
+
+  /// Before VAT, supplementary duty and surcharge.
+  final num pricePerDayTaka;
 
   factory Pust9Config.fromJson(Map<String, Object?> json) {
     const d = defaults;
@@ -114,6 +119,7 @@ class Pust9Config {
       ussdCode: json['ussdCode'] as String? ?? d.ussdCode,
       shortcode: json['shortcode'] as String? ?? d.shortcode,
       keyword: json['keyword'] as String? ?? d.keyword,
+      pricePerDayTaka: json['pricePerDayTaka'] as num? ?? d.pricePerDayTaka,
     );
   }
 }
@@ -123,6 +129,12 @@ class AppRemoteConfig {
     required this.pust9,
     required this.slots,
     required this.minSupportedVersion,
+    this.latestVersion,
+    this.updateSizeMb,
+    this.storeUrl,
+    this.supportEmail = 'support@epushti.org',
+    this.privacyUrl,
+    this.termsUrl,
   });
 
   /// Bundled defaults used until (and whenever) the server config is not
@@ -136,6 +148,18 @@ class AppRemoteConfig {
   final Pust9Config pust9;
   final Map<AdSlotId, SlotContent> slots;
   final String minSupportedVersion;
+
+  /// Shown on the forced-update screen (SYS-04).
+  final String? latestVersion;
+  final double? updateSizeMb;
+  final String? storeUrl;
+
+  /// From the INF-02 design.
+  final String supportEmail;
+
+  /// Not published yet; the rows say "coming soon" while null.
+  final String? privacyUrl;
+  final String? termsUrl;
 
   SlotContent slot(AdSlotId id) => slots[id] ?? const EmptySlot();
 
@@ -160,6 +184,12 @@ class AppRemoteConfig {
       minSupportedVersion:
           json['minSupportedVersion'] as String? ??
           defaults.minSupportedVersion,
+      latestVersion: json['latestVersion'] as String?,
+      updateSizeMb: (json['updateSizeMb'] as num?)?.toDouble(),
+      storeUrl: json['storeUrl'] as String?,
+      supportEmail: json['supportEmail'] as String? ?? defaults.supportEmail,
+      privacyUrl: json['privacyUrl'] as String?,
+      termsUrl: json['termsUrl'] as String?,
     );
   }
 }

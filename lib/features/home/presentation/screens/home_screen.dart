@@ -11,6 +11,7 @@ import '../../../../core/widgets/commercial/ad_slot.dart';
 import '../../../../core/widgets/display/ep_promo_card.dart';
 import '../../../auth/presentation/providers/auth_controller.dart';
 import '../../../auth/presentation/widgets/login_prompt_sheet.dart';
+import '../../../system/presentation/widgets/offline_card.dart';
 import '../widgets/app_sidebar.dart';
 
 /// HOM-01. Identical logged in or out; with the slot empty (the launch state)
@@ -107,6 +108,7 @@ class HomeScreen extends ConsumerWidget {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.stretch,
                     children: [
+                      const OfflineCard(),
                       EpPromoCard(
                         key: const ValueKey('home-pust9-card'),
                         title: l10n.homeSmsTitle,

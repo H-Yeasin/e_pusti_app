@@ -388,6 +388,1092 @@ abstract class EPustiGeneratedLocalizations {
   /// In en, this message translates to:
   /// **'Partner content'**
   String get partnerContentLabel;
+
+  /// No description provided for @retryAction.
+  ///
+  /// In en, this message translates to:
+  /// **'Try again'**
+  String get retryAction;
+
+  /// No description provided for @cancelAction.
+  ///
+  /// In en, this message translates to:
+  /// **'Cancel'**
+  String get cancelAction;
+
+  /// No description provided for @copyAction.
+  ///
+  /// In en, this message translates to:
+  /// **'Copy'**
+  String get copyAction;
+
+  /// No description provided for @copiedToast.
+  ///
+  /// In en, this message translates to:
+  /// **'Copied'**
+  String get copiedToast;
+
+  /// No description provided for @cannotOpenAppToast.
+  ///
+  /// In en, this message translates to:
+  /// **'Couldn\'t open the app on this phone'**
+  String get cannotOpenAppToast;
+
+  /// No description provided for @offlineTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'No internet connection'**
+  String get offlineTitle;
+
+  /// No description provided for @offlineAvailableIntro.
+  ///
+  /// In en, this message translates to:
+  /// **'Available without a connection —'**
+  String get offlineAvailableIntro;
+
+  /// No description provided for @offlineDownloadedDocs.
+  ///
+  /// In en, this message translates to:
+  /// **'Downloaded documents · {count}'**
+  String offlineDownloadedDocs(String count);
+
+  /// No description provided for @offlineReadChapters.
+  ///
+  /// In en, this message translates to:
+  /// **'Text of chapters you\'ve read'**
+  String get offlineReadChapters;
+
+  /// No description provided for @offlineBmi.
+  ///
+  /// In en, this message translates to:
+  /// **'BMI calculator'**
+  String get offlineBmi;
+
+  /// No description provided for @offlineVideoWebinar.
+  ///
+  /// In en, this message translates to:
+  /// **'Videos and webinars'**
+  String get offlineVideoWebinar;
+
+  /// No description provided for @offlineBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Try again when you\'re back online.'**
+  String get offlineBody;
+
+  /// No description provided for @slowConnection.
+  ///
+  /// In en, this message translates to:
+  /// **'Slow connection — this is taking a while'**
+  String get slowConnection;
+
+  /// No description provided for @serverErrorTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Something went wrong'**
+  String get serverErrorTitle;
+
+  /// No description provided for @serverErrorBody.
+  ///
+  /// In en, this message translates to:
+  /// **'It\'s not your fault. Our server is having a temporary problem. Please try again shortly.'**
+  String get serverErrorBody;
+
+  /// No description provided for @reportToSupport.
+  ///
+  /// In en, this message translates to:
+  /// **'Tell support'**
+  String get reportToSupport;
+
+  /// No description provided for @contentServerTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Couldn\'t fetch the content'**
+  String get contentServerTitle;
+
+  /// No description provided for @contentServerBody.
+  ///
+  /// In en, this message translates to:
+  /// **'This content comes from our content server, which can\'t be reached right now. Your progress is safely saved.'**
+  String get contentServerBody;
+
+  /// No description provided for @updateTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Update the app'**
+  String get updateTitle;
+
+  /// No description provided for @updateBody.
+  ///
+  /// In en, this message translates to:
+  /// **'This version is no longer supported. Please update to the new version to continue.'**
+  String get updateBody;
+
+  /// No description provided for @updateVersionSize.
+  ///
+  /// In en, this message translates to:
+  /// **'Version {version} · {size} MB'**
+  String updateVersionSize(String version, String size);
+
+  /// No description provided for @updateAction.
+  ///
+  /// In en, this message translates to:
+  /// **'Update'**
+  String get updateAction;
+
+  /// No description provided for @updateRequiredNote.
+  ///
+  /// In en, this message translates to:
+  /// **'The app can\'t be used without updating'**
+  String get updateRequiredNote;
+
+  /// No description provided for @pust9Headline.
+  ///
+  /// In en, this message translates to:
+  /// **'{days}-day nutrition curriculum'**
+  String pust9Headline(String days);
+
+  /// No description provided for @pust9Tagline.
+  ///
+  /// In en, this message translates to:
+  /// **'One nutrition tip a day, straight to your phone'**
+  String get pust9Tagline;
+
+  /// No description provided for @pust9OperatorNote.
+  ///
+  /// In en, this message translates to:
+  /// **'Available only for Robi and Airtel customers'**
+  String get pust9OperatorNote;
+
+  /// No description provided for @pust9ChargeLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Charge'**
+  String get pust9ChargeLabel;
+
+  /// No description provided for @pust9Charge.
+  ///
+  /// In en, this message translates to:
+  /// **'৳{price}/day + VAT, supplementary duty and surcharge apply'**
+  String pust9Charge(String price);
+
+  /// No description provided for @pust9PathATitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Subscribe by dialling'**
+  String get pust9PathATitle;
+
+  /// No description provided for @pust9DialAction.
+  ///
+  /// In en, this message translates to:
+  /// **'Dial'**
+  String get pust9DialAction;
+
+  /// No description provided for @pust9PathAStep1.
+  ///
+  /// In en, this message translates to:
+  /// **'Dial the code above'**
+  String get pust9PathAStep1;
+
+  /// No description provided for @pust9PathAStep2.
+  ///
+  /// In en, this message translates to:
+  /// **'When the pop-up menu appears, type 1 and Reply/Send'**
+  String get pust9PathAStep2;
+
+  /// No description provided for @pust9PathAStep3.
+  ///
+  /// In en, this message translates to:
+  /// **'The service starts when you get the confirmation SMS'**
+  String get pust9PathAStep3;
+
+  /// No description provided for @pust9PathBTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Subscribe by SMS'**
+  String get pust9PathBTitle;
+
+  /// No description provided for @pust9ShortcodeLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Shortcode'**
+  String get pust9ShortcodeLabel;
+
+  /// No description provided for @pust9MessageLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Message'**
+  String get pust9MessageLabel;
+
+  /// No description provided for @pust9OpenSmsAction.
+  ///
+  /// In en, this message translates to:
+  /// **'Open SMS app'**
+  String get pust9OpenSmsAction;
+
+  /// No description provided for @pust9PathBStep1.
+  ///
+  /// In en, this message translates to:
+  /// **'Send the message above to the shortcode'**
+  String get pust9PathBStep1;
+
+  /// No description provided for @pust9PathBStep2.
+  ///
+  /// In en, this message translates to:
+  /// **'Reply 1 to the message you get back'**
+  String get pust9PathBStep2;
+
+  /// No description provided for @pust9SupportLink.
+  ///
+  /// In en, this message translates to:
+  /// **'Having trouble? Tell support'**
+  String get pust9SupportLink;
+
+  /// No description provided for @pust9NotEligible.
+  ///
+  /// In en, this message translates to:
+  /// **'Your number doesn\'t look like Robi or Airtel. PUST9 runs only on these two operators.'**
+  String get pust9NotEligible;
+
+  /// No description provided for @pust9StillOpen.
+  ///
+  /// In en, this message translates to:
+  /// **'But all of the app\'s content is open to you —'**
+  String get pust9StillOpen;
+
+  /// No description provided for @bmiAnonymousNote.
+  ///
+  /// In en, this message translates to:
+  /// **'You can calculate without logging in. Saving needs a login.'**
+  String get bmiAnonymousNote;
+
+  /// No description provided for @bmiHeight.
+  ///
+  /// In en, this message translates to:
+  /// **'Height'**
+  String get bmiHeight;
+
+  /// No description provided for @bmiWeight.
+  ///
+  /// In en, this message translates to:
+  /// **'Weight'**
+  String get bmiWeight;
+
+  /// No description provided for @bmiAge.
+  ///
+  /// In en, this message translates to:
+  /// **'Age'**
+  String get bmiAge;
+
+  /// No description provided for @bmiSex.
+  ///
+  /// In en, this message translates to:
+  /// **'Sex'**
+  String get bmiSex;
+
+  /// No description provided for @bmiUnitCm.
+  ///
+  /// In en, this message translates to:
+  /// **'cm'**
+  String get bmiUnitCm;
+
+  /// No description provided for @bmiUnitFeetInches.
+  ///
+  /// In en, this message translates to:
+  /// **'ft + in'**
+  String get bmiUnitFeetInches;
+
+  /// No description provided for @bmiFeet.
+  ///
+  /// In en, this message translates to:
+  /// **'ft'**
+  String get bmiFeet;
+
+  /// No description provided for @bmiInches.
+  ///
+  /// In en, this message translates to:
+  /// **'in'**
+  String get bmiInches;
+
+  /// No description provided for @bmiKg.
+  ///
+  /// In en, this message translates to:
+  /// **'kg'**
+  String get bmiKg;
+
+  /// No description provided for @bmiAddAgeOptional.
+  ///
+  /// In en, this message translates to:
+  /// **'Add age (optional)'**
+  String get bmiAddAgeOptional;
+
+  /// No description provided for @bmiAgeValue.
+  ///
+  /// In en, this message translates to:
+  /// **'{years} y {months} m'**
+  String bmiAgeValue(String years, String months);
+
+  /// No description provided for @bmiAgeYears.
+  ///
+  /// In en, this message translates to:
+  /// **'Years'**
+  String get bmiAgeYears;
+
+  /// No description provided for @bmiAgeMonths.
+  ///
+  /// In en, this message translates to:
+  /// **'Months'**
+  String get bmiAgeMonths;
+
+  /// No description provided for @bmiAgeClear.
+  ///
+  /// In en, this message translates to:
+  /// **'Remove age'**
+  String get bmiAgeClear;
+
+  /// No description provided for @doneAction.
+  ///
+  /// In en, this message translates to:
+  /// **'Done'**
+  String get doneAction;
+
+  /// No description provided for @bmiNoAgeNote.
+  ///
+  /// In en, this message translates to:
+  /// **'Without an age the result uses the adult standard — that does not apply to children and teenagers.'**
+  String get bmiNoAgeNote;
+
+  /// No description provided for @bmiSexNote.
+  ///
+  /// In en, this message translates to:
+  /// **'Under 19, BMI is assessed on separate growth standards for boys and girls. With \"Other\" an age-based result can\'t be shown.'**
+  String get bmiSexNote;
+
+  /// No description provided for @sexFemale.
+  ///
+  /// In en, this message translates to:
+  /// **'Female'**
+  String get sexFemale;
+
+  /// No description provided for @sexMale.
+  ///
+  /// In en, this message translates to:
+  /// **'Male'**
+  String get sexMale;
+
+  /// No description provided for @sexOther.
+  ///
+  /// In en, this message translates to:
+  /// **'Other'**
+  String get sexOther;
+
+  /// No description provided for @childBoy.
+  ///
+  /// In en, this message translates to:
+  /// **'boy'**
+  String get childBoy;
+
+  /// No description provided for @childGirl.
+  ///
+  /// In en, this message translates to:
+  /// **'girl'**
+  String get childGirl;
+
+  /// No description provided for @bmiShowResult.
+  ///
+  /// In en, this message translates to:
+  /// **'Show result'**
+  String get bmiShowResult;
+
+  /// No description provided for @bmiCheckHeight.
+  ///
+  /// In en, this message translates to:
+  /// **'Check the height'**
+  String get bmiCheckHeight;
+
+  /// No description provided for @bmiCheckWeight.
+  ///
+  /// In en, this message translates to:
+  /// **'Check the weight'**
+  String get bmiCheckWeight;
+
+  /// No description provided for @bmiResultTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Result'**
+  String get bmiResultTitle;
+
+  /// No description provided for @bmiAdultUnderweight.
+  ///
+  /// In en, this message translates to:
+  /// **'Underweight'**
+  String get bmiAdultUnderweight;
+
+  /// No description provided for @bmiAdultNormal.
+  ///
+  /// In en, this message translates to:
+  /// **'Normal'**
+  String get bmiAdultNormal;
+
+  /// No description provided for @bmiAdultOverweight.
+  ///
+  /// In en, this message translates to:
+  /// **'Overweight'**
+  String get bmiAdultOverweight;
+
+  /// No description provided for @bmiAdultObesity.
+  ///
+  /// In en, this message translates to:
+  /// **'Obesity'**
+  String get bmiAdultObesity;
+
+  /// No description provided for @bmiAdultUnderweightBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Your weight is below the healthy range for your height.'**
+  String get bmiAdultUnderweightBody;
+
+  /// No description provided for @bmiAdultNormalBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Your weight is in the healthy range for your height.'**
+  String get bmiAdultNormalBody;
+
+  /// No description provided for @bmiAdultOverweightBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Your weight is above the healthy range for your height.'**
+  String get bmiAdultOverweightBody;
+
+  /// No description provided for @bmiAdultObesityBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Your weight is well above the healthy range for your height.'**
+  String get bmiAdultObesityBody;
+
+  /// No description provided for @bmiAdultStandard.
+  ///
+  /// In en, this message translates to:
+  /// **'Adult standard (WHO)'**
+  String get bmiAdultStandard;
+
+  /// No description provided for @bmiBandUnder.
+  ///
+  /// In en, this message translates to:
+  /// **'Below 18.5'**
+  String get bmiBandUnder;
+
+  /// No description provided for @bmiBandNormal.
+  ///
+  /// In en, this message translates to:
+  /// **'18.5 – 24.9'**
+  String get bmiBandNormal;
+
+  /// No description provided for @bmiBandOver.
+  ///
+  /// In en, this message translates to:
+  /// **'25.0 – 29.9'**
+  String get bmiBandOver;
+
+  /// No description provided for @bmiBandObese.
+  ///
+  /// In en, this message translates to:
+  /// **'30.0 or more'**
+  String get bmiBandObese;
+
+  /// No description provided for @bmiDisclaimer.
+  ///
+  /// In en, this message translates to:
+  /// **'This is not a diagnosis. If you\'re worried, talk to a doctor.'**
+  String get bmiDisclaimer;
+
+  /// No description provided for @bmiChildDisclaimer.
+  ///
+  /// In en, this message translates to:
+  /// **'This is not a diagnosis. If you\'re worried about a child\'s growth, talk to a doctor.'**
+  String get bmiChildDisclaimer;
+
+  /// No description provided for @saveAction.
+  ///
+  /// In en, this message translates to:
+  /// **'Save'**
+  String get saveAction;
+
+  /// No description provided for @bmiSaveDataAction.
+  ///
+  /// In en, this message translates to:
+  /// **'Save the data'**
+  String get bmiSaveDataAction;
+
+  /// No description provided for @bmiSavePromptBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Log in to save measurements and follow changes over time. You\'ll come back to this result.'**
+  String get bmiSavePromptBody;
+
+  /// No description provided for @bmiPersonAge.
+  ///
+  /// In en, this message translates to:
+  /// **'{age} years'**
+  String bmiPersonAge(String age);
+
+  /// No description provided for @bmiChildStandardNote.
+  ///
+  /// In en, this message translates to:
+  /// **'Results for children and teenagers use growth standards by age and sex — adult values don\'t apply here.'**
+  String get bmiChildStandardNote;
+
+  /// No description provided for @bmiChildPosition.
+  ///
+  /// In en, this message translates to:
+  /// **'Position for age'**
+  String get bmiChildPosition;
+
+  /// No description provided for @bmiChildThinness.
+  ///
+  /// In en, this message translates to:
+  /// **'Thinness'**
+  String get bmiChildThinness;
+
+  /// No description provided for @bmiChildSevereThinness.
+  ///
+  /// In en, this message translates to:
+  /// **'Severe thinness'**
+  String get bmiChildSevereThinness;
+
+  /// No description provided for @bmiChildNormal.
+  ///
+  /// In en, this message translates to:
+  /// **'Normal'**
+  String get bmiChildNormal;
+
+  /// No description provided for @bmiChildOverweight.
+  ///
+  /// In en, this message translates to:
+  /// **'Overweight'**
+  String get bmiChildOverweight;
+
+  /// No description provided for @bmiChildObesity.
+  ///
+  /// In en, this message translates to:
+  /// **'Obesity'**
+  String get bmiChildObesity;
+
+  /// No description provided for @bmiChildCompare.
+  ///
+  /// In en, this message translates to:
+  /// **'Compared with {group} of the same age, the weight is: {category}.'**
+  String bmiChildCompare(String group, String category);
+
+  /// No description provided for @bmiUnderFiveTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'BMI doesn\'t apply'**
+  String get bmiUnderFiveTitle;
+
+  /// No description provided for @bmiUnderFiveBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Nutrition status of children under 5 isn\'t measured with BMI. At this age, weight-for-height and the growth pattern are used.'**
+  String get bmiUnderFiveBody;
+
+  /// No description provided for @bmiUnderFiveSave.
+  ///
+  /// In en, this message translates to:
+  /// **'If you save the data, the child\'s growth pattern can be followed over time.'**
+  String get bmiUnderFiveSave;
+
+  /// No description provided for @bmiUnderFiveAdvice.
+  ///
+  /// In en, this message translates to:
+  /// **'To know the child\'s nutrition status, visit the nearest health centre or a doctor.'**
+  String get bmiUnderFiveAdvice;
+
+  /// No description provided for @bmiNoReferenceTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'An age-based result can\'t be shown'**
+  String get bmiNoReferenceTitle;
+
+  /// No description provided for @bmiNoReferenceSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'{age} years · Sex: Other'**
+  String bmiNoReferenceSubtitle(String age);
+
+  /// No description provided for @bmiNoReferenceBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Under 19, BMI is assessed on separate growth standards for boys and girls. There is no internationally recognised standard for \"Other\".'**
+  String get bmiNoReferenceBody;
+
+  /// No description provided for @bmiNoReferenceWhy.
+  ///
+  /// In en, this message translates to:
+  /// **'We think showing nothing is better than showing a wrong result.'**
+  String get bmiNoReferenceWhy;
+
+  /// No description provided for @bmiNoReferenceSave.
+  ///
+  /// In en, this message translates to:
+  /// **'Height and weight can still be saved and used when talking to a doctor.'**
+  String get bmiNoReferenceSave;
+
+  /// No description provided for @bmiNoAgeLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'On the adult standard'**
+  String get bmiNoAgeLabel;
+
+  /// No description provided for @bmiNoAgeGiven.
+  ///
+  /// In en, this message translates to:
+  /// **'No age given'**
+  String get bmiNoAgeGiven;
+
+  /// No description provided for @bmiNoAgeBody.
+  ///
+  /// In en, this message translates to:
+  /// **'This result uses the adult standard. It does not apply if the person is under 19.'**
+  String get bmiNoAgeBody;
+
+  /// No description provided for @bmiNoAgeHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Add age and sex for an accurate result.'**
+  String get bmiNoAgeHint;
+
+  /// No description provided for @bmiAddAgeAction.
+  ///
+  /// In en, this message translates to:
+  /// **'Add age'**
+  String get bmiAddAgeAction;
+
+  /// No description provided for @bmiChildTablesMissing.
+  ///
+  /// In en, this message translates to:
+  /// **'The age-based reference for children isn\'t available in this version yet, so no classification is shown.'**
+  String get bmiChildTablesMissing;
+
+  /// No description provided for @minutesShort.
+  ///
+  /// In en, this message translates to:
+  /// **'{minutes} min'**
+  String minutesShort(String minutes);
+
+  /// No description provided for @chapterNumbered.
+  ///
+  /// In en, this message translates to:
+  /// **'{number}. {title}'**
+  String chapterNumbered(String number, String title);
+
+  /// No description provided for @coursesLoggedOutNote.
+  ///
+  /// In en, this message translates to:
+  /// **'All chapters can be read without logging in. Saving progress and quizzes need a login.'**
+  String get coursesLoggedOutNote;
+
+  /// No description provided for @videoDataNote.
+  ///
+  /// In en, this message translates to:
+  /// **'Playing the video uses about {size} MB of data'**
+  String videoDataNote(String size);
+
+  /// No description provided for @videoWifiOnlyNote.
+  ///
+  /// In en, this message translates to:
+  /// **'Video is set to play on Wi-Fi only. Change this in Settings.'**
+  String get videoWifiOnlyNote;
+
+  /// No description provided for @videoFailedTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Couldn\'t load the video'**
+  String get videoFailedTitle;
+
+  /// No description provided for @videoFailedBody.
+  ///
+  /// In en, this message translates to:
+  /// **'The video can be watched when the connection is back. The text is fine to read.'**
+  String get videoFailedBody;
+
+  /// No description provided for @takeQuizAction.
+  ///
+  /// In en, this message translates to:
+  /// **'Take the quiz'**
+  String get takeQuizAction;
+
+  /// No description provided for @quizLoginBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Log in to take the quiz and get a certificate. You\'ll come back to where you were.'**
+  String get quizLoginBody;
+
+  /// No description provided for @libraryAllCategories.
+  ///
+  /// In en, this message translates to:
+  /// **'All categories'**
+  String get libraryAllCategories;
+
+  /// No description provided for @libraryDocCount.
+  ///
+  /// In en, this message translates to:
+  /// **'{count} documents'**
+  String libraryDocCount(String count);
+
+  /// No description provided for @librarySearchHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Search documents…'**
+  String get librarySearchHint;
+
+  /// No description provided for @libraryNoResultsTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'No documents found'**
+  String get libraryNoResultsTitle;
+
+  /// No description provided for @libraryNoResultsBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Nothing matched \"{query}\". Try another word, or see all categories.'**
+  String libraryNoResultsBody(String query);
+
+  /// No description provided for @librarySeeAll.
+  ///
+  /// In en, this message translates to:
+  /// **'See all documents'**
+  String get librarySeeAll;
+
+  /// No description provided for @docMeta.
+  ///
+  /// In en, this message translates to:
+  /// **'{size} MB · {pages} pages'**
+  String docMeta(String size, String pages);
+
+  /// No description provided for @docDownloaded.
+  ///
+  /// In en, this message translates to:
+  /// **'Downloaded'**
+  String get docDownloaded;
+
+  /// No description provided for @docWaitingWifi.
+  ///
+  /// In en, this message translates to:
+  /// **'Waiting for Wi-Fi'**
+  String get docWaitingWifi;
+
+  /// No description provided for @docPending.
+  ///
+  /// In en, this message translates to:
+  /// **'Waiting to download'**
+  String get docPending;
+
+  /// No description provided for @downloadAction.
+  ///
+  /// In en, this message translates to:
+  /// **'Download'**
+  String get downloadAction;
+
+  /// No description provided for @docLargeNote.
+  ///
+  /// In en, this message translates to:
+  /// **'This document is {size} MB. Opening it on mobile data will cost data.'**
+  String docLargeNote(String size);
+
+  /// No description provided for @openAction.
+  ///
+  /// In en, this message translates to:
+  /// **'Open'**
+  String get openAction;
+
+  /// No description provided for @readLaterWifi.
+  ///
+  /// In en, this message translates to:
+  /// **'Read later on Wi-Fi'**
+  String get readLaterWifi;
+
+  /// No description provided for @queuedForWifiToast.
+  ///
+  /// In en, this message translates to:
+  /// **'Added to downloads — it will download on Wi-Fi'**
+  String get queuedForWifiToast;
+
+  /// No description provided for @queuedToast.
+  ///
+  /// In en, this message translates to:
+  /// **'Added to downloads'**
+  String get queuedToast;
+
+  /// No description provided for @docPreviewUnavailableTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Preview not available yet'**
+  String get docPreviewUnavailableTitle;
+
+  /// No description provided for @docPreviewUnavailableBody.
+  ///
+  /// In en, this message translates to:
+  /// **'This document\'s file isn\'t on the content server yet.'**
+  String get docPreviewUnavailableBody;
+
+  /// No description provided for @pageCounter.
+  ///
+  /// In en, this message translates to:
+  /// **'{page} / {total}'**
+  String pageCounter(String page, String total);
+
+  /// No description provided for @downloadsTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Downloaded files'**
+  String get downloadsTitle;
+
+  /// No description provided for @downloadsEmptyTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'No downloads yet'**
+  String get downloadsEmptyTitle;
+
+  /// No description provided for @downloadsEmptyBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Documents you download or save for Wi-Fi appear here and can be read offline.'**
+  String get downloadsEmptyBody;
+
+  /// No description provided for @removeAction.
+  ///
+  /// In en, this message translates to:
+  /// **'Remove'**
+  String get removeAction;
+
+  /// No description provided for @webinarUpcoming.
+  ///
+  /// In en, this message translates to:
+  /// **'Upcoming'**
+  String get webinarUpcoming;
+
+  /// No description provided for @webinarPast.
+  ///
+  /// In en, this message translates to:
+  /// **'Past events'**
+  String get webinarPast;
+
+  /// No description provided for @webinarSeatsLeft.
+  ///
+  /// In en, this message translates to:
+  /// **'{count} seats left'**
+  String webinarSeatsLeft(String count);
+
+  /// No description provided for @webinarOnlySeatsLeft.
+  ///
+  /// In en, this message translates to:
+  /// **'Only {count} seats left'**
+  String webinarOnlySeatsLeft(String count);
+
+  /// No description provided for @webinarSeatsOfTotal.
+  ///
+  /// In en, this message translates to:
+  /// **'{left} seats left · {total} total'**
+  String webinarSeatsOfTotal(String left, String total);
+
+  /// No description provided for @webinarReserveSeat.
+  ///
+  /// In en, this message translates to:
+  /// **'Reserve a seat'**
+  String get webinarReserveSeat;
+
+  /// No description provided for @webinarCompleted.
+  ///
+  /// In en, this message translates to:
+  /// **'Completed'**
+  String get webinarCompleted;
+
+  /// No description provided for @webinarWatchRecording.
+  ///
+  /// In en, this message translates to:
+  /// **'Watch recording'**
+  String get webinarWatchRecording;
+
+  /// No description provided for @webinarNoRecording.
+  ///
+  /// In en, this message translates to:
+  /// **'No recording'**
+  String get webinarNoRecording;
+
+  /// No description provided for @webinarNoUpcoming.
+  ///
+  /// In en, this message translates to:
+  /// **'There are no upcoming webinars right now. You\'ll get a notification when a new event is announced.'**
+  String get webinarNoUpcoming;
+
+  /// No description provided for @webinarFull.
+  ///
+  /// In en, this message translates to:
+  /// **'Full'**
+  String get webinarFull;
+
+  /// No description provided for @webinarFullBody.
+  ///
+  /// In en, this message translates to:
+  /// **'All seats for this session are taken. We\'ll let you know when the recording is published.'**
+  String get webinarFullBody;
+
+  /// No description provided for @webinarNotifyRecording.
+  ///
+  /// In en, this message translates to:
+  /// **'Tell me about the recording'**
+  String get webinarNotifyRecording;
+
+  /// No description provided for @webinarSeeOthers.
+  ///
+  /// In en, this message translates to:
+  /// **'See other webinars'**
+  String get webinarSeeOthers;
+
+  /// No description provided for @webinarMinutes.
+  ///
+  /// In en, this message translates to:
+  /// **'{minutes} minutes'**
+  String webinarMinutes(String minutes);
+
+  /// No description provided for @webinarRegisterLoginBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Log in to reserve a seat. You\'ll come back to this webinar.'**
+  String get webinarRegisterLoginBody;
+
+  /// No description provided for @aboutBody.
+  ///
+  /// In en, this message translates to:
+  /// **'e-Pushti is an initiative to bring reliable nutrition information to families in Bangladesh. Content follows government and internationally recognised guidelines.'**
+  String get aboutBody;
+
+  /// No description provided for @aboutPartners.
+  ///
+  /// In en, this message translates to:
+  /// **'Partners'**
+  String get aboutPartners;
+
+  /// No description provided for @privacyPolicy.
+  ///
+  /// In en, this message translates to:
+  /// **'Privacy policy'**
+  String get privacyPolicy;
+
+  /// No description provided for @termsOfUse.
+  ///
+  /// In en, this message translates to:
+  /// **'Terms of use'**
+  String get termsOfUse;
+
+  /// No description provided for @versionLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Version {version}'**
+  String versionLabel(String version);
+
+  /// No description provided for @supportScope.
+  ///
+  /// In en, this message translates to:
+  /// **'This channel helps with using the app. Personal health or medical advice is not given here — please contact a doctor for that.'**
+  String get supportScope;
+
+  /// No description provided for @supportSubject.
+  ///
+  /// In en, this message translates to:
+  /// **'Subject'**
+  String get supportSubject;
+
+  /// No description provided for @supportSubjectSubscription.
+  ///
+  /// In en, this message translates to:
+  /// **'Subscription problem'**
+  String get supportSubjectSubscription;
+
+  /// No description provided for @supportSubjectApp.
+  ///
+  /// In en, this message translates to:
+  /// **'Using the app'**
+  String get supportSubjectApp;
+
+  /// No description provided for @supportSubjectContent.
+  ///
+  /// In en, this message translates to:
+  /// **'Content'**
+  String get supportSubjectContent;
+
+  /// No description provided for @supportSubjectOther.
+  ///
+  /// In en, this message translates to:
+  /// **'Other'**
+  String get supportSubjectOther;
+
+  /// No description provided for @supportDetails.
+  ///
+  /// In en, this message translates to:
+  /// **'Details'**
+  String get supportDetails;
+
+  /// No description provided for @supportDetailsHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Describe the problem…'**
+  String get supportDetailsHint;
+
+  /// No description provided for @supportSend.
+  ///
+  /// In en, this message translates to:
+  /// **'Send'**
+  String get supportSend;
+
+  /// No description provided for @supportSendNote.
+  ///
+  /// In en, this message translates to:
+  /// **'Opens your email app with the message ready to send.'**
+  String get supportSendNote;
+
+  /// No description provided for @supportDirect.
+  ///
+  /// In en, this message translates to:
+  /// **'Direct contact'**
+  String get supportDirect;
+
+  /// No description provided for @supportHours.
+  ///
+  /// In en, this message translates to:
+  /// **'Sun–Thu, 10 am – 5 pm'**
+  String get supportHours;
+
+  /// No description provided for @settingsLanguage.
+  ///
+  /// In en, this message translates to:
+  /// **'Language'**
+  String get settingsLanguage;
+
+  /// No description provided for @settingsVideoWifi.
+  ///
+  /// In en, this message translates to:
+  /// **'Video on Wi-Fi only'**
+  String get settingsVideoWifi;
+
+  /// No description provided for @settingsVideoWifiSub.
+  ///
+  /// In en, this message translates to:
+  /// **'Saves mobile data'**
+  String get settingsVideoWifiSub;
+
+  /// No description provided for @settingsLogout.
+  ///
+  /// In en, this message translates to:
+  /// **'Log out'**
+  String get settingsLogout;
+
+  /// No description provided for @offlineNotNow.
+  ///
+  /// In en, this message translates to:
+  /// **'Needs internet'**
+  String get offlineNotNow;
 }
 
 class _EPustiGeneratedLocalizationsDelegate

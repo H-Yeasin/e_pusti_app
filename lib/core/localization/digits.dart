@@ -18,6 +18,28 @@ String localizeDigits(String value, Locale locale) {
   return buffer.toString();
 }
 
+/// Converts Bangla digits to ASCII so user input can be parsed.
+String normalizeDigits(String value) {
+  final buffer = StringBuffer();
+  for (final rune in value.runes) {
+    if (rune >= 0x09E6 && rune <= 0x09EF) {
+      buffer.writeCharCode(0x30 + rune - 0x09E6);
+    } else {
+      buffer.writeCharCode(rune);
+    }
+  }
+  return buffer.toString();
+}
+
+/// Parses a decimal number typed with Bangla or ASCII digits.
+double? parseLocalizedNumber(String value) {
+  final cleaned = normalizeDigits(value.trim()).replaceAll(',', '.');
+  if (cleaned.isEmpty) {
+    return null;
+  }
+  return double.tryParse(cleaned);
+}
+
 extension LocalizedDigitsX on BuildContext {
   String digits(Object value) =>
       localizeDigits('$value', Localizations.localeOf(this));

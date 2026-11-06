@@ -1,50 +1,9 @@
-import 'package:epushti/app/providers/app_environment_provider.dart';
-import 'package:epushti/app/providers/app_locale_controller_provider.dart';
-import 'package:epushti/app/view/e_pusti_app.dart';
-import 'package:epushti/core/config/app_environment.dart';
 import 'package:epushti/core/config/remote_config.dart';
-import 'package:epushti/core/localization/localization.dart';
 import 'package:epushti/core/widgets/commercial/ad_slot.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 
-/// Pumps the real app with a stored language so the splash goes to home.
-Future<void> pumpAppAtHome(
-  WidgetTester tester, {
-  String language = 'en',
-  AppRemoteConfig config = AppRemoteConfig.defaults,
-}) async {
-  SharedPreferences.setMockInitialValues({
-    AppLanguageStore.languageCodeKey: language,
-  });
-  final preferences = await SharedPreferences.getInstance();
-  await tester.binding.setSurfaceSize(const Size(390, 844));
-  addTearDown(() => tester.binding.setSurfaceSize(null));
-
-  await tester.pumpWidget(
-    ProviderScope(
-      overrides: [
-        appEnvironmentProvider.overrideWithValue(AppEnvironment.dev),
-        appLocaleControllerProvider.overrideWithValue(
-          AppLocaleController(AppLanguageStore(preferences)),
-        ),
-        remoteConfigProvider.overrideWithValue(config),
-      ],
-      child: const EPustiApp(),
-    ),
-  );
-  // Splash hands over after 2.5 s.
-  await tester.pump(const Duration(seconds: 3));
-  await tester.pump(const Duration(seconds: 1));
-}
-
-Future<void> settle(WidgetTester tester) async {
-  for (var i = 0; i < 10; i++) {
-    await tester.pump(const Duration(milliseconds: 100));
-  }
-}
+import '../helpers/pump_app.dart';
 
 void main() {
   testWidgets('home matches HOM-01 with the slot empty', (tester) async {
@@ -119,8 +78,8 @@ void main() {
     await tester.tap(find.text('Library'));
     await settle(tester);
 
-    expect(find.text('Coming soon'), findsOneWidget);
     expect(find.widgetWithText(AppBar, 'Library'), findsOneWidget);
+    expect(find.text('সুষম খাদ্য পিরামিড'), findsOneWidget);
   });
 
   testWidgets('logged-out sidebar marks gated items and returns after login', (
@@ -156,6 +115,33 @@ void main() {
     await settle(tester);
     expect(find.byIcon(Icons.lock_outline_rounded), findsNothing);
     expect(find.text('+880 1712-345678'), findsOneWidget);
+  });
+
+  testWidgets('offline card lists what still works', (tester) async {
+    await pumpAppAtHome(tester, online: false);
+
+    expect(find.byKey(const ValueKey('offline-card')), findsOneWidget);
+    expect(find.text('No internet connection'), findsOneWidget);
+    expect(find.text('BMI calculator'), findsOneWidget);
+  });
+
+  testWidgets('no offline card while online', (tester) async {
+    await pumpAppAtHome(tester);
+
+    expect(find.byKey(const ValueKey('offline-card')), findsNothing);
+  });
+
+  testWidgets('unsupported version sees only the update screen', (
+    tester,
+  ) async {
+    await pumpAppAtHome(
+      tester,
+      appVersion: '0.9.0',
+      config: AppRemoteConfig.fromJson({'minSupportedVersion': '1.0.0'}),
+    );
+
+    expect(find.text('Update the app'), findsOneWidget);
+    expect(find.text('BMI Calculator'), findsNothing);
   });
 
   testWidgets('"Not now" keeps the user on home', (tester) async {

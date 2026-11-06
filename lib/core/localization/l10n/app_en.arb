@@ -68,5 +68,354 @@
   "backToHomeAction": "Back to home",
   "devSimulateLogin": "Simulate login (dev only)",
   "devCatalogTitle": "Component catalog",
-  "partnerContentLabel": "Partner content"
+  "partnerContentLabel": "Partner content",
+  "retryAction": "Try again",
+  "cancelAction": "Cancel",
+  "copyAction": "Copy",
+  "copiedToast": "Copied",
+  "cannotOpenAppToast": "Couldn't open the app on this phone",
+  "offlineTitle": "No internet connection",
+  "offlineAvailableIntro": "Available without a connection —",
+  "offlineDownloadedDocs": "Downloaded documents · {count}",
+  "@offlineDownloadedDocs": {
+    "placeholders": {
+      "count": {
+        "type": "String"
+      }
+    }
+  },
+  "offlineReadChapters": "Text of chapters you've read",
+  "offlineBmi": "BMI calculator",
+  "offlineVideoWebinar": "Videos and webinars",
+  "offlineBody": "Try again when you're back online.",
+  "slowConnection": "Slow connection — this is taking a while",
+  "serverErrorTitle": "Something went wrong",
+  "serverErrorBody": "It's not your fault. Our server is having a temporary problem. Please try again shortly.",
+  "reportToSupport": "Tell support",
+  "contentServerTitle": "Couldn't fetch the content",
+  "contentServerBody": "This content comes from our content server, which can't be reached right now. Your progress is safely saved.",
+  "updateTitle": "Update the app",
+  "updateBody": "This version is no longer supported. Please update to the new version to continue.",
+  "updateVersionSize": "Version {version} · {size} MB",
+  "@updateVersionSize": {
+    "placeholders": {
+      "version": {
+        "type": "String"
+      },
+      "size": {
+        "type": "String"
+      }
+    }
+  },
+  "updateAction": "Update",
+  "updateRequiredNote": "The app can't be used without updating",
+  "pust9Headline": "{days}-day nutrition curriculum",
+  "@pust9Headline": {
+    "placeholders": {
+      "days": {
+        "type": "String"
+      }
+    }
+  },
+  "pust9Tagline": "One nutrition tip a day, straight to your phone",
+  "pust9OperatorNote": "Available only for Robi and Airtel customers",
+  "pust9ChargeLabel": "Charge",
+  "pust9Charge": "৳{price}/day + VAT, supplementary duty and surcharge apply",
+  "@pust9Charge": {
+    "placeholders": {
+      "price": {
+        "type": "String"
+      }
+    }
+  },
+  "pust9PathATitle": "Subscribe by dialling",
+  "pust9DialAction": "Dial",
+  "pust9PathAStep1": "Dial the code above",
+  "pust9PathAStep2": "When the pop-up menu appears, type 1 and Reply/Send",
+  "pust9PathAStep3": "The service starts when you get the confirmation SMS",
+  "pust9PathBTitle": "Subscribe by SMS",
+  "pust9ShortcodeLabel": "Shortcode",
+  "pust9MessageLabel": "Message",
+  "pust9OpenSmsAction": "Open SMS app",
+  "pust9PathBStep1": "Send the message above to the shortcode",
+  "pust9PathBStep2": "Reply 1 to the message you get back",
+  "pust9SupportLink": "Having trouble? Tell support",
+  "pust9NotEligible": "Your number doesn't look like Robi or Airtel. PUST9 runs only on these two operators.",
+  "pust9StillOpen": "But all of the app's content is open to you —",
+  "bmiAnonymousNote": "You can calculate without logging in. Saving needs a login.",
+  "bmiHeight": "Height",
+  "bmiWeight": "Weight",
+  "bmiAge": "Age",
+  "bmiSex": "Sex",
+  "bmiUnitCm": "cm",
+  "bmiUnitFeetInches": "ft + in",
+  "bmiFeet": "ft",
+  "bmiInches": "in",
+  "bmiKg": "kg",
+  "bmiAddAgeOptional": "Add age (optional)",
+  "bmiAgeValue": "{years} y {months} m",
+  "@bmiAgeValue": {
+    "placeholders": {
+      "years": {
+        "type": "String"
+      },
+      "months": {
+        "type": "String"
+      }
+    }
+  },
+  "bmiAgeYears": "Years",
+  "bmiAgeMonths": "Months",
+  "bmiAgeClear": "Remove age",
+  "doneAction": "Done",
+  "bmiNoAgeNote": "Without an age the result uses the adult standard — that does not apply to children and teenagers.",
+  "bmiSexNote": "Under 19, BMI is assessed on separate growth standards for boys and girls. With \"Other\" an age-based result can't be shown.",
+  "sexFemale": "Female",
+  "sexMale": "Male",
+  "sexOther": "Other",
+  "childBoy": "boy",
+  "childGirl": "girl",
+  "bmiShowResult": "Show result",
+  "bmiCheckHeight": "Check the height",
+  "bmiCheckWeight": "Check the weight",
+  "bmiResultTitle": "Result",
+  "bmiAdultUnderweight": "Underweight",
+  "bmiAdultNormal": "Normal",
+  "bmiAdultOverweight": "Overweight",
+  "bmiAdultObesity": "Obesity",
+  "bmiAdultUnderweightBody": "Your weight is below the healthy range for your height.",
+  "bmiAdultNormalBody": "Your weight is in the healthy range for your height.",
+  "bmiAdultOverweightBody": "Your weight is above the healthy range for your height.",
+  "bmiAdultObesityBody": "Your weight is well above the healthy range for your height.",
+  "bmiAdultStandard": "Adult standard (WHO)",
+  "bmiBandUnder": "Below 18.5",
+  "bmiBandNormal": "18.5 – 24.9",
+  "bmiBandOver": "25.0 – 29.9",
+  "bmiBandObese": "30.0 or more",
+  "bmiDisclaimer": "This is not a diagnosis. If you're worried, talk to a doctor.",
+  "bmiChildDisclaimer": "This is not a diagnosis. If you're worried about a child's growth, talk to a doctor.",
+  "saveAction": "Save",
+  "bmiSaveDataAction": "Save the data",
+  "bmiSavePromptBody": "Log in to save measurements and follow changes over time. You'll come back to this result.",
+  "bmiPersonAge": "{age} years",
+  "@bmiPersonAge": {
+    "placeholders": {
+      "age": {
+        "type": "String"
+      }
+    }
+  },
+  "bmiChildStandardNote": "Results for children and teenagers use growth standards by age and sex — adult values don't apply here.",
+  "bmiChildPosition": "Position for age",
+  "bmiChildThinness": "Thinness",
+  "bmiChildSevereThinness": "Severe thinness",
+  "bmiChildNormal": "Normal",
+  "bmiChildOverweight": "Overweight",
+  "bmiChildObesity": "Obesity",
+  "bmiChildCompare": "Compared with {group} of the same age, the weight is: {category}.",
+  "@bmiChildCompare": {
+    "placeholders": {
+      "group": {
+        "type": "String"
+      },
+      "category": {
+        "type": "String"
+      }
+    }
+  },
+  "bmiUnderFiveTitle": "BMI doesn't apply",
+  "bmiUnderFiveBody": "Nutrition status of children under 5 isn't measured with BMI. At this age, weight-for-height and the growth pattern are used.",
+  "bmiUnderFiveSave": "If you save the data, the child's growth pattern can be followed over time.",
+  "bmiUnderFiveAdvice": "To know the child's nutrition status, visit the nearest health centre or a doctor.",
+  "bmiNoReferenceTitle": "An age-based result can't be shown",
+  "bmiNoReferenceSubtitle": "{age} years · Sex: Other",
+  "@bmiNoReferenceSubtitle": {
+    "placeholders": {
+      "age": {
+        "type": "String"
+      }
+    }
+  },
+  "bmiNoReferenceBody": "Under 19, BMI is assessed on separate growth standards for boys and girls. There is no internationally recognised standard for \"Other\".",
+  "bmiNoReferenceWhy": "We think showing nothing is better than showing a wrong result.",
+  "bmiNoReferenceSave": "Height and weight can still be saved and used when talking to a doctor.",
+  "bmiNoAgeLabel": "On the adult standard",
+  "bmiNoAgeGiven": "No age given",
+  "bmiNoAgeBody": "This result uses the adult standard. It does not apply if the person is under 19.",
+  "bmiNoAgeHint": "Add age and sex for an accurate result.",
+  "bmiAddAgeAction": "Add age",
+  "bmiChildTablesMissing": "The age-based reference for children isn't available in this version yet, so no classification is shown.",
+  "minutesShort": "{minutes} min",
+  "@minutesShort": {
+    "placeholders": {
+      "minutes": {
+        "type": "String"
+      }
+    }
+  },
+  "chapterNumbered": "{number}. {title}",
+  "@chapterNumbered": {
+    "placeholders": {
+      "number": {
+        "type": "String"
+      },
+      "title": {
+        "type": "String"
+      }
+    }
+  },
+  "coursesLoggedOutNote": "All chapters can be read without logging in. Saving progress and quizzes need a login.",
+  "videoDataNote": "Playing the video uses about {size} MB of data",
+  "@videoDataNote": {
+    "placeholders": {
+      "size": {
+        "type": "String"
+      }
+    }
+  },
+  "videoWifiOnlyNote": "Video is set to play on Wi-Fi only. Change this in Settings.",
+  "videoFailedTitle": "Couldn't load the video",
+  "videoFailedBody": "The video can be watched when the connection is back. The text is fine to read.",
+  "takeQuizAction": "Take the quiz",
+  "quizLoginBody": "Log in to take the quiz and get a certificate. You'll come back to where you were.",
+  "libraryAllCategories": "All categories",
+  "libraryDocCount": "{count} documents",
+  "@libraryDocCount": {
+    "placeholders": {
+      "count": {
+        "type": "String"
+      }
+    }
+  },
+  "librarySearchHint": "Search documents…",
+  "libraryNoResultsTitle": "No documents found",
+  "libraryNoResultsBody": "Nothing matched \"{query}\". Try another word, or see all categories.",
+  "@libraryNoResultsBody": {
+    "placeholders": {
+      "query": {
+        "type": "String"
+      }
+    }
+  },
+  "librarySeeAll": "See all documents",
+  "docMeta": "{size} MB · {pages} pages",
+  "@docMeta": {
+    "placeholders": {
+      "size": {
+        "type": "String"
+      },
+      "pages": {
+        "type": "String"
+      }
+    }
+  },
+  "docDownloaded": "Downloaded",
+  "docWaitingWifi": "Waiting for Wi-Fi",
+  "docPending": "Waiting to download",
+  "downloadAction": "Download",
+  "docLargeNote": "This document is {size} MB. Opening it on mobile data will cost data.",
+  "@docLargeNote": {
+    "placeholders": {
+      "size": {
+        "type": "String"
+      }
+    }
+  },
+  "openAction": "Open",
+  "readLaterWifi": "Read later on Wi-Fi",
+  "queuedForWifiToast": "Added to downloads — it will download on Wi-Fi",
+  "queuedToast": "Added to downloads",
+  "docPreviewUnavailableTitle": "Preview not available yet",
+  "docPreviewUnavailableBody": "This document's file isn't on the content server yet.",
+  "pageCounter": "{page} / {total}",
+  "@pageCounter": {
+    "placeholders": {
+      "page": {
+        "type": "String"
+      },
+      "total": {
+        "type": "String"
+      }
+    }
+  },
+  "downloadsTitle": "Downloaded files",
+  "downloadsEmptyTitle": "No downloads yet",
+  "downloadsEmptyBody": "Documents you download or save for Wi-Fi appear here and can be read offline.",
+  "removeAction": "Remove",
+  "webinarUpcoming": "Upcoming",
+  "webinarPast": "Past events",
+  "webinarSeatsLeft": "{count} seats left",
+  "@webinarSeatsLeft": {
+    "placeholders": {
+      "count": {
+        "type": "String"
+      }
+    }
+  },
+  "webinarOnlySeatsLeft": "Only {count} seats left",
+  "@webinarOnlySeatsLeft": {
+    "placeholders": {
+      "count": {
+        "type": "String"
+      }
+    }
+  },
+  "webinarSeatsOfTotal": "{left} seats left · {total} total",
+  "@webinarSeatsOfTotal": {
+    "placeholders": {
+      "left": {
+        "type": "String"
+      },
+      "total": {
+        "type": "String"
+      }
+    }
+  },
+  "webinarReserveSeat": "Reserve a seat",
+  "webinarCompleted": "Completed",
+  "webinarWatchRecording": "Watch recording",
+  "webinarNoRecording": "No recording",
+  "webinarNoUpcoming": "There are no upcoming webinars right now. You'll get a notification when a new event is announced.",
+  "webinarFull": "Full",
+  "webinarFullBody": "All seats for this session are taken. We'll let you know when the recording is published.",
+  "webinarNotifyRecording": "Tell me about the recording",
+  "webinarSeeOthers": "See other webinars",
+  "webinarMinutes": "{minutes} minutes",
+  "@webinarMinutes": {
+    "placeholders": {
+      "minutes": {
+        "type": "String"
+      }
+    }
+  },
+  "webinarRegisterLoginBody": "Log in to reserve a seat. You'll come back to this webinar.",
+  "aboutBody": "e-Pushti is an initiative to bring reliable nutrition information to families in Bangladesh. Content follows government and internationally recognised guidelines.",
+  "aboutPartners": "Partners",
+  "privacyPolicy": "Privacy policy",
+  "termsOfUse": "Terms of use",
+  "versionLabel": "Version {version}",
+  "@versionLabel": {
+    "placeholders": {
+      "version": {
+        "type": "String"
+      }
+    }
+  },
+  "supportScope": "This channel helps with using the app. Personal health or medical advice is not given here — please contact a doctor for that.",
+  "supportSubject": "Subject",
+  "supportSubjectSubscription": "Subscription problem",
+  "supportSubjectApp": "Using the app",
+  "supportSubjectContent": "Content",
+  "supportSubjectOther": "Other",
+  "supportDetails": "Details",
+  "supportDetailsHint": "Describe the problem…",
+  "supportSend": "Send",
+  "supportSendNote": "Opens your email app with the message ready to send.",
+  "supportDirect": "Direct contact",
+  "supportHours": "Sun–Thu, 10 am – 5 pm",
+  "settingsLanguage": "Language",
+  "settingsVideoWifi": "Video on Wi-Fi only",
+  "settingsVideoWifiSub": "Saves mobile data",
+  "settingsLogout": "Log out",
+  "offlineNotNow": "Needs internet"
 }

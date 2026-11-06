@@ -68,5 +68,354 @@
   "backToHomeAction": "হোমে ফিরুন",
   "devSimulateLogin": "Simulate login (dev only)",
   "devCatalogTitle": "Component catalog",
-  "partnerContentLabel": "অংশীদারের কনটেন্ট"
+  "partnerContentLabel": "অংশীদারের কনটেন্ট",
+  "retryAction": "আবার চেষ্টা করুন",
+  "cancelAction": "বাতিল করুন",
+  "copyAction": "কপি করুন",
+  "copiedToast": "কপি করা হয়েছে",
+  "cannotOpenAppToast": "এই ফোনে অ্যাপটি খোলা যায়নি",
+  "offlineTitle": "ইন্টারনেট সংযোগ নেই",
+  "offlineAvailableIntro": "সংযোগ ছাড়াও যা দেখতে পারবেন —",
+  "offlineDownloadedDocs": "ডাউনলোড করা ডকুমেন্ট {count}টি",
+  "@offlineDownloadedDocs": {
+    "placeholders": {
+      "count": {
+        "type": "String"
+      }
+    }
+  },
+  "offlineReadChapters": "পড়া অধ্যায়ের লেখা",
+  "offlineBmi": "BMI ক্যালকুলেটর",
+  "offlineVideoWebinar": "ভিডিও ও ওয়েবিনার",
+  "offlineBody": "সংযোগ ফিরে এলে আবার চেষ্টা করুন।",
+  "slowConnection": "সংযোগ ধীর — লোড হতে সময় লাগছে",
+  "serverErrorTitle": "কিছু একটা সমস্যা হয়েছে",
+  "serverErrorBody": "এটি আপনার ভুল নয়। আমাদের সার্ভারে সাময়িক সমস্যা হচ্ছে। কিছুক্ষণ পর আবার চেষ্টা করুন।",
+  "reportToSupport": "সাপোর্টে জানান",
+  "contentServerTitle": "কনটেন্ট আনা যায়নি",
+  "contentServerBody": "এই বিষয়বস্তু আমাদের কনটেন্ট সার্ভার থেকে আসে। এই মুহূর্তে সেখানে সংযোগ করা যাচ্ছে না। আপনার অগ্রগতি নিরাপদে সংরক্ষিত আছে।",
+  "updateTitle": "অ্যাপ আপডেট করুন",
+  "updateBody": "এই সংস্করণটি আর সমর্থিত নয়। চালিয়ে যেতে নতুন সংস্করণে আপডেট করা প্রয়োজন।",
+  "updateVersionSize": "Version {version} · {size} MB",
+  "@updateVersionSize": {
+    "placeholders": {
+      "version": {
+        "type": "String"
+      },
+      "size": {
+        "type": "String"
+      }
+    }
+  },
+  "updateAction": "আপডেট করুন",
+  "updateRequiredNote": "আপডেট ছাড়া অ্যাপ ব্যবহার করা যাবে না",
+  "pust9Headline": "{days} দিনের পুষ্টি কারিকুলাম",
+  "@pust9Headline": {
+    "placeholders": {
+      "days": {
+        "type": "String"
+      }
+    }
+  },
+  "pust9Tagline": "প্রতিদিন ১টি করে পুষ্টি পরামর্শ সরাসরি আপনার ফোনে",
+  "pust9OperatorNote": "শুধু রবি ও এয়ারটেল গ্রাহকদের জন্য প্রযোজ্য",
+  "pust9ChargeLabel": "চার্জ",
+  "pust9Charge": "৳{price}/দিন + ভ্যাট, সম্পূরক শুল্ক ও সারচার্জ প্রযোজ্য",
+  "@pust9Charge": {
+    "placeholders": {
+      "price": {
+        "type": "String"
+      }
+    }
+  },
+  "pust9PathATitle": "ডায়াল করে সাবস্ক্রাইব",
+  "pust9DialAction": "ডায়াল করুন",
+  "pust9PathAStep1": "উপরের কোডটি ডায়াল করুন",
+  "pust9PathAStep2": "পপ-আপ মেনু এলে ১ লিখে Reply/Send করুন",
+  "pust9PathAStep3": "নিশ্চিতকরণ SMS পেলে সেবা চালু",
+  "pust9PathBTitle": "SMS পাঠিয়ে সাবস্ক্রাইব",
+  "pust9ShortcodeLabel": "শর্টকোড",
+  "pust9MessageLabel": "মেসেজ",
+  "pust9OpenSmsAction": "SMS অ্যাপ খুলুন",
+  "pust9PathBStep1": "উপরের মেসেজটি শর্টকোডে পাঠান",
+  "pust9PathBStep2": "ফিরতি মেসেজে ১ লিখে Reply করুন",
+  "pust9SupportLink": "সমস্যা হলে সাপোর্টে জানান",
+  "pust9NotEligible": "আপনার নম্বরটি রবি বা এয়ারটেলের নয় বলে মনে হচ্ছে। PUST9 শুধু এই দুটি অপারেটরে চালু আছে।",
+  "pust9StillOpen": "তবে অ্যাপের সব কনটেন্ট আপনার জন্য উন্মুক্ত —",
+  "bmiAnonymousNote": "লগইন ছাড়াই হিসাব করতে পারবেন। সংরক্ষণ করতে লগইন প্রয়োজন।",
+  "bmiHeight": "উচ্চতা",
+  "bmiWeight": "ওজন",
+  "bmiAge": "বয়স",
+  "bmiSex": "লিঙ্গ",
+  "bmiUnitCm": "cm",
+  "bmiUnitFeetInches": "ফুট + ইঞ্চি",
+  "bmiFeet": "ফুট",
+  "bmiInches": "ইঞ্চি",
+  "bmiKg": "kg",
+  "bmiAddAgeOptional": "বয়স দিন (ঐচ্ছিক)",
+  "bmiAgeValue": "{years} বছর {months} মাস",
+  "@bmiAgeValue": {
+    "placeholders": {
+      "years": {
+        "type": "String"
+      },
+      "months": {
+        "type": "String"
+      }
+    }
+  },
+  "bmiAgeYears": "বছর",
+  "bmiAgeMonths": "মাস",
+  "bmiAgeClear": "বয়স মুছুন",
+  "doneAction": "সম্পন্ন",
+  "bmiNoAgeNote": "বয়স না দিলে প্রাপ্তবয়স্কদের মানদণ্ডে ফলাফল দেখানো হবে — শিশু-কিশোরদের জন্য তা প্রযোজ্য নয়।",
+  "bmiSexNote": "১৯ বছরের কম বয়সীদের BMI হিসাব লিঙ্গভিত্তিক মানদণ্ড অনুযায়ী করা হয়। \"অন্যান্য\" নির্বাচন করলে বয়সভিত্তিক ফলাফল দেখানো সম্ভব হবে না।",
+  "sexFemale": "নারী",
+  "sexMale": "পুরুষ",
+  "sexOther": "অন্যান্য",
+  "childBoy": "ছেলে",
+  "childGirl": "মেয়ে",
+  "bmiShowResult": "ফলাফল দেখুন",
+  "bmiCheckHeight": "উচ্চতা আবার দেখুন",
+  "bmiCheckWeight": "ওজন আবার দেখুন",
+  "bmiResultTitle": "ফলাফল",
+  "bmiAdultUnderweight": "স্বল্প ওজন",
+  "bmiAdultNormal": "স্বাভাবিক",
+  "bmiAdultOverweight": "অতিরিক্ত ওজন",
+  "bmiAdultObesity": "স্থূলতা",
+  "bmiAdultUnderweightBody": "আপনার ওজন উচ্চতার তুলনায় স্বাস্থ্যসম্মত মাত্রার চেয়ে কম।",
+  "bmiAdultNormalBody": "আপনার ওজন উচ্চতার তুলনায় স্বাস্থ্যসম্মত মাত্রায় আছে।",
+  "bmiAdultOverweightBody": "আপনার ওজন উচ্চতার তুলনায় স্বাস্থ্যসম্মত মাত্রার চেয়ে বেশি।",
+  "bmiAdultObesityBody": "আপনার ওজন উচ্চতার তুলনায় স্বাস্থ্যসম্মত মাত্রার চেয়ে অনেক বেশি।",
+  "bmiAdultStandard": "প্রাপ্তবয়স্কদের মানদণ্ড (WHO)",
+  "bmiBandUnder": "১৮.৫ এর নিচে",
+  "bmiBandNormal": "১৮.৫ – ২৪.৯",
+  "bmiBandOver": "২৫.০ – ২৯.৯",
+  "bmiBandObese": "৩০.০ বা বেশি",
+  "bmiDisclaimer": "এটি কোনো রোগ নির্ণয় নয়। উদ্বেগ থাকলে চিকিৎসকের পরামর্শ নিন।",
+  "bmiChildDisclaimer": "এটি কোনো রোগ নির্ণয় নয়। শিশুর বৃদ্ধি নিয়ে উদ্বেগ থাকলে চিকিৎসকের পরামর্শ নিন।",
+  "saveAction": "সংরক্ষণ করুন",
+  "bmiSaveDataAction": "তথ্য সংরক্ষণ করুন",
+  "bmiSavePromptBody": "পরিমাপ সংরক্ষণ করতে ও সময়ের সাথে পরিবর্তন দেখতে লগইন করুন। আপনি এই ফলাফলে ফিরে আসবেন।",
+  "bmiPersonAge": "{age} বছর",
+  "@bmiPersonAge": {
+    "placeholders": {
+      "age": {
+        "type": "String"
+      }
+    }
+  },
+  "bmiChildStandardNote": "শিশু ও কিশোরদের ফলাফল বয়স ও লিঙ্গভিত্তিক বৃদ্ধি মানদণ্ড অনুযায়ী — প্রাপ্তবয়স্কদের মান এখানে প্রযোজ্য নয়।",
+  "bmiChildPosition": "বয়স অনুযায়ী অবস্থান",
+  "bmiChildThinness": "কৃশতা",
+  "bmiChildSevereThinness": "তীব্র কৃশতা",
+  "bmiChildNormal": "স্বাভাবিক",
+  "bmiChildOverweight": "অতিরিক্ত ওজন",
+  "bmiChildObesity": "স্থূলতা",
+  "bmiChildCompare": "এই বয়সী {group}দের তুলনায় ওজন: {category}।",
+  "@bmiChildCompare": {
+    "placeholders": {
+      "group": {
+        "type": "String"
+      },
+      "category": {
+        "type": "String"
+      }
+    }
+  },
+  "bmiUnderFiveTitle": "BMI প্রযোজ্য নয়",
+  "bmiUnderFiveBody": "৫ বছরের কম বয়সী শিশুদের পুষ্টি অবস্থা BMI দিয়ে মাপা হয় না। এই বয়সে উচ্চতা-অনুযায়ী ওজন ও বৃদ্ধির ধারা দেখা হয়।",
+  "bmiUnderFiveSave": "তথ্য সংরক্ষণ করলে সময়ের সাথে শিশুর বৃদ্ধির ধারা দেখা যাবে।",
+  "bmiUnderFiveAdvice": "শিশুর পুষ্টি অবস্থা জানতে নিকটস্থ স্বাস্থ্যকেন্দ্র বা চিকিৎসকের পরামর্শ নিন।",
+  "bmiNoReferenceTitle": "বয়সভিত্তিক ফলাফল দেখানো সম্ভব নয়",
+  "bmiNoReferenceSubtitle": "{age} বছর · লিঙ্গ: অন্যান্য",
+  "@bmiNoReferenceSubtitle": {
+    "placeholders": {
+      "age": {
+        "type": "String"
+      }
+    }
+  },
+  "bmiNoReferenceBody": "১৯ বছরের কম বয়সীদের BMI ছেলে ও মেয়েদের জন্য আলাদা বৃদ্ধি মানদণ্ড অনুযায়ী হিসাব করা হয়। \"অন্যান্য\"-এর জন্য আন্তর্জাতিকভাবে স্বীকৃত কোনো মানদণ্ড নেই।",
+  "bmiNoReferenceWhy": "ভুল ফলাফল দেখানোর চেয়ে আমরা কিছু না দেখানোই উপযুক্ত মনে করি।",
+  "bmiNoReferenceSave": "উচ্চতা ও ওজন সংরক্ষণ করা যাবে, এবং চিকিৎসকের সাথে আলোচনায় কাজে লাগবে।",
+  "bmiNoAgeLabel": "প্রাপ্তবয়স্ক মানদণ্ডে",
+  "bmiNoAgeGiven": "বয়স দেওয়া হয়নি",
+  "bmiNoAgeBody": "এই ফলাফল প্রাপ্তবয়স্কদের মানদণ্ডে হিসাব করা। ব্যক্তি ১৯ বছরের কম হলে এটি প্রযোজ্য নয়।",
+  "bmiNoAgeHint": "সঠিক ফলাফল পেতে বয়স ও লিঙ্গ যোগ করুন।",
+  "bmiAddAgeAction": "বয়স যোগ করুন",
+  "bmiChildTablesMissing": "শিশুদের বয়সভিত্তিক মানদণ্ড এই সংস্করণে এখনো যুক্ত হয়নি, তাই কোনো শ্রেণিবিভাগ দেখানো হচ্ছে না।",
+  "minutesShort": "{minutes} মিনিট",
+  "@minutesShort": {
+    "placeholders": {
+      "minutes": {
+        "type": "String"
+      }
+    }
+  },
+  "chapterNumbered": "{number}. {title}",
+  "@chapterNumbered": {
+    "placeholders": {
+      "number": {
+        "type": "String"
+      },
+      "title": {
+        "type": "String"
+      }
+    }
+  },
+  "coursesLoggedOutNote": "সব অধ্যায় লগইন ছাড়াই পড়তে পারবেন। অগ্রগতি সংরক্ষণ ও কুইজের জন্য লগইন প্রয়োজন।",
+  "videoDataNote": "ভিডিও চালু করলে প্রায় {size} MB ডেটা খরচ হবে",
+  "@videoDataNote": {
+    "placeholders": {
+      "size": {
+        "type": "String"
+      }
+    }
+  },
+  "videoWifiOnlyNote": "ভিডিও শুধু ওয়াই-ফাইতে চালানোর সেটিং চালু আছে। সেটিংস থেকে পরিবর্তন করা যাবে।",
+  "videoFailedTitle": "ভিডিও লোড করা যায়নি",
+  "videoFailedBody": "সংযোগ ফিরে এলে ভিডিও দেখা যাবে। লেখা অংশ পড়তে কোনো সমস্যা নেই।",
+  "takeQuizAction": "কুইজ দিন",
+  "quizLoginBody": "কুইজ দিতে ও সার্টিফিকেট পেতে লগইন করুন। আপনি যেখানে ছিলেন সেখানেই ফিরে আসবেন।",
+  "libraryAllCategories": "সব ক্যাটাগরি",
+  "libraryDocCount": "{count}টি ডকুমেন্ট",
+  "@libraryDocCount": {
+    "placeholders": {
+      "count": {
+        "type": "String"
+      }
+    }
+  },
+  "librarySearchHint": "ডকুমেন্ট খুঁজুন...",
+  "libraryNoResultsTitle": "কোনো ডকুমেন্ট পাওয়া যায়নি",
+  "libraryNoResultsBody": "\"{query}\" শব্দে কিছু মেলেনি। অন্য শব্দ দিয়ে খুঁজে দেখুন, অথবা সব ক্যাটাগরি দেখুন।",
+  "@libraryNoResultsBody": {
+    "placeholders": {
+      "query": {
+        "type": "String"
+      }
+    }
+  },
+  "librarySeeAll": "সব ডকুমেন্ট দেখুন",
+  "docMeta": "{size} MB · {pages} পৃষ্ঠা",
+  "@docMeta": {
+    "placeholders": {
+      "size": {
+        "type": "String"
+      },
+      "pages": {
+        "type": "String"
+      }
+    }
+  },
+  "docDownloaded": "ডাউনলোড করা",
+  "docWaitingWifi": "ওয়াই-ফাইয়ের অপেক্ষায়",
+  "docPending": "ডাউনলোডের অপেক্ষায়",
+  "downloadAction": "ডাউনলোড",
+  "docLargeNote": "এই ডকুমেন্টটি {size} MB। মোবাইল ডেটায় খুললে খরচ হবে।",
+  "@docLargeNote": {
+    "placeholders": {
+      "size": {
+        "type": "String"
+      }
+    }
+  },
+  "openAction": "খুলুন",
+  "readLaterWifi": "ওয়াই-ফাইতে পরে পড়ব",
+  "queuedForWifiToast": "ডাউনলোড তালিকায় যোগ হয়েছে — ওয়াই-ফাইতে ডাউনলোড হবে",
+  "queuedToast": "ডাউনলোড তালিকায় যোগ হয়েছে",
+  "docPreviewUnavailableTitle": "প্রিভিউ এখনো পাওয়া যাচ্ছে না",
+  "docPreviewUnavailableBody": "এই ডকুমেন্টের ফাইল এখনো কনটেন্ট সার্ভারে যুক্ত হয়নি।",
+  "pageCounter": "{page} / {total}",
+  "@pageCounter": {
+    "placeholders": {
+      "page": {
+        "type": "String"
+      },
+      "total": {
+        "type": "String"
+      }
+    }
+  },
+  "downloadsTitle": "ডাউনলোড করা ফাইল",
+  "downloadsEmptyTitle": "এখনো কিছু ডাউনলোড করা হয়নি",
+  "downloadsEmptyBody": "যে ডকুমেন্ট ডাউনলোড করবেন বা ওয়াই-ফাইয়ের জন্য রাখবেন, তা এখানে দেখা যাবে এবং অফলাইনে পড়া যাবে।",
+  "removeAction": "সরিয়ে দিন",
+  "webinarUpcoming": "আসন্ন",
+  "webinarPast": "বিগত ইভেন্ট",
+  "webinarSeatsLeft": "{count}টি আসন বাকি",
+  "@webinarSeatsLeft": {
+    "placeholders": {
+      "count": {
+        "type": "String"
+      }
+    }
+  },
+  "webinarOnlySeatsLeft": "মাত্র {count}টি আসন বাকি",
+  "@webinarOnlySeatsLeft": {
+    "placeholders": {
+      "count": {
+        "type": "String"
+      }
+    }
+  },
+  "webinarSeatsOfTotal": "{left}টি আসন বাকি · মোট {total}",
+  "@webinarSeatsOfTotal": {
+    "placeholders": {
+      "left": {
+        "type": "String"
+      },
+      "total": {
+        "type": "String"
+      }
+    }
+  },
+  "webinarReserveSeat": "আসন সংরক্ষণ করুন",
+  "webinarCompleted": "সম্পন্ন",
+  "webinarWatchRecording": "রেকর্ডিং দেখুন",
+  "webinarNoRecording": "রেকর্ডিং নেই",
+  "webinarNoUpcoming": "এই মুহূর্তে কোনো আসন্ন ওয়েবিনার নেই। নতুন ইভেন্ট ঘোষণা হলে নোটিফিকেশন পাবেন।",
+  "webinarFull": "আসন পূর্ণ",
+  "webinarFullBody": "এই সেশনের সব আসন নেওয়া হয়ে গেছে। রেকর্ডিং প্রকাশ হলে আপনাকে জানানো হবে।",
+  "webinarNotifyRecording": "রেকর্ডিংয়ের খবর পেতে চাই",
+  "webinarSeeOthers": "অন্য ওয়েবিনার দেখুন",
+  "webinarMinutes": "{minutes} মিনিট",
+  "@webinarMinutes": {
+    "placeholders": {
+      "minutes": {
+        "type": "String"
+      }
+    }
+  },
+  "webinarRegisterLoginBody": "আসন সংরক্ষণ করতে লগইন করুন। আপনি এই ওয়েবিনারে ফিরে আসবেন।",
+  "aboutBody": "e-Pushti বাংলাদেশের পরিবারগুলোর কাছে নির্ভরযোগ্য পুষ্টি তথ্য পৌঁছে দেওয়ার একটি উদ্যোগ। কনটেন্ট তৈরি হয়েছে সরকারি ও আন্তর্জাতিক স্বীকৃত নির্দেশিকা অনুসরণ করে।",
+  "aboutPartners": "অংশীদার",
+  "privacyPolicy": "প্রাইভেসি পলিসি",
+  "termsOfUse": "শর্তাবলী",
+  "versionLabel": "Version {version}",
+  "@versionLabel": {
+    "placeholders": {
+      "version": {
+        "type": "String"
+      }
+    }
+  },
+  "supportScope": "এই চ্যানেলে অ্যাপ ব্যবহার সংক্রান্ত সহায়তা দেওয়া হয়। ব্যক্তিগত স্বাস্থ্য বা চিকিৎসা পরামর্শ এখানে দেওয়া হয় না — এর জন্য চিকিৎসকের সাথে যোগাযোগ করুন।",
+  "supportSubject": "বিষয়",
+  "supportSubjectSubscription": "সাবস্ক্রিপশন সমস্যা",
+  "supportSubjectApp": "অ্যাপ ব্যবহার",
+  "supportSubjectContent": "কনটেন্ট",
+  "supportSubjectOther": "অন্যান্য",
+  "supportDetails": "বিস্তারিত",
+  "supportDetailsHint": "কী সমস্যা হচ্ছে লিখুন...",
+  "supportSend": "পাঠান",
+  "supportSendNote": "আপনার ইমেইল অ্যাপে বার্তাটি প্রস্তুত অবস্থায় খুলবে।",
+  "supportDirect": "সরাসরি যোগাযোগ",
+  "supportHours": "রবি–বৃহস্পতি, সকাল ১০টা – বিকাল ৫টা",
+  "settingsLanguage": "ভাষা",
+  "settingsVideoWifi": "শুধু ওয়াই-ফাইতে ভিডিও",
+  "settingsVideoWifiSub": "মোবাইল ডেটা সংরক্ষণ",
+  "settingsLogout": "লগআউট",
+  "offlineNotNow": "ইন্টারনেট প্রয়োজন"
 }
