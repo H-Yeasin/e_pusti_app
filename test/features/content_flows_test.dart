@@ -10,7 +10,8 @@ class _LoggedIn extends AuthController {
   final String phone;
 
   @override
-  AuthSession build() => AuthSession.loggedIn(phoneNumber: phone);
+  AuthSession build() =>
+      AuthSession.loggedIn(userId: 'test-user', phoneNumber: phone);
 }
 
 void main() {

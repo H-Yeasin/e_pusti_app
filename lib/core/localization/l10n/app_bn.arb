@@ -417,5 +417,233 @@
   "settingsVideoWifi": "শুধু ওয়াই-ফাইতে ভিডিও",
   "settingsVideoWifiSub": "মোবাইল ডেটা সংরক্ষণ",
   "settingsLogout": "লগআউট",
-  "offlineNotNow": "ইন্টারনেট প্রয়োজন"
+  "offlineNotNow": "ইন্টারনেট প্রয়োজন",
+  "phoneHeading": "মোবাইল নম্বর দিন",
+  "phoneReason": "অগ্রগতি সংরক্ষণ, সার্টিফিকেট ও ওয়েবিনার রেজিস্ট্রেশনের জন্য প্রয়োজন",
+  "phoneLabel": "মোবাইল নম্বর",
+  "phoneHint": "1XXX-XXXXXX",
+  "phoneOperatorNote": "যেকোনো অপারেটরের নম্বর দিয়ে অ্যাপ ব্যবহার করা যাবে। শুধু PUST9 সাবস্ক্রিপশনের জন্য রবি বা এয়ারটেল প্রয়োজন।",
+  "phoneTermsNote": "চালিয়ে গেলে আপনি প্রাইভেসি পলিসি ও শর্তাবলী মেনে নিচ্ছেন।",
+  "phoneInvalid": "সঠিক মোবাইল নম্বর দিন",
+  "sendCodeAction": "কোড পাঠান",
+  "otpTitle": "কোড যাচাই",
+  "otpSentTo": "এই নম্বরে কোড পাঠানো হয়েছে",
+  "changeAction": "পরিবর্তন",
+  "otpResendIn": "কোড আবার পাঠান — {time}",
+  "@otpResendIn": {
+    "placeholders": {
+      "time": {
+        "type": "String"
+      }
+    }
+  },
+  "otpResend": "কোড আবার পাঠান",
+  "otpVerify": "যাচাই করুন",
+  "otpNoCodeHint": "কোড না পেলে নেটওয়ার্ক সংযোগ দেখে নিন",
+  "otpDelayedHint": "কোড আসতে দেরি হচ্ছে? নম্বরটি ঠিক আছে কিনা দেখে নিন বা অন্য নম্বর ব্যবহার করুন।",
+  "otpWrong": "কোডটি সঠিক নয় — আবার চেষ্টা করুন",
+  "otpExpired": "কোডের মেয়াদ শেষ — নতুন কোড নিন",
+  "otpTooMany": "অনেকবার চেষ্টা করা হয়েছে। কিছুক্ষণ পর আবার চেষ্টা করুন।",
+  "otpSmsFailed": "কোড পাঠানো যায়নি। কিছুক্ষণ পর আবার চেষ্টা করুন।",
+  "authUnavailable": "এই সংস্করণে লগইন এখনো চালু হয়নি। অ্যাপের বাকি সবকিছু আপনার জন্য উন্মুক্ত।",
+  "devOtpHint": "Development build: use code {code}",
+  "@devOtpHint": {
+    "placeholders": {
+      "code": {
+        "type": "String"
+      }
+    }
+  },
+  "changeNumberTitle": "নম্বর পরিবর্তন",
+  "changeNumberHeading": "নতুন মোবাইল নম্বর দিন",
+  "changeNumberBody": "আপনার প্রোফাইল, পরিবার, রেকর্ড ও সার্টিফিকেট নতুন নম্বরে চলে যাবে।",
+  "phoneInUse": "এই নম্বরটি অন্য একটি অ্যাকাউন্টে ব্যবহৃত হচ্ছে।",
+  "numberChangedToast": "নম্বর পরিবর্তন হয়েছে",
+  "consentTitle": "সম্মতি",
+  "consentHeading": "আপনার তথ্য কীভাবে ব্যবহার করা হয়",
+  "consentBody": "আপনি যে তথ্য দেবেন তা শুধু আপনাকে উপযোগী পুষ্টি পরামর্শ দিতে এবং BIID ফাউন্ডেশনের সমষ্টিগত প্রতিবেদনে (নাম-পরিচয় ছাড়া) ব্যবহার করা হয়। কোনো তথ্য বিক্রি করা হয় না।",
+  "consentTerms": "আমি প্রাইভেসি পলিসি ও শর্তাবলী পড়েছি এবং সম্মত আছি",
+  "consentHealth": "আমি স্বাস্থ্য সংক্রান্ত তথ্য (উচ্চতা, ওজন) সংরক্ষণে সম্মতি দিচ্ছি",
+  "consentContinue": "সম্মত হয়ে চালিয়ে যান",
+  "consentSkipNote": "সম্মতি না দিলেও কোর্স, লাইব্রেরি ও ওয়েবিনার দেখতে পারবেন",
+  "privacyCentreTitle": "প্রাইভেসি ও তথ্য",
+  "privacyTermsAccepted": "শর্তাবলী গ্রহণ করেছেন: {date}",
+  "@privacyTermsAccepted": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "privacyHealthOn": "স্বাস্থ্য তথ্য সংরক্ষণ: চালু",
+  "privacyHealthOff": "স্বাস্থ্য তথ্য সংরক্ষণ: বন্ধ",
+  "privacyWithdraw": "স্বাস্থ্য তথ্যের সম্মতি প্রত্যাহার করুন",
+  "privacyWithdrawConfirm": "সম্মতি প্রত্যাহার করবেন? সংরক্ষিত সব উচ্চতা, ওজন ও BMI রেকর্ড মুছে যাবে। এটি ফিরিয়ে আনা যাবে না।",
+  "privacyGiveConsent": "সম্মতি দিন",
+  "withdrawAction": "প্রত্যাহার করুন",
+  "profileTitle": "আপনার প্রোফাইল",
+  "editAction": "সম্পাদনা",
+  "profileAddName": "আপনার তথ্য যোগ করুন",
+  "familyAddTitle": "পরিবারের সদস্য যোগ করুন",
+  "familyAddBody": "সন্তান, স্বামী/স্ত্রী বা বাবা-মায়ের তথ্য যোগ করলে তাদের জন্যও বয়স-উপযোগী পুষ্টি পরামর্শ ও BMI দেখতে পারবেন।",
+  "familyAddAction": "সদস্য যোগ করুন",
+  "familyCount": "আপনার পরিবার · {count} জন",
+  "@familyCount": {
+    "placeholders": {
+      "count": {
+        "type": "String"
+      }
+    }
+  },
+  "consentNeededBanner": "প্রোফাইল ও স্বাস্থ্য তথ্য সংরক্ষণ করতে সম্মতি দিন।",
+  "ageYearsMonths": "{years} বছর {months} মাস",
+  "@ageYearsMonths": {
+    "placeholders": {
+      "years": {
+        "type": "String"
+      },
+      "months": {
+        "type": "String"
+      }
+    }
+  },
+  "ageYears": "{years} বছর",
+  "@ageYears": {
+    "placeholders": {
+      "years": {
+        "type": "String"
+      }
+    }
+  },
+  "fieldNameOptional": "নাম (ঐচ্ছিক)",
+  "fieldNameHint": "পুরো নাম লিখুন",
+  "fieldRelationship": "সম্পর্ক",
+  "fieldDob": "জন্ম তারিখ",
+  "fieldDistrict": "জেলা",
+  "fieldOccupation": "পেশা",
+  "fieldPregnant": "গর্ভবতী",
+  "fieldBreastfeeding": "স্তন্যদানকারী",
+  "fieldInterests": "আগ্রহের বিষয়",
+  "fieldInterestsOptional": "আগ্রহের বিষয় (ঐচ্ছিক)",
+  "fieldChoose": "নির্বাচন করুন",
+  "fieldSelectedCount": "{count}টি নির্বাচিত",
+  "@fieldSelectedCount": {
+    "placeholders": {
+      "count": {
+        "type": "String"
+      }
+    }
+  },
+  "dobReason": "বয়স-উপযোগী BMI হিসাবের জন্য জন্ম তারিখ ও লিঙ্গ প্রয়োজন",
+  "dobSelectedAge": "নির্বাচিত বয়স: {age}",
+  "@dobSelectedAge": {
+    "placeholders": {
+      "age": {
+        "type": "String"
+      }
+    }
+  },
+  "removeMemberAction": "সদস্য মুছে ফেলুন",
+  "removeMemberConfirm": "এই সদস্যকে মুছে ফেলবেন? তার সংরক্ষিত পরিমাপও মুছে যাবে।",
+  "savedToast": "সংরক্ষিত হয়েছে",
+  "pickDistrictTitle": "জেলা নির্বাচন করুন",
+  "pickDistrictSearch": "জেলা খুঁজুন...",
+  "pickOccupationTitle": "পেশা নির্বাচন করুন",
+  "pickRelationshipTitle": "সম্পর্ক নির্বাচন করুন",
+  "pickSexTitle": "লিঙ্গ নির্বাচন করুন",
+  "pickInterestsHint": "একাধিক নির্বাচন করতে পারবেন",
+  "pickInterestsDone": "সম্পন্ন · {count}টি নির্বাচিত",
+  "@pickInterestsDone": {
+    "placeholders": {
+      "count": {
+        "type": "String"
+      }
+    }
+  },
+  "divisionDhaka": "ঢাকা বিভাগ",
+  "divisionChattogram": "চট্টগ্রাম বিভাগ",
+  "divisionRajshahi": "রাজশাহী বিভাগ",
+  "divisionKhulna": "খুলনা বিভাগ",
+  "divisionBarishal": "বরিশাল বিভাগ",
+  "divisionSylhet": "সিলেট বিভাগ",
+  "divisionRangpur": "রংপুর বিভাগ",
+  "divisionMymensingh": "ময়মনসিংহ বিভাগ",
+  "relChild": "সন্তান",
+  "relSpouse": "স্বামী / স্ত্রী",
+  "relParent": "পিতা / মাতা",
+  "relSibling": "ভাই / বোন",
+  "relOther": "অন্যান্য",
+  "relHolderYou": "{name} (আপনি)",
+  "@relHolderYou": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "youLabel": "আপনি",
+  "occStudent": "ছাত্র/ছাত্রী",
+  "occPrivate": "চাকরিজীবী (বেসরকারি)",
+  "occGovernment": "সরকারি কর্মকর্তা/কর্মচারী",
+  "occBusiness": "ব্যবসায়ী",
+  "occTeacher": "শিক্ষক/শিক্ষিকা",
+  "occFarmer": "কৃষক",
+  "occHomemaker": "গৃহিণী",
+  "occOther": "অন্যান্য",
+  "intBalanced": "সুষম খাদ্যাভ্যাস",
+  "intPregnancy": "গর্ভকালীন পুষ্টি",
+  "intWeight": "ওজন ব্যবস্থাপনা",
+  "intChild": "শিশু পুষ্টি",
+  "intDiabetes": "ডায়াবেটিক ব্যবস্থাপনা",
+  "intGeneral": "সাধারণ স্বাস্থ্য সচেতনতা",
+  "bmiForWhom": "কার জন্য?",
+  "bmiSeeHistory": "আগের রেকর্ড দেখুন",
+  "bmiChoosePerson": "কার জন্য সংরক্ষণ করবেন?",
+  "bmiSavedToast": "রেকর্ডে সংরক্ষিত হয়েছে",
+  "historyTitle": "রেকর্ড",
+  "historyHeader": "{person} · {count}টি রেকর্ড",
+  "@historyHeader": {
+    "placeholders": {
+      "person": {
+        "type": "String"
+      },
+      "count": {
+        "type": "String"
+      }
+    }
+  },
+  "historyRowMeta": "{height} cm · {weight} kg",
+  "@historyRowMeta": {
+    "placeholders": {
+      "height": {
+        "type": "String"
+      },
+      "weight": {
+        "type": "String"
+      }
+    }
+  },
+  "historyGrowthSoon": "বৃদ্ধির গ্রাফ শীঘ্রই যুক্ত হবে",
+  "historyEmptyTitle": "এখনো কোনো রেকর্ড নেই",
+  "historyEmptyBody": "উচ্চতা ও ওজন সংরক্ষণ করলে সময়ের সাথে পরিবর্তন এখানে দেখতে পারবেন।",
+  "historyAddAction": "পরিমাপ যোগ করুন",
+  "historyEditTitle": "রেকর্ড সংশোধন",
+  "deleteAction": "মুছে ফেলুন",
+  "deleteRecordConfirm": "এই রেকর্ডটি মুছে ফেলবেন?",
+  "settingsChangeNumber": "নম্বর পরিবর্তন",
+  "settingsPrivacyCentre": "প্রাইভেসি ও তথ্য",
+  "settingsDeleteAccount": "অ্যাকাউন্ট মুছে ফেলুন",
+  "logoutConfirm": "লগআউট করবেন? ডাউনলোড করা ফাইল এই ফোনে থেকে যাবে।",
+  "deleteAccountTitle": "অ্যাকাউন্ট মুছে ফেলুন",
+  "deleteAccountWarning": "অ্যাকাউন্ট মুছে ফেলা স্থায়ী — এটি ফিরিয়ে আনা যায় না।",
+  "deleteAccountDeletes": "যা মুছে যাবে",
+  "deleteAccountProfiles": "আপনার ও পরিবারের সদস্যদের প্রোফাইল",
+  "deleteAccountRecords": "সংরক্ষিত উচ্চতা, ওজন ও BMI রেকর্ড",
+  "deleteAccountProgress": "কোর্স ও মডিউলের অগ্রগতি",
+  "deleteAccountRegistrations": "ওয়েবিনার রেজিস্ট্রেশন",
+  "deleteAccountStays": "যা থেকে যাবে",
+  "deleteAccountCertificates": "ইস্যু করা সার্টিফিকেট যাচাইযোগ্য থাকবে, কারণ তৃতীয় পক্ষ এর সত্যতা যাচাই করতে পারে। নাম-পরিচয় ছাড়া সমষ্টিগত পরিসংখ্যানও থেকে যাবে।",
+  "deleteAccountPust9": "PUST9 সাবস্ক্রিপশন অপারেটরের কাছে চালু থাকবে — আলাদাভাবে বন্ধ করতে হবে।",
+  "deleteAccountFailed": "অ্যাকাউন্ট মুছে ফেলা যায়নি। আবার চেষ্টা করুন।",
+  "accountDeletedToast": "অ্যাকাউন্ট মুছে ফেলা হয়েছে"
 }

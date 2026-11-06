@@ -8,6 +8,10 @@ import '../../../../core/localization/localization.dart';
 import '../../../../core/theme/app_tokens.dart';
 import '../../../../core/widgets/feedback/ep_banner.dart';
 import '../../../../core/widgets/navigation/ep_app_bar.dart';
+import '../../../auth/presentation/providers/auth_controller.dart';
+import '../../../profile/domain/profile_models.dart';
+import '../../../profile/presentation/profile_labels.dart';
+import '../../../profile/presentation/profile_providers.dart';
 import '../../domain/bmi_engine.dart';
 import '../../domain/entities/bmi_models.dart';
 import '../bmi_route_args.dart';
@@ -15,10 +19,12 @@ import '../widgets/sex_label.dart';
 
 enum _HeightUnit { cm, feetInches }
 
-/// BMI-01, anonymous variant: works without an account; saving needs login.
-/// Choosing a family member (logged-in variant) arrives with profiles.
+/// BMI-01. Anonymous: works without an account; saving needs login.
+/// Logged in: "who is this for?" fills age and sex from the profile.
 class BmiEntryScreen extends ConsumerStatefulWidget {
-  const BmiEntryScreen({super.key});
+  const BmiEntryScreen({super.key, this.personId});
+
+  final String? personId;
 
   @override
   ConsumerState<BmiEntryScreen> createState() => _BmiEntryScreenState();
@@ -33,6 +39,16 @@ class _BmiEntryScreenState extends ConsumerState<BmiEntryScreen> {
   int? _ageMonths;
   Sex? _sex;
   bool _submitted = false;
+  String? _personId;
+  bool _personApplied = false;
+
+  void _selectPerson(Person person) {
+    setState(() {
+      _personId = person.id;
+      _ageMonths = person.ageMonthsAt(DateTime.now());
+      _sex = person.sex;
+    });
+  }
 
   @override
   void initState() {
@@ -98,7 +114,7 @@ class _BmiEntryScreenState extends ConsumerState<BmiEntryScreen> {
     context.push(
       Uri(
         path: AppRoutes.bmiResult,
-        queryParameters: BmiRouteArgs.toQuery(input),
+        queryParameters: BmiRouteArgs.toQuery(input, personId: _personId),
       ).toString(),
     );
   }
@@ -118,17 +134,56 @@ class _BmiEntryScreenState extends ConsumerState<BmiEntryScreen> {
     final l10n = context.l10n;
     final theme = Theme.of(context);
     final age = _ageMonths;
+    final loggedIn = ref.watch(authControllerProvider).isLoggedIn;
+    final family = loggedIn
+        ? ref.watch(familyProvider).value ?? const <Person>[]
+        : const <Person>[];
+    if (!_personApplied && family.isNotEmpty) {
+      _personApplied = true;
+      final initial =
+          family.where((p) => p.id == widget.personId).firstOrNull ??
+          family.first;
+      WidgetsBinding.instance.addPostFrameCallback((_) {
+        if (mounted) _selectPerson(initial);
+      });
+    }
 
     return Scaffold(
       appBar: EpAppBar(title: l10n.homeBmiTitle),
       body: ListView(
         padding: const EdgeInsets.all(EpSpace.gutter),
         children: [
-          EpBanner(
-            tone: EpBannerTone.clinical,
-            icon: Icons.info_outline_rounded,
-            message: l10n.bmiAnonymousNote,
-          ),
+          if (!loggedIn)
+            EpBanner(
+              tone: EpBannerTone.clinical,
+              icon: Icons.info_outline_rounded,
+              message: l10n.bmiAnonymousNote,
+            )
+          else if (family.isNotEmpty) ...[
+            Text(l10n.bmiForWhom, style: theme.textTheme.titleMedium),
+            const SizedBox(height: EpSpace.s2),
+            Wrap(
+              key: const ValueKey('bmi-for-whom'),
+              spacing: EpSpace.s2,
+              runSpacing: EpSpace.s2,
+              children: [
+                for (final person in family)
+                  ChoiceChip(
+                    label: Text(
+                      person.isHolder
+                          ? l10n.relHolderYou(
+                              person.name?.trim().isNotEmpty == true
+                                  ? person.name!.trim()
+                                  : l10n.youLabel,
+                            )
+                          : personName(context, person),
+                    ),
+                    selected: _personId == person.id,
+                    onSelected: (_) => _selectPerson(person),
+                  ),
+              ],
+            ),
+          ],
           const SizedBox(height: EpSpace.s5),
           Row(
             children: [
@@ -248,6 +303,18 @@ class _BmiEntryScreenState extends ConsumerState<BmiEntryScreen> {
             onPressed: _canSubmit || !_submitted ? _submit : null,
             child: Text(l10n.bmiShowResult),
           ),
+          if (loggedIn) ...[
+            const SizedBox(height: EpSpace.s2),
+            TextButton(
+              onPressed: () => context.push(
+                Uri(
+                  path: AppRoutes.bmiHistory,
+                  queryParameters: {'p': ?_personId},
+                ).toString(),
+              ),
+              child: Text(l10n.bmiSeeHistory),
+            ),
+          ],
         ],
       ),
     );

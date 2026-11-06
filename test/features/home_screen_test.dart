@@ -101,9 +101,10 @@ void main() {
     await tester.tap(find.widgetWithText(FilledButton, 'Log in'));
     await settle(tester);
 
-    expect(find.text('Simulate login (dev only)'), findsOneWidget);
-    await tester.tap(find.text('Simulate login (dev only)'));
-    await settle(tester);
+    await logInThroughScreens(tester);
+    // First login asks for consent once, then returns to the destination.
+    expect(find.text('How your information is used'), findsOneWidget);
+    await acceptConsent(tester);
 
     expect(find.widgetWithText(AppBar, 'My certificates'), findsOneWidget);
 

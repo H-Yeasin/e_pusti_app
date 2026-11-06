@@ -8,6 +8,7 @@ import '../../../../core/config/remote_config.dart';
 import '../../../../core/localization/digits.dart';
 import '../../../../core/localization/localization.dart';
 import '../../../../core/platform/launcher.dart';
+import '../../../../core/theme/app_tokens.dart';
 import '../../../../core/widgets/navigation/ep_app_bar.dart';
 import '../../../auth/presentation/providers/auth_controller.dart';
 import '../../../library/presentation/library_providers.dart';
@@ -89,18 +90,65 @@ class SettingsScreen extends ConsumerWidget {
             if (isLoggedIn) ...[
               const Divider(height: 1),
               ListTile(
+                key: const ValueKey('settings-privacy'),
+                title: Text(l10n.settingsPrivacyCentre),
+                trailing: const Icon(Icons.chevron_right_rounded),
+                onTap: () => context.push(AppRoutes.privacyCentre),
+              ),
+              const Divider(height: 1),
+              ListTile(
+                key: const ValueKey('settings-change-number'),
+                title: Text(l10n.settingsChangeNumber),
+                trailing: const Icon(Icons.chevron_right_rounded),
+                onTap: () => context.push(AppRoutes.changeNumber),
+              ),
+              const Divider(height: 1),
+              ListTile(
+                key: const ValueKey('settings-logout'),
                 title: Text(l10n.settingsLogout),
                 trailing: const Icon(Icons.logout_rounded),
-                onTap: () {
-                  ref.read(authControllerProvider.notifier).logOut();
-                  context.go(AppRoutes.home);
-                },
+                onTap: () => _confirmLogout(context, ref),
+              ),
+              const Divider(height: 1),
+              ListTile(
+                key: const ValueKey('settings-delete-account'),
+                title: Text(
+                  l10n.settingsDeleteAccount,
+                  style: const TextStyle(color: EpColors.destructiveText),
+                ),
+                trailing: const Icon(Icons.chevron_right_rounded),
+                onTap: () => context.push(AppRoutes.deleteAccount),
               ),
             ],
           ],
         ),
       ),
     );
+  }
+
+  /// INF-06: logging out keeps downloaded files on the phone.
+  Future<void> _confirmLogout(BuildContext context, WidgetRef ref) async {
+    final l10n = context.l10n;
+    final router = GoRouter.of(context);
+    final ok = await showDialog<bool>(
+      context: context,
+      builder: (context) => AlertDialog(
+        content: Text(l10n.logoutConfirm),
+        actions: [
+          TextButton(
+            onPressed: () => Navigator.of(context).pop(false),
+            child: Text(l10n.cancelAction),
+          ),
+          TextButton(
+            onPressed: () => Navigator.of(context).pop(true),
+            child: Text(l10n.settingsLogout),
+          ),
+        ],
+      ),
+    );
+    if (ok != true) return;
+    await ref.read(authControllerProvider.notifier).logOut();
+    router.go(AppRoutes.home);
   }
 
   Future<void> _pickLanguage(

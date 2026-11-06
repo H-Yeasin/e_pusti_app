@@ -8,6 +8,7 @@ import '../../../../core/config/app_info.dart';
 import '../../../../core/localization/digits.dart';
 import '../../../../core/localization/localization.dart';
 import '../../../../core/theme/app_tokens.dart';
+import '../../../auth/presentation/phone_number.dart';
 import '../../../auth/presentation/providers/auth_controller.dart';
 
 /// HOM-02. Gated destinations stay visible and are marked with a lock when
@@ -144,7 +145,7 @@ class _SidebarHeader extends StatelessWidget {
           const SizedBox(height: EpSpace.s3),
           if (phone != null)
             Text(
-              context.digits(phone),
+              context.digits(PhoneNumber.display(phone)),
               style: Theme.of(context).textTheme.titleMedium,
             )
           else

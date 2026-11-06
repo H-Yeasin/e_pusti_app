@@ -40,6 +40,12 @@ Phases are ordered by dependency and user value. Each phase ends in a shippable 
 | Settings | INF-04 full, INF-05 delete account, INF-06 logout confirm |
 **Exit:** family of 4 can be created, measured and tracked; deletion removes all listed data.
 
+**Status (2026-11-06):**
+- Done: LAU-03/04 phone + 6-digit OTP (wrong, expired, too-many-attempts, SMS-failed, slow-SMS states, resend countdown, Bangla digits, SMS autofill), LAU-05 return-to-origin with the consent step in between, LAU-06 change number; PRO-03 consent (both boxes, "not now" keeps content open) and INF-07 privacy centre (withdraw deletes health records); PRO-01/02 holder + dependants with PRO-04a–f pickers (64 districts by division with search, occupation, relationship, sex with BMI note, interests multi-select, date of birth); BMI-01 "who is this for?", save to a person (asks whom when anonymous), BMI-03 history with correct/delete and no BMI number where results show none; INF-04 privacy/change number/logout/delete rows, INF-05 delete account, INF-06 logout confirm.
+- Backend: repository interfaces with a Supabase implementation (`supabase/migrations`, row-level security, consent enforced in the database, `delete_my_account()`) and an on-device dev backend (code `123456`) used by dev/staging builds without keys. See `supabase/README.md`.
+- Moved: P1-4 measurement reminders → Phase 4, so they ship with the notification system (and once clinical intervals are confirmed).
+- Still open: a real Supabase project with an SMS provider; offline caching of family data; growth chart (P2-1).
+
 ## Phase 3 — Learning, assessment, certificates
 | Feature | Screens |
 |---------|---------|

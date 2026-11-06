@@ -1474,6 +1474,816 @@ abstract class EPustiGeneratedLocalizations {
   /// In en, this message translates to:
   /// **'Needs internet'**
   String get offlineNotNow;
+
+  /// No description provided for @phoneHeading.
+  ///
+  /// In en, this message translates to:
+  /// **'Enter your mobile number'**
+  String get phoneHeading;
+
+  /// No description provided for @phoneReason.
+  ///
+  /// In en, this message translates to:
+  /// **'Needed to save progress, certificates and webinar registrations'**
+  String get phoneReason;
+
+  /// No description provided for @phoneLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Mobile number'**
+  String get phoneLabel;
+
+  /// No description provided for @phoneHint.
+  ///
+  /// In en, this message translates to:
+  /// **'1XXX-XXXXXX'**
+  String get phoneHint;
+
+  /// No description provided for @phoneOperatorNote.
+  ///
+  /// In en, this message translates to:
+  /// **'Any operator\'s number works for the app. Only the PUST9 subscription needs Robi or Airtel.'**
+  String get phoneOperatorNote;
+
+  /// No description provided for @phoneTermsNote.
+  ///
+  /// In en, this message translates to:
+  /// **'By continuing you accept the privacy policy and terms.'**
+  String get phoneTermsNote;
+
+  /// No description provided for @phoneInvalid.
+  ///
+  /// In en, this message translates to:
+  /// **'Enter a valid Bangladeshi mobile number'**
+  String get phoneInvalid;
+
+  /// No description provided for @sendCodeAction.
+  ///
+  /// In en, this message translates to:
+  /// **'Send code'**
+  String get sendCodeAction;
+
+  /// No description provided for @otpTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Verify code'**
+  String get otpTitle;
+
+  /// No description provided for @otpSentTo.
+  ///
+  /// In en, this message translates to:
+  /// **'Code sent to this number'**
+  String get otpSentTo;
+
+  /// No description provided for @changeAction.
+  ///
+  /// In en, this message translates to:
+  /// **'Change'**
+  String get changeAction;
+
+  /// No description provided for @otpResendIn.
+  ///
+  /// In en, this message translates to:
+  /// **'Resend code — {time}'**
+  String otpResendIn(String time);
+
+  /// No description provided for @otpResend.
+  ///
+  /// In en, this message translates to:
+  /// **'Resend code'**
+  String get otpResend;
+
+  /// No description provided for @otpVerify.
+  ///
+  /// In en, this message translates to:
+  /// **'Verify'**
+  String get otpVerify;
+
+  /// No description provided for @otpNoCodeHint.
+  ///
+  /// In en, this message translates to:
+  /// **'If the code doesn\'t arrive, check your network connection'**
+  String get otpNoCodeHint;
+
+  /// No description provided for @otpDelayedHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Code taking long? Check the number is right, or use another number.'**
+  String get otpDelayedHint;
+
+  /// No description provided for @otpWrong.
+  ///
+  /// In en, this message translates to:
+  /// **'That code isn\'t right — try again'**
+  String get otpWrong;
+
+  /// No description provided for @otpExpired.
+  ///
+  /// In en, this message translates to:
+  /// **'This code has expired — get a new one'**
+  String get otpExpired;
+
+  /// No description provided for @otpTooMany.
+  ///
+  /// In en, this message translates to:
+  /// **'Too many attempts. Please wait a while and try again.'**
+  String get otpTooMany;
+
+  /// No description provided for @otpSmsFailed.
+  ///
+  /// In en, this message translates to:
+  /// **'The code couldn\'t be sent. Please try again shortly.'**
+  String get otpSmsFailed;
+
+  /// No description provided for @authUnavailable.
+  ///
+  /// In en, this message translates to:
+  /// **'Login isn\'t available in this version yet. Everything else in the app is open to you.'**
+  String get authUnavailable;
+
+  /// No description provided for @devOtpHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Development build: use code {code}'**
+  String devOtpHint(String code);
+
+  /// No description provided for @changeNumberTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Change number'**
+  String get changeNumberTitle;
+
+  /// No description provided for @changeNumberHeading.
+  ///
+  /// In en, this message translates to:
+  /// **'Enter your new mobile number'**
+  String get changeNumberHeading;
+
+  /// No description provided for @changeNumberBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Your profile, family, records and certificates move to the new number.'**
+  String get changeNumberBody;
+
+  /// No description provided for @phoneInUse.
+  ///
+  /// In en, this message translates to:
+  /// **'This number is already used by another account.'**
+  String get phoneInUse;
+
+  /// No description provided for @numberChangedToast.
+  ///
+  /// In en, this message translates to:
+  /// **'Number changed'**
+  String get numberChangedToast;
+
+  /// No description provided for @consentTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Consent'**
+  String get consentTitle;
+
+  /// No description provided for @consentHeading.
+  ///
+  /// In en, this message translates to:
+  /// **'How your information is used'**
+  String get consentHeading;
+
+  /// No description provided for @consentBody.
+  ///
+  /// In en, this message translates to:
+  /// **'The information you give is used only to give you suitable nutrition advice and, without names, in BIID Foundation\'s aggregate reports. No information is sold.'**
+  String get consentBody;
+
+  /// No description provided for @consentTerms.
+  ///
+  /// In en, this message translates to:
+  /// **'I have read and agree to the privacy policy and terms'**
+  String get consentTerms;
+
+  /// No description provided for @consentHealth.
+  ///
+  /// In en, this message translates to:
+  /// **'I consent to storing health information (height, weight)'**
+  String get consentHealth;
+
+  /// No description provided for @consentContinue.
+  ///
+  /// In en, this message translates to:
+  /// **'Agree and continue'**
+  String get consentContinue;
+
+  /// No description provided for @consentSkipNote.
+  ///
+  /// In en, this message translates to:
+  /// **'Without consent you can still use courses, the library and webinars'**
+  String get consentSkipNote;
+
+  /// No description provided for @privacyCentreTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Privacy & data'**
+  String get privacyCentreTitle;
+
+  /// No description provided for @privacyTermsAccepted.
+  ///
+  /// In en, this message translates to:
+  /// **'Terms accepted on {date}'**
+  String privacyTermsAccepted(String date);
+
+  /// No description provided for @privacyHealthOn.
+  ///
+  /// In en, this message translates to:
+  /// **'Health data storage: on'**
+  String get privacyHealthOn;
+
+  /// No description provided for @privacyHealthOff.
+  ///
+  /// In en, this message translates to:
+  /// **'Health data storage: off'**
+  String get privacyHealthOff;
+
+  /// No description provided for @privacyWithdraw.
+  ///
+  /// In en, this message translates to:
+  /// **'Withdraw health data consent'**
+  String get privacyWithdraw;
+
+  /// No description provided for @privacyWithdrawConfirm.
+  ///
+  /// In en, this message translates to:
+  /// **'Withdraw consent? All saved height, weight and BMI records will be deleted. This can\'t be undone.'**
+  String get privacyWithdrawConfirm;
+
+  /// No description provided for @privacyGiveConsent.
+  ///
+  /// In en, this message translates to:
+  /// **'Give consent'**
+  String get privacyGiveConsent;
+
+  /// No description provided for @withdrawAction.
+  ///
+  /// In en, this message translates to:
+  /// **'Withdraw'**
+  String get withdrawAction;
+
+  /// No description provided for @profileTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Your profile'**
+  String get profileTitle;
+
+  /// No description provided for @editAction.
+  ///
+  /// In en, this message translates to:
+  /// **'Edit'**
+  String get editAction;
+
+  /// No description provided for @profileAddName.
+  ///
+  /// In en, this message translates to:
+  /// **'Add your details'**
+  String get profileAddName;
+
+  /// No description provided for @familyAddTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Add family members'**
+  String get familyAddTitle;
+
+  /// No description provided for @familyAddBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Add your children, spouse or parents to see age-appropriate nutrition advice and BMI for them too.'**
+  String get familyAddBody;
+
+  /// No description provided for @familyAddAction.
+  ///
+  /// In en, this message translates to:
+  /// **'Add member'**
+  String get familyAddAction;
+
+  /// No description provided for @familyCount.
+  ///
+  /// In en, this message translates to:
+  /// **'Your family · {count}'**
+  String familyCount(String count);
+
+  /// No description provided for @consentNeededBanner.
+  ///
+  /// In en, this message translates to:
+  /// **'Give consent to save profile and health information.'**
+  String get consentNeededBanner;
+
+  /// No description provided for @ageYearsMonths.
+  ///
+  /// In en, this message translates to:
+  /// **'{years} y {months} m'**
+  String ageYearsMonths(String years, String months);
+
+  /// No description provided for @ageYears.
+  ///
+  /// In en, this message translates to:
+  /// **'{years} years'**
+  String ageYears(String years);
+
+  /// No description provided for @fieldNameOptional.
+  ///
+  /// In en, this message translates to:
+  /// **'Name (optional)'**
+  String get fieldNameOptional;
+
+  /// No description provided for @fieldNameHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Full name'**
+  String get fieldNameHint;
+
+  /// No description provided for @fieldRelationship.
+  ///
+  /// In en, this message translates to:
+  /// **'Relationship'**
+  String get fieldRelationship;
+
+  /// No description provided for @fieldDob.
+  ///
+  /// In en, this message translates to:
+  /// **'Date of birth'**
+  String get fieldDob;
+
+  /// No description provided for @fieldDistrict.
+  ///
+  /// In en, this message translates to:
+  /// **'District'**
+  String get fieldDistrict;
+
+  /// No description provided for @fieldOccupation.
+  ///
+  /// In en, this message translates to:
+  /// **'Occupation'**
+  String get fieldOccupation;
+
+  /// No description provided for @fieldPregnant.
+  ///
+  /// In en, this message translates to:
+  /// **'Pregnant'**
+  String get fieldPregnant;
+
+  /// No description provided for @fieldBreastfeeding.
+  ///
+  /// In en, this message translates to:
+  /// **'Breastfeeding'**
+  String get fieldBreastfeeding;
+
+  /// No description provided for @fieldInterests.
+  ///
+  /// In en, this message translates to:
+  /// **'Interests'**
+  String get fieldInterests;
+
+  /// No description provided for @fieldInterestsOptional.
+  ///
+  /// In en, this message translates to:
+  /// **'Interests (optional)'**
+  String get fieldInterestsOptional;
+
+  /// No description provided for @fieldChoose.
+  ///
+  /// In en, this message translates to:
+  /// **'Choose'**
+  String get fieldChoose;
+
+  /// No description provided for @fieldSelectedCount.
+  ///
+  /// In en, this message translates to:
+  /// **'{count} selected'**
+  String fieldSelectedCount(String count);
+
+  /// No description provided for @dobReason.
+  ///
+  /// In en, this message translates to:
+  /// **'Date of birth and sex are needed for age-appropriate BMI'**
+  String get dobReason;
+
+  /// No description provided for @dobSelectedAge.
+  ///
+  /// In en, this message translates to:
+  /// **'Selected age: {age}'**
+  String dobSelectedAge(String age);
+
+  /// No description provided for @removeMemberAction.
+  ///
+  /// In en, this message translates to:
+  /// **'Remove member'**
+  String get removeMemberAction;
+
+  /// No description provided for @removeMemberConfirm.
+  ///
+  /// In en, this message translates to:
+  /// **'Remove this member? Their saved measurements will also be deleted.'**
+  String get removeMemberConfirm;
+
+  /// No description provided for @savedToast.
+  ///
+  /// In en, this message translates to:
+  /// **'Saved'**
+  String get savedToast;
+
+  /// No description provided for @pickDistrictTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Choose district'**
+  String get pickDistrictTitle;
+
+  /// No description provided for @pickDistrictSearch.
+  ///
+  /// In en, this message translates to:
+  /// **'Search districts…'**
+  String get pickDistrictSearch;
+
+  /// No description provided for @pickOccupationTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Choose occupation'**
+  String get pickOccupationTitle;
+
+  /// No description provided for @pickRelationshipTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Choose relationship'**
+  String get pickRelationshipTitle;
+
+  /// No description provided for @pickSexTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Choose sex'**
+  String get pickSexTitle;
+
+  /// No description provided for @pickInterestsHint.
+  ///
+  /// In en, this message translates to:
+  /// **'You can choose more than one'**
+  String get pickInterestsHint;
+
+  /// No description provided for @pickInterestsDone.
+  ///
+  /// In en, this message translates to:
+  /// **'Done · {count} selected'**
+  String pickInterestsDone(String count);
+
+  /// No description provided for @divisionDhaka.
+  ///
+  /// In en, this message translates to:
+  /// **'Dhaka Division'**
+  String get divisionDhaka;
+
+  /// No description provided for @divisionChattogram.
+  ///
+  /// In en, this message translates to:
+  /// **'Chattogram Division'**
+  String get divisionChattogram;
+
+  /// No description provided for @divisionRajshahi.
+  ///
+  /// In en, this message translates to:
+  /// **'Rajshahi Division'**
+  String get divisionRajshahi;
+
+  /// No description provided for @divisionKhulna.
+  ///
+  /// In en, this message translates to:
+  /// **'Khulna Division'**
+  String get divisionKhulna;
+
+  /// No description provided for @divisionBarishal.
+  ///
+  /// In en, this message translates to:
+  /// **'Barishal Division'**
+  String get divisionBarishal;
+
+  /// No description provided for @divisionSylhet.
+  ///
+  /// In en, this message translates to:
+  /// **'Sylhet Division'**
+  String get divisionSylhet;
+
+  /// No description provided for @divisionRangpur.
+  ///
+  /// In en, this message translates to:
+  /// **'Rangpur Division'**
+  String get divisionRangpur;
+
+  /// No description provided for @divisionMymensingh.
+  ///
+  /// In en, this message translates to:
+  /// **'Mymensingh Division'**
+  String get divisionMymensingh;
+
+  /// No description provided for @relChild.
+  ///
+  /// In en, this message translates to:
+  /// **'Child'**
+  String get relChild;
+
+  /// No description provided for @relSpouse.
+  ///
+  /// In en, this message translates to:
+  /// **'Husband / Wife'**
+  String get relSpouse;
+
+  /// No description provided for @relParent.
+  ///
+  /// In en, this message translates to:
+  /// **'Father / Mother'**
+  String get relParent;
+
+  /// No description provided for @relSibling.
+  ///
+  /// In en, this message translates to:
+  /// **'Brother / Sister'**
+  String get relSibling;
+
+  /// No description provided for @relOther.
+  ///
+  /// In en, this message translates to:
+  /// **'Other'**
+  String get relOther;
+
+  /// No description provided for @relHolderYou.
+  ///
+  /// In en, this message translates to:
+  /// **'{name} (you)'**
+  String relHolderYou(String name);
+
+  /// No description provided for @youLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'You'**
+  String get youLabel;
+
+  /// No description provided for @occStudent.
+  ///
+  /// In en, this message translates to:
+  /// **'Student'**
+  String get occStudent;
+
+  /// No description provided for @occPrivate.
+  ///
+  /// In en, this message translates to:
+  /// **'Employee (private)'**
+  String get occPrivate;
+
+  /// No description provided for @occGovernment.
+  ///
+  /// In en, this message translates to:
+  /// **'Government employee'**
+  String get occGovernment;
+
+  /// No description provided for @occBusiness.
+  ///
+  /// In en, this message translates to:
+  /// **'Business'**
+  String get occBusiness;
+
+  /// No description provided for @occTeacher.
+  ///
+  /// In en, this message translates to:
+  /// **'Teacher'**
+  String get occTeacher;
+
+  /// No description provided for @occFarmer.
+  ///
+  /// In en, this message translates to:
+  /// **'Farmer'**
+  String get occFarmer;
+
+  /// No description provided for @occHomemaker.
+  ///
+  /// In en, this message translates to:
+  /// **'Homemaker'**
+  String get occHomemaker;
+
+  /// No description provided for @occOther.
+  ///
+  /// In en, this message translates to:
+  /// **'Other'**
+  String get occOther;
+
+  /// No description provided for @intBalanced.
+  ///
+  /// In en, this message translates to:
+  /// **'Balanced diet'**
+  String get intBalanced;
+
+  /// No description provided for @intPregnancy.
+  ///
+  /// In en, this message translates to:
+  /// **'Nutrition in pregnancy'**
+  String get intPregnancy;
+
+  /// No description provided for @intWeight.
+  ///
+  /// In en, this message translates to:
+  /// **'Weight management'**
+  String get intWeight;
+
+  /// No description provided for @intChild.
+  ///
+  /// In en, this message translates to:
+  /// **'Child nutrition'**
+  String get intChild;
+
+  /// No description provided for @intDiabetes.
+  ///
+  /// In en, this message translates to:
+  /// **'Diabetes management'**
+  String get intDiabetes;
+
+  /// No description provided for @intGeneral.
+  ///
+  /// In en, this message translates to:
+  /// **'General health awareness'**
+  String get intGeneral;
+
+  /// No description provided for @bmiForWhom.
+  ///
+  /// In en, this message translates to:
+  /// **'Who is this for?'**
+  String get bmiForWhom;
+
+  /// No description provided for @bmiSeeHistory.
+  ///
+  /// In en, this message translates to:
+  /// **'See previous records'**
+  String get bmiSeeHistory;
+
+  /// No description provided for @bmiChoosePerson.
+  ///
+  /// In en, this message translates to:
+  /// **'Save for whom?'**
+  String get bmiChoosePerson;
+
+  /// No description provided for @bmiSavedToast.
+  ///
+  /// In en, this message translates to:
+  /// **'Saved to records'**
+  String get bmiSavedToast;
+
+  /// No description provided for @historyTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Records'**
+  String get historyTitle;
+
+  /// No description provided for @historyHeader.
+  ///
+  /// In en, this message translates to:
+  /// **'{person} · {count} records'**
+  String historyHeader(String person, String count);
+
+  /// No description provided for @historyRowMeta.
+  ///
+  /// In en, this message translates to:
+  /// **'{height} cm · {weight} kg'**
+  String historyRowMeta(String height, String weight);
+
+  /// No description provided for @historyGrowthSoon.
+  ///
+  /// In en, this message translates to:
+  /// **'Growth chart coming soon'**
+  String get historyGrowthSoon;
+
+  /// No description provided for @historyEmptyTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'No records yet'**
+  String get historyEmptyTitle;
+
+  /// No description provided for @historyEmptyBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Save height and weight to see changes over time here.'**
+  String get historyEmptyBody;
+
+  /// No description provided for @historyAddAction.
+  ///
+  /// In en, this message translates to:
+  /// **'Add measurement'**
+  String get historyAddAction;
+
+  /// No description provided for @historyEditTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Correct record'**
+  String get historyEditTitle;
+
+  /// No description provided for @deleteAction.
+  ///
+  /// In en, this message translates to:
+  /// **'Delete'**
+  String get deleteAction;
+
+  /// No description provided for @deleteRecordConfirm.
+  ///
+  /// In en, this message translates to:
+  /// **'Delete this record?'**
+  String get deleteRecordConfirm;
+
+  /// No description provided for @settingsChangeNumber.
+  ///
+  /// In en, this message translates to:
+  /// **'Change number'**
+  String get settingsChangeNumber;
+
+  /// No description provided for @settingsPrivacyCentre.
+  ///
+  /// In en, this message translates to:
+  /// **'Privacy & data'**
+  String get settingsPrivacyCentre;
+
+  /// No description provided for @settingsDeleteAccount.
+  ///
+  /// In en, this message translates to:
+  /// **'Delete account'**
+  String get settingsDeleteAccount;
+
+  /// No description provided for @logoutConfirm.
+  ///
+  /// In en, this message translates to:
+  /// **'Log out? Downloaded files stay on this phone.'**
+  String get logoutConfirm;
+
+  /// No description provided for @deleteAccountTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Delete account'**
+  String get deleteAccountTitle;
+
+  /// No description provided for @deleteAccountWarning.
+  ///
+  /// In en, this message translates to:
+  /// **'Deleting the account is permanent — it can\'t be restored.'**
+  String get deleteAccountWarning;
+
+  /// No description provided for @deleteAccountDeletes.
+  ///
+  /// In en, this message translates to:
+  /// **'What will be deleted'**
+  String get deleteAccountDeletes;
+
+  /// No description provided for @deleteAccountProfiles.
+  ///
+  /// In en, this message translates to:
+  /// **'Your and your family members\' profiles'**
+  String get deleteAccountProfiles;
+
+  /// No description provided for @deleteAccountRecords.
+  ///
+  /// In en, this message translates to:
+  /// **'Saved height, weight and BMI records'**
+  String get deleteAccountRecords;
+
+  /// No description provided for @deleteAccountProgress.
+  ///
+  /// In en, this message translates to:
+  /// **'Course and module progress'**
+  String get deleteAccountProgress;
+
+  /// No description provided for @deleteAccountRegistrations.
+  ///
+  /// In en, this message translates to:
+  /// **'Webinar registrations'**
+  String get deleteAccountRegistrations;
+
+  /// No description provided for @deleteAccountStays.
+  ///
+  /// In en, this message translates to:
+  /// **'What stays'**
+  String get deleteAccountStays;
+
+  /// No description provided for @deleteAccountCertificates.
+  ///
+  /// In en, this message translates to:
+  /// **'Issued certificates stay verifiable, because third parties may check them. Anonymous aggregate statistics also remain.'**
+  String get deleteAccountCertificates;
+
+  /// No description provided for @deleteAccountPust9.
+  ///
+  /// In en, this message translates to:
+  /// **'The PUST9 subscription stays active with your operator — stop it separately.'**
+  String get deleteAccountPust9;
+
+  /// No description provided for @deleteAccountFailed.
+  ///
+  /// In en, this message translates to:
+  /// **'The account couldn\'t be deleted. Please try again.'**
+  String get deleteAccountFailed;
+
+  /// No description provided for @accountDeletedToast.
+  ///
+  /// In en, this message translates to:
+  /// **'Account deleted'**
+  String get accountDeletedToast;
 }
 
 class _EPustiGeneratedLocalizationsDelegate

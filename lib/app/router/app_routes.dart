@@ -4,6 +4,9 @@ abstract final class AppRoutes {
   static const language = '/language';
   static const home = '/home';
   static const login = '/login';
+  static const loginVerify = '/login/verify';
+  static const changeNumber = '/login/change';
+  static const consent = '/consent';
 
   // Open to everyone (soft gate).
   static const pust9 = '/pust9';
@@ -34,9 +37,43 @@ abstract final class AppRoutes {
 
   static const devCatalog = '/dev/catalog';
 
-  static const gated = {profile, certificates, registrations, notifications};
+  static const bmiHistory = '/bmi/history';
+  static const privacyCentre = '/settings/privacy';
+  static const deleteAccount = '/settings/delete-account';
+  static const newPerson = '/profile/person/new';
+  static String person(String id) => '/profile/person/$id';
 
-  static bool isGated(String path) => gated.contains(path);
+  static const gated = {
+    profile,
+    certificates,
+    registrations,
+    notifications,
+    bmiHistory,
+    privacyCentre,
+    deleteAccount,
+    changeNumber,
+    consent,
+  };
+
+  /// A gated path or anything beneath it (e.g. `/profile/person/x`).
+  static bool isGated(String path) =>
+      gated.any((g) => path == g || path.startsWith('$g/'));
+
+  static String verifyCode({
+    required String phone,
+    String? returnTo,
+    bool changeNumber = false,
+  }) => Uri(
+    path: loginVerify,
+    queryParameters: {
+      'phone': phone,
+      'from': ?returnTo,
+      if (changeNumber) 'change': '1',
+    },
+  ).toString();
+
+  static String consentReturningTo(String returnTo) =>
+      Uri(path: consent, queryParameters: {'from': returnTo}).toString();
 
   /// `/login?from=…` — after login the user returns to [returnTo].
   static String loginReturningTo(String returnTo) =>
@@ -47,7 +84,9 @@ abstract final class AppRoutes {
     if (from == null || !from.startsWith('/') || from.startsWith('//')) {
       return home;
     }
-    if (from == login || from.startsWith('$login?')) {
+    if (from == login ||
+        from.startsWith('$login?') ||
+        from.startsWith('$login/')) {
       return home;
     }
     return from;

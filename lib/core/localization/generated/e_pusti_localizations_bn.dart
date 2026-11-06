@@ -781,4 +781,455 @@ class EPustiGeneratedLocalizationsBn extends EPustiGeneratedLocalizations {
 
   @override
   String get offlineNotNow => 'ইন্টারনেট প্রয়োজন';
+
+  @override
+  String get phoneHeading => 'মোবাইল নম্বর দিন';
+
+  @override
+  String get phoneReason =>
+      'অগ্রগতি সংরক্ষণ, সার্টিফিকেট ও ওয়েবিনার রেজিস্ট্রেশনের জন্য প্রয়োজন';
+
+  @override
+  String get phoneLabel => 'মোবাইল নম্বর';
+
+  @override
+  String get phoneHint => '1XXX-XXXXXX';
+
+  @override
+  String get phoneOperatorNote =>
+      'যেকোনো অপারেটরের নম্বর দিয়ে অ্যাপ ব্যবহার করা যাবে। শুধু PUST9 সাবস্ক্রিপশনের জন্য রবি বা এয়ারটেল প্রয়োজন।';
+
+  @override
+  String get phoneTermsNote =>
+      'চালিয়ে গেলে আপনি প্রাইভেসি পলিসি ও শর্তাবলী মেনে নিচ্ছেন।';
+
+  @override
+  String get phoneInvalid => 'সঠিক মোবাইল নম্বর দিন';
+
+  @override
+  String get sendCodeAction => 'কোড পাঠান';
+
+  @override
+  String get otpTitle => 'কোড যাচাই';
+
+  @override
+  String get otpSentTo => 'এই নম্বরে কোড পাঠানো হয়েছে';
+
+  @override
+  String get changeAction => 'পরিবর্তন';
+
+  @override
+  String otpResendIn(String time) {
+    return 'কোড আবার পাঠান — $time';
+  }
+
+  @override
+  String get otpResend => 'কোড আবার পাঠান';
+
+  @override
+  String get otpVerify => 'যাচাই করুন';
+
+  @override
+  String get otpNoCodeHint => 'কোড না পেলে নেটওয়ার্ক সংযোগ দেখে নিন';
+
+  @override
+  String get otpDelayedHint =>
+      'কোড আসতে দেরি হচ্ছে? নম্বরটি ঠিক আছে কিনা দেখে নিন বা অন্য নম্বর ব্যবহার করুন।';
+
+  @override
+  String get otpWrong => 'কোডটি সঠিক নয় — আবার চেষ্টা করুন';
+
+  @override
+  String get otpExpired => 'কোডের মেয়াদ শেষ — নতুন কোড নিন';
+
+  @override
+  String get otpTooMany =>
+      'অনেকবার চেষ্টা করা হয়েছে। কিছুক্ষণ পর আবার চেষ্টা করুন।';
+
+  @override
+  String get otpSmsFailed => 'কোড পাঠানো যায়নি। কিছুক্ষণ পর আবার চেষ্টা করুন।';
+
+  @override
+  String get authUnavailable =>
+      'এই সংস্করণে লগইন এখনো চালু হয়নি। অ্যাপের বাকি সবকিছু আপনার জন্য উন্মুক্ত।';
+
+  @override
+  String devOtpHint(String code) {
+    return 'Development build: use code $code';
+  }
+
+  @override
+  String get changeNumberTitle => 'নম্বর পরিবর্তন';
+
+  @override
+  String get changeNumberHeading => 'নতুন মোবাইল নম্বর দিন';
+
+  @override
+  String get changeNumberBody =>
+      'আপনার প্রোফাইল, পরিবার, রেকর্ড ও সার্টিফিকেট নতুন নম্বরে চলে যাবে।';
+
+  @override
+  String get phoneInUse => 'এই নম্বরটি অন্য একটি অ্যাকাউন্টে ব্যবহৃত হচ্ছে।';
+
+  @override
+  String get numberChangedToast => 'নম্বর পরিবর্তন হয়েছে';
+
+  @override
+  String get consentTitle => 'সম্মতি';
+
+  @override
+  String get consentHeading => 'আপনার তথ্য কীভাবে ব্যবহার করা হয়';
+
+  @override
+  String get consentBody =>
+      'আপনি যে তথ্য দেবেন তা শুধু আপনাকে উপযোগী পুষ্টি পরামর্শ দিতে এবং BIID ফাউন্ডেশনের সমষ্টিগত প্রতিবেদনে (নাম-পরিচয় ছাড়া) ব্যবহার করা হয়। কোনো তথ্য বিক্রি করা হয় না।';
+
+  @override
+  String get consentTerms =>
+      'আমি প্রাইভেসি পলিসি ও শর্তাবলী পড়েছি এবং সম্মত আছি';
+
+  @override
+  String get consentHealth =>
+      'আমি স্বাস্থ্য সংক্রান্ত তথ্য (উচ্চতা, ওজন) সংরক্ষণে সম্মতি দিচ্ছি';
+
+  @override
+  String get consentContinue => 'সম্মত হয়ে চালিয়ে যান';
+
+  @override
+  String get consentSkipNote =>
+      'সম্মতি না দিলেও কোর্স, লাইব্রেরি ও ওয়েবিনার দেখতে পারবেন';
+
+  @override
+  String get privacyCentreTitle => 'প্রাইভেসি ও তথ্য';
+
+  @override
+  String privacyTermsAccepted(String date) {
+    return 'শর্তাবলী গ্রহণ করেছেন: $date';
+  }
+
+  @override
+  String get privacyHealthOn => 'স্বাস্থ্য তথ্য সংরক্ষণ: চালু';
+
+  @override
+  String get privacyHealthOff => 'স্বাস্থ্য তথ্য সংরক্ষণ: বন্ধ';
+
+  @override
+  String get privacyWithdraw => 'স্বাস্থ্য তথ্যের সম্মতি প্রত্যাহার করুন';
+
+  @override
+  String get privacyWithdrawConfirm =>
+      'সম্মতি প্রত্যাহার করবেন? সংরক্ষিত সব উচ্চতা, ওজন ও BMI রেকর্ড মুছে যাবে। এটি ফিরিয়ে আনা যাবে না।';
+
+  @override
+  String get privacyGiveConsent => 'সম্মতি দিন';
+
+  @override
+  String get withdrawAction => 'প্রত্যাহার করুন';
+
+  @override
+  String get profileTitle => 'আপনার প্রোফাইল';
+
+  @override
+  String get editAction => 'সম্পাদনা';
+
+  @override
+  String get profileAddName => 'আপনার তথ্য যোগ করুন';
+
+  @override
+  String get familyAddTitle => 'পরিবারের সদস্য যোগ করুন';
+
+  @override
+  String get familyAddBody =>
+      'সন্তান, স্বামী/স্ত্রী বা বাবা-মায়ের তথ্য যোগ করলে তাদের জন্যও বয়স-উপযোগী পুষ্টি পরামর্শ ও BMI দেখতে পারবেন।';
+
+  @override
+  String get familyAddAction => 'সদস্য যোগ করুন';
+
+  @override
+  String familyCount(String count) {
+    return 'আপনার পরিবার · $count জন';
+  }
+
+  @override
+  String get consentNeededBanner =>
+      'প্রোফাইল ও স্বাস্থ্য তথ্য সংরক্ষণ করতে সম্মতি দিন।';
+
+  @override
+  String ageYearsMonths(String years, String months) {
+    return '$years বছর $months মাস';
+  }
+
+  @override
+  String ageYears(String years) {
+    return '$years বছর';
+  }
+
+  @override
+  String get fieldNameOptional => 'নাম (ঐচ্ছিক)';
+
+  @override
+  String get fieldNameHint => 'পুরো নাম লিখুন';
+
+  @override
+  String get fieldRelationship => 'সম্পর্ক';
+
+  @override
+  String get fieldDob => 'জন্ম তারিখ';
+
+  @override
+  String get fieldDistrict => 'জেলা';
+
+  @override
+  String get fieldOccupation => 'পেশা';
+
+  @override
+  String get fieldPregnant => 'গর্ভবতী';
+
+  @override
+  String get fieldBreastfeeding => 'স্তন্যদানকারী';
+
+  @override
+  String get fieldInterests => 'আগ্রহের বিষয়';
+
+  @override
+  String get fieldInterestsOptional => 'আগ্রহের বিষয় (ঐচ্ছিক)';
+
+  @override
+  String get fieldChoose => 'নির্বাচন করুন';
+
+  @override
+  String fieldSelectedCount(String count) {
+    return '$countটি নির্বাচিত';
+  }
+
+  @override
+  String get dobReason =>
+      'বয়স-উপযোগী BMI হিসাবের জন্য জন্ম তারিখ ও লিঙ্গ প্রয়োজন';
+
+  @override
+  String dobSelectedAge(String age) {
+    return 'নির্বাচিত বয়স: $age';
+  }
+
+  @override
+  String get removeMemberAction => 'সদস্য মুছে ফেলুন';
+
+  @override
+  String get removeMemberConfirm =>
+      'এই সদস্যকে মুছে ফেলবেন? তার সংরক্ষিত পরিমাপও মুছে যাবে।';
+
+  @override
+  String get savedToast => 'সংরক্ষিত হয়েছে';
+
+  @override
+  String get pickDistrictTitle => 'জেলা নির্বাচন করুন';
+
+  @override
+  String get pickDistrictSearch => 'জেলা খুঁজুন...';
+
+  @override
+  String get pickOccupationTitle => 'পেশা নির্বাচন করুন';
+
+  @override
+  String get pickRelationshipTitle => 'সম্পর্ক নির্বাচন করুন';
+
+  @override
+  String get pickSexTitle => 'লিঙ্গ নির্বাচন করুন';
+
+  @override
+  String get pickInterestsHint => 'একাধিক নির্বাচন করতে পারবেন';
+
+  @override
+  String pickInterestsDone(String count) {
+    return 'সম্পন্ন · $countটি নির্বাচিত';
+  }
+
+  @override
+  String get divisionDhaka => 'ঢাকা বিভাগ';
+
+  @override
+  String get divisionChattogram => 'চট্টগ্রাম বিভাগ';
+
+  @override
+  String get divisionRajshahi => 'রাজশাহী বিভাগ';
+
+  @override
+  String get divisionKhulna => 'খুলনা বিভাগ';
+
+  @override
+  String get divisionBarishal => 'বরিশাল বিভাগ';
+
+  @override
+  String get divisionSylhet => 'সিলেট বিভাগ';
+
+  @override
+  String get divisionRangpur => 'রংপুর বিভাগ';
+
+  @override
+  String get divisionMymensingh => 'ময়মনসিংহ বিভাগ';
+
+  @override
+  String get relChild => 'সন্তান';
+
+  @override
+  String get relSpouse => 'স্বামী / স্ত্রী';
+
+  @override
+  String get relParent => 'পিতা / মাতা';
+
+  @override
+  String get relSibling => 'ভাই / বোন';
+
+  @override
+  String get relOther => 'অন্যান্য';
+
+  @override
+  String relHolderYou(String name) {
+    return '$name (আপনি)';
+  }
+
+  @override
+  String get youLabel => 'আপনি';
+
+  @override
+  String get occStudent => 'ছাত্র/ছাত্রী';
+
+  @override
+  String get occPrivate => 'চাকরিজীবী (বেসরকারি)';
+
+  @override
+  String get occGovernment => 'সরকারি কর্মকর্তা/কর্মচারী';
+
+  @override
+  String get occBusiness => 'ব্যবসায়ী';
+
+  @override
+  String get occTeacher => 'শিক্ষক/শিক্ষিকা';
+
+  @override
+  String get occFarmer => 'কৃষক';
+
+  @override
+  String get occHomemaker => 'গৃহিণী';
+
+  @override
+  String get occOther => 'অন্যান্য';
+
+  @override
+  String get intBalanced => 'সুষম খাদ্যাভ্যাস';
+
+  @override
+  String get intPregnancy => 'গর্ভকালীন পুষ্টি';
+
+  @override
+  String get intWeight => 'ওজন ব্যবস্থাপনা';
+
+  @override
+  String get intChild => 'শিশু পুষ্টি';
+
+  @override
+  String get intDiabetes => 'ডায়াবেটিক ব্যবস্থাপনা';
+
+  @override
+  String get intGeneral => 'সাধারণ স্বাস্থ্য সচেতনতা';
+
+  @override
+  String get bmiForWhom => 'কার জন্য?';
+
+  @override
+  String get bmiSeeHistory => 'আগের রেকর্ড দেখুন';
+
+  @override
+  String get bmiChoosePerson => 'কার জন্য সংরক্ষণ করবেন?';
+
+  @override
+  String get bmiSavedToast => 'রেকর্ডে সংরক্ষিত হয়েছে';
+
+  @override
+  String get historyTitle => 'রেকর্ড';
+
+  @override
+  String historyHeader(String person, String count) {
+    return '$person · $countটি রেকর্ড';
+  }
+
+  @override
+  String historyRowMeta(String height, String weight) {
+    return '$height cm · $weight kg';
+  }
+
+  @override
+  String get historyGrowthSoon => 'বৃদ্ধির গ্রাফ শীঘ্রই যুক্ত হবে';
+
+  @override
+  String get historyEmptyTitle => 'এখনো কোনো রেকর্ড নেই';
+
+  @override
+  String get historyEmptyBody =>
+      'উচ্চতা ও ওজন সংরক্ষণ করলে সময়ের সাথে পরিবর্তন এখানে দেখতে পারবেন।';
+
+  @override
+  String get historyAddAction => 'পরিমাপ যোগ করুন';
+
+  @override
+  String get historyEditTitle => 'রেকর্ড সংশোধন';
+
+  @override
+  String get deleteAction => 'মুছে ফেলুন';
+
+  @override
+  String get deleteRecordConfirm => 'এই রেকর্ডটি মুছে ফেলবেন?';
+
+  @override
+  String get settingsChangeNumber => 'নম্বর পরিবর্তন';
+
+  @override
+  String get settingsPrivacyCentre => 'প্রাইভেসি ও তথ্য';
+
+  @override
+  String get settingsDeleteAccount => 'অ্যাকাউন্ট মুছে ফেলুন';
+
+  @override
+  String get logoutConfirm =>
+      'লগআউট করবেন? ডাউনলোড করা ফাইল এই ফোনে থেকে যাবে।';
+
+  @override
+  String get deleteAccountTitle => 'অ্যাকাউন্ট মুছে ফেলুন';
+
+  @override
+  String get deleteAccountWarning =>
+      'অ্যাকাউন্ট মুছে ফেলা স্থায়ী — এটি ফিরিয়ে আনা যায় না।';
+
+  @override
+  String get deleteAccountDeletes => 'যা মুছে যাবে';
+
+  @override
+  String get deleteAccountProfiles => 'আপনার ও পরিবারের সদস্যদের প্রোফাইল';
+
+  @override
+  String get deleteAccountRecords => 'সংরক্ষিত উচ্চতা, ওজন ও BMI রেকর্ড';
+
+  @override
+  String get deleteAccountProgress => 'কোর্স ও মডিউলের অগ্রগতি';
+
+  @override
+  String get deleteAccountRegistrations => 'ওয়েবিনার রেজিস্ট্রেশন';
+
+  @override
+  String get deleteAccountStays => 'যা থেকে যাবে';
+
+  @override
+  String get deleteAccountCertificates =>
+      'ইস্যু করা সার্টিফিকেট যাচাইযোগ্য থাকবে, কারণ তৃতীয় পক্ষ এর সত্যতা যাচাই করতে পারে। নাম-পরিচয় ছাড়া সমষ্টিগত পরিসংখ্যানও থেকে যাবে।';
+
+  @override
+  String get deleteAccountPust9 =>
+      'PUST9 সাবস্ক্রিপশন অপারেটরের কাছে চালু থাকবে — আলাদাভাবে বন্ধ করতে হবে।';
+
+  @override
+  String get deleteAccountFailed =>
+      'অ্যাকাউন্ট মুছে ফেলা যায়নি। আবার চেষ্টা করুন।';
+
+  @override
+  String get accountDeletedToast => 'অ্যাকাউন্ট মুছে ফেলা হয়েছে';
 }

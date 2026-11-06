@@ -3,12 +3,15 @@ import '../domain/entities/bmi_models.dart';
 /// Encodes a measurement in the result route's query so the result can be
 /// rebuilt after login ("you'll return where you were").
 abstract final class BmiRouteArgs {
-  static Map<String, String> toQuery(BmiInput input) => {
+  static Map<String, String> toQuery(BmiInput input, {String? personId}) => {
+    'p': ?personId,
     'h': input.heightCm.toStringAsFixed(1),
     'w': input.weightKg.toStringAsFixed(1),
     if (input.ageMonths != null) 'a': '${input.ageMonths}',
     if (input.sex != null) 's': input.sex!.name,
   };
+
+  static String? personIdFrom(Map<String, String> query) => query['p'];
 
   static BmiInput? fromQuery(Map<String, String> query) {
     final height = double.tryParse(query['h'] ?? '');

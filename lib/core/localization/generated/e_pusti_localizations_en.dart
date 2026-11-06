@@ -784,4 +784,456 @@ class EPustiGeneratedLocalizationsEn extends EPustiGeneratedLocalizations {
 
   @override
   String get offlineNotNow => 'Needs internet';
+
+  @override
+  String get phoneHeading => 'Enter your mobile number';
+
+  @override
+  String get phoneReason =>
+      'Needed to save progress, certificates and webinar registrations';
+
+  @override
+  String get phoneLabel => 'Mobile number';
+
+  @override
+  String get phoneHint => '1XXX-XXXXXX';
+
+  @override
+  String get phoneOperatorNote =>
+      'Any operator\'s number works for the app. Only the PUST9 subscription needs Robi or Airtel.';
+
+  @override
+  String get phoneTermsNote =>
+      'By continuing you accept the privacy policy and terms.';
+
+  @override
+  String get phoneInvalid => 'Enter a valid Bangladeshi mobile number';
+
+  @override
+  String get sendCodeAction => 'Send code';
+
+  @override
+  String get otpTitle => 'Verify code';
+
+  @override
+  String get otpSentTo => 'Code sent to this number';
+
+  @override
+  String get changeAction => 'Change';
+
+  @override
+  String otpResendIn(String time) {
+    return 'Resend code — $time';
+  }
+
+  @override
+  String get otpResend => 'Resend code';
+
+  @override
+  String get otpVerify => 'Verify';
+
+  @override
+  String get otpNoCodeHint =>
+      'If the code doesn\'t arrive, check your network connection';
+
+  @override
+  String get otpDelayedHint =>
+      'Code taking long? Check the number is right, or use another number.';
+
+  @override
+  String get otpWrong => 'That code isn\'t right — try again';
+
+  @override
+  String get otpExpired => 'This code has expired — get a new one';
+
+  @override
+  String get otpTooMany =>
+      'Too many attempts. Please wait a while and try again.';
+
+  @override
+  String get otpSmsFailed =>
+      'The code couldn\'t be sent. Please try again shortly.';
+
+  @override
+  String get authUnavailable =>
+      'Login isn\'t available in this version yet. Everything else in the app is open to you.';
+
+  @override
+  String devOtpHint(String code) {
+    return 'Development build: use code $code';
+  }
+
+  @override
+  String get changeNumberTitle => 'Change number';
+
+  @override
+  String get changeNumberHeading => 'Enter your new mobile number';
+
+  @override
+  String get changeNumberBody =>
+      'Your profile, family, records and certificates move to the new number.';
+
+  @override
+  String get phoneInUse => 'This number is already used by another account.';
+
+  @override
+  String get numberChangedToast => 'Number changed';
+
+  @override
+  String get consentTitle => 'Consent';
+
+  @override
+  String get consentHeading => 'How your information is used';
+
+  @override
+  String get consentBody =>
+      'The information you give is used only to give you suitable nutrition advice and, without names, in BIID Foundation\'s aggregate reports. No information is sold.';
+
+  @override
+  String get consentTerms =>
+      'I have read and agree to the privacy policy and terms';
+
+  @override
+  String get consentHealth =>
+      'I consent to storing health information (height, weight)';
+
+  @override
+  String get consentContinue => 'Agree and continue';
+
+  @override
+  String get consentSkipNote =>
+      'Without consent you can still use courses, the library and webinars';
+
+  @override
+  String get privacyCentreTitle => 'Privacy & data';
+
+  @override
+  String privacyTermsAccepted(String date) {
+    return 'Terms accepted on $date';
+  }
+
+  @override
+  String get privacyHealthOn => 'Health data storage: on';
+
+  @override
+  String get privacyHealthOff => 'Health data storage: off';
+
+  @override
+  String get privacyWithdraw => 'Withdraw health data consent';
+
+  @override
+  String get privacyWithdrawConfirm =>
+      'Withdraw consent? All saved height, weight and BMI records will be deleted. This can\'t be undone.';
+
+  @override
+  String get privacyGiveConsent => 'Give consent';
+
+  @override
+  String get withdrawAction => 'Withdraw';
+
+  @override
+  String get profileTitle => 'Your profile';
+
+  @override
+  String get editAction => 'Edit';
+
+  @override
+  String get profileAddName => 'Add your details';
+
+  @override
+  String get familyAddTitle => 'Add family members';
+
+  @override
+  String get familyAddBody =>
+      'Add your children, spouse or parents to see age-appropriate nutrition advice and BMI for them too.';
+
+  @override
+  String get familyAddAction => 'Add member';
+
+  @override
+  String familyCount(String count) {
+    return 'Your family · $count';
+  }
+
+  @override
+  String get consentNeededBanner =>
+      'Give consent to save profile and health information.';
+
+  @override
+  String ageYearsMonths(String years, String months) {
+    return '$years y $months m';
+  }
+
+  @override
+  String ageYears(String years) {
+    return '$years years';
+  }
+
+  @override
+  String get fieldNameOptional => 'Name (optional)';
+
+  @override
+  String get fieldNameHint => 'Full name';
+
+  @override
+  String get fieldRelationship => 'Relationship';
+
+  @override
+  String get fieldDob => 'Date of birth';
+
+  @override
+  String get fieldDistrict => 'District';
+
+  @override
+  String get fieldOccupation => 'Occupation';
+
+  @override
+  String get fieldPregnant => 'Pregnant';
+
+  @override
+  String get fieldBreastfeeding => 'Breastfeeding';
+
+  @override
+  String get fieldInterests => 'Interests';
+
+  @override
+  String get fieldInterestsOptional => 'Interests (optional)';
+
+  @override
+  String get fieldChoose => 'Choose';
+
+  @override
+  String fieldSelectedCount(String count) {
+    return '$count selected';
+  }
+
+  @override
+  String get dobReason =>
+      'Date of birth and sex are needed for age-appropriate BMI';
+
+  @override
+  String dobSelectedAge(String age) {
+    return 'Selected age: $age';
+  }
+
+  @override
+  String get removeMemberAction => 'Remove member';
+
+  @override
+  String get removeMemberConfirm =>
+      'Remove this member? Their saved measurements will also be deleted.';
+
+  @override
+  String get savedToast => 'Saved';
+
+  @override
+  String get pickDistrictTitle => 'Choose district';
+
+  @override
+  String get pickDistrictSearch => 'Search districts…';
+
+  @override
+  String get pickOccupationTitle => 'Choose occupation';
+
+  @override
+  String get pickRelationshipTitle => 'Choose relationship';
+
+  @override
+  String get pickSexTitle => 'Choose sex';
+
+  @override
+  String get pickInterestsHint => 'You can choose more than one';
+
+  @override
+  String pickInterestsDone(String count) {
+    return 'Done · $count selected';
+  }
+
+  @override
+  String get divisionDhaka => 'Dhaka Division';
+
+  @override
+  String get divisionChattogram => 'Chattogram Division';
+
+  @override
+  String get divisionRajshahi => 'Rajshahi Division';
+
+  @override
+  String get divisionKhulna => 'Khulna Division';
+
+  @override
+  String get divisionBarishal => 'Barishal Division';
+
+  @override
+  String get divisionSylhet => 'Sylhet Division';
+
+  @override
+  String get divisionRangpur => 'Rangpur Division';
+
+  @override
+  String get divisionMymensingh => 'Mymensingh Division';
+
+  @override
+  String get relChild => 'Child';
+
+  @override
+  String get relSpouse => 'Husband / Wife';
+
+  @override
+  String get relParent => 'Father / Mother';
+
+  @override
+  String get relSibling => 'Brother / Sister';
+
+  @override
+  String get relOther => 'Other';
+
+  @override
+  String relHolderYou(String name) {
+    return '$name (you)';
+  }
+
+  @override
+  String get youLabel => 'You';
+
+  @override
+  String get occStudent => 'Student';
+
+  @override
+  String get occPrivate => 'Employee (private)';
+
+  @override
+  String get occGovernment => 'Government employee';
+
+  @override
+  String get occBusiness => 'Business';
+
+  @override
+  String get occTeacher => 'Teacher';
+
+  @override
+  String get occFarmer => 'Farmer';
+
+  @override
+  String get occHomemaker => 'Homemaker';
+
+  @override
+  String get occOther => 'Other';
+
+  @override
+  String get intBalanced => 'Balanced diet';
+
+  @override
+  String get intPregnancy => 'Nutrition in pregnancy';
+
+  @override
+  String get intWeight => 'Weight management';
+
+  @override
+  String get intChild => 'Child nutrition';
+
+  @override
+  String get intDiabetes => 'Diabetes management';
+
+  @override
+  String get intGeneral => 'General health awareness';
+
+  @override
+  String get bmiForWhom => 'Who is this for?';
+
+  @override
+  String get bmiSeeHistory => 'See previous records';
+
+  @override
+  String get bmiChoosePerson => 'Save for whom?';
+
+  @override
+  String get bmiSavedToast => 'Saved to records';
+
+  @override
+  String get historyTitle => 'Records';
+
+  @override
+  String historyHeader(String person, String count) {
+    return '$person · $count records';
+  }
+
+  @override
+  String historyRowMeta(String height, String weight) {
+    return '$height cm · $weight kg';
+  }
+
+  @override
+  String get historyGrowthSoon => 'Growth chart coming soon';
+
+  @override
+  String get historyEmptyTitle => 'No records yet';
+
+  @override
+  String get historyEmptyBody =>
+      'Save height and weight to see changes over time here.';
+
+  @override
+  String get historyAddAction => 'Add measurement';
+
+  @override
+  String get historyEditTitle => 'Correct record';
+
+  @override
+  String get deleteAction => 'Delete';
+
+  @override
+  String get deleteRecordConfirm => 'Delete this record?';
+
+  @override
+  String get settingsChangeNumber => 'Change number';
+
+  @override
+  String get settingsPrivacyCentre => 'Privacy & data';
+
+  @override
+  String get settingsDeleteAccount => 'Delete account';
+
+  @override
+  String get logoutConfirm => 'Log out? Downloaded files stay on this phone.';
+
+  @override
+  String get deleteAccountTitle => 'Delete account';
+
+  @override
+  String get deleteAccountWarning =>
+      'Deleting the account is permanent — it can\'t be restored.';
+
+  @override
+  String get deleteAccountDeletes => 'What will be deleted';
+
+  @override
+  String get deleteAccountProfiles => 'Your and your family members\' profiles';
+
+  @override
+  String get deleteAccountRecords => 'Saved height, weight and BMI records';
+
+  @override
+  String get deleteAccountProgress => 'Course and module progress';
+
+  @override
+  String get deleteAccountRegistrations => 'Webinar registrations';
+
+  @override
+  String get deleteAccountStays => 'What stays';
+
+  @override
+  String get deleteAccountCertificates =>
+      'Issued certificates stay verifiable, because third parties may check them. Anonymous aggregate statistics also remain.';
+
+  @override
+  String get deleteAccountPust9 =>
+      'The PUST9 subscription stays active with your operator — stop it separately.';
+
+  @override
+  String get deleteAccountFailed =>
+      'The account couldn\'t be deleted. Please try again.';
+
+  @override
+  String get accountDeletedToast => 'Account deleted';
 }

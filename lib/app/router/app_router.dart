@@ -10,6 +10,13 @@ import '../../core/localization/localization.dart';
 import '../../core/utils/version.dart';
 import '../../features/auth/presentation/providers/auth_controller.dart';
 import '../../features/auth/presentation/screens/login_screen.dart';
+import '../../features/auth/presentation/screens/verify_code_screen.dart';
+import '../../features/bmi/presentation/screens/bmi_history_screen.dart';
+import '../../features/profile/presentation/screens/consent_screen.dart';
+import '../../features/profile/presentation/screens/person_form_screen.dart';
+import '../../features/profile/presentation/screens/profile_screen.dart';
+import '../../features/support/presentation/screens/delete_account_screen.dart';
+import '../../features/support/presentation/screens/privacy_centre_screen.dart';
 import '../../features/bmi/presentation/bmi_route_args.dart';
 import '../../features/bmi/presentation/screens/bmi_entry_screen.dart';
 import '../../features/bmi/presentation/screens/bmi_result_screen.dart';
@@ -112,6 +119,43 @@ final appRouterProvider = Provider<GoRouter>((ref) {
         path: AppRoutes.login,
         builder: (context, state) =>
             LoginScreen(returnTo: state.uri.queryParameters['from']),
+        routes: [
+          GoRoute(
+            path: 'verify',
+            builder: (context, state) {
+              final q = state.uri.queryParameters;
+              return VerifyCodeScreen(
+                phone: q['phone'] ?? '',
+                returnTo: q['from'],
+                changeNumber: q['change'] == '1',
+              );
+            },
+          ),
+          GoRoute(
+            path: 'change',
+            builder: (context, state) => const LoginScreen(changeNumber: true),
+          ),
+        ],
+      ),
+      GoRoute(
+        path: AppRoutes.consent,
+        builder: (context, state) =>
+            ConsentScreen(returnTo: state.uri.queryParameters['from']),
+      ),
+      GoRoute(
+        path: AppRoutes.profile,
+        builder: (context, state) => const ProfileScreen(),
+        routes: [
+          GoRoute(
+            path: 'person/new',
+            builder: (context, state) => const PersonFormScreen(),
+          ),
+          GoRoute(
+            path: 'person/:id',
+            builder: (context, state) =>
+                PersonFormScreen(personId: state.pathParameters['id']),
+          ),
+        ],
       ),
       GoRoute(
         path: AppRoutes.updateRequired,
@@ -123,16 +167,26 @@ final appRouterProvider = Provider<GoRouter>((ref) {
       ),
       GoRoute(
         path: AppRoutes.bmi,
-        builder: (context, state) => const BmiEntryScreen(),
+        builder: (context, state) =>
+            BmiEntryScreen(personId: state.uri.queryParameters['p']),
         routes: [
           GoRoute(
             path: 'result',
             builder: (context, state) {
-              final input = BmiRouteArgs.fromQuery(state.uri.queryParameters);
+              final q = state.uri.queryParameters;
+              final input = BmiRouteArgs.fromQuery(q);
               return input == null
                   ? const BmiEntryScreen()
-                  : BmiResultScreen(input: input);
+                  : BmiResultScreen(
+                      input: input,
+                      personId: BmiRouteArgs.personIdFrom(q),
+                    );
             },
+          ),
+          GoRoute(
+            path: 'history',
+            builder: (context, state) =>
+                BmiHistoryScreen(personId: state.uri.queryParameters['p']),
           ),
         ],
       ),
@@ -184,9 +238,18 @@ final appRouterProvider = Provider<GoRouter>((ref) {
       GoRoute(
         path: AppRoutes.settings,
         builder: (context, state) => const SettingsScreen(),
+        routes: [
+          GoRoute(
+            path: 'privacy',
+            builder: (context, state) => const PrivacyCentreScreen(),
+          ),
+          GoRoute(
+            path: 'delete-account',
+            builder: (context, state) => const DeleteAccountScreen(),
+          ),
+        ],
       ),
       placeholder(AppRoutes.digiSkills, (c) => c.l10n.homeDigiSkill),
-      placeholder(AppRoutes.profile, (c) => c.l10n.menuFamilyProfile),
       placeholder(AppRoutes.certificates, (c) => c.l10n.menuCertificates),
       placeholder(AppRoutes.registrations, (c) => c.l10n.menuRegistrations),
       placeholder(AppRoutes.notifications, (c) => c.l10n.menuNotifications),

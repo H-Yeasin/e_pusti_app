@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
+import '../../../../app/router/app_routes.dart';
+
 import '../../../../core/localization/digits.dart';
 import '../../../../core/localization/localization.dart';
 import '../../../../core/theme/app_tokens.dart';
@@ -9,6 +11,9 @@ import '../../../../core/widgets/feedback/ep_banner.dart';
 import '../../../../core/widgets/navigation/ep_app_bar.dart';
 import '../../../auth/presentation/providers/auth_controller.dart';
 import '../../../auth/presentation/widgets/login_prompt_sheet.dart';
+import '../../../profile/domain/profile_models.dart';
+import '../../../profile/presentation/profile_labels.dart';
+import '../../../profile/presentation/profile_providers.dart';
 import '../../data/who_bmi_for_age_reference.dart';
 import '../../domain/bmi_engine.dart';
 import '../../domain/entities/bmi_models.dart';
@@ -17,9 +22,12 @@ import '../widgets/sex_label.dart';
 /// BMI-02. Drawn in the clinical palette only — no green, amber or red
 /// carries a health reading. Cases 3 and 4 show no number at all.
 class BmiResultScreen extends ConsumerWidget {
-  const BmiResultScreen({super.key, required this.input});
+  const BmiResultScreen({super.key, required this.input, this.personId});
 
   final BmiInput input;
+
+  /// The family member this measurement is for, when chosen on entry.
+  final String? personId;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -30,33 +38,101 @@ class BmiResultScreen extends ConsumerWidget {
       appBar: EpAppBar(title: l10n.bmiResultTitle),
       body: reference.when(
         loading: () => const Center(child: CircularProgressIndicator()),
-        error: (_, _) =>
-            _ResultBody(outcome: const BmiEngine(null).evaluate(input)),
-        data: (table) => _ResultBody(outcome: BmiEngine(table).evaluate(input)),
+        error: (_, _) => _ResultBody(
+          outcome: const BmiEngine(null).evaluate(input),
+          personId: personId,
+        ),
+        data: (table) => _ResultBody(
+          outcome: BmiEngine(table).evaluate(input),
+          personId: personId,
+        ),
       ),
     );
   }
 }
 
 class _ResultBody extends ConsumerWidget {
-  const _ResultBody({required this.outcome});
+  const _ResultBody({required this.outcome, this.personId});
 
   final BmiOutcome outcome;
+  final String? personId;
 
-  void _save(BuildContext context, WidgetRef ref) {
+  Future<void> _save(BuildContext context, WidgetRef ref) async {
     final l10n = context.l10n;
+    final here = GoRouterState.of(context).uri.toString();
     if (!ref.read(authControllerProvider).isLoggedIn) {
-      showLoginPrompt(
-        context,
-        returnTo: GoRouterState.of(context).uri.toString(),
-        body: l10n.bmiSavePromptBody,
-      );
+      showLoginPrompt(context, returnTo: here, body: l10n.bmiSavePromptBody);
       return;
     }
-    // Saving to the person's history arrives with profiles (Phase 2).
+    final consent = await ref.read(consentProvider.future);
+    if (!context.mounted) return;
+    if (!consent.canStoreHealthData) {
+      context.push(AppRoutes.consentReturningTo(here));
+      return;
+    }
+    final family = await ref.read(familyProvider.future);
+    if (!context.mounted) return;
+    final person =
+        family.where((p) => p.id == personId).firstOrNull ??
+        await _choosePerson(context, family);
+    if (person == null || !context.mounted) return;
+
+    final input = outcome.input;
+    await ref
+        .read(measurementActionsProvider)
+        .save(
+          Measurement(
+            id: newId(),
+            personId: person.id,
+            measuredAt: DateTime.now(),
+            heightCm: input.heightCm,
+            weightKg: input.weightKg,
+          ),
+        );
+    if (!context.mounted) return;
     ScaffoldMessenger.of(context)
       ..hideCurrentSnackBar()
-      ..showSnackBar(SnackBar(content: Text(l10n.comingSoonTitle)));
+      ..showSnackBar(
+        SnackBar(
+          content: Text(l10n.bmiSavedToast),
+          action: SnackBarAction(
+            label: l10n.bmiSeeHistory,
+            onPressed: () => context.push(
+              Uri(
+                path: AppRoutes.bmiHistory,
+                queryParameters: {'p': person.id},
+              ).toString(),
+            ),
+          ),
+        ),
+      );
+  }
+
+  Future<Person?> _choosePerson(BuildContext context, List<Person> family) {
+    final l10n = context.l10n;
+    return showModalBottomSheet<Person>(
+      context: context,
+      builder: (sheetContext) => SafeArea(
+        child: ListView(
+          shrinkWrap: true,
+          children: [
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: EpSpace.s6),
+              child: Text(
+                l10n.bmiChoosePerson,
+                style: Theme.of(context).textTheme.titleLarge,
+              ),
+            ),
+            for (final p in family)
+              ListTile(
+                title: Text(personName(context, p)),
+                subtitle: Text(personSummary(context, p, withRelation: true)),
+                onTap: () => Navigator.of(sheetContext).pop(p),
+              ),
+          ],
+        ),
+      ),
+    );
   }
 
   @override
@@ -64,6 +140,9 @@ class _ResultBody extends ConsumerWidget {
     final l10n = context.l10n;
     final theme = Theme.of(context);
     final input = outcome.input;
+    final person = (ref.watch(familyProvider).value ?? const <Person>[])
+        .where((p) => p.id == personId)
+        .firstOrNull;
     final ageText = input.ageMonths == null
         ? null
         : l10n.bmiAgeValue(
@@ -80,7 +159,8 @@ class _ResultBody extends ConsumerWidget {
       case AdultBmiOutcome(:final bmi, :final category):
         children.addAll([
           _Headline(value: bmiText(bmi), label: _adultLabel(context, category)),
-          if (ageText != null) _Subline(text: _personLine(context, ageText)),
+          if (ageText != null)
+            _Subline(text: _personLine(context, ageText, person)),
           const SizedBox(height: EpSpace.s4),
           Text(_adultBody(context, category), style: theme.textTheme.bodyLarge),
           const SizedBox(height: EpSpace.s5),
@@ -199,9 +279,14 @@ class _ResultBody extends ConsumerWidget {
     );
   }
 
-  String _personLine(BuildContext context, String ageText) {
+  String _personLine(BuildContext context, String ageText, Person? person) {
     final sex = outcome.input.sex;
-    return sex == null ? ageText : '$ageText · ${sexLabel(context, sex)}';
+    final parts = [
+      if (person != null) personName(context, person),
+      ageText,
+      if (sex != null) sexLabel(context, sex),
+    ];
+    return parts.join(' · ');
   }
 }
 

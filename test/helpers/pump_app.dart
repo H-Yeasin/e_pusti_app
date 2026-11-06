@@ -4,9 +4,11 @@ import 'package:epushti/app/router/app_router.dart';
 import 'package:epushti/app/view/e_pusti_app.dart';
 import 'package:epushti/core/config/app_environment.dart';
 import 'package:epushti/core/config/app_info.dart';
+import 'package:epushti/core/config/backend_config.dart';
 import 'package:epushti/core/config/remote_config.dart';
 import 'package:epushti/core/localization/localization.dart';
 import 'package:epushti/core/network/connectivity_provider.dart';
+import 'package:epushti/features/auth/presentation/providers/auth_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_riverpod/misc.dart' show Override;
@@ -22,9 +24,12 @@ Future<void> pumpAppAtHome(
   bool online = true,
   bool onWifi = false,
   List<Override> overrides = const [],
+  BackendKind backend = BackendKind.local,
+  Map<String, Object> storedValues = const {},
 }) async {
   SharedPreferences.setMockInitialValues({
     AppLanguageStore.languageCodeKey: language,
+    ...storedValues,
   });
   final preferences = await SharedPreferences.getInstance();
   await tester.binding.setSurfaceSize(const Size(390, 844));
@@ -34,6 +39,8 @@ Future<void> pumpAppAtHome(
     ProviderScope(
       overrides: [
         appEnvironmentProvider.overrideWithValue(AppEnvironment.dev),
+        sharedPreferencesProvider.overrideWithValue(preferences),
+        backendKindProvider.overrideWithValue(backend),
         appLocaleControllerProvider.overrideWithValue(
           AppLocaleController(AppLanguageStore(preferences)),
         ),
@@ -71,4 +78,22 @@ Future<void> tapAndSettle(WidgetTester tester, Finder finder) async {
   await tester.pump();
   await tester.tap(finder);
   await settle(tester);
+}
+
+/// Logs in through the real LAU-03 / LAU-04 screens with the dev code.
+Future<void> logInThroughScreens(
+  WidgetTester tester, {
+  String phone = '1712345678',
+}) async {
+  await tester.enterText(find.byKey(const ValueKey('login-phone')), phone);
+  await tapAndSettle(tester, find.text('Send code'));
+  await tester.enterText(find.byKey(const ValueKey('otp-field')), '123456');
+  await settle(tester);
+}
+
+/// Completes PRO-03 with both boxes ticked.
+Future<void> acceptConsent(WidgetTester tester) async {
+  await tapAndSettle(tester, find.byKey(const ValueKey('consent-terms')));
+  await tapAndSettle(tester, find.byKey(const ValueKey('consent-health')));
+  await tapAndSettle(tester, find.text('Agree and continue'));
 }

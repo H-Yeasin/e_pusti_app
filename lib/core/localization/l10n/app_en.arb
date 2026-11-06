@@ -417,5 +417,233 @@
   "settingsVideoWifi": "Video on Wi-Fi only",
   "settingsVideoWifiSub": "Saves mobile data",
   "settingsLogout": "Log out",
-  "offlineNotNow": "Needs internet"
+  "offlineNotNow": "Needs internet",
+  "phoneHeading": "Enter your mobile number",
+  "phoneReason": "Needed to save progress, certificates and webinar registrations",
+  "phoneLabel": "Mobile number",
+  "phoneHint": "1XXX-XXXXXX",
+  "phoneOperatorNote": "Any operator's number works for the app. Only the PUST9 subscription needs Robi or Airtel.",
+  "phoneTermsNote": "By continuing you accept the privacy policy and terms.",
+  "phoneInvalid": "Enter a valid Bangladeshi mobile number",
+  "sendCodeAction": "Send code",
+  "otpTitle": "Verify code",
+  "otpSentTo": "Code sent to this number",
+  "changeAction": "Change",
+  "otpResendIn": "Resend code — {time}",
+  "@otpResendIn": {
+    "placeholders": {
+      "time": {
+        "type": "String"
+      }
+    }
+  },
+  "otpResend": "Resend code",
+  "otpVerify": "Verify",
+  "otpNoCodeHint": "If the code doesn't arrive, check your network connection",
+  "otpDelayedHint": "Code taking long? Check the number is right, or use another number.",
+  "otpWrong": "That code isn't right — try again",
+  "otpExpired": "This code has expired — get a new one",
+  "otpTooMany": "Too many attempts. Please wait a while and try again.",
+  "otpSmsFailed": "The code couldn't be sent. Please try again shortly.",
+  "authUnavailable": "Login isn't available in this version yet. Everything else in the app is open to you.",
+  "devOtpHint": "Development build: use code {code}",
+  "@devOtpHint": {
+    "placeholders": {
+      "code": {
+        "type": "String"
+      }
+    }
+  },
+  "changeNumberTitle": "Change number",
+  "changeNumberHeading": "Enter your new mobile number",
+  "changeNumberBody": "Your profile, family, records and certificates move to the new number.",
+  "phoneInUse": "This number is already used by another account.",
+  "numberChangedToast": "Number changed",
+  "consentTitle": "Consent",
+  "consentHeading": "How your information is used",
+  "consentBody": "The information you give is used only to give you suitable nutrition advice and, without names, in BIID Foundation's aggregate reports. No information is sold.",
+  "consentTerms": "I have read and agree to the privacy policy and terms",
+  "consentHealth": "I consent to storing health information (height, weight)",
+  "consentContinue": "Agree and continue",
+  "consentSkipNote": "Without consent you can still use courses, the library and webinars",
+  "privacyCentreTitle": "Privacy & data",
+  "privacyTermsAccepted": "Terms accepted on {date}",
+  "@privacyTermsAccepted": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "privacyHealthOn": "Health data storage: on",
+  "privacyHealthOff": "Health data storage: off",
+  "privacyWithdraw": "Withdraw health data consent",
+  "privacyWithdrawConfirm": "Withdraw consent? All saved height, weight and BMI records will be deleted. This can't be undone.",
+  "privacyGiveConsent": "Give consent",
+  "withdrawAction": "Withdraw",
+  "profileTitle": "Your profile",
+  "editAction": "Edit",
+  "profileAddName": "Add your details",
+  "familyAddTitle": "Add family members",
+  "familyAddBody": "Add your children, spouse or parents to see age-appropriate nutrition advice and BMI for them too.",
+  "familyAddAction": "Add member",
+  "familyCount": "Your family · {count}",
+  "@familyCount": {
+    "placeholders": {
+      "count": {
+        "type": "String"
+      }
+    }
+  },
+  "consentNeededBanner": "Give consent to save profile and health information.",
+  "ageYearsMonths": "{years} y {months} m",
+  "@ageYearsMonths": {
+    "placeholders": {
+      "years": {
+        "type": "String"
+      },
+      "months": {
+        "type": "String"
+      }
+    }
+  },
+  "ageYears": "{years} years",
+  "@ageYears": {
+    "placeholders": {
+      "years": {
+        "type": "String"
+      }
+    }
+  },
+  "fieldNameOptional": "Name (optional)",
+  "fieldNameHint": "Full name",
+  "fieldRelationship": "Relationship",
+  "fieldDob": "Date of birth",
+  "fieldDistrict": "District",
+  "fieldOccupation": "Occupation",
+  "fieldPregnant": "Pregnant",
+  "fieldBreastfeeding": "Breastfeeding",
+  "fieldInterests": "Interests",
+  "fieldInterestsOptional": "Interests (optional)",
+  "fieldChoose": "Choose",
+  "fieldSelectedCount": "{count} selected",
+  "@fieldSelectedCount": {
+    "placeholders": {
+      "count": {
+        "type": "String"
+      }
+    }
+  },
+  "dobReason": "Date of birth and sex are needed for age-appropriate BMI",
+  "dobSelectedAge": "Selected age: {age}",
+  "@dobSelectedAge": {
+    "placeholders": {
+      "age": {
+        "type": "String"
+      }
+    }
+  },
+  "removeMemberAction": "Remove member",
+  "removeMemberConfirm": "Remove this member? Their saved measurements will also be deleted.",
+  "savedToast": "Saved",
+  "pickDistrictTitle": "Choose district",
+  "pickDistrictSearch": "Search districts…",
+  "pickOccupationTitle": "Choose occupation",
+  "pickRelationshipTitle": "Choose relationship",
+  "pickSexTitle": "Choose sex",
+  "pickInterestsHint": "You can choose more than one",
+  "pickInterestsDone": "Done · {count} selected",
+  "@pickInterestsDone": {
+    "placeholders": {
+      "count": {
+        "type": "String"
+      }
+    }
+  },
+  "divisionDhaka": "Dhaka Division",
+  "divisionChattogram": "Chattogram Division",
+  "divisionRajshahi": "Rajshahi Division",
+  "divisionKhulna": "Khulna Division",
+  "divisionBarishal": "Barishal Division",
+  "divisionSylhet": "Sylhet Division",
+  "divisionRangpur": "Rangpur Division",
+  "divisionMymensingh": "Mymensingh Division",
+  "relChild": "Child",
+  "relSpouse": "Husband / Wife",
+  "relParent": "Father / Mother",
+  "relSibling": "Brother / Sister",
+  "relOther": "Other",
+  "relHolderYou": "{name} (you)",
+  "@relHolderYou": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "youLabel": "You",
+  "occStudent": "Student",
+  "occPrivate": "Employee (private)",
+  "occGovernment": "Government employee",
+  "occBusiness": "Business",
+  "occTeacher": "Teacher",
+  "occFarmer": "Farmer",
+  "occHomemaker": "Homemaker",
+  "occOther": "Other",
+  "intBalanced": "Balanced diet",
+  "intPregnancy": "Nutrition in pregnancy",
+  "intWeight": "Weight management",
+  "intChild": "Child nutrition",
+  "intDiabetes": "Diabetes management",
+  "intGeneral": "General health awareness",
+  "bmiForWhom": "Who is this for?",
+  "bmiSeeHistory": "See previous records",
+  "bmiChoosePerson": "Save for whom?",
+  "bmiSavedToast": "Saved to records",
+  "historyTitle": "Records",
+  "historyHeader": "{person} · {count} records",
+  "@historyHeader": {
+    "placeholders": {
+      "person": {
+        "type": "String"
+      },
+      "count": {
+        "type": "String"
+      }
+    }
+  },
+  "historyRowMeta": "{height} cm · {weight} kg",
+  "@historyRowMeta": {
+    "placeholders": {
+      "height": {
+        "type": "String"
+      },
+      "weight": {
+        "type": "String"
+      }
+    }
+  },
+  "historyGrowthSoon": "Growth chart coming soon",
+  "historyEmptyTitle": "No records yet",
+  "historyEmptyBody": "Save height and weight to see changes over time here.",
+  "historyAddAction": "Add measurement",
+  "historyEditTitle": "Correct record",
+  "deleteAction": "Delete",
+  "deleteRecordConfirm": "Delete this record?",
+  "settingsChangeNumber": "Change number",
+  "settingsPrivacyCentre": "Privacy & data",
+  "settingsDeleteAccount": "Delete account",
+  "logoutConfirm": "Log out? Downloaded files stay on this phone.",
+  "deleteAccountTitle": "Delete account",
+  "deleteAccountWarning": "Deleting the account is permanent — it can't be restored.",
+  "deleteAccountDeletes": "What will be deleted",
+  "deleteAccountProfiles": "Your and your family members' profiles",
+  "deleteAccountRecords": "Saved height, weight and BMI records",
+  "deleteAccountProgress": "Course and module progress",
+  "deleteAccountRegistrations": "Webinar registrations",
+  "deleteAccountStays": "What stays",
+  "deleteAccountCertificates": "Issued certificates stay verifiable, because third parties may check them. Anonymous aggregate statistics also remain.",
+  "deleteAccountPust9": "The PUST9 subscription stays active with your operator — stop it separately.",
+  "deleteAccountFailed": "The account couldn't be deleted. Please try again.",
+  "accountDeletedToast": "Account deleted"
 }
