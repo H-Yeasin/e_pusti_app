@@ -3208,6 +3208,72 @@ abstract class EPustiGeneratedLocalizations {
   /// In en, this message translates to:
   /// **'Expected due date'**
   String get fieldDueDate;
+
+  /// No description provided for @under5Title.
+  ///
+  /// In en, this message translates to:
+  /// **'Growth charts (WHO 2006 standards)'**
+  String get under5Title;
+
+  /// No description provided for @indWeightForAge.
+  ///
+  /// In en, this message translates to:
+  /// **'Weight for age'**
+  String get indWeightForAge;
+
+  /// No description provided for @indHeightForAge.
+  ///
+  /// In en, this message translates to:
+  /// **'Height for age'**
+  String get indHeightForAge;
+
+  /// No description provided for @indWeightForHeight.
+  ///
+  /// In en, this message translates to:
+  /// **'Weight for height'**
+  String get indWeightForHeight;
+
+  /// No description provided for @under5Legend.
+  ///
+  /// In en, this message translates to:
+  /// **'Lines: WHO Child Growth Standards (2006), −2 to +2 SD; the thick line is the median; shaded −2 to +2 SD. Dots are saved measurements.'**
+  String get under5Legend;
+
+  /// No description provided for @under5AxisMonths.
+  ///
+  /// In en, this message translates to:
+  /// **'Bottom axis: age in months.'**
+  String get under5AxisMonths;
+
+  /// No description provided for @under5AxisCm.
+  ///
+  /// In en, this message translates to:
+  /// **'Bottom axis: length/height in cm.'**
+  String get under5AxisCm;
+
+  /// No description provided for @under5LengthNote.
+  ///
+  /// In en, this message translates to:
+  /// **'Under 2 years, length is measured lying down; from 2 years, height standing.'**
+  String get under5LengthNote;
+
+  /// No description provided for @under5OutOfRange.
+  ///
+  /// In en, this message translates to:
+  /// **'The saved height is outside the range of the WHO weight-for-height table.'**
+  String get under5OutOfRange;
+
+  /// No description provided for @growthNeedsDob.
+  ///
+  /// In en, this message translates to:
+  /// **'Add a date of birth to see growth charts.'**
+  String get growthNeedsDob;
+
+  /// No description provided for @growthNeedsSex.
+  ///
+  /// In en, this message translates to:
+  /// **'WHO growth charts are separate for boys and girls, so they can\'t be shown when sex is \"Other\" or not given.'**
+  String get growthNeedsSex;
 }
 
 class _EPustiGeneratedLocalizationsDelegate

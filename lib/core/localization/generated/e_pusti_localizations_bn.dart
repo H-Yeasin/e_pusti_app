@@ -1774,4 +1774,41 @@ class EPustiGeneratedLocalizationsBn extends EPustiGeneratedLocalizations {
 
   @override
   String get fieldDueDate => 'সম্ভাব্য প্রসবের তারিখ';
+
+  @override
+  String get under5Title => 'বৃদ্ধির গ্রাফ (WHO ২০০৬ মানদণ্ড)';
+
+  @override
+  String get indWeightForAge => 'বয়স অনুযায়ী ওজন';
+
+  @override
+  String get indHeightForAge => 'বয়স অনুযায়ী উচ্চতা';
+
+  @override
+  String get indWeightForHeight => 'উচ্চতা অনুযায়ী ওজন';
+
+  @override
+  String get under5Legend =>
+      'রেখা: WHO শিশু বৃদ্ধি মানদণ্ড (২০০৬), −২ থেকে +২ SD; মোটা রেখাটি মধ্যমা; ছায়াযুক্ত অংশ −২ থেকে +২ SD। বিন্দুগুলো সংরক্ষিত পরিমাপ।';
+
+  @override
+  String get under5AxisMonths => 'নিচের অক্ষ: বয়স (মাস)।';
+
+  @override
+  String get under5AxisCm => 'নিচের অক্ষ: দৈর্ঘ্য/উচ্চতা (cm)।';
+
+  @override
+  String get under5LengthNote =>
+      '২ বছরের কম বয়সে শুইয়ে দৈর্ঘ্য, ২ বছর থেকে দাঁড়িয়ে উচ্চতা মাপা হয়।';
+
+  @override
+  String get under5OutOfRange =>
+      'সংরক্ষিত উচ্চতা WHO উচ্চতা-অনুযায়ী ওজন সারণির সীমার বাইরে।';
+
+  @override
+  String get growthNeedsDob => 'জন্ম তারিখ যোগ করলে বৃদ্ধির গ্রাফ দেখা যাবে।';
+
+  @override
+  String get growthNeedsSex =>
+      'WHO বৃদ্ধির গ্রাফ ছেলে ও মেয়েদের জন্য আলাদা, তাই লিঙ্গ \"অন্যান্য\" বা দেওয়া না থাকলে গ্রাফ দেখানো যায় না।';
 }

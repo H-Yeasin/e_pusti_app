@@ -1009,5 +1009,16 @@
       }
     }
   },
-  "fieldDueDate": "Expected due date"
+  "fieldDueDate": "Expected due date",
+  "under5Title": "Growth charts (WHO 2006 standards)",
+  "indWeightForAge": "Weight for age",
+  "indHeightForAge": "Height for age",
+  "indWeightForHeight": "Weight for height",
+  "under5Legend": "Lines: WHO Child Growth Standards (2006), −2 to +2 SD; the thick line is the median; shaded −2 to +2 SD. Dots are saved measurements.",
+  "under5AxisMonths": "Bottom axis: age in months.",
+  "under5AxisCm": "Bottom axis: length/height in cm.",
+  "under5LengthNote": "Under 2 years, length is measured lying down; from 2 years, height standing.",
+  "under5OutOfRange": "The saved height is outside the range of the WHO weight-for-height table.",
+  "growthNeedsDob": "Add a date of birth to see growth charts.",
+  "growthNeedsSex": "WHO growth charts are separate for boys and girls, so they can't be shown when sex is \"Other\" or not given."
 }

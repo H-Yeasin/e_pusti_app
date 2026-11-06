@@ -1778,4 +1778,41 @@ class EPustiGeneratedLocalizationsEn extends EPustiGeneratedLocalizations {
 
   @override
   String get fieldDueDate => 'Expected due date';
+
+  @override
+  String get under5Title => 'Growth charts (WHO 2006 standards)';
+
+  @override
+  String get indWeightForAge => 'Weight for age';
+
+  @override
+  String get indHeightForAge => 'Height for age';
+
+  @override
+  String get indWeightForHeight => 'Weight for height';
+
+  @override
+  String get under5Legend =>
+      'Lines: WHO Child Growth Standards (2006), −2 to +2 SD; the thick line is the median; shaded −2 to +2 SD. Dots are saved measurements.';
+
+  @override
+  String get under5AxisMonths => 'Bottom axis: age in months.';
+
+  @override
+  String get under5AxisCm => 'Bottom axis: length/height in cm.';
+
+  @override
+  String get under5LengthNote =>
+      'Under 2 years, length is measured lying down; from 2 years, height standing.';
+
+  @override
+  String get under5OutOfRange =>
+      'The saved height is outside the range of the WHO weight-for-height table.';
+
+  @override
+  String get growthNeedsDob => 'Add a date of birth to see growth charts.';
+
+  @override
+  String get growthNeedsSex =>
+      'WHO growth charts are separate for boys and girls, so they can\'t be shown when sex is \"Other\" or not given.';
 }

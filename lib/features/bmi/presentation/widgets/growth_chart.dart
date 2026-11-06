@@ -14,13 +14,14 @@ class GrowthPoint {
   final double bmi;
 }
 
-/// BMI at [z] SD for one age from the LMS parameters.
+/// Value at [z] SD from the LMS parameters (used for every WHO indicator).
 double bmiAtZ(Lms lms, double z) => lms.l == 0
     ? lms.m * math.exp(lms.s * z)
     : lms.m * math.pow(1 + lms.l * lms.s * z, 1 / lms.l).toDouble();
 
+const referenceCurves = [-2.0, -1.0, 0.0, 1.0, 2.0];
+
 /// P2-1 (ages 5–19): the person's BMI on the WHO 2007 BMI-for-age curves.
-/// Clinical palette only; no colour carries a health judgement.
 class GrowthChart extends StatelessWidget {
   const GrowthChart({
     super.key,
@@ -33,8 +34,6 @@ class GrowthChart extends StatelessWidget {
   final Sex sex;
   final List<GrowthPoint> points;
 
-  static const curves = [-2.0, -1.0, 0.0, 1.0, 2.0];
-
   @override
   Widget build(BuildContext context) {
     final l10n = context.l10n;
@@ -42,64 +41,126 @@ class GrowthChart extends StatelessWidget {
     final from = math.max(61, ages.reduce(math.min) - 12);
     final to = math.min(228, ages.reduce(math.max) + 12);
 
-    final lines = <double, List<Offset>>{};
-    for (final z in curves) {
-      lines[z] = [
-        for (var m = from; m <= to; m++)
-          if (reference.lookup(sex, m) case final lms?)
-            Offset(m.toDouble(), bmiAtZ(lms, z)),
-      ];
-    }
+    return ReferenceChart(
+      chartKey: const ValueKey('growth-chart'),
+      curves: {
+        for (final z in referenceCurves)
+          z: [
+            for (var m = from; m <= to; m++)
+              if (reference.lookup(sex, m) case final lms?)
+                Offset(m.toDouble(), bmiAtZ(lms, z)),
+          ],
+      },
+      points: [for (final p in points) Offset(p.ageMonths.toDouble(), p.bmi)],
+      xFrom: from.toDouble(),
+      xTo: to.toDouble(),
+      xStep: 12,
+      xLabel: (months) => context.digits(months ~/ 12),
+      legend: l10n.growthChartLegend,
+      semanticLabel: l10n.growthChartSemantic(context.digits(points.length)),
+    );
+  }
+}
 
+/// WHO reference curves (−2…+2 SD, normal band shaded) with the person's
+/// measurements. Clinical palette only; no colour carries a judgement.
+class ReferenceChart extends StatelessWidget {
+  const ReferenceChart({
+    super.key,
+    required this.curves,
+    required this.points,
+    required this.xFrom,
+    required this.xTo,
+    required this.xStep,
+    required this.xLabel,
+    required this.legend,
+    required this.semanticLabel,
+    this.chartKey,
+    this.shadeFrom = -2,
+    this.shadeTo = 1,
+  });
+
+  final Map<double, List<Offset>> curves;
+  final List<Offset> points;
+  final double xFrom;
+  final double xTo;
+  final double xStep;
+  final String Function(double x) xLabel;
+  final String legend;
+  final String semanticLabel;
+  final Key? chartKey;
+
+  /// SD lines bounding the lightly shaded band.
+  final double shadeFrom;
+  final double shadeTo;
+
+  @override
+  Widget build(BuildContext context) {
     return Semantics(
-      label: l10n.growthChartSemantic(context.digits(points.length)),
+      label: semanticLabel,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           AspectRatio(
             aspectRatio: 1.4,
             child: CustomPaint(
-              key: const ValueKey('growth-chart'),
+              key: chartKey,
               painter: _ChartPainter(
-                lines: lines,
-                points: [
-                  for (final p in points) Offset(p.ageMonths.toDouble(), p.bmi),
-                ],
-                fromMonth: from.toDouble(),
-                toMonth: to.toDouble(),
-                yearLabel: (months) => context.digits(months ~/ 12),
+                lines: curves,
+                points: points,
+                xFrom: xFrom,
+                xTo: xTo,
+                xStep: xStep,
+                xLabel: xLabel,
+                shadeFrom: shadeFrom,
+                shadeTo: shadeTo,
               ),
             ),
           ),
           const SizedBox(height: EpSpace.s2),
-          Text(
-            l10n.growthChartLegend,
-            style: Theme.of(context).textTheme.bodySmall,
-          ),
+          Text(legend, style: Theme.of(context).textTheme.bodySmall),
         ],
       ),
     );
   }
 }
 
+/// A "nice" grid step (1, 2, 5 × 10ⁿ) for about five lines.
+double niceStep(double range) {
+  final raw = range / 5;
+  final magnitude = math
+      .pow(10, (math.log(raw) / math.ln10).floor())
+      .toDouble();
+  for (final f in [1.0, 2.0, 5.0, 10.0]) {
+    if (raw <= f * magnitude) return f * magnitude;
+  }
+  return 10 * magnitude;
+}
+
 class _ChartPainter extends CustomPainter {
   _ChartPainter({
     required this.lines,
     required this.points,
-    required this.fromMonth,
-    required this.toMonth,
-    required this.yearLabel,
+    required this.xFrom,
+    required this.xTo,
+    required this.xStep,
+    required this.xLabel,
+    required this.shadeFrom,
+    required this.shadeTo,
   });
 
   final Map<double, List<Offset>> lines;
   final List<Offset> points;
-  final double fromMonth;
-  final double toMonth;
-  final String Function(int months) yearLabel;
+  final double xFrom;
+  final double xTo;
+  final double xStep;
+  final String Function(double x) xLabel;
+  final double shadeFrom;
+  final double shadeTo;
 
   @override
   void paint(Canvas canvas, Size size) {
-    const left = 28.0;
+    const left = 30.0;
     const bottom = 20.0;
     final plot = Rect.fromLTRB(left, 8, size.width - 8, size.height - bottom);
 
@@ -107,16 +168,19 @@ class _ChartPainter extends CustomPainter {
       for (final l in lines.values) ...l.map((o) => o.dy),
       ...points.map((p) => p.dy),
     ];
-    final minY = (allY.reduce(math.min) - 1).floorToDouble();
-    final maxY = (allY.reduce(math.max) + 1).ceilToDouble();
+    if (allY.isEmpty || xTo <= xFrom) return;
+    final rawMin = allY.reduce(math.min), rawMax = allY.reduce(math.max);
+    final yStep = niceStep(math.max(rawMax - rawMin, 1));
+    final minY = (rawMin / yStep).floor() * yStep;
+    final maxY = (rawMax / yStep).ceil() * yStep;
 
     Offset map(Offset v) => Offset(
-      plot.left + (v.dx - fromMonth) / (toMonth - fromMonth) * plot.width,
+      plot.left + (v.dx - xFrom) / (xTo - xFrom) * plot.width,
       plot.bottom - (v.dy - minY) / (maxY - minY) * plot.height,
     );
 
-    // Normal band (−2 to +1 SD) shaded lightly.
-    final low = lines[-2.0]!, high = lines[1.0]!;
+    final low = lines[shadeFrom] ?? const [];
+    final high = lines[shadeTo] ?? const [];
     if (low.isNotEmpty && high.isNotEmpty) {
       final band = Path()..moveTo(map(low.first).dx, map(low.first).dy);
       for (final o in low) {
@@ -142,15 +206,18 @@ class _ChartPainter extends CustomPainter {
       text.paint(canvas, at - Offset(text.width / 2, 0));
     }
 
-    for (var m = (fromMonth / 12).ceil() * 12; m <= toMonth; m += 12) {
-      final x = map(Offset(m.toDouble(), minY)).dx;
-      canvas.drawLine(Offset(x, plot.top), Offset(x, plot.bottom), grid);
-      label(yearLabel(m), Offset(x, plot.bottom + 4));
+    for (var x = (xFrom / xStep).ceil() * xStep; x <= xTo; x += xStep) {
+      final px = map(Offset(x, minY)).dx;
+      canvas.drawLine(Offset(px, plot.top), Offset(px, plot.bottom), grid);
+      label(xLabel(x), Offset(px, plot.bottom + 4));
     }
-    for (var y = minY; y <= maxY; y += 2) {
-      final py = map(Offset(fromMonth, y)).dy;
+    for (var y = minY; y <= maxY + 1e-9; y += yStep) {
+      final py = map(Offset(xFrom, y)).dy;
       canvas.drawLine(Offset(plot.left, py), Offset(plot.right, py), grid);
-      label(y.toStringAsFixed(0), Offset(left / 2, py - 6));
+      label(
+        y % 1 == 0 ? y.toStringAsFixed(0) : y.toStringAsFixed(1),
+        Offset(left / 2, py - 6),
+      );
     }
 
     for (final entry in lines.entries) {

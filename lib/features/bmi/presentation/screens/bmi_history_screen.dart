@@ -14,9 +14,11 @@ import '../../../profile/domain/profile_models.dart';
 import '../../../profile/presentation/profile_labels.dart';
 import '../../../profile/presentation/profile_providers.dart';
 import '../../data/who_bmi_for_age_reference.dart';
+import '../../data/who_under_five_reference.dart';
 import '../../domain/bmi_engine.dart';
 import '../../domain/entities/bmi_models.dart';
 import '../widgets/growth_chart.dart';
+import '../widgets/under_five_charts.dart';
 
 /// BMI-03 — records per person, correctable and deletable.
 class BmiHistoryScreen extends ConsumerStatefulWidget {
@@ -310,9 +312,8 @@ class _EditSheetState extends ConsumerState<_EditSheet> {
   }
 }
 
-/// Chart for records taken between 5 and 19 years with a sex the WHO
-/// reference covers; otherwise the "coming soon" line (under-5 charts need
-/// the WHO 2006 standards).
+/// Growth charts for the records this person has: WHO 2006 standards
+/// before age 5, WHO 2007 BMI-for-age from 5 to 19, none for adults.
 class _GrowthSection extends ConsumerWidget {
   const _GrowthSection({required this.person, required this.records});
 
@@ -322,44 +323,71 @@ class _GrowthSection extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final l10n = context.l10n;
+    final small = Theme.of(context).textTheme.bodySmall;
     final sex = person.sex;
-    final reference = ref.watch(bmiForAgeReferenceProvider).value;
-    final points = [
+    final dob = person.dateOfBirth;
+    final childRecords = [
       for (final m in records)
         if (person.ageMonthsAt(m.measuredAt) case final age?
-            when age >= BmiEngine.childFromMonths &&
-                age < BmiEngine.adultFromMonths)
-          GrowthPoint(ageMonths: age, bmi: m.bmi),
+            when age < BmiEngine.adultFromMonths)
+          m,
     ];
-    if (reference == null ||
-        points.isEmpty ||
-        sex == null ||
-        sex == Sex.other) {
-      final adultOnly =
-          points.isEmpty &&
-          (person.ageMonthsAt(DateTime.now()) ?? 0) >=
-              BmiEngine.adultFromMonths;
-      if (adultOnly) return const SizedBox.shrink();
+    final adultNow =
+        (person.ageMonthsAt(DateTime.now()) ?? 0) >= BmiEngine.adultFromMonths;
+
+    if (dob == null) {
+      return adultNow
+          ? const SizedBox.shrink()
+          : Text(
+              l10n.growthNeedsDob,
+              textAlign: TextAlign.center,
+              style: small,
+            );
+    }
+    if (childRecords.isEmpty) return const SizedBox.shrink();
+    if (sex == null || sex == Sex.other) {
       return Text(
-        l10n.historyGrowthSoon,
+        l10n.growthNeedsSex,
         textAlign: TextAlign.center,
-        style: Theme.of(context).textTheme.bodySmall,
+        style: small,
       );
     }
+
+    final under5 = ref.watch(underFiveReferenceProvider).value;
+    final bmiRef = ref.watch(bmiForAgeReferenceProvider).value;
+    final under5Records = [
+      for (final m in childRecords)
+        if (ageInDays(dob, m.measuredAt) <= underFiveMaxDays) m,
+    ];
+    final bmiPoints = [
+      for (final m in childRecords)
+        if (person.ageMonthsAt(m.measuredAt) case final age?
+            when age >= BmiEngine.childFromMonths)
+          GrowthPoint(ageMonths: age, bmi: m.bmi),
+    ];
+
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text(
-          l10n.growthChartTitle,
-          style: Theme.of(context).textTheme.titleMedium,
-        ),
-        const SizedBox(height: EpSpace.s2),
-        GrowthChart(reference: reference, sex: sex, points: points),
-        const SizedBox(height: EpSpace.s2),
-        Text(
-          l10n.bmiChildDisclaimer,
-          style: Theme.of(context).textTheme.bodySmall,
-        ),
+        if (under5 != null && under5Records.isNotEmpty) ...[
+          UnderFiveCharts(
+            reference: under5,
+            sex: sex,
+            dateOfBirth: dob,
+            records: under5Records,
+          ),
+          const SizedBox(height: EpSpace.s5),
+        ],
+        if (bmiRef != null && bmiPoints.isNotEmpty) ...[
+          Text(
+            l10n.growthChartTitle,
+            style: Theme.of(context).textTheme.titleMedium,
+          ),
+          const SizedBox(height: EpSpace.s2),
+          GrowthChart(reference: bmiRef, sex: sex, points: bmiPoints),
+          const SizedBox(height: EpSpace.s2),
+        ],
+        Text(l10n.bmiChildDisclaimer, style: small),
       ],
     );
   }
