@@ -183,6 +183,7 @@ class AppRemoteConfig {
     this.verifyBaseUrl,
     this.shareBaseUrl,
     this.measurementReminderDays = MeasurementReminderDays.defaults,
+    this.ancContactWeeks,
   });
 
   /// Bundled defaults used until (and whenever) the server config is not
@@ -218,6 +219,10 @@ class AppRemoteConfig {
   final String? shareBaseUrl;
 
   final MeasurementReminderDays measurementReminderDays;
+
+  /// Pregnancy weeks of antenatal care contacts. Null until the schedule is
+  /// confirmed for Bangladesh; the journey then shows no visit reminders.
+  final List<int>? ancContactWeeks;
 
   SlotContent slot(AdSlotId id) => slots[id] ?? const EmptySlot();
 
@@ -255,6 +260,12 @@ class AppRemoteConfig {
               (json['measurementReminderDays'] as Map).cast<String, Object?>(),
             )
           : MeasurementReminderDays.defaults,
+      ancContactWeeks: json['ancContactWeeks'] is List
+          ? [
+              for (final w in json['ancContactWeeks'] as List)
+                if (w is num) w.toInt(),
+            ]
+          : null,
     );
   }
 }

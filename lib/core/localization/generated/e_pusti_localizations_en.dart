@@ -1638,4 +1638,144 @@ class EPustiGeneratedLocalizationsEn extends EPustiGeneratedLocalizations {
   String pust9StopBody(String keyword, String shortcode) {
     return 'Send $keyword to $shortcode';
   }
+
+  @override
+  String get bookmarkAdd => 'Save';
+
+  @override
+  String get bookmarkRemove => 'Remove from saved';
+
+  @override
+  String get bookmarkSaved => 'Added to saved';
+
+  @override
+  String get bookmarkRemoved => 'Removed from saved';
+
+  @override
+  String get savedTitle => 'Saved';
+
+  @override
+  String get savedEmptyTitle => 'Nothing saved yet';
+
+  @override
+  String get savedEmptyBody =>
+      'Tap the bookmark on a chapter, module, document or webinar to save it here.';
+
+  @override
+  String get searchHint => 'Search all content…';
+
+  @override
+  String get searchTooltip => 'Search';
+
+  @override
+  String get searchPromptTitle => 'What are you looking for?';
+
+  @override
+  String get searchPromptBody =>
+      'Search chapters, modules, the library and webinars in one place.';
+
+  @override
+  String get searchRecent => 'Recent searches';
+
+  @override
+  String searchNoResults(String query) {
+    return 'Nothing matched \"$query\". Try another word, or browse the library or courses.';
+  }
+
+  @override
+  String get listenAction => 'Listen';
+
+  @override
+  String get listenStop => 'Stop';
+
+  @override
+  String get listenUnavailable =>
+      'This phone has no Bangla text-to-speech voice. Add a Bangla voice in the phone\'s settings to listen.';
+
+  @override
+  String get growthChartTitle => 'Growth chart (BMI for age)';
+
+  @override
+  String get growthChartLegend =>
+      'Lines: WHO 2007 reference from −2 to +2 SD; the thick line is the median. Dots are saved measurements. Shaded: −2 to +1 SD.';
+
+  @override
+  String growthChartSemantic(String count) {
+    return 'Growth chart with $count measurements';
+  }
+
+  @override
+  String get journeyTitle => 'Mother & baby journey';
+
+  @override
+  String get journeyPregnancy => 'Pregnancy';
+
+  @override
+  String get journeyBreastfeeding => 'Breastfeeding';
+
+  @override
+  String journeyPregnancyWeek(String week) {
+    return 'Week $week';
+  }
+
+  @override
+  String journeyBabyWeek(String name, String week) {
+    return '$name: $week weeks old';
+  }
+
+  @override
+  String journeyTrimester(String n) {
+    return 'Trimester $n';
+  }
+
+  @override
+  String journeyDueDate(String date) {
+    return 'Expected due date: $date';
+  }
+
+  @override
+  String get journeyAddDueDate => 'Add the expected due date to see your week';
+
+  @override
+  String get journeyAddBaby => 'Add your baby to see guidance by age';
+
+  @override
+  String get journeyContentSoon =>
+      'Guidance for this week will be added soon. Meanwhile, see the resources below.';
+
+  @override
+  String get journeyResources => 'Related resources';
+
+  @override
+  String get journeyNoneTitle => 'For pregnant and breastfeeding mothers';
+
+  @override
+  String get journeyNoneBody =>
+      'Turn on \"Pregnant\" or \"Breastfeeding\" in your profile to see information for you here.';
+
+  @override
+  String get journeyAncTitle => 'Antenatal check-ups';
+
+  @override
+  String journeyAncWeek(String week) {
+    return 'Week $week check-up';
+  }
+
+  @override
+  String get journeyAncRemind => 'Remind me before check-ups';
+
+  @override
+  String get journeyAncReminded =>
+      'You\'ll be reminded the day before each check-up';
+
+  @override
+  String get journeyAncReminderTitle => 'Antenatal check-up tomorrow';
+
+  @override
+  String journeyAncReminderBody(String week) {
+    return 'Week $week check-up';
+  }
+
+  @override
+  String get fieldDueDate => 'Expected due date';
 }

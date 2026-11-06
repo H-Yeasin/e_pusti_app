@@ -76,6 +76,12 @@ class HomeScreen extends ConsumerWidget {
           errorBuilder: (context, error, stackTrace) => Text(l10n.homeAppTitle),
         ),
         actions: [
+          IconButton(
+            key: const ValueKey('home-search'),
+            tooltip: l10n.searchTooltip,
+            onPressed: () => context.push(AppRoutes.search),
+            icon: const Icon(Icons.search_rounded),
+          ),
           Builder(
             builder: (context) {
               return IconButton(

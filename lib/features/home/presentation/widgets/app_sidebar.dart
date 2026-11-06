@@ -47,6 +47,7 @@ class AppSidebar extends ConsumerWidget {
         l10n.menuCertificates,
         AppRoutes.certificates,
       ),
+      (Icons.bookmark_border_rounded, l10n.savedTitle, AppRoutes.saved),
       (
         Icons.event_note_outlined,
         l10n.menuRegistrations,

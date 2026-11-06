@@ -61,6 +61,10 @@
             <action android:name="android.intent.action.PROCESS_TEXT"/>
             <data android:mimeType="text/plain"/>
         </intent>
+        <!-- flutter_tts: find the phone's text-to-speech engine (Android 11+) -->
+        <intent>
+            <action android:name="android.intent.action.TTS_SERVICE"/>
+        </intent>
         <!-- url_launcher: dial (PUST9 USSD), SMS app, email, web links -->
         <intent>
             <action android:name="android.intent.action.DIAL"/>

@@ -911,5 +911,103 @@
         "type": "String"
       }
     }
-  }
+  },
+  "bookmarkAdd": "সংরক্ষণ করুন",
+  "bookmarkRemove": "সংরক্ষিত থেকে সরান",
+  "bookmarkSaved": "সংরক্ষিত তালিকায় যোগ হয়েছে",
+  "bookmarkRemoved": "সংরক্ষিত তালিকা থেকে সরানো হয়েছে",
+  "savedTitle": "সংরক্ষিত",
+  "savedEmptyTitle": "এখনো কিছু সংরক্ষণ করা হয়নি",
+  "savedEmptyBody": "অধ্যায়, মডিউল, ডকুমেন্ট বা ওয়েবিনারের বুকমার্ক চিহ্নে চাপ দিলে এখানে সংরক্ষিত থাকবে।",
+  "searchHint": "সব কনটেন্টে খুঁজুন...",
+  "searchTooltip": "খুঁজুন",
+  "searchPromptTitle": "কী খুঁজছেন?",
+  "searchPromptBody": "অধ্যায়, মডিউল, লাইব্রেরি ও ওয়েবিনার — সব এক জায়গায় খুঁজুন।",
+  "searchRecent": "সাম্প্রতিক খোঁজ",
+  "searchNoResults": "\"{query}\" শব্দে কিছু মেলেনি। অন্য শব্দ দিয়ে খুঁজুন, অথবা লাইব্রেরি বা কোর্স দেখুন।",
+  "@searchNoResults": {
+    "placeholders": {
+      "query": {
+        "type": "String"
+      }
+    }
+  },
+  "listenAction": "শুনুন",
+  "listenStop": "থামান",
+  "listenUnavailable": "এই ফোনে বাংলা কণ্ঠস্বর (টেক্সট-টু-স্পিচ) চালু নেই। ফোনের সেটিংস থেকে বাংলা ভয়েস যোগ করলে শুনতে পারবেন।",
+  "growthChartTitle": "বৃদ্ধির গ্রাফ (বয়স অনুযায়ী BMI)",
+  "growthChartLegend": "রেখা: WHO ২০০৭ মানদণ্ডের −২ থেকে +২ SD; মোটা রেখাটি মধ্যমা। বিন্দুগুলো সংরক্ষিত পরিমাপ। ছায়াযুক্ত অংশ: −২ থেকে +১ SD।",
+  "growthChartSemantic": "{count}টি পরিমাপসহ বৃদ্ধির গ্রাফ",
+  "@growthChartSemantic": {
+    "placeholders": {
+      "count": {
+        "type": "String"
+      }
+    }
+  },
+  "journeyTitle": "মা ও শিশুর যাত্রা",
+  "journeyPregnancy": "গর্ভকাল",
+  "journeyBreastfeeding": "স্তন্যদান",
+  "journeyPregnancyWeek": "সপ্তাহ {week}",
+  "@journeyPregnancyWeek": {
+    "placeholders": {
+      "week": {
+        "type": "String"
+      }
+    }
+  },
+  "journeyBabyWeek": "{name}: বয়স {week} সপ্তাহ",
+  "@journeyBabyWeek": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      },
+      "week": {
+        "type": "String"
+      }
+    }
+  },
+  "journeyTrimester": "ত্রৈমাসিক {n}",
+  "@journeyTrimester": {
+    "placeholders": {
+      "n": {
+        "type": "String"
+      }
+    }
+  },
+  "journeyDueDate": "সম্ভাব্য প্রসবের তারিখ: {date}",
+  "@journeyDueDate": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "journeyAddDueDate": "সপ্তাহ হিসাব করতে সম্ভাব্য প্রসবের তারিখ যোগ করুন",
+  "journeyAddBaby": "শিশুর তথ্য যোগ করলে বয়স অনুযায়ী তথ্য দেখাবে",
+  "journeyContentSoon": "এই সপ্তাহের পরামর্শ শীঘ্রই যুক্ত হবে। ততক্ষণ নিচের উপকরণগুলো দেখুন।",
+  "journeyResources": "সংশ্লিষ্ট উপকরণ",
+  "journeyNoneTitle": "গর্ভবতী ও স্তন্যদানকারী মায়েদের জন্য",
+  "journeyNoneBody": "প্রোফাইলে \"গর্ভবতী\" বা \"স্তন্যদানকারী\" চালু করলে এখানে আপনার জন্য তথ্য দেখাবে।",
+  "journeyAncTitle": "প্রসবপূর্ব চেকআপ",
+  "journeyAncWeek": "সপ্তাহ {week}-এর চেকআপ",
+  "@journeyAncWeek": {
+    "placeholders": {
+      "week": {
+        "type": "String"
+      }
+    }
+  },
+  "journeyAncRemind": "চেকআপের রিমাইন্ডার চালু করুন",
+  "journeyAncReminded": "প্রতিটি চেকআপের আগের দিন রিমাইন্ডার দেওয়া হবে",
+  "journeyAncReminderTitle": "আগামীকাল প্রসবপূর্ব চেকআপ",
+  "journeyAncReminderBody": "সপ্তাহ {week}-এর চেকআপ",
+  "@journeyAncReminderBody": {
+    "placeholders": {
+      "week": {
+        "type": "String"
+      }
+    }
+  },
+  "fieldDueDate": "সম্ভাব্য প্রসবের তারিখ"
 }

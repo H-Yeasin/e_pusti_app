@@ -1,4 +1,7 @@
 import 'package:flutter/foundation.dart';
+import '../../features/search/presentation/search_screen.dart';
+import '../../features/journey/journey_screen.dart';
+import '../../features/bookmarks/saved_screen.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
@@ -181,6 +184,18 @@ final appRouterProvider = Provider<GoRouter>((ref) {
             builder: (context, state) => const Pust9ArchiveScreen(),
           ),
         ],
+      ),
+      GoRoute(
+        path: AppRoutes.search,
+        builder: (context, state) => const SearchScreen(),
+      ),
+      GoRoute(
+        path: AppRoutes.saved,
+        builder: (context, state) => const SavedScreen(),
+      ),
+      GoRoute(
+        path: AppRoutes.journey,
+        builder: (context, state) => const JourneyScreen(),
       ),
       GoRoute(
         path: AppRoutes.registrations,

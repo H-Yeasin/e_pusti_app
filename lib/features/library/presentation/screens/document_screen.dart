@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import '../../../share/share_actions.dart';
+import '../../../search/search_index.dart';
+import '../../../bookmarks/bookmarks.dart';
+import '../../../../app/router/app_routes.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../../../core/config/remote_config.dart';
@@ -54,7 +58,29 @@ class _DocumentScreenState extends ConsumerState<DocumentScreen> {
     final onWifi = ref.watch(isOnWifiProvider).value ?? false;
 
     return Scaffold(
-      appBar: EpAppBar(title: doc?.title ?? l10n.homeLibrary),
+      appBar: EpAppBar(
+        title: doc?.title ?? l10n.homeLibrary,
+        actions: [
+          if (doc != null) ...[
+            BookmarkButton(
+              kind: SearchKind.document,
+              id: doc.id,
+              title: doc.title,
+              route: AppRoutes.document(doc.id),
+            ),
+            IconButton(
+              tooltip: l10n.shareAction,
+              icon: const Icon(Icons.share_outlined),
+              onPressed: () => shareInAppLink(
+                context,
+                ref,
+                title: doc.title,
+                route: AppRoutes.document(doc.id),
+              ),
+            ),
+          ],
+        ],
+      ),
       body: EpAsyncView(
         value: documents,
         onRetry: () => ref.invalidate(libraryDocumentsProvider),

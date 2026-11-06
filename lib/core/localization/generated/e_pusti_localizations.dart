@@ -2974,6 +2974,240 @@ abstract class EPustiGeneratedLocalizations {
   /// In en, this message translates to:
   /// **'Send {keyword} to {shortcode}'**
   String pust9StopBody(String keyword, String shortcode);
+
+  /// No description provided for @bookmarkAdd.
+  ///
+  /// In en, this message translates to:
+  /// **'Save'**
+  String get bookmarkAdd;
+
+  /// No description provided for @bookmarkRemove.
+  ///
+  /// In en, this message translates to:
+  /// **'Remove from saved'**
+  String get bookmarkRemove;
+
+  /// No description provided for @bookmarkSaved.
+  ///
+  /// In en, this message translates to:
+  /// **'Added to saved'**
+  String get bookmarkSaved;
+
+  /// No description provided for @bookmarkRemoved.
+  ///
+  /// In en, this message translates to:
+  /// **'Removed from saved'**
+  String get bookmarkRemoved;
+
+  /// No description provided for @savedTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Saved'**
+  String get savedTitle;
+
+  /// No description provided for @savedEmptyTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Nothing saved yet'**
+  String get savedEmptyTitle;
+
+  /// No description provided for @savedEmptyBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Tap the bookmark on a chapter, module, document or webinar to save it here.'**
+  String get savedEmptyBody;
+
+  /// No description provided for @searchHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Search all content…'**
+  String get searchHint;
+
+  /// No description provided for @searchTooltip.
+  ///
+  /// In en, this message translates to:
+  /// **'Search'**
+  String get searchTooltip;
+
+  /// No description provided for @searchPromptTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'What are you looking for?'**
+  String get searchPromptTitle;
+
+  /// No description provided for @searchPromptBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Search chapters, modules, the library and webinars in one place.'**
+  String get searchPromptBody;
+
+  /// No description provided for @searchRecent.
+  ///
+  /// In en, this message translates to:
+  /// **'Recent searches'**
+  String get searchRecent;
+
+  /// No description provided for @searchNoResults.
+  ///
+  /// In en, this message translates to:
+  /// **'Nothing matched \"{query}\". Try another word, or browse the library or courses.'**
+  String searchNoResults(String query);
+
+  /// No description provided for @listenAction.
+  ///
+  /// In en, this message translates to:
+  /// **'Listen'**
+  String get listenAction;
+
+  /// No description provided for @listenStop.
+  ///
+  /// In en, this message translates to:
+  /// **'Stop'**
+  String get listenStop;
+
+  /// No description provided for @listenUnavailable.
+  ///
+  /// In en, this message translates to:
+  /// **'This phone has no Bangla text-to-speech voice. Add a Bangla voice in the phone\'s settings to listen.'**
+  String get listenUnavailable;
+
+  /// No description provided for @growthChartTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Growth chart (BMI for age)'**
+  String get growthChartTitle;
+
+  /// No description provided for @growthChartLegend.
+  ///
+  /// In en, this message translates to:
+  /// **'Lines: WHO 2007 reference from −2 to +2 SD; the thick line is the median. Dots are saved measurements. Shaded: −2 to +1 SD.'**
+  String get growthChartLegend;
+
+  /// No description provided for @growthChartSemantic.
+  ///
+  /// In en, this message translates to:
+  /// **'Growth chart with {count} measurements'**
+  String growthChartSemantic(String count);
+
+  /// No description provided for @journeyTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Mother & baby journey'**
+  String get journeyTitle;
+
+  /// No description provided for @journeyPregnancy.
+  ///
+  /// In en, this message translates to:
+  /// **'Pregnancy'**
+  String get journeyPregnancy;
+
+  /// No description provided for @journeyBreastfeeding.
+  ///
+  /// In en, this message translates to:
+  /// **'Breastfeeding'**
+  String get journeyBreastfeeding;
+
+  /// No description provided for @journeyPregnancyWeek.
+  ///
+  /// In en, this message translates to:
+  /// **'Week {week}'**
+  String journeyPregnancyWeek(String week);
+
+  /// No description provided for @journeyBabyWeek.
+  ///
+  /// In en, this message translates to:
+  /// **'{name}: {week} weeks old'**
+  String journeyBabyWeek(String name, String week);
+
+  /// No description provided for @journeyTrimester.
+  ///
+  /// In en, this message translates to:
+  /// **'Trimester {n}'**
+  String journeyTrimester(String n);
+
+  /// No description provided for @journeyDueDate.
+  ///
+  /// In en, this message translates to:
+  /// **'Expected due date: {date}'**
+  String journeyDueDate(String date);
+
+  /// No description provided for @journeyAddDueDate.
+  ///
+  /// In en, this message translates to:
+  /// **'Add the expected due date to see your week'**
+  String get journeyAddDueDate;
+
+  /// No description provided for @journeyAddBaby.
+  ///
+  /// In en, this message translates to:
+  /// **'Add your baby to see guidance by age'**
+  String get journeyAddBaby;
+
+  /// No description provided for @journeyContentSoon.
+  ///
+  /// In en, this message translates to:
+  /// **'Guidance for this week will be added soon. Meanwhile, see the resources below.'**
+  String get journeyContentSoon;
+
+  /// No description provided for @journeyResources.
+  ///
+  /// In en, this message translates to:
+  /// **'Related resources'**
+  String get journeyResources;
+
+  /// No description provided for @journeyNoneTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'For pregnant and breastfeeding mothers'**
+  String get journeyNoneTitle;
+
+  /// No description provided for @journeyNoneBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Turn on \"Pregnant\" or \"Breastfeeding\" in your profile to see information for you here.'**
+  String get journeyNoneBody;
+
+  /// No description provided for @journeyAncTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Antenatal check-ups'**
+  String get journeyAncTitle;
+
+  /// No description provided for @journeyAncWeek.
+  ///
+  /// In en, this message translates to:
+  /// **'Week {week} check-up'**
+  String journeyAncWeek(String week);
+
+  /// No description provided for @journeyAncRemind.
+  ///
+  /// In en, this message translates to:
+  /// **'Remind me before check-ups'**
+  String get journeyAncRemind;
+
+  /// No description provided for @journeyAncReminded.
+  ///
+  /// In en, this message translates to:
+  /// **'You\'ll be reminded the day before each check-up'**
+  String get journeyAncReminded;
+
+  /// No description provided for @journeyAncReminderTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Antenatal check-up tomorrow'**
+  String get journeyAncReminderTitle;
+
+  /// No description provided for @journeyAncReminderBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Week {week} check-up'**
+  String journeyAncReminderBody(String week);
+
+  /// No description provided for @fieldDueDate.
+  ///
+  /// In en, this message translates to:
+  /// **'Expected due date'**
+  String get fieldDueDate;
 }
 
 class _EPustiGeneratedLocalizationsDelegate

@@ -13,8 +13,10 @@ import '../../../../core/widgets/navigation/ep_app_bar.dart';
 import '../../../profile/domain/profile_models.dart';
 import '../../../profile/presentation/profile_labels.dart';
 import '../../../profile/presentation/profile_providers.dart';
+import '../../data/who_bmi_for_age_reference.dart';
 import '../../domain/bmi_engine.dart';
 import '../../domain/entities/bmi_models.dart';
+import '../widgets/growth_chart.dart';
 
 /// BMI-03 — records per person, correctable and deletable.
 class BmiHistoryScreen extends ConsumerStatefulWidget {
@@ -144,11 +146,7 @@ class _PersonHistory extends ConsumerWidget {
                 ),
               ),
             const SizedBox(height: EpSpace.s3),
-            Text(
-              l10n.historyGrowthSoon,
-              textAlign: TextAlign.center,
-              style: Theme.of(context).textTheme.bodySmall,
-            ),
+            _GrowthSection(person: person, records: items),
             const SizedBox(height: EpSpace.s6),
           ],
         );
@@ -308,6 +306,61 @@ class _EditSheetState extends ConsumerState<_EditSheet> {
           ),
         ],
       ),
+    );
+  }
+}
+
+/// Chart for records taken between 5 and 19 years with a sex the WHO
+/// reference covers; otherwise the "coming soon" line (under-5 charts need
+/// the WHO 2006 standards).
+class _GrowthSection extends ConsumerWidget {
+  const _GrowthSection({required this.person, required this.records});
+
+  final Person person;
+  final List<Measurement> records;
+
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    final l10n = context.l10n;
+    final sex = person.sex;
+    final reference = ref.watch(bmiForAgeReferenceProvider).value;
+    final points = [
+      for (final m in records)
+        if (person.ageMonthsAt(m.measuredAt) case final age?
+            when age >= BmiEngine.childFromMonths &&
+                age < BmiEngine.adultFromMonths)
+          GrowthPoint(ageMonths: age, bmi: m.bmi),
+    ];
+    if (reference == null ||
+        points.isEmpty ||
+        sex == null ||
+        sex == Sex.other) {
+      final adultOnly =
+          points.isEmpty &&
+          (person.ageMonthsAt(DateTime.now()) ?? 0) >=
+              BmiEngine.adultFromMonths;
+      if (adultOnly) return const SizedBox.shrink();
+      return Text(
+        l10n.historyGrowthSoon,
+        textAlign: TextAlign.center,
+        style: Theme.of(context).textTheme.bodySmall,
+      );
+    }
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Text(
+          l10n.growthChartTitle,
+          style: Theme.of(context).textTheme.titleMedium,
+        ),
+        const SizedBox(height: EpSpace.s2),
+        GrowthChart(reference: reference, sex: sex, points: points),
+        const SizedBox(height: EpSpace.s2),
+        Text(
+          l10n.bmiChildDisclaimer,
+          style: Theme.of(context).textTheme.bodySmall,
+        ),
+      ],
     );
   }
 }

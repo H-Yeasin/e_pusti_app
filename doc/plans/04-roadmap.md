@@ -81,6 +81,11 @@ Phases are ordered by dependency and user value. Each phase ends in a shippable 
 ## Phase 5 — Depth (after clinical/content sign-off)
 P2-1 growth charts · P2-2 pregnancy/breastfeeding journey · P2-3 audio narration · P2-4 global search · P2-5 bookmarks · selected P3 items after user research.
 
+**Status (2026-11-06):**
+- Done: P2-4 global search (chapters incl. their text, modules, documents, webinars; Bangla/ASCII digits match; recent searches; no-results way out); P2-5 saved items (bookmark on chapter, module, document and webinar; Saved screen with swipe to remove; on the device, works logged out); P2-3 "Listen" on chapters, modules and journey guidance using the phone's text-to-speech, with a clear message when no Bangla voice is installed; P2-1 growth chart for ages 5–19 on the WHO 2007 curves (−2…+2 SD, clinical palette) in BMI history; P2-2 mother & baby journey — pregnancy week and trimester from a new expected-due-date field, baby's age in weeks while breastfeeding, related resources, a slot for weekly guidance, and antenatal check-up reminders once `ancContactWeeks` is configured; "For you" shows the journey row.
+- Waiting on content or sign-off: weekly pregnancy / breastfeeding guidance (no reviewed content yet — the screen says so); antenatal visit schedule for Bangladesh (config stays empty until confirmed); under-5 growth charts need the WHO 2006 Child Growth Standards tables; recorded audio can replace text-to-speech per chapter later.
+- P3 items (food guide, meal planner, streaks, ask-an-expert, CHW mode, impact dashboard) are left for user research, as planned.
+
 ## Dependency map (blocking items)
 
 | Blocker | Blocks |

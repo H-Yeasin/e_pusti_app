@@ -911,5 +911,103 @@
         "type": "String"
       }
     }
-  }
+  },
+  "bookmarkAdd": "Save",
+  "bookmarkRemove": "Remove from saved",
+  "bookmarkSaved": "Added to saved",
+  "bookmarkRemoved": "Removed from saved",
+  "savedTitle": "Saved",
+  "savedEmptyTitle": "Nothing saved yet",
+  "savedEmptyBody": "Tap the bookmark on a chapter, module, document or webinar to save it here.",
+  "searchHint": "Search all content…",
+  "searchTooltip": "Search",
+  "searchPromptTitle": "What are you looking for?",
+  "searchPromptBody": "Search chapters, modules, the library and webinars in one place.",
+  "searchRecent": "Recent searches",
+  "searchNoResults": "Nothing matched \"{query}\". Try another word, or browse the library or courses.",
+  "@searchNoResults": {
+    "placeholders": {
+      "query": {
+        "type": "String"
+      }
+    }
+  },
+  "listenAction": "Listen",
+  "listenStop": "Stop",
+  "listenUnavailable": "This phone has no Bangla text-to-speech voice. Add a Bangla voice in the phone's settings to listen.",
+  "growthChartTitle": "Growth chart (BMI for age)",
+  "growthChartLegend": "Lines: WHO 2007 reference from −2 to +2 SD; the thick line is the median. Dots are saved measurements. Shaded: −2 to +1 SD.",
+  "growthChartSemantic": "Growth chart with {count} measurements",
+  "@growthChartSemantic": {
+    "placeholders": {
+      "count": {
+        "type": "String"
+      }
+    }
+  },
+  "journeyTitle": "Mother & baby journey",
+  "journeyPregnancy": "Pregnancy",
+  "journeyBreastfeeding": "Breastfeeding",
+  "journeyPregnancyWeek": "Week {week}",
+  "@journeyPregnancyWeek": {
+    "placeholders": {
+      "week": {
+        "type": "String"
+      }
+    }
+  },
+  "journeyBabyWeek": "{name}: {week} weeks old",
+  "@journeyBabyWeek": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      },
+      "week": {
+        "type": "String"
+      }
+    }
+  },
+  "journeyTrimester": "Trimester {n}",
+  "@journeyTrimester": {
+    "placeholders": {
+      "n": {
+        "type": "String"
+      }
+    }
+  },
+  "journeyDueDate": "Expected due date: {date}",
+  "@journeyDueDate": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "journeyAddDueDate": "Add the expected due date to see your week",
+  "journeyAddBaby": "Add your baby to see guidance by age",
+  "journeyContentSoon": "Guidance for this week will be added soon. Meanwhile, see the resources below.",
+  "journeyResources": "Related resources",
+  "journeyNoneTitle": "For pregnant and breastfeeding mothers",
+  "journeyNoneBody": "Turn on \"Pregnant\" or \"Breastfeeding\" in your profile to see information for you here.",
+  "journeyAncTitle": "Antenatal check-ups",
+  "journeyAncWeek": "Week {week} check-up",
+  "@journeyAncWeek": {
+    "placeholders": {
+      "week": {
+        "type": "String"
+      }
+    }
+  },
+  "journeyAncRemind": "Remind me before check-ups",
+  "journeyAncReminded": "You'll be reminded the day before each check-up",
+  "journeyAncReminderTitle": "Antenatal check-up tomorrow",
+  "journeyAncReminderBody": "Week {week} check-up",
+  "@journeyAncReminderBody": {
+    "placeholders": {
+      "week": {
+        "type": "String"
+      }
+    }
+  },
+  "fieldDueDate": "Expected due date"
 }

@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import '../../../../core/localization/digits.dart';
+import '../../../journey/journey.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
@@ -86,8 +88,30 @@ class ForYouCard extends ConsumerWidget {
       );
     }
 
-    // Family measurements that are due.
     final family = ref.watch(familyProvider).value ?? const <Person>[];
+
+    // Pregnancy / breastfeeding journey.
+    final journey = journeyFor(family, now);
+    if (journey != null) {
+      final week = journey.week;
+      rows.add(
+        _Row(
+          key: const ValueKey('for-you-journey'),
+          icon: Icons.pregnant_woman_outlined,
+          label: l10n.journeyTitle,
+          text: week == null
+              ? (journey.stage == JourneyStage.pregnancy
+                    ? l10n.journeyAddDueDate
+                    : l10n.journeyAddBaby)
+              : journey.stage == JourneyStage.pregnancy
+              ? '${l10n.journeyPregnancy} · ${l10n.journeyPregnancyWeek(context.digits(week))}'
+              : '${l10n.journeyBreastfeeding} · ${l10n.journeyBabyWeek(personName(context, journey.baby!), context.digits(week))}',
+          onTap: () => context.push(AppRoutes.journey),
+        ),
+      );
+    }
+
+    // Family measurements that are due.
     final planner = ref.watch(reminderPlannerProvider);
     for (final person in family) {
       final records =

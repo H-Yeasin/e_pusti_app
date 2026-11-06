@@ -1633,4 +1633,145 @@ class EPustiGeneratedLocalizationsBn extends EPustiGeneratedLocalizations {
   String pust9StopBody(String keyword, String shortcode) {
     return '$keyword লিখে $shortcode নম্বরে পাঠান';
   }
+
+  @override
+  String get bookmarkAdd => 'সংরক্ষণ করুন';
+
+  @override
+  String get bookmarkRemove => 'সংরক্ষিত থেকে সরান';
+
+  @override
+  String get bookmarkSaved => 'সংরক্ষিত তালিকায় যোগ হয়েছে';
+
+  @override
+  String get bookmarkRemoved => 'সংরক্ষিত তালিকা থেকে সরানো হয়েছে';
+
+  @override
+  String get savedTitle => 'সংরক্ষিত';
+
+  @override
+  String get savedEmptyTitle => 'এখনো কিছু সংরক্ষণ করা হয়নি';
+
+  @override
+  String get savedEmptyBody =>
+      'অধ্যায়, মডিউল, ডকুমেন্ট বা ওয়েবিনারের বুকমার্ক চিহ্নে চাপ দিলে এখানে সংরক্ষিত থাকবে।';
+
+  @override
+  String get searchHint => 'সব কনটেন্টে খুঁজুন...';
+
+  @override
+  String get searchTooltip => 'খুঁজুন';
+
+  @override
+  String get searchPromptTitle => 'কী খুঁজছেন?';
+
+  @override
+  String get searchPromptBody =>
+      'অধ্যায়, মডিউল, লাইব্রেরি ও ওয়েবিনার — সব এক জায়গায় খুঁজুন।';
+
+  @override
+  String get searchRecent => 'সাম্প্রতিক খোঁজ';
+
+  @override
+  String searchNoResults(String query) {
+    return '\"$query\" শব্দে কিছু মেলেনি। অন্য শব্দ দিয়ে খুঁজুন, অথবা লাইব্রেরি বা কোর্স দেখুন।';
+  }
+
+  @override
+  String get listenAction => 'শুনুন';
+
+  @override
+  String get listenStop => 'থামান';
+
+  @override
+  String get listenUnavailable =>
+      'এই ফোনে বাংলা কণ্ঠস্বর (টেক্সট-টু-স্পিচ) চালু নেই। ফোনের সেটিংস থেকে বাংলা ভয়েস যোগ করলে শুনতে পারবেন।';
+
+  @override
+  String get growthChartTitle => 'বৃদ্ধির গ্রাফ (বয়স অনুযায়ী BMI)';
+
+  @override
+  String get growthChartLegend =>
+      'রেখা: WHO ২০০৭ মানদণ্ডের −২ থেকে +২ SD; মোটা রেখাটি মধ্যমা। বিন্দুগুলো সংরক্ষিত পরিমাপ। ছায়াযুক্ত অংশ: −২ থেকে +১ SD।';
+
+  @override
+  String growthChartSemantic(String count) {
+    return '$countটি পরিমাপসহ বৃদ্ধির গ্রাফ';
+  }
+
+  @override
+  String get journeyTitle => 'মা ও শিশুর যাত্রা';
+
+  @override
+  String get journeyPregnancy => 'গর্ভকাল';
+
+  @override
+  String get journeyBreastfeeding => 'স্তন্যদান';
+
+  @override
+  String journeyPregnancyWeek(String week) {
+    return 'সপ্তাহ $week';
+  }
+
+  @override
+  String journeyBabyWeek(String name, String week) {
+    return '$name: বয়স $week সপ্তাহ';
+  }
+
+  @override
+  String journeyTrimester(String n) {
+    return 'ত্রৈমাসিক $n';
+  }
+
+  @override
+  String journeyDueDate(String date) {
+    return 'সম্ভাব্য প্রসবের তারিখ: $date';
+  }
+
+  @override
+  String get journeyAddDueDate =>
+      'সপ্তাহ হিসাব করতে সম্ভাব্য প্রসবের তারিখ যোগ করুন';
+
+  @override
+  String get journeyAddBaby => 'শিশুর তথ্য যোগ করলে বয়স অনুযায়ী তথ্য দেখাবে';
+
+  @override
+  String get journeyContentSoon =>
+      'এই সপ্তাহের পরামর্শ শীঘ্রই যুক্ত হবে। ততক্ষণ নিচের উপকরণগুলো দেখুন।';
+
+  @override
+  String get journeyResources => 'সংশ্লিষ্ট উপকরণ';
+
+  @override
+  String get journeyNoneTitle => 'গর্ভবতী ও স্তন্যদানকারী মায়েদের জন্য';
+
+  @override
+  String get journeyNoneBody =>
+      'প্রোফাইলে \"গর্ভবতী\" বা \"স্তন্যদানকারী\" চালু করলে এখানে আপনার জন্য তথ্য দেখাবে।';
+
+  @override
+  String get journeyAncTitle => 'প্রসবপূর্ব চেকআপ';
+
+  @override
+  String journeyAncWeek(String week) {
+    return 'সপ্তাহ $week-এর চেকআপ';
+  }
+
+  @override
+  String get journeyAncRemind => 'চেকআপের রিমাইন্ডার চালু করুন';
+
+  @override
+  String get journeyAncReminded =>
+      'প্রতিটি চেকআপের আগের দিন রিমাইন্ডার দেওয়া হবে';
+
+  @override
+  String get journeyAncReminderTitle => 'আগামীকাল প্রসবপূর্ব চেকআপ';
+
+  @override
+  String journeyAncReminderBody(String week) {
+    return 'সপ্তাহ $week-এর চেকআপ';
+  }
+
+  @override
+  String get fieldDueDate => 'সম্ভাব্য প্রসবের তারিখ';
 }

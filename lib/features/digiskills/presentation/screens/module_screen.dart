@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import '../../../search/search_index.dart';
+import '../../../bookmarks/bookmarks.dart';
+import '../../../../core/widgets/content/listen_button.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
@@ -63,6 +66,15 @@ class _ModuleScreenState extends ConsumerState<ModuleScreen> {
     return Scaffold(
       appBar: EpAppBar(
         title: module.value?.summary.title ?? l10n.homeDigiSkill,
+        actions: [
+          if (module.value case final m?)
+            BookmarkButton(
+              kind: SearchKind.module,
+              id: m.summary.id,
+              title: m.summary.title,
+              route: AppRoutes.module(m.summary.id),
+            ),
+        ],
       ),
       body: EpAsyncView(
         value: module,
@@ -90,6 +102,8 @@ class _ModuleScreenState extends ConsumerState<ModuleScreen> {
                   ),
                 ),
               const SizedBox(height: EpSpace.s3),
+              ListenButton(parts: [summary.title, ...m.paragraphs]),
+              const SizedBox(height: EpSpace.s4),
               for (final p in m.paragraphs) ...[
                 Text(p, style: theme.textTheme.bodyLarge),
                 const SizedBox(height: EpSpace.s4),

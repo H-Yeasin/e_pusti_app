@@ -241,8 +241,34 @@ class _PersonFormScreenState extends ConsumerState<PersonFormScreen> {
                 ),
                 title: Text(l10n.fieldPregnant),
                 value: person.pregnant,
-                onChanged: (v) => _update((p) => p.copyWith(pregnant: v)),
+                onChanged: (v) => _update(
+                  (p) => v
+                      ? p.copyWith(pregnant: true)
+                      : p.copyWith(pregnant: false, clearDueDate: true),
+                ),
               ),
+              if (person.pregnant)
+                _PickerRow(
+                  key: const ValueKey('person-due-date'),
+                  label: l10n.fieldDueDate,
+                  value: person.expectedDueDate == null
+                      ? l10n.fieldChoose
+                      : _longDate(context, person.expectedDueDate!),
+                  onTap: () async {
+                    final now = DateTime.now();
+                    final d = await showDatePicker(
+                      context: context,
+                      initialDate:
+                          person.expectedDueDate ??
+                          now.add(const Duration(days: 140)),
+                      firstDate: now.subtract(const Duration(days: 14)),
+                      lastDate: now.add(const Duration(days: 294)),
+                    );
+                    if (d != null) {
+                      _update((p) => p.copyWith(expectedDueDate: d));
+                    }
+                  },
+                ),
               SwitchListTile(
                 contentPadding: const EdgeInsets.symmetric(
                   horizontal: EpSpace.s4,

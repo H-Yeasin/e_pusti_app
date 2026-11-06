@@ -36,6 +36,7 @@ class Person {
     this.pregnant = false,
     this.breastfeeding = false,
     this.interests = const {},
+    this.expectedDueDate,
   });
 
   final String id;
@@ -48,6 +49,9 @@ class Person {
   final bool pregnant;
   final bool breastfeeding;
   final Set<Interest> interests;
+
+  /// Holder only, while pregnant: drives the pregnancy journey week.
+  final DateTime? expectedDueDate;
 
   bool get isHolder => relationship == Relationship.holder;
 
@@ -70,7 +74,9 @@ class Person {
     bool? pregnant,
     bool? breastfeeding,
     Set<Interest>? interests,
+    DateTime? expectedDueDate,
     bool clearName = false,
+    bool clearDueDate = false,
   }) {
     return Person(
       id: id,
@@ -83,6 +89,9 @@ class Person {
       pregnant: pregnant ?? this.pregnant,
       breastfeeding: breastfeeding ?? this.breastfeeding,
       interests: interests ?? this.interests,
+      expectedDueDate: clearDueDate
+          ? null
+          : (expectedDueDate ?? this.expectedDueDate),
     );
   }
 
@@ -97,6 +106,9 @@ class Person {
     'pregnant': pregnant,
     'breastfeeding': breastfeeding,
     'interests': [for (final i in interests) i.name],
+    'expected_due_date': expectedDueDate == null
+        ? null
+        : _date(expectedDueDate!),
   };
 
   static Person fromJson(Map<String, Object?> json) {
@@ -118,6 +130,7 @@ class Person {
       interests: interests is List
           ? {for (final i in interests) ?byName(Interest.values, i)}
           : const {},
+      expectedDueDate: DateTime.tryParse('${json['expected_due_date']}'),
     );
   }
 

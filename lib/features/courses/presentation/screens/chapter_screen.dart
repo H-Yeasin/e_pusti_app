@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import '../../../share/share_actions.dart';
+import '../../../search/search_index.dart';
+import '../../../bookmarks/bookmarks.dart';
+import '../../../../core/widgets/content/listen_button.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
@@ -58,13 +62,37 @@ class _ChapterScreenState extends ConsumerState<ChapterScreen> {
           );
 
     return Scaffold(
-      appBar: EpAppBar(title: title),
+      appBar: EpAppBar(
+        title: title,
+        actions: [
+          if (chapter.value case final c?) ...[
+            BookmarkButton(
+              kind: SearchKind.chapter,
+              id: c.summary.id,
+              title: c.summary.title,
+              route: AppRoutes.chapter(c.summary.id),
+            ),
+            IconButton(
+              tooltip: l10n.shareAction,
+              icon: const Icon(Icons.share_outlined),
+              onPressed: () => shareInAppLink(
+                context,
+                ref,
+                title: c.summary.title,
+                route: AppRoutes.chapter(c.summary.id),
+              ),
+            ),
+          ],
+        ],
+      ),
       body: EpAsyncView(
         value: chapter,
         onRetry: () => ref.invalidate(chapterProvider(widget.chapterId)),
         data: (data) => ListView(
           padding: const EdgeInsets.all(EpSpace.gutter),
           children: [
+            ListenButton(parts: [data.summary.title, ...data.paragraphs]),
+            const SizedBox(height: EpSpace.s4),
             if (data.video != null) ...[
               _VideoGate(video: data.video!),
               const SizedBox(height: EpSpace.s5),

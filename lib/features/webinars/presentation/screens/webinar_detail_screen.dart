@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import '../../../search/search_index.dart';
+import '../../../bookmarks/bookmarks.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
@@ -64,6 +66,13 @@ class _WebinarDetailScreenState extends ConsumerState<WebinarDetailScreen> {
       appBar: EpAppBar(
         title: l10n.homeWebinar,
         actions: [
+          if (webinar.value case final w?)
+            BookmarkButton(
+              kind: SearchKind.webinar,
+              id: w.id,
+              title: w.title,
+              route: AppRoutes.webinar(w.id),
+            ),
           if (webinar.value case final w?)
             IconButton(
               tooltip: l10n.shareAction,

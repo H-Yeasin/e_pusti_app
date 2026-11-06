@@ -34,6 +34,9 @@ abstract final class AppRoutes {
   static String module(String id) => '$digiSkills/$id';
   static const assessments = '/assessment';
   static const notificationSettings = '/settings/notifications';
+  static const search = '/search';
+  static const saved = '/saved';
+  static const journey = '/journey';
   static const pust9Archive = '/pust9/tips';
   static String assessment(String id) => '$assessments/$id';
   static String assessmentResult(String id) => '$assessments/$id/result';
@@ -61,6 +64,7 @@ abstract final class AppRoutes {
     changeNumber,
     consent,
     assessments,
+    journey,
   };
 
   /// A gated path or anything beneath it (e.g. `/profile/person/x`).
